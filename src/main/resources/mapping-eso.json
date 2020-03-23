@@ -1,0 +1,84 @@
+{
+  "Stop": {
+    "onPress":{
+      "class": "StopApplication",
+      "params": [
+      ]
+    }
+  },
+  "F12": {
+    "onPress":{
+      "class": "DebugMacro",
+      "params": [
+      ]
+    }
+  },
+  "F23": {
+    "onPress":{
+      "class": "EsoChangeFirstBar",
+      "params": [
+      ]
+    },
+    "onRelease":{
+      "class": "EsoChangeSecondBar",
+      "params": [
+      ]
+    }
+  },
+  "F13": {
+    "onPress":{
+      "class": "EsoUseSkill",
+      "params": [
+        "2",//send key
+        "F13",//trigger key
+        "60", // delay between lkm and send
+        "1000" // total execution
+      ]
+    }
+  },
+  "F14": {
+    "onPress":{
+      "class": "EsoUseSkill",
+      "params": [
+        "3",//send key
+        "F14",//trigger key
+        "60", // delay between lkm and send
+        "1000" // total execution
+      ]
+    }
+  },
+  "F15": {
+    "onPress":{
+      "class": "EsoUseSkill",
+      "params": [
+        "4",//send key
+        "F15",//trigger key
+        "60", // delay between lkm and send
+        "1000" // total execution
+      ]
+    }
+  },
+  "F16": {
+    "onPress":{
+      "class": "EsoUseSkill",
+      "params": [
+        "5",//send key
+        "F16",//trigger key
+        "60", // delay between lkm and send
+        "1000", // total execution
+        "3" //proc key
+      ]
+    }
+  },
+  "F17": {
+    "onPress":{
+      "class": "EsoUseSkill",
+      "params": [
+        "6",//send key
+        "F17",//trigger key
+        "60", // delay between lkm and send
+        "1000" // total execution
+      ]
+    }
+  }
+}

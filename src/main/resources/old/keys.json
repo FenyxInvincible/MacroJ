@@ -1,0 +1,523 @@
+{
+  "57380": {
+    "keyCode": 57380,
+    "keyText": "Stop",
+    "rawCode": 178
+  },
+  "44": {
+    "keyCode": 44,
+    "keyText": "Z",
+    "rawCode": 90
+  },
+  "0": {
+    "keyCode": 0,
+    "keyText": "Undefined",
+    "rawCode": 0
+  },
+  "88": {
+    "keyCode": 88,
+    "keyText": "F12",
+    "rawCode": 123
+  },
+  "45": {
+    "keyCode": 45,
+    "keyText": "X",
+    "rawCode": 88
+  },
+  "46": {
+    "keyCode": 46,
+    "keyText": "C",
+    "rawCode": 67
+  },
+  "47": {
+    "keyCode": 47,
+    "keyText": "V",
+    "rawCode": 86
+  },
+  "48": {
+    "keyCode": 48,
+    "keyText": "B",
+    "rawCode": 66
+  },
+  "49": {
+    "keyCode": 49,
+    "keyText": "N",
+    "rawCode": 78
+  },
+  "57424": {
+    "keyCode": 57424,
+    "keyText": "Down",
+    "rawCode": 40
+  },
+  "3639": {
+    "keyCode": 3639,
+    "keyText": "Print Screen",
+    "rawCode": 44
+  },
+  "57421": {
+    "keyCode": 57421,
+    "keyText": "Right",
+    "rawCode": 39
+  },
+  "50": {
+    "keyCode": 50,
+    "keyText": "M",
+    "rawCode": 77
+  },
+  "51": {
+    "keyCode": 51,
+    "keyText": "Comma",
+    "rawCode": 188
+  },
+  "52": {
+    "keyCode": 52,
+    "keyText": "Period",
+    "rawCode": 190
+  },
+  "53": {
+    "keyCode": 53,
+    "keyText": "Slash",
+    "rawCode": 191
+  },
+  "10": {
+    "keyCode": 10,
+    "keyText": "9",
+    "rawCode": 57
+  },
+  "3637": {
+    "keyCode": 3637,
+    "keyText": "NumPad Divide",
+    "rawCode": 111
+  },
+  "11": {
+    "keyCode": 11,
+    "keyText": "0",
+    "rawCode": 48
+  },
+  "55": {
+    "keyCode": 55,
+    "keyText": "NumPad Multiply",
+    "rawCode": 106
+  },
+  "12": {
+    "keyCode": 12,
+    "keyText": "Minus",
+    "rawCode": 189
+  },
+  "13": {
+    "keyCode": 13,
+    "keyText": "Equals",
+    "rawCode": 187
+  },
+  "14": {
+    "keyCode": 14,
+    "keyText": "Backspace",
+    "rawCode": 8
+  },
+  "59": {
+    "keyCode": 59,
+    "keyText": "F1",
+    "rawCode": 112
+  },
+  "15": {
+    "keyCode": 15,
+    "keyText": "Tab",
+    "rawCode": 9
+  },
+  "16": {
+    "keyCode": 16,
+    "keyText": "Q",
+    "rawCode": 81
+  },
+  "17": {
+    "keyCode": 17,
+    "keyText": "W",
+    "rawCode": 87
+  },
+  "18": {
+    "keyCode": 18,
+    "keyText": "E",
+    "rawCode": 69
+  },
+  "19": {
+    "keyCode": 19,
+    "keyText": "R",
+    "rawCode": 82
+  },
+  "1": {
+    "keyCode": 1,
+    "keyText": "Escape",
+    "rawCode": 27
+  },
+  "2": {
+    "keyCode": 2,
+    "keyText": "1",
+    "rawCode": 49
+  },
+  "3": {
+    "keyCode": 3,
+    "keyText": "2",
+    "rawCode": 50
+  },
+  "4": {
+    "keyCode": 4,
+    "keyText": "3",
+    "rawCode": 51
+  },
+  "5": {
+    "keyCode": 5,
+    "keyText": "4",
+    "rawCode": 52
+  },
+  "6": {
+    "keyCode": 6,
+    "keyText": "5",
+    "rawCode": 53
+  },
+  "7": {
+    "keyCode": 7,
+    "keyText": "6",
+    "rawCode": 54
+  },
+  "8": {
+    "keyCode": 8,
+    "keyText": "7",
+    "rawCode": 55
+  },
+  "9": {
+    "keyCode": 9,
+    "keyText": "8",
+    "rawCode": 56
+  },
+  "60": {
+    "keyCode": 60,
+    "keyText": "F2",
+    "rawCode": 113
+  },
+  "61": {
+    "keyCode": 61,
+    "keyText": "F3",
+    "rawCode": 114
+  },
+  "62": {
+    "keyCode": 62,
+    "keyText": "F4",
+    "rawCode": 115
+  },
+  "63": {
+    "keyCode": 63,
+    "keyText": "F5",
+    "rawCode": 116
+  },
+  "20": {
+    "keyCode": 20,
+    "keyText": "T",
+    "rawCode": 84
+  },
+  "64": {
+    "keyCode": 64,
+    "keyText": "F6",
+    "rawCode": 117
+  },
+  "65": {
+    "keyCode": 65,
+    "keyText": "F7",
+    "rawCode": 118
+  },
+  "22": {
+    "keyCode": 22,
+    "keyText": "U",
+    "rawCode": 85
+  },
+  "66": {
+    "keyCode": 66,
+    "keyText": "F8",
+    "rawCode": 119
+  },
+  "23": {
+    "keyCode": 23,
+    "keyText": "I",
+    "rawCode": 73
+  },
+  "67": {
+    "keyCode": 67,
+    "keyText": "F9",
+    "rawCode": 120
+  },
+  "24": {
+    "keyCode": 24,
+    "keyText": "O",
+    "rawCode": 79
+  },
+  "68": {
+    "keyCode": 68,
+    "keyText": "F10",
+    "rawCode": 121
+  },
+  "25": {
+    "keyCode": 25,
+    "keyText": "P",
+    "rawCode": 80
+  },
+  "26": {
+    "keyCode": 26,
+    "keyText": "Open Bracket",
+    "rawCode": 219
+  },
+  "27": {
+    "keyCode": 27,
+    "keyText": "Close Bracket",
+    "rawCode": 221
+  },
+  "28": {
+    "keyCode": 28,
+    "keyText": "Enter",
+    "rawCode": 13
+  },
+  "29": {
+    "keyCode": 29,
+    "keyText": "Left Control",
+    "rawCode": 162
+  },
+  "70": {
+    "keyCode": 70,
+    "keyText": "Scroll Lock",
+    "rawCode": 145
+  },
+  "3653": {
+    "keyCode": 3653,
+    "keyText": "Pause",
+    "rawCode": 19
+  },
+  "71": {
+    "keyCode": 71,
+    "keyText": "NumPad 7",
+    "rawCode": 103
+  },
+  "3655": {
+    "keyCode": 3655,
+    "keyText": "Home",
+    "rawCode": 36
+  },
+  "72": {
+    "keyCode": 72,
+    "keyText": "NumPad 8",
+    "rawCode": 104
+  },
+  "73": {
+    "keyCode": 73,
+    "keyText": "NumPad 9",
+    "rawCode": 105
+  },
+  "30": {
+    "keyCode": 30,
+    "keyText": "A",
+    "rawCode": 65
+  },
+  "3657": {
+    "keyCode": 3657,
+    "keyText": "Page Up",
+    "rawCode": 33
+  },
+  "74": {
+    "keyCode": 74,
+    "keyText": "NumPad Subtract",
+    "rawCode": 109
+  },
+  "31": {
+    "keyCode": 31,
+    "keyText": "S",
+    "rawCode": 83
+  },
+  "75": {
+    "keyCode": 75,
+    "keyText": "NumPad 4",
+    "rawCode": 100
+  },
+  "32": {
+    "keyCode": 32,
+    "keyText": "D",
+    "rawCode": 68
+  },
+  "76": {
+    "keyCode": 76,
+    "keyText": "NumPad 5",
+    "rawCode": 101
+  },
+  "33": {
+    "keyCode": 33,
+    "keyText": "F",
+    "rawCode": 70
+  },
+  "77": {
+    "keyCode": 77,
+    "keyText": "NumPad 6",
+    "rawCode": 102
+  },
+  "34": {
+    "keyCode": 34,
+    "keyText": "G",
+    "rawCode": 71
+  },
+  "78": {
+    "keyCode": 78,
+    "keyText": "NumPad Add",
+    "rawCode": 107
+  },
+  "35": {
+    "keyCode": 35,
+    "keyText": "H",
+    "rawCode": 72
+  },
+  "79": {
+    "keyCode": 79,
+    "keyText": "NumPad 1",
+    "rawCode": 97
+  },
+  "37": {
+    "keyCode": 37,
+    "keyText": "K",
+    "rawCode": 75
+  },
+  "38": {
+    "keyCode": 38,
+    "keyText": "L",
+    "rawCode": 76
+  },
+  "39": {
+    "keyCode": 39,
+    "keyText": "Semicolon",
+    "rawCode": 186
+  },
+  "57416": {
+    "keyCode": 57416,
+    "keyText": "Up",
+    "rawCode": 38
+  },
+  "3663": {
+    "keyCode": 3663,
+    "keyText": "End",
+    "rawCode": 35
+  },
+  "80": {
+    "keyCode": 80,
+    "keyText": "NumPad 2",
+    "rawCode": 98
+  },
+  "81": {
+    "keyCode": 81,
+    "keyText": "NumPad 3",
+    "rawCode": 99
+  },
+  "3665": {
+    "keyCode": 3665,
+    "keyText": "Page Down",
+    "rawCode": 34
+  },
+  "82": {
+    "keyCode": 82,
+    "keyText": "NumPad 0",
+    "rawCode": 96
+  },
+  "3666": {
+    "keyCode": 3666,
+    "keyText": "Insert",
+    "rawCode": 45
+  },
+  "83": {
+    "keyCode": 83,
+    "keyText": "NumPad Separator",
+    "rawCode": 110
+  },
+  "40": {
+    "keyCode": 40,
+    "keyText": "Quote",
+    "rawCode": 222
+  },
+  "3667": {
+    "keyCode": 3667,
+    "keyText": "Delete",
+    "rawCode": 46
+  },
+  "41": {
+    "keyCode": 41,
+    "keyText": "Back Quote",
+    "rawCode": 192
+  },
+  "57419": {
+    "keyCode": 57419,
+    "keyText": "Left",
+    "rawCode": 37
+  },
+  "43": {
+    "keyCode": 43,
+    "keyText": "Back Slash",
+    "rawCode": 220
+  },
+  "87": {
+    "keyCode": 87,
+    "keyText": "F11",
+    "rawCode": 122
+  },
+  "91": {
+    "keyCode": 91,
+    "keyText": "F13",
+    "rawCode": 124
+  },
+  "92": {
+    "keyCode": 92,
+    "keyText": "F14",
+    "rawCode": 125
+  },
+  "93": {
+    "keyCode": 93,
+    "keyText": "F15",
+    "rawCode": 126
+  },
+  "99": {
+    "keyCode": 99,
+    "keyText": "F16",
+    "rawCode": 127
+  },
+  "100": {
+    "keyCode": 100,
+    "keyText": "F17",
+    "rawCode": 128
+  },
+  "101": {
+    "keyCode": 101,
+    "keyText": "F18",
+    "rawCode": 129
+  },
+  "102": {
+    "keyCode": 102,
+    "keyText": "F19",
+    "rawCode": 130
+  },
+  "103": {
+    "keyCode": 103,
+    "keyText": "F20",
+    "rawCode": 131
+  },
+  "104": {
+    "keyCode": 104,
+    "keyText": "F21",
+    "rawCode": 132
+  },
+  "105": {
+    "keyCode": 105,
+    "keyText": "F22",
+    "rawCode": 133
+  },
+  "106": {
+    "keyCode": 106,
+    "keyText": "F23",
+    "rawCode": 134
+  },
+  "107": {
+    "keyCode": 107,
+    "keyText": "F24",
+    "rawCode": 135
+  }
+}
+
