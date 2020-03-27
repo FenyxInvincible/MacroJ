@@ -19,7 +19,8 @@ import java.util.List;
 @Slf4j
 public class EsoUseSkill implements Macro {
 
-    private static final int POTION_COLOR = 2302860;
+    private static final int POTION_COLOR = 7165462;
+    private static final long SWITCH_DELAY = 200;
     private final Sender sender;
     private final KeyManager keys;
     private final Locks locks;
@@ -46,6 +47,7 @@ public class EsoUseSkill implements Macro {
                 return;
             }
             locks.getNumberOfCasting().incrementAndGet();
+            locks.getSwitchBarLock().lock();
             locks.getCastLock().lock();
 
             do {
@@ -54,6 +56,7 @@ public class EsoUseSkill implements Macro {
                 Thread.sleep(delay/2);
                 sender.mouseLeftClick();
                 Thread.sleep(delay/2);
+
 
                 boolean isProcTriggered = false;
                 if (procKey != null
@@ -64,10 +67,12 @@ public class EsoUseSkill implements Macro {
                 }
 
                 sender.sendKey(isProcTriggered ? procKey: overridableKey, 30);
-
+                if (locks.getSwitchBarLock().isHeldByCurrentThread()) {
+                    locks.getSwitchBarLock().unlock();
+                }
                 //use potion
                 Thread.sleep(50);
-                if(ScreenPicker.pickDwordColor( 944 ,1127) == POTION_COLOR) {
+                if(ScreenPicker.pickDwordColor( 974 ,1107) == POTION_COLOR) {
                     sender.sendKey(keys.findKeyByText("1"), 30);
                 }
 
@@ -86,6 +91,9 @@ public class EsoUseSkill implements Macro {
         } finally {
             locks.getNumberOfCasting().decrementAndGet();
             locks.getCastLock().unlock();
+            if (locks.getSwitchBarLock().isHeldByCurrentThread()) {
+                locks.getSwitchBarLock().unlock();
+            }
         }
     }
 }

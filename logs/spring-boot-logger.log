@@ -1,0 +1,294 @@
+2020-03-22 12:18:34,944 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on HomeServer with PID 844 (D:\Projects\autohotkey\out\production\classes started by Fenyx in D:\Projects\autohotkey)
+2020-03-22 12:18:34,979 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-22 12:18:34,980 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: eso
+2020-03-22 12:18:35,394 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'applicationRunner' defined in file [D:\Projects\autohotkey\out\production\classes\local\autohotkey\ApplicationRunner.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'macroKeyListener' defined in file [D:\Projects\autohotkey\out\production\classes\local\autohotkey\service\MacroKeyListener.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'macroFactory': Invocation of init method failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'local.autohotkey.data.macro.DebugMacro' available
+2020-03-22 12:18:35,399 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-22 12:18:35,470 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in local.autohotkey.service.MacroKeyListener required a bean of type 'local.autohotkey.data.macro.DebugMacro' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'local.autohotkey.data.macro.DebugMacro' in your configuration.
+
+2020-03-22 12:18:59,674 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on HomeServer with PID 1960 (D:\Projects\autohotkey\out\production\classes started by Fenyx in D:\Projects\autohotkey)
+2020-03-22 12:18:59,676 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-22 12:18:59,676 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: eso
+2020-03-22 12:19:00,074 INFO org.springframework.boot.StartupInfoLogger [main] Started Application in 0.667 seconds (JVM running for 1.205)
+2020-03-22 12:19:00,133 INFO local.autohotkey.ApplicationRunner [main] Application started
+2020-03-22 12:19:00,133 DEBUG local.autohotkey.ApplicationRunner [main] Application asdasd
+2020-03-22 12:19:06,504 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=88,keyText=F12,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=123
+2020-03-22 12:19:06,511 DEBUG local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Key suppressed F12
+2020-03-22 12:19:06,511 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Trying to execute macro for 
+2020-03-22 12:19:06,513 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Macro found class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:19:06,514 DEBUG local.autohotkey.macro.MacroThreads [JNativeHook Hook Thread] Thread is free class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:19:06,514 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-1-thread-1] Obtaining thread for class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:19:06,604 DEBUG local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Key suppressed F12
+2020-03-22 12:19:06,604 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Trying to execute macro for 
+2020-03-22 12:19:06,604 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Macro found class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:19:06,604 DEBUG local.autohotkey.macro.MacroThreads [JNativeHook Hook Thread] Thread is free class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:19:06,605 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-2-thread-1] Obtaining thread for class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:19:06,606 WARN local.autohotkey.data.macro.DummyMacro [pool-2-thread-1] DummyMacro is executed
+2020-03-22 12:19:06,606 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-2-thread-1] Releasing thread for class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:19:19,316 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=63,keyText=F5,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=116
+2020-03-22 12:19:45,781 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:19:46,108 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=46,keyText=C,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=67
+2020-03-22 12:19:46,110 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='c',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=67
+2020-03-22 12:19:48,845 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=88,keyText=F12,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=123
+2020-03-22 12:19:48,847 DEBUG local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Key suppressed F12
+2020-03-22 12:19:48,848 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Trying to execute macro for 
+2020-03-22 12:19:48,849 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Macro found class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:19:48,849 DEBUG local.autohotkey.macro.MacroThreads [JNativeHook Hook Thread] Thread is not free. Skipping
+2020-03-22 12:19:48,957 DEBUG local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Key suppressed F12
+2020-03-22 12:19:48,958 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Trying to execute macro for 
+2020-03-22 12:19:48,958 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Macro found class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:19:48,959 DEBUG local.autohotkey.macro.MacroThreads [JNativeHook Hook Thread] Thread is free class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:19:48,960 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-2-thread-1] Obtaining thread for class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:19:48,961 WARN local.autohotkey.data.macro.DummyMacro [pool-2-thread-1] DummyMacro is executed
+2020-03-22 12:19:48,962 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-2-thread-1] Releasing thread for class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:20:11,358 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=28,keyText=Enter,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=13
+2020-03-22 12:20:11,358 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=13
+2020-03-22 12:20:11,662 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:12,454 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:12,806 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=44,keyText=Z,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=90
+2020-03-22 12:20:12,807 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='z',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=90
+2020-03-22 12:20:20,918 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=28,keyText=Enter,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=13
+2020-03-22 12:20:20,918 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=13
+2020-03-22 12:20:22,686 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=38,keyText=L,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=76
+2020-03-22 12:20:22,687 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='l',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=76
+2020-03-22 12:20:22,894 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=24,keyText=O,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=79
+2020-03-22 12:20:22,894 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='o',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=79
+2020-03-22 12:20:25,509 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=28,keyText=Enter,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=13
+2020-03-22 12:20:25,509 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=13
+2020-03-22 12:20:25,621 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:25,853 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=3,keyText=2,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_STANDARD,rawCode=50
+2020-03-22 12:20:25,853 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='@',modifiers=Shift,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=50
+2020-03-22 12:20:26,302 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:26,637 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=31,keyText=S,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_STANDARD,rawCode=83
+2020-03-22 12:20:26,638 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='S',modifiers=Shift,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=83
+2020-03-22 12:20:26,789 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=38,keyText=L,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=76
+2020-03-22 12:20:26,791 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='l',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=76
+2020-03-22 12:20:27,237 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=28,keyText=Enter,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=13
+2020-03-22 12:20:27,237 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=13
+2020-03-22 12:20:29,893 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=34,keyText=G,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=71
+2020-03-22 12:20:29,894 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='g',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=71
+2020-03-22 12:20:30,173 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=52,keyText=Period,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=190
+2020-03-22 12:20:30,174 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='.',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=190
+2020-03-22 12:20:31,125 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=28,keyText=Enter,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=13
+2020-03-22 12:20:31,126 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=13
+2020-03-22 12:20:32,622 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:32,918 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=40,keyText=Quote,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_STANDARD,rawCode=222
+2020-03-22 12:20:32,919 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='"',modifiers=Shift,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=222
+2020-03-22 12:20:34,102 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:34,603 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:34,636 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:34,668 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:34,701 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:34,734 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:34,767 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:34,790 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=33,keyText=F,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_STANDARD,rawCode=70
+2020-03-22 12:20:34,790 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='F',modifiers=Shift,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=70
+2020-03-22 12:20:34,909 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=23,keyText=I,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=73
+2020-03-22 12:20:34,910 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='i',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=73
+2020-03-22 12:20:35,134 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=38,keyText=L,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=76
+2020-03-22 12:20:35,134 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='l',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=76
+2020-03-22 12:20:35,261 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=18,keyText=E,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=69
+2020-03-22 12:20:35,262 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='e',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=69
+2020-03-22 12:20:35,693 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=57,keyText=Space,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=32
+2020-03-22 12:20:35,696 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar=' ',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=32
+2020-03-22 12:20:35,886 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=31,keyText=S,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=83
+2020-03-22 12:20:35,887 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='s',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=83
+2020-03-22 12:20:36,053 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=30,keyText=A,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=65
+2020-03-22 12:20:36,054 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='a',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=65
+2020-03-22 12:20:36,278 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=47,keyText=V,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=86
+2020-03-22 12:20:36,278 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='v',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=86
+2020-03-22 12:20:36,438 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=18,keyText=E,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=69
+2020-03-22 12:20:36,438 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='e',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=69
+2020-03-22 12:20:36,646 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=32,keyText=D,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=68
+2020-03-22 12:20:36,647 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='d',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=68
+2020-03-22 12:20:39,455 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:39,955 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:39,988 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:40,021 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:40,054 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:40,086 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=40,keyText=Quote,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_STANDARD,rawCode=222
+2020-03-22 12:20:40,086 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='"',modifiers=Shift,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=222
+2020-03-22 12:20:41,286 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=57419,keyText=Left,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=37
+2020-03-22 12:20:42,262 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:42,694 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=39,keyText=Semicolon,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_STANDARD,rawCode=186
+2020-03-22 12:20:42,695 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar=':',modifiers=Shift,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=186
+2020-03-22 12:20:43,086 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=57,keyText=Space,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=32
+2020-03-22 12:20:43,086 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar=' ',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=32
+2020-03-22 12:20:43,413 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=57421,keyText=Right,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=39
+2020-03-22 12:20:43,998 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=57,keyText=Space,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=32
+2020-03-22 12:20:44,000 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar=' ',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=32
+2020-03-22 12:20:45,007 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:46,022 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=57419,keyText=Left,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=37
+2020-03-22 12:20:46,190 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=57419,keyText=Left,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=37
+2020-03-22 12:20:46,518 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=42,keyText=Left Shift,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_LEFT,rawCode=160
+2020-03-22 12:20:46,990 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=26,keyText=Open Bracket,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_STANDARD,rawCode=219
+2020-03-22 12:20:46,992 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='{',modifiers=Shift,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=219
+2020-03-22 12:20:47,053 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=27,keyText=Close Bracket,keyChar=Undefined,modifiers=Shift,keyLocation=KEY_LOCATION_STANDARD,rawCode=221
+2020-03-22 12:20:47,054 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='}',modifiers=Shift,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=221
+2020-03-22 12:20:47,990 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=57421,keyText=Right,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=39
+2020-03-22 12:20:49,614 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=51,keyText=Comma,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=188
+2020-03-22 12:20:49,616 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar=',',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=188
+2020-03-22 12:20:49,782 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=57,keyText=Space,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=32
+2020-03-22 12:20:49,782 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar=' ',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=32
+2020-03-22 12:20:54,798 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:55,299 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:55,332 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:55,365 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:55,398 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:55,431 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:55,465 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:55,498 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:55,529 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:55,562 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:55,595 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:55,629 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:55,639 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=45,keyText=X,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=88
+2020-03-22 12:20:55,639 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='x',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=88
+2020-03-22 12:20:56,447 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:20:56,663 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=47,keyText=V,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=86
+2020-03-22 12:20:56,664 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='v',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=86
+2020-03-22 12:20:59,302 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=33,keyText=F,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=70
+2020-03-22 12:20:59,302 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='f',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=70
+2020-03-22 12:20:59,382 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=23,keyText=I,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=73
+2020-03-22 12:20:59,382 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='i',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=73
+2020-03-22 12:20:59,566 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=38,keyText=L,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=76
+2020-03-22 12:20:59,566 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='l',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=76
+2020-03-22 12:20:59,654 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=18,keyText=E,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=69
+2020-03-22 12:20:59,655 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='e',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=69
+2020-03-22 12:21:00,206 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=57,keyText=Space,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=32
+2020-03-22 12:21:00,207 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar=' ',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=32
+2020-03-22 12:21:00,631 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=13,keyText=Equals,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=187
+2020-03-22 12:21:00,648 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='=',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=187
+2020-03-22 12:21:00,735 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=57,keyText=Space,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=32
+2020-03-22 12:21:00,735 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar=' ',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=32
+2020-03-22 12:21:01,639 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=3655,keyText=Home,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=36
+2020-03-22 12:21:01,903 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=56,keyText=Left Alt,keyChar=Undefined,modifiers=Alt,keyLocation=KEY_LOCATION_LEFT,rawCode=164
+2020-03-22 12:21:02,382 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=28,keyText=Enter,keyChar=Undefined,modifiers=Alt,keyLocation=KEY_LOCATION_STANDARD,rawCode=13
+2020-03-22 12:21:02,382 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='',modifiers=Alt,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=13
+2020-03-22 12:21:02,758 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=28,keyText=Enter,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=13
+2020-03-22 12:21:02,759 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=13
+2020-03-22 12:21:03,278 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=28,keyText=Enter,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=13
+2020-03-22 12:21:03,279 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='',keyLocation=KEY_LOCATION_UNKNOWN,rawCode=13
+2020-03-22 12:21:05,687 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:21:05,964 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=47,keyText=V,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=86
+2020-03-22 12:21:05,965 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='v',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=86
+2020-03-22 12:21:06,623 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:21:06,888 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=44,keyText=Z,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=90
+2020-03-22 12:21:06,889 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='z',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=90
+2020-03-22 12:21:07,351 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:21:07,852 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:21:07,891 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=46,keyText=C,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=67
+2020-03-22 12:21:07,892 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='c',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=67
+2020-03-22 12:21:08,775 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:21:09,062 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=47,keyText=V,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=86
+2020-03-22 12:21:09,063 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='v',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=86
+2020-03-22 12:21:11,703 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:21:11,900 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=47,keyText=V,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=86
+2020-03-22 12:21:11,900 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='v',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=86
+2020-03-22 12:21:12,854 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:21:13,046 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=31,keyText=S,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=83
+2020-03-22 12:21:13,046 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='s',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=83
+2020-03-22 12:21:20,531 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on HomeServer with PID 16380 (D:\Projects\autohotkey\out\production\classes started by Fenyx in D:\Projects\autohotkey)
+2020-03-22 12:21:20,533 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-22 12:21:20,533 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: eso
+2020-03-22 12:21:20,893 INFO org.springframework.boot.StartupInfoLogger [main] Started Application in 0.619 seconds (JVM running for 1.223)
+2020-03-22 12:21:20,919 INFO local.autohotkey.ApplicationRunner [main] Application started
+2020-03-22 12:21:20,919 DEBUG local.autohotkey.ApplicationRunner [main] Application asdasd
+2020-03-22 12:21:23,437 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=88,keyText=F12,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=123
+2020-03-22 12:21:23,444 DEBUG local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Key suppressed F12
+2020-03-22 12:21:23,444 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Trying to execute macro for 
+2020-03-22 12:21:23,446 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Macro found class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:21:23,446 DEBUG local.autohotkey.macro.MacroThreads [JNativeHook Hook Thread] Thread is free class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:21:23,446 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-1-thread-1] Obtaining thread for class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:21:23,518 DEBUG local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Key suppressed F12
+2020-03-22 12:21:23,518 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Trying to execute macro for 
+2020-03-22 12:21:23,519 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Macro found class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:21:23,519 DEBUG local.autohotkey.macro.MacroThreads [JNativeHook Hook Thread] Thread is free class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:21:23,519 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-2-thread-1] Obtaining thread for class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:21:23,519 WARN local.autohotkey.data.macro.DummyMacro [pool-2-thread-1] DummyMacro is executed
+2020-03-22 12:21:23,519 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-2-thread-1] Releasing thread for class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:21:55,322 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on HomeServer with PID 16644 (D:\Projects\autohotkey\out\production\classes started by Fenyx in D:\Projects\autohotkey)
+2020-03-22 12:21:55,325 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-22 12:21:55,326 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: eso
+2020-03-22 12:21:55,692 INFO org.springframework.boot.StartupInfoLogger [main] Started Application in 0.729 seconds (JVM running for 1.601)
+2020-03-22 12:21:55,727 INFO local.autohotkey.ApplicationRunner [main] Application started
+2020-03-22 12:21:55,727 DEBUG local.autohotkey.ApplicationRunner [main] Application asdasd
+2020-03-22 12:22:03,521 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=88,keyText=F12,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=123
+2020-03-22 12:22:03,528 DEBUG local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Key suppressed F12
+2020-03-22 12:22:03,528 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Trying to execute macro for 
+2020-03-22 12:22:03,529 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Macro found class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:22:03,529 DEBUG local.autohotkey.macro.MacroThreads [JNativeHook Hook Thread] Thread is free class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:22:03,530 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-1-thread-1] Obtaining thread for class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:22:31,240 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=66,keyText=F8,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=119
+2020-03-22 12:22:37,749 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on HomeServer with PID 11888 (D:\Projects\autohotkey\out\production\classes started by Fenyx in D:\Projects\autohotkey)
+2020-03-22 12:22:37,752 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-22 12:22:37,753 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: eso
+2020-03-22 12:22:38,214 INFO org.springframework.boot.StartupInfoLogger [main] Started Application in 1.106 seconds (JVM running for 2.564)
+2020-03-22 12:22:38,252 INFO local.autohotkey.ApplicationRunner [main] Application started
+2020-03-22 12:22:38,252 DEBUG local.autohotkey.ApplicationRunner [main] Application asdasd
+2020-03-22 12:22:40,680 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=66,keyText=F8,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=119
+2020-03-22 12:22:42,897 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=88,keyText=F12,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=123
+2020-03-22 12:22:42,899 DEBUG local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Key suppressed F12
+2020-03-22 12:22:42,900 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Trying to execute macro for 
+2020-03-22 12:22:42,903 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Macro found class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:22:42,903 DEBUG local.autohotkey.macro.MacroThreads [JNativeHook Hook Thread] Thread is free class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:22:42,904 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-1-thread-1] Obtaining thread for class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:22:43,032 DEBUG local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Key suppressed F12
+2020-03-22 12:22:43,033 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Trying to execute macro for 
+2020-03-22 12:22:43,033 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Macro found class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:22:43,033 DEBUG local.autohotkey.macro.MacroThreads [JNativeHook Hook Thread] Thread is free class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:22:43,033 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-2-thread-1] Obtaining thread for class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:22:43,034 WARN local.autohotkey.data.macro.DummyMacro [pool-2-thread-1] DummyMacro is executed
+2020-03-22 12:22:43,034 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-2-thread-1] Releasing thread for class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:22:48,392 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=88,keyText=F12,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=123
+2020-03-22 12:22:48,394 DEBUG local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Key suppressed F12
+2020-03-22 12:22:48,395 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Trying to execute macro for 
+2020-03-22 12:22:48,396 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Macro found class local.autohotkey.data.macro.DebugMacro
+2020-03-22 12:22:48,397 DEBUG local.autohotkey.macro.MacroThreads [JNativeHook Hook Thread] Thread is not free. Skipping
+2020-03-22 12:22:48,497 DEBUG local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Key suppressed F12
+2020-03-22 12:22:48,498 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Trying to execute macro for 
+2020-03-22 12:22:48,498 DEBUG local.autohotkey.service.MacroFactory [JNativeHook Hook Thread] Macro found class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:22:48,499 DEBUG local.autohotkey.macro.MacroThreads [JNativeHook Hook Thread] Thread is free class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:22:48,500 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-2-thread-1] Obtaining thread for class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:22:48,501 WARN local.autohotkey.data.macro.DummyMacro [pool-2-thread-1] DummyMacro is executed
+2020-03-22 12:22:48,501 DEBUG local.autohotkey.macro.MacroThreads$MacroThread [pool-2-thread-1] Releasing thread for class local.autohotkey.data.macro.DummyMacro
+2020-03-22 12:23:05,666 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:05,980 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=46,keyText=C,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=67
+2020-03-22 12:23:05,981 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='c',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=67
+2020-03-22 12:23:38,466 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:38,967 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:39,000 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:39,032 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:39,066 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:39,098 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:39,131 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:39,164 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:39,197 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:39,231 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:39,263 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:39,274 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=32,keyText=D,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=68
+2020-03-22 12:23:39,274 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='d',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=68
+2020-03-22 12:23:40,306 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:40,513 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=31,keyText=S,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=83
+2020-03-22 12:23:40,514 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='s',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=83
+2020-03-22 12:23:48,954 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=3667,keyText=Delete,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=46
+2020-03-22 12:23:50,362 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=57416,keyText=Up,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=38
+2020-03-22 12:23:50,682 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=3667,keyText=Delete,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=46
+2020-03-22 12:23:51,026 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=3667,keyText=Delete,keyChar=Undefined,keyLocation=KEY_LOCATION_STANDARD,rawCode=46
+2020-03-22 12:23:51,426 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=29,keyText=Left Control,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_LEFT,rawCode=162
+2020-03-22 12:23:51,674 WARN local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] NATIVE_KEY_PRESSED,keyCode=31,keyText=S,keyChar=Undefined,modifiers=Ctrl,keyLocation=KEY_LOCATION_STANDARD,rawCode=83
+2020-03-22 12:23:51,674 ERROR local.autohotkey.service.MacroKeyListener [JNativeHook Hook Thread] Unexpected action nativeKeyTyped: NATIVE_KEY_TYPED,keyCode=0,keyText=Undefined,keyChar='s',modifiers=Ctrl,keyLocation=KEY_LOCATION_UNKNOWN,rawCode=83

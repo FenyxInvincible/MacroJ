@@ -12,6 +12,6 @@ public class DummyMacro implements Macro {
 
     @Override
     public void run() {
-        log.warn("DummyMacro is executed");
+        log.debug("DummyMacro is executed");
     }
 }

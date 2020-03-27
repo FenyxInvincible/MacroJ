@@ -32,7 +32,6 @@ public class EsoChangeFirstBar implements Macro {
     public void run() {
         try{
             locks.getSwitchBarLock().lock();
-
             long start = System.currentTimeMillis();
             log.debug("ScreenPicker.pickDwordColor != ScreenPicker.DWORD_WHITE {}", ScreenPicker.pickDwordColor(1149, 1399) != ScreenPicker.DWORD_WHITE);
             while (EsoUtils.isFirstBar()){
