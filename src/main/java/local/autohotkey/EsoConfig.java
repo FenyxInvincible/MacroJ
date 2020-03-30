@@ -2,10 +2,10 @@ package local.autohotkey;
 
 import local.autohotkey.key.RobotSender;
 import local.autohotkey.key.Sender;
+import me.coley.simplejna.hook.key.KeyHookManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
 
 import java.awt.*;
 
@@ -15,6 +15,10 @@ public class EsoConfig {
     @Bean
     public Robot robot() throws AWTException {
         return new Robot();
+    }
+    @Bean
+    public KeyHookManager keyHookManager() {
+        return new KeyHookManager();
     }
 
     @Bean

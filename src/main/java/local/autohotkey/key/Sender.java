@@ -7,4 +7,6 @@ public interface Sender {
     void releaseKey(Key key);
     void sendKey(Key key, int delay);
     void mouseLeftClick();
+    void mouseRightClick(int delay) throws InterruptedException;
+    void mouseMiddleClick();
 }

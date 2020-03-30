@@ -6,6 +6,13 @@
       ]
     }
   },
+  "F11": {
+    "onPress":{
+      "class": "SettingsMacro",
+      "params": [
+      ]
+    }
+  },
   "F12": {
     "onPress":{
       "class": "DebugMacro",
@@ -32,7 +39,9 @@
         "2",//send key
         "F13",//trigger key
         "150", // delay between lkm and send
-        "1000" // total execution
+        "1000", // total execution
+        "",
+        "false"
       ]
     }
   },
@@ -43,7 +52,9 @@
         "3",//send key
         "F14",//trigger key
         "150", // delay between lkm and send
-        "1000" // total execution
+        "1000", // total execution
+        "",
+        "false"
       ]
     }
   },
@@ -54,7 +65,9 @@
         "4",//send key
         "F15",//trigger key
         "150", // delay between lkm and send
-        "1000" // total execution
+        "1000", // total execution
+        "",
+        "false"
       ]
     }
   },
@@ -66,7 +79,8 @@
         "F16",//trigger key
         "150", // delay between lkm and send
         "1000", // total execution
-        "3" //proc key
+        "3", //proc key
+        "true"
       ]
     }
   },
@@ -77,7 +91,9 @@
         "6",//send key
         "F17",//trigger key
         "150", // delay between lkm and send
-        "1000" // total execution
+        "1000", // total execution,
+        "",
+        "true"
       ]
     }
   }

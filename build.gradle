@@ -13,6 +13,7 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -21,10 +22,7 @@ dependencies {
     compile group: 'net.java.dev.jna', name: 'jna', version: '5.5.0'
     compile group: 'net.java.dev.jna', name: 'jna-platform', version: '5.5.0'
 
-
-
-
-    implementation group: 'com.1stleg', name: 'jnativehook', version: '2.0.2'
+    implementation group: 'com.github.Col-E', name: 'Simplified-JNA', version: '1.0'
 
     compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
@@ -37,9 +35,6 @@ dependencies {
     implementation group: 'com.google.guava', name: 'guava', version: '28.2-jre'
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
 
-
-
     testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.3.0-alpha5'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.6.0'
-
 }

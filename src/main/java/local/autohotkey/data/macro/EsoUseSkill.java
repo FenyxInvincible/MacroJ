@@ -20,6 +20,7 @@ import java.util.List;
 public class EsoUseSkill implements Macro {
 
     private static final int POTION_COLOR = 7165462;
+    private static final int SYNERGY_COLOR = 16777215;
     private static final long SWITCH_DELAY = 200;
     private final Sender sender;
     private final KeyManager keys;
@@ -30,6 +31,7 @@ public class EsoUseSkill implements Macro {
     private Key procKey;
     private Integer delay;
     private Integer totalExecution;
+    private boolean useBlock;
 
     @Override
     public void setParams(List<String> params) {
@@ -37,11 +39,15 @@ public class EsoUseSkill implements Macro {
         triggerKey = keys.findKeyByText(params.get(1));
         delay = Integer.valueOf(params.get(2));
         totalExecution = Integer.valueOf(params.get(3));
-        procKey = (params.size() >= 5) ?keys.findKeyByText(params.get(4)) : null;
+        procKey = (!params.get(4).equals("")) ?keys.findKeyByText(params.get(4)) : null;
+        useBlock = Boolean.valueOf(params.get(5));
     }
 
     @Override
     public void run() {
+        boolean usePotion = locks.getSettings().getOrDefault("potion", "off").equals("on");
+        boolean useSynergy = locks.getSettings().getOrDefault("synergy", "on").equals("on");
+
         try{
             if(locks.getNumberOfCasting().get() > 2) {
                 return;
@@ -66,13 +72,20 @@ public class EsoUseSkill implements Macro {
                     isProcTriggered = true;
                 }
 
+                if (useSynergy && ScreenPicker.pickDwordColor( 1278, 1114) == SYNERGY_COLOR){
+                    sender.mouseMiddleClick();
+                }
+
                 sender.sendKey(isProcTriggered ? procKey: overridableKey, 30);
+
                 if (locks.getSwitchBarLock().isHeldByCurrentThread()) {
                     locks.getSwitchBarLock().unlock();
                 }
+
                 //use potion
                 Thread.sleep(50);
-                if(ScreenPicker.pickDwordColor( 974 ,1107) == POTION_COLOR) {
+
+                if(usePotion && ScreenPicker.pickDwordColor( 974 ,1107) == POTION_COLOR) {
                     sender.sendKey(keys.findKeyByText("1"), 30);
                 }
 
@@ -80,9 +93,10 @@ public class EsoUseSkill implements Macro {
 
                 if (execution < totalExecution) {
                     Thread.sleep(totalExecution - execution);
+                    if (useSynergy && ScreenPicker.pickDwordColor( 1278, 1114) == SYNERGY_COLOR){
+                        sender.mouseMiddleClick();
+                    }
                 }
-
-
 
                 log.debug("Trigger key {} is pressed : {}", triggerKey.getKeyText(), triggerKey.isPressed());
             } while (triggerKey.isPressed());

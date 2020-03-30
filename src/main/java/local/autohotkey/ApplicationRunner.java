@@ -2,9 +2,8 @@ package local.autohotkey;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.jnativehook.GlobalScreen;
-import org.jnativehook.NativeHookException;
-import org.jnativehook.keyboard.NativeKeyListener;
+import me.coley.simplejna.hook.key.KeyEventReceiver;
+import me.coley.simplejna.hook.key.KeyHookManager;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ExecutorService;
@@ -15,14 +14,11 @@ import java.util.concurrent.ExecutorService;
 public class ApplicationRunner {
 
     private final ExecutorService executorService;
-    private final NativeKeyListener keyListener;
+    private final KeyEventReceiver keyListener;
+    private final KeyHookManager keyHookManager;
 
-    public void run() throws NativeHookException {
-        GlobalScreen.setEventDispatcher(executorService);
-        GlobalScreen.registerNativeHook();
-
-        GlobalScreen.addNativeKeyListener(keyListener);
+    public void run() {
+        keyHookManager.hook(keyListener);
         log.info("Application started");
-        log.debug("Application asdasd");
     }
 }

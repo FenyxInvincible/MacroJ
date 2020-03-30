@@ -2,13 +2,14 @@ package local.autohotkey.service;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import local.autohotkey.data.Key;
 import local.autohotkey.data.macro.DummyMacro;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.macro.MacroThreads;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import me.coley.simplejna.hook.key.KeyEventReceiver;
 import org.apache.commons.lang3.tuple.Pair;
-import org.jnativehook.keyboard.NativeKeyEvent;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
@@ -62,19 +63,18 @@ public class MacroFactory {
     }
 
 
-    public void execute(NativeKeyEvent e) {
-        int eventType = e.getID();
-        Macro macro = macros.get(e.getKeyCode()).getMacroByEventType(eventType);
+    public void execute(Key key, KeyEventReceiver.PressState pressState) {
+        Macro macro = macros.get(key.getKeyCode()).getMacroByEventType(pressState);
 
-        if (!macroThreadMap.containsKey(e.getKeyCode())) {
-            macroThreadMap.put(e.getKeyCode(), new MacroThreads());
+        if (!macroThreadMap.containsKey(key.getKeyCode())) {
+            macroThreadMap.put(key.getKeyCode(), new MacroThreads());
         }
 
         log.debug("Macro found {}", macro.getClass());
 
-        MacroThreads macroThreads = macroThreadMap.get(e.getKeyCode());
+        MacroThreads macroThreads = macroThreadMap.get(key.getKeyCode());
 
-        macroThreads.run(macro, eventType);
+        macroThreads.run(macro, pressState);
     }
 
     private Macro findMacroClass(JsonElement value) {
@@ -105,8 +105,8 @@ public class MacroFactory {
         return bean;
     }
 
-    public boolean hasMacro(int keyCode) {
-        return macros.containsKey(keyCode);
+    public boolean hasMacro(Key key) {
+        return macros.containsKey(key.getKeyCode());
     }
 
     @Data
@@ -114,11 +114,11 @@ public class MacroFactory {
         private final Macro onPressMacro;
         private final Macro onReleaseMacro;
 
-        public Macro getMacroByEventType(int eventType) {
+        public Macro getMacroByEventType(KeyEventReceiver.PressState eventType) {
             switch(eventType) {
-                case MacroFactory.KEY_PRESS:
+                case DOWN:
                     return getOnPressMacro();
-                case MacroFactory.KEY_RELEASE:
+                case UP:
                     return getOnReleaseMacro();
                 default:
                     throw new IllegalArgumentException("Unknown event type " + eventType);

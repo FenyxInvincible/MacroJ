@@ -44,4 +44,17 @@ public class RobotSender implements Sender {
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
+
+    @Override
+    public void mouseRightClick(int delay) throws InterruptedException {
+        robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
+        Thread.sleep(delay);
+        robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
+    }
+
+    @Override
+    public void mouseMiddleClick() {
+        robot.mousePress(InputEvent.BUTTON2_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON2_DOWN_MASK);
+    }
 }

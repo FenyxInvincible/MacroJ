@@ -1,8 +1,8 @@
 package local.autohotkey.macro;
 
 import local.autohotkey.data.macro.Macro;
-import local.autohotkey.service.MacroFactory;
 import lombok.extern.slf4j.Slf4j;
+import me.coley.simplejna.hook.key.KeyEventReceiver;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -14,14 +14,14 @@ public class MacroThreads {
     private MacroThread onPressThread = new MacroThread();
     private MacroThread onReleaseThread = new MacroThread();
 
-    public void run(Macro macro, int eventType) {
+    public void run(Macro macro, KeyEventReceiver.PressState eventType) {
 
         MacroThread macroThread = null;
         switch (eventType){
-            case MacroFactory.KEY_PRESS:
+            case DOWN:
                 macroThread = onPressThread;
                 break;
-            case MacroFactory.KEY_RELEASE:
+            case UP:
                 macroThread = onReleaseThread;
                 break;
             default:

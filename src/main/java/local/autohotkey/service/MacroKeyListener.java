@@ -1,61 +1,64 @@
 package local.autohotkey.service;
 
-import lombok.RequiredArgsConstructor;
+import local.autohotkey.data.Key;
 import lombok.extern.slf4j.Slf4j;
-import org.jnativehook.NativeInputEvent;
-import org.jnativehook.keyboard.NativeKeyEvent;
-import org.jnativehook.keyboard.NativeKeyListener;
+import me.coley.simplejna.hook.key.KeyEventReceiver;
+import me.coley.simplejna.hook.key.KeyHookManager;
 import org.springframework.stereotype.Service;
-
-import java.lang.reflect.Field;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor
-public class MacroKeyListener implements NativeKeyListener {
+public class MacroKeyListener extends KeyEventReceiver {
 
     private final KeyManager keyManager;
     private final MacroFactory macroFactory;
 
-    public void nativeKeyPressed(NativeKeyEvent e) {
-
-        if (keyManager.findKeyByKeyCode(e.getKeyCode()).isPressed()) {
-            return;
-        }
-
-        keyManager.findKeyByKeyCode(e.getKeyCode()).pressed();
-
-        if (macroFactory.hasMacro(e.getKeyCode())) {
-            suppressEvent(e);
-            macroFactory.execute(e);
-        }
-    }
-
-    public void nativeKeyReleased(NativeKeyEvent e) {
-        if (!keyManager.findKeyByKeyCode(e.getKeyCode()).isPressed()) {
-            return;
-        }
-
-        if (macroFactory.hasMacro(e.getKeyCode())) {
-            suppressEvent(e);
-            macroFactory.execute(e);
-        }
-        keyManager.findKeyByKeyCode(e.getKeyCode()).released();
+    public MacroKeyListener(
+            KeyManager keyManager,
+            MacroFactory macroFactory,
+            KeyHookManager keyHookManager
+    ){
+        super(keyHookManager);
+        this.keyManager = keyManager;
+        this.macroFactory = macroFactory;
     }
 
     @Override
-    public void nativeKeyTyped(NativeKeyEvent nativeKeyEvent) {
-        log.debug("Unexpected action nativeKeyTyped: " + nativeKeyEvent.paramString());
+    public boolean onKeyUpdate(SystemState systemState, PressState pressState, int time, int vkCode) {
+        Key key = keyManager.findKeyByKeyCode(vkCode);
+        log.debug("{} {}", vkCode, key);
+        switch (pressState){
+            case DOWN:
+                return keyPressed(key, pressState);
+            case UP:
+                return keyReleased(key, pressState);
+            default:
+                log.debug("Unexpected action nativeKeyTyped: {}", vkCode);
+                return false;
+        }
     }
 
-    private void suppressEvent(NativeKeyEvent e) {
-        try {
-            Field f = NativeInputEvent.class.getDeclaredField("reserved");
-            f.setAccessible(true);
-            f.setShort(e, (short) 0x01);
-            //log.debug("Key suppressed {}", NativeKeyEvent.getKeyText(e.getKeyCode()));
-        } catch (Exception ex) {
-            log.error("Unable to suppress key: ", ex);
+    private boolean keyPressed(Key key, PressState pressState) {
+        if (key.isPressed()) {
+            return false;
         }
+
+        key.pressed();
+
+        if (macroFactory.hasMacro(key)) {
+            macroFactory.execute(key, pressState);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean keyReleased(Key key, PressState pressState) {
+        if (macroFactory.hasMacro(key)) {
+
+            macroFactory.execute(key, pressState);
+            return true;
+        }
+        key.released();
+        return false;
     }
 }

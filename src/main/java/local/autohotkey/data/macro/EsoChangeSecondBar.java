@@ -3,8 +3,8 @@ package local.autohotkey.data.macro;
 import local.autohotkey.data.Key;
 import local.autohotkey.key.Sender;
 import local.autohotkey.service.KeyManager;
-import local.autohotkey.utils.eso.Locks;
 import local.autohotkey.utils.eso.EsoUtils;
+import local.autohotkey.utils.eso.Locks;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -38,8 +38,9 @@ public class EsoChangeSecondBar implements Macro {
                 sender.sendKey(f22, 16);
                 Thread.sleep(50);
 
-                if (System.currentTimeMillis() - start > 2000) {
-                    break;
+                if (System.currentTimeMillis() - start > 1500) {
+                    log.warn("Exiting by timeout {}", this.getClass().getName());
+                    return;
                 }
             }
         } catch (Exception e) {

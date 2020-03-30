@@ -4,7 +4,6 @@ import com.google.gson.JsonObject;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-import java.awt.event.KeyEvent;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Data
@@ -17,7 +16,7 @@ public class Key {
 
     public static Key create(JsonObject jsonElement) {
         return new Key(
-                jsonElement.get("keyCode").getAsInt(),
+                jsonElement.get("rawCode").getAsInt(),
                 jsonElement.get("keyText").getAsString(),
                 jsonElement.get("rawCode").getAsInt()
         );
