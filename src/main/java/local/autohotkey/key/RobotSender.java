@@ -18,13 +18,13 @@ public class RobotSender implements Sender {
     @Override
     public void pressKey(Key key) {
 
-        robot.keyPress(key.getRawCode());
+        robot.keyPress(key.getKeyCode());
         log.debug("!!!Key sent{}",key.getKeyText());
     }
 
     @Override
     public void releaseKey(Key key) {
-        robot.keyRelease(key.getRawCode());
+        robot.keyRelease(key.getKeyCode());
     }
 
     @Override

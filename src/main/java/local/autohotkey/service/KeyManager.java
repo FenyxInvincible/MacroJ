@@ -28,7 +28,6 @@ public class KeyManager {
         keys = new JsonReader(keyConfig).parse().entrySet()
             .stream().map(s -> Pair.of(Integer.valueOf(s.getKey()), Key.create(s.getValue().getAsJsonObject())))
             .collect(Collectors.toMap(Pair::getLeft, Pair::getRight));
-
         /*Map<Integer, Key> map = keys.entrySet().stream()
                 .map(e -> Pair.of(e.getValue().getRawCode(), e.getValue()))
                 .collect(Collectors.toMap(Pair::getLeft, Pair::getRight));

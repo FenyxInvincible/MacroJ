@@ -1,5 +1,6 @@
 package local.autohotkey;
 
+import local.autohotkey.key.JnaSender;
 import local.autohotkey.key.RobotSender;
 import local.autohotkey.key.Sender;
 import me.coley.simplejna.hook.key.KeyHookManager;
@@ -22,7 +23,7 @@ public class EsoConfig {
     }
 
     @Bean
-    public Sender sender(Robot robot){
-        return new RobotSender(robot);
+    public Sender sender(){
+        return new JnaSender();
     }
 }

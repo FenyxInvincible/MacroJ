@@ -11,14 +11,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class Key {
     private final int keyCode;
     private final String keyText;
-    private final int rawCode;
     private AtomicBoolean isPressed = new AtomicBoolean(false);
 
     public static Key create(JsonObject jsonElement) {
         return new Key(
-                jsonElement.get("rawCode").getAsInt(),
-                jsonElement.get("keyText").getAsString(),
-                jsonElement.get("rawCode").getAsInt()
+                jsonElement.get("keyCode").getAsInt(),
+                jsonElement.get("keyText").getAsString()
         );
     }
 

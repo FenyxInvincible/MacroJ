@@ -1,626 +1,1002 @@
 {
-  "0": {
-    "keyCode": 0,
-    "keyText": "Undefined",
-    "rawCode": 0,
+  "230": {
+    "keyCode": 230,
+    "keyText": "ICO_CLEAR",
     "isPressed": false
   },
-  "61440": {
-    "keyCode": 61440,
-    "keyText": "F13",
-    "rawCode": 61440,
+  "110": {
+    "keyCode": 110,
+    "keyText": "DECIMAL",
     "isPressed": false
   },
-  "61441": {
-    "keyCode": 61441,
-    "keyText": "F14",
-    "rawCode": 61441,
-    "isPressed": false
-  },
-  "61442": {
-    "keyCode": 61442,
-    "keyText": "F15",
-    "rawCode": 61442,
-    "isPressed": false
-  },
-  "61443": {
-    "keyCode": 61443,
-    "keyText": "F16",
-    "rawCode": 61443,
-    "isPressed": false
-  },
-  "61444": {
-    "keyCode": 61444,
-    "keyText": "F17",
-    "rawCode": 61444,
-    "isPressed": false
-  },
-  "61445": {
-    "keyCode": 61445,
-    "keyText": "F18",
-    "rawCode": 61445,
-    "isPressed": false
-  },
-  "61446": {
-    "keyCode": 61446,
-    "keyText": "F19",
-    "rawCode": 61446,
-    "isPressed": false
-  },
-  "61447": {
-    "keyCode": 61447,
-    "keyText": "F20",
-    "rawCode": 61447,
-    "isPressed": false
-  },
-  "8": {
-    "keyCode": 8,
-    "keyText": "Backspace",
-    "rawCode": 8,
-    "isPressed": false
-  },
-  "61448": {
-    "keyCode": 61448,
-    "keyText": "F21",
-    "rawCode": 61448,
-    "isPressed": false
-  },
-  "9": {
-    "keyCode": 9,
-    "keyText": "Tab",
-    "rawCode": 9,
-    "isPressed": false
-  },
-  "61449": {
-    "keyCode": 61449,
-    "keyText": "F22",
-    "rawCode": 61449,
-    "isPressed": false
-  },
-  "10": {
-    "keyCode": 10,
-    "keyText": "Enter",
-    "rawCode": 10,
-    "isPressed": false
-  },
-  "61450": {
-    "keyCode": 61450,
-    "keyText": "F23",
-    "rawCode": 61450,
-    "isPressed": false
-  },
-  "61451": {
-    "keyCode": 61451,
-    "keyText": "F24",
-    "rawCode": 61451,
-    "isPressed": false
-  },
-  "16": {
-    "keyCode": 16,
-    "keyText": "Left Control",
-    "rawCode": 16,
-    "isPressed": false
-  },
-  "19": {
-    "keyCode": 19,
-    "keyText": "Pause",
-    "rawCode": 19,
-    "isPressed": false
-  },
-  "27": {
-    "keyCode": 27,
-    "keyText": "Escape",
-    "rawCode": 27,
-    "isPressed": false
-  },
-  "33": {
-    "keyCode": 33,
-    "keyText": "Page Up",
-    "rawCode": 33,
-    "isPressed": false
-  },
-  "34": {
-    "keyCode": 34,
-    "keyText": "Page Down",
-    "rawCode": 34,
-    "isPressed": false
-  },
-  "35": {
-    "keyCode": 35,
-    "keyText": "End",
-    "rawCode": 35,
-    "isPressed": false
-  },
-  "36": {
-    "keyCode": 36,
-    "keyText": "Home",
-    "rawCode": 36,
-    "isPressed": false
-  },
-  "44": {
-    "keyCode": 44,
-    "keyText": "Comma",
-    "rawCode": 44,
-    "isPressed": false
-  },
-  "45": {
-    "keyCode": 45,
-    "keyText": "Minus",
-    "rawCode": 45,
-    "isPressed": false
-  },
-  "46": {
-    "keyCode": 46,
-    "keyText": "Period",
-    "rawCode": 46,
-    "isPressed": false
-  },
-  "47": {
-    "keyCode": 47,
-    "keyText": "Slash",
-    "rawCode": 47,
-    "isPressed": false
-  },
-  "48": {
-    "keyCode": 48,
-    "keyText": "0",
-    "rawCode": 48,
-    "isPressed": false
-  },
-  "49": {
-    "keyCode": 49,
-    "keyText": "1",
-    "rawCode": 49,
-    "isPressed": false
-  },
-  "50": {
-    "keyCode": 50,
-    "keyText": "2",
-    "rawCode": 50,
-    "isPressed": false
-  },
-  "51": {
-    "keyCode": 51,
-    "keyText": "3",
-    "rawCode": 51,
-    "isPressed": false
-  },
-  "52": {
-    "keyCode": 52,
-    "keyText": "4",
-    "rawCode": 52,
-    "isPressed": false
-  },
-  "53": {
-    "keyCode": 53,
-    "keyText": "5",
-    "rawCode": 53,
-    "isPressed": false
-  },
-  "54": {
-    "keyCode": 54,
-    "keyText": "6",
-    "rawCode": 54,
-    "isPressed": false
-  },
-  "55": {
-    "keyCode": 55,
-    "keyText": "7",
-    "rawCode": 55,
-    "isPressed": false
-  },
-  "56": {
-    "keyCode": 56,
-    "keyText": "8",
-    "rawCode": 56,
-    "isPressed": false
-  },
-  "57": {
-    "keyCode": 57,
-    "keyText": "9",
-    "rawCode": 57,
-    "isPressed": false
-  },
-  "59": {
-    "keyCode": 59,
-    "keyText": "Semicolon",
-    "rawCode": 59,
-    "isPressed": false
-  },
-  "61": {
-    "keyCode": 61,
-    "keyText": "Equals",
-    "rawCode": 61,
-    "isPressed": false
-  },
-  "65": {
-    "keyCode": 65,
-    "keyText": "A",
-    "rawCode": 65,
-    "isPressed": false
-  },
-  "66": {
-    "keyCode": 66,
-    "keyText": "B",
-    "rawCode": 66,
-    "isPressed": false
-  },
-  "67": {
-    "keyCode": 67,
-    "keyText": "C",
-    "rawCode": 67,
-    "isPressed": false
-  },
-  "68": {
-    "keyCode": 68,
-    "keyText": "D",
-    "rawCode": 68,
-    "isPressed": false
-  },
-  "69": {
-    "keyCode": 69,
-    "keyText": "E",
-    "rawCode": 69,
-    "isPressed": false
-  },
-  "70": {
-    "keyCode": 70,
-    "keyText": "F",
-    "rawCode": 70,
-    "isPressed": false
-  },
-  "71": {
-    "keyCode": 71,
-    "keyText": "G",
-    "rawCode": 71,
-    "isPressed": false
-  },
-  "72": {
-    "keyCode": 72,
-    "keyText": "H",
-    "rawCode": 72,
-    "isPressed": false
-  },
-  "73": {
-    "keyCode": 73,
-    "keyText": "I",
-    "rawCode": 73,
-    "isPressed": false
-  },
-  "75": {
-    "keyCode": 75,
-    "keyText": "K",
-    "rawCode": 75,
-    "isPressed": false
-  },
-  "76": {
-    "keyCode": 76,
-    "keyText": "L",
-    "rawCode": 76,
-    "isPressed": false
-  },
-  "77": {
-    "keyCode": 77,
-    "keyText": "M",
-    "rawCode": 77,
-    "isPressed": false
-  },
-  "78": {
-    "keyCode": 78,
-    "keyText": "N",
-    "rawCode": 78,
-    "isPressed": false
-  },
-  "79": {
-    "keyCode": 79,
-    "keyText": "O",
-    "rawCode": 79,
-    "isPressed": false
-  },
-  "80": {
-    "keyCode": 80,
-    "keyText": "P",
-    "rawCode": 80,
-    "isPressed": false
-  },
-  "81": {
-    "keyCode": 81,
-    "keyText": "Q",
-    "rawCode": 81,
-    "isPressed": false
-  },
-  "82": {
-    "keyCode": 82,
-    "keyText": "R",
-    "rawCode": 82,
-    "isPressed": false
-  },
-  "83": {
-    "keyCode": 83,
-    "keyText": "S",
-    "rawCode": 83,
-    "isPressed": false
-  },
-  "84": {
-    "keyCode": 84,
-    "keyText": "T",
-    "rawCode": 84,
-    "isPressed": false
-  },
-  "85": {
-    "keyCode": 85,
-    "keyText": "U",
-    "rawCode": 85,
-    "isPressed": false
-  },
-  "86": {
-    "keyCode": 86,
-    "keyText": "V",
-    "rawCode": 86,
-    "isPressed": false
-  },
-  "87": {
-    "keyCode": 87,
-    "keyText": "W",
-    "rawCode": 87,
-    "isPressed": false
-  },
-  "88": {
-    "keyCode": 88,
-    "keyText": "X",
-    "rawCode": 88,
-    "isPressed": false
-  },
-  "90": {
-    "keyCode": 90,
-    "keyText": "Z",
-    "rawCode": 90,
-    "isPressed": false
-  },
-  "91": {
-    "keyCode": 91,
-    "keyText": "Open Bracket",
-    "rawCode": 91,
-    "isPressed": false
-  },
-  "92": {
-    "keyCode": 92,
-    "keyText": "Back Slash",
-    "rawCode": 92,
-    "isPressed": false
-  },
-  "93": {
-    "keyCode": 93,
-    "keyText": "Close Bracket",
-    "rawCode": 93,
-    "isPressed": false
-  },
-  "96": {
-    "keyCode": 96,
-    "keyText": "NumPad 0",
-    "rawCode": 96,
-    "isPressed": false
-  },
-  "97": {
-    "keyCode": 97,
-    "keyText": "NumPad 1",
-    "rawCode": 97,
-    "isPressed": false
-  },
-  "98": {
-    "keyCode": 98,
-    "keyText": "NumPad 2",
-    "rawCode": 98,
-    "isPressed": false
-  },
-  "99": {
-    "keyCode": 99,
-    "keyText": "NumPad 3",
-    "rawCode": 99,
-    "isPressed": false
-  },
-  "100": {
-    "keyCode": 100,
-    "keyText": "NumPad 4",
-    "rawCode": 100,
-    "isPressed": false
-  },
-  "101": {
-    "keyCode": 101,
-    "keyText": "NumPad 5",
-    "rawCode": 101,
-    "isPressed": false
-  },
-  "102": {
-    "keyCode": 102,
-    "keyText": "NumPad 6",
-    "rawCode": 102,
-    "isPressed": false
-  },
-  "103": {
-    "keyCode": 103,
-    "keyText": "NumPad 7",
-    "rawCode": 103,
-    "isPressed": false
-  },
-  "104": {
-    "keyCode": 104,
-    "keyText": "NumPad 8",
-    "rawCode": 104,
-    "isPressed": false
-  },
-  "105": {
-    "keyCode": 105,
-    "keyText": "NumPad 9",
-    "rawCode": 105,
-    "isPressed": false
-  },
-  "106": {
-    "keyCode": 106,
-    "keyText": "NumPad Multiply",
-    "rawCode": 106,
-    "isPressed": false
-  },
-  "107": {
-    "keyCode": 107,
-    "keyText": "NumPad Add",
-    "rawCode": 107,
-    "isPressed": false
-  },
-  "108": {
-    "keyCode": 108,
-    "keyText": "NumPad Separator",
-    "rawCode": 108,
-    "isPressed": false
-  },
-  "109": {
-    "keyCode": 109,
-    "keyText": "NumPad Subtract",
-    "rawCode": 109,
+  "231": {
+    "keyCode": 231,
+    "keyText": "PACKET",
     "isPressed": false
   },
   "111": {
     "keyCode": 111,
-    "keyText": "NumPad Divide",
-    "rawCode": 111,
+    "keyText": "DIVIDE",
     "isPressed": false
   },
   "112": {
     "keyCode": 112,
     "keyText": "F1",
-    "rawCode": 112,
+    "isPressed": false
+  },
+  "233": {
+    "keyCode": 233,
+    "keyText": "OEM_RESET",
     "isPressed": false
   },
   "113": {
     "keyCode": 113,
     "keyText": "F2",
-    "rawCode": 113,
+    "isPressed": false
+  },
+  "234": {
+    "keyCode": 234,
+    "keyText": "OEM_JUMP",
     "isPressed": false
   },
   "114": {
     "keyCode": 114,
     "keyText": "F3",
-    "rawCode": 114,
+    "isPressed": false
+  },
+  "235": {
+    "keyCode": 235,
+    "keyText": "OEM_PA1",
     "isPressed": false
   },
   "115": {
     "keyCode": 115,
     "keyText": "F4",
-    "rawCode": 115,
+    "isPressed": false
+  },
+  "236": {
+    "keyCode": 236,
+    "keyText": "OEM_PA2",
     "isPressed": false
   },
   "116": {
     "keyCode": 116,
     "keyText": "F5",
-    "rawCode": 116,
+    "isPressed": false
+  },
+  "237": {
+    "keyCode": 237,
+    "keyText": "OEM_PA3",
     "isPressed": false
   },
   "117": {
     "keyCode": 117,
     "keyText": "F6",
-    "rawCode": 117,
+    "isPressed": false
+  },
+  "238": {
+    "keyCode": 238,
+    "keyText": "OEM_WSCTRL",
     "isPressed": false
   },
   "118": {
     "keyCode": 118,
     "keyText": "F7",
-    "rawCode": 118,
+    "isPressed": false
+  },
+  "239": {
+    "keyCode": 239,
+    "keyText": "OEM_CUSEL",
     "isPressed": false
   },
   "119": {
     "keyCode": 119,
     "keyText": "F8",
-    "rawCode": 119,
+    "isPressed": false
+  },
+  "12": {
+    "keyCode": 12,
+    "keyText": "CLEAR",
+    "isPressed": false
+  },
+  "13": {
+    "keyCode": 13,
+    "keyText": "RETURN",
+    "isPressed": false
+  },
+  "16": {
+    "keyCode": 16,
+    "keyText": "SHIFT",
+    "isPressed": false
+  },
+  "17": {
+    "keyCode": 17,
+    "keyText": "CONTROL",
+    "isPressed": false
+  },
+  "18": {
+    "keyCode": 18,
+    "keyText": "MENU",
+    "isPressed": false
+  },
+  "19": {
+    "keyCode": 19,
+    "keyText": "PAUSE",
+    "isPressed": false
+  },
+  "240": {
+    "keyCode": 240,
+    "keyText": "OEM_ATTN",
     "isPressed": false
   },
   "120": {
     "keyCode": 120,
     "keyText": "F9",
-    "rawCode": 120,
+    "isPressed": false
+  },
+  "241": {
+    "keyCode": 241,
+    "keyText": "OEM_FINISH",
     "isPressed": false
   },
   "121": {
     "keyCode": 121,
     "keyText": "F10",
-    "rawCode": 121,
+    "isPressed": false
+  },
+  "242": {
+    "keyCode": 242,
+    "keyText": "OEM_COPY",
+    "isPressed": false
+  },
+  "1": {
+    "keyCode": 1,
+    "keyText": "LBUTTON",
     "isPressed": false
   },
   "122": {
     "keyCode": 122,
     "keyText": "F11",
-    "rawCode": 122,
+    "isPressed": false
+  },
+  "243": {
+    "keyCode": 243,
+    "keyText": "OEM_AUTO",
+    "isPressed": false
+  },
+  "2": {
+    "keyCode": 2,
+    "keyText": "RBUTTON",
     "isPressed": false
   },
   "123": {
     "keyCode": 123,
     "keyText": "F12",
-    "rawCode": 123,
+    "isPressed": false
+  },
+  "244": {
+    "keyCode": 244,
+    "keyText": "OEM_ENLW",
+    "isPressed": false
+  },
+  "3": {
+    "keyCode": 3,
+    "keyText": "CANCEL",
+    "isPressed": false
+  },
+  "124": {
+    "keyCode": 124,
+    "keyText": "F13",
+    "isPressed": false
+  },
+  "245": {
+    "keyCode": 245,
+    "keyText": "OEM_BACKTAB",
+    "isPressed": false
+  },
+  "4": {
+    "keyCode": 4,
+    "keyText": "MBUTTON",
+    "isPressed": false
+  },
+  "125": {
+    "keyCode": 125,
+    "keyText": "F14",
+    "isPressed": false
+  },
+  "246": {
+    "keyCode": 246,
+    "keyText": "ATTN",
+    "isPressed": false
+  },
+  "5": {
+    "keyCode": 5,
+    "keyText": "XBUTTON1",
+    "isPressed": false
+  },
+  "126": {
+    "keyCode": 126,
+    "keyText": "F15",
+    "isPressed": false
+  },
+  "247": {
+    "keyCode": 247,
+    "keyText": "CRSEL",
+    "isPressed": false
+  },
+  "6": {
+    "keyCode": 6,
+    "keyText": "XBUTTON2",
     "isPressed": false
   },
   "127": {
     "keyCode": 127,
-    "keyText": "Delete",
-    "rawCode": 127,
+    "keyText": "F16",
+    "isPressed": false
+  },
+  "248": {
+    "keyCode": 248,
+    "keyText": "EXSEL",
+    "isPressed": false
+  },
+  "128": {
+    "keyCode": 128,
+    "keyText": "F17",
+    "isPressed": false
+  },
+  "249": {
+    "keyCode": 249,
+    "keyText": "EREOF",
+    "isPressed": false
+  },
+  "8": {
+    "keyCode": 8,
+    "keyText": "BACK",
+    "isPressed": false
+  },
+  "129": {
+    "keyCode": 129,
+    "keyText": "F18",
+    "isPressed": false
+  },
+  "9": {
+    "keyCode": 9,
+    "keyText": "TAB",
+    "isPressed": false
+  },
+  "20": {
+    "keyCode": 20,
+    "keyText": "CAPITAL",
+    "isPressed": false
+  },
+  "21": {
+    "keyCode": 21,
+    "keyText": "HANGUL",
+    "isPressed": false
+  },
+  "23": {
+    "keyCode": 23,
+    "keyText": "JUNJA",
+    "isPressed": false
+  },
+  "24": {
+    "keyCode": 24,
+    "keyText": "FINAL",
+    "isPressed": false
+  },
+  "25": {
+    "keyCode": 25,
+    "keyText": "KANJI",
+    "isPressed": false
+  },
+  "27": {
+    "keyCode": 27,
+    "keyText": "ESCAPE",
+    "isPressed": false
+  },
+  "28": {
+    "keyCode": 28,
+    "keyText": "CONVERT",
+    "isPressed": false
+  },
+  "29": {
+    "keyCode": 29,
+    "keyText": "NONCONVERT",
+    "isPressed": false
+  },
+  "250": {
+    "keyCode": 250,
+    "keyText": "PLAY",
+    "isPressed": false
+  },
+  "130": {
+    "keyCode": 130,
+    "keyText": "F19",
+    "isPressed": false
+  },
+  "251": {
+    "keyCode": 251,
+    "keyText": "ZOOM",
+    "isPressed": false
+  },
+  "131": {
+    "keyCode": 131,
+    "keyText": "F20",
+    "isPressed": false
+  },
+  "252": {
+    "keyCode": 252,
+    "keyText": "NONAME",
+    "isPressed": false
+  },
+  "132": {
+    "keyCode": 132,
+    "keyText": "F21",
+    "isPressed": false
+  },
+  "253": {
+    "keyCode": 253,
+    "keyText": "PA1",
+    "isPressed": false
+  },
+  "133": {
+    "keyCode": 133,
+    "keyText": "F22",
+    "isPressed": false
+  },
+  "254": {
+    "keyCode": 254,
+    "keyText": "OEM_CLEAR",
+    "isPressed": false
+  },
+  "134": {
+    "keyCode": 134,
+    "keyText": "F23",
+    "isPressed": false
+  },
+  "135": {
+    "keyCode": 135,
+    "keyText": "F24",
+    "isPressed": false
+  },
+  "136": {
+    "keyCode": 136,
+    "keyText": "NAVIGATION_VIEW",
+    "isPressed": false
+  },
+  "137": {
+    "keyCode": 137,
+    "keyText": "NAVIGATION_MENU",
+    "isPressed": false
+  },
+  "138": {
+    "keyCode": 138,
+    "keyText": "NAVIGATION_UP",
+    "isPressed": false
+  },
+  "139": {
+    "keyCode": 139,
+    "keyText": "NAVIGATION_DOWN",
+    "isPressed": false
+  },
+  "30": {
+    "keyCode": 30,
+    "keyText": "ACCEPT",
+    "isPressed": false
+  },
+  "31": {
+    "keyCode": 31,
+    "keyText": "MODECHANGE",
+    "isPressed": false
+  },
+  "32": {
+    "keyCode": 32,
+    "keyText": "SPACE",
+    "isPressed": false
+  },
+  "33": {
+    "keyCode": 33,
+    "keyText": "PRIOR",
+    "isPressed": false
+  },
+  "34": {
+    "keyCode": 34,
+    "keyText": "NEXT",
+    "isPressed": false
+  },
+  "35": {
+    "keyCode": 35,
+    "keyText": "END",
+    "isPressed": false
+  },
+  "36": {
+    "keyCode": 36,
+    "keyText": "HOME",
+    "isPressed": false
+  },
+  "37": {
+    "keyCode": 37,
+    "keyText": "LEFT",
+    "isPressed": false
+  },
+  "38": {
+    "keyCode": 38,
+    "keyText": "UP",
+    "isPressed": false
+  },
+  "39": {
+    "keyCode": 39,
+    "keyText": "RIGHT",
+    "isPressed": false
+  },
+  "140": {
+    "keyCode": 140,
+    "keyText": "NAVIGATION_LEFT",
+    "isPressed": false
+  },
+  "141": {
+    "keyCode": 141,
+    "keyText": "NAVIGATION_RIGHT",
+    "isPressed": false
+  },
+  "142": {
+    "keyCode": 142,
+    "keyText": "NAVIGATION_ACCEPT",
+    "isPressed": false
+  },
+  "143": {
+    "keyCode": 143,
+    "keyText": "NAVIGATION_CANCEL",
+    "isPressed": false
+  },
+  "144": {
+    "keyCode": 144,
+    "keyText": "NUMLOCK",
     "isPressed": false
   },
   "145": {
     "keyCode": 145,
-    "keyText": "Scroll Lock",
-    "rawCode": 145,
+    "keyText": "SCROLL",
     "isPressed": false
   },
-  "154": {
-    "keyCode": 154,
-    "keyText": "Print Screen",
-    "rawCode": 154,
+  "146": {
+    "keyCode": 146,
+    "keyText": "OEM_FJ_JISHO",
     "isPressed": false
   },
-  "155": {
-    "keyCode": 155,
-    "keyText": "Insert",
-    "rawCode": 155,
+  "147": {
+    "keyCode": 147,
+    "keyText": "OEM_FJ_MASSHOU",
     "isPressed": false
   },
-  "192": {
-    "keyCode": 192,
-    "keyText": "Back Quote",
-    "rawCode": 192,
+  "148": {
+    "keyCode": 148,
+    "keyText": "OEM_FJ_TOUROKU",
+    "isPressed": false
+  },
+  "149": {
+    "keyCode": 149,
+    "keyText": "OEM_FJ_LOYA",
+    "isPressed": false
+  },
+  "40": {
+    "keyCode": 40,
+    "keyText": "DOWN",
+    "isPressed": false
+  },
+  "41": {
+    "keyCode": 41,
+    "keyText": "SELECT",
+    "isPressed": false
+  },
+  "42": {
+    "keyCode": 42,
+    "keyText": "PRINT",
+    "isPressed": false
+  },
+  "43": {
+    "keyCode": 43,
+    "keyText": "EXECUTE",
+    "isPressed": false
+  },
+  "44": {
+    "keyCode": 44,
+    "keyText": "SNAPSHOT",
+    "isPressed": false
+  },
+  "45": {
+    "keyCode": 45,
+    "keyText": "INSERT",
+    "isPressed": false
+  },
+  "46": {
+    "keyCode": 46,
+    "keyText": "DELETE",
+    "isPressed": false
+  },
+  "47": {
+    "keyCode": 47,
+    "keyText": "HELP",
+    "isPressed": false
+  },
+  "48": {
+    "keyCode": 48,
+    "keyText": "0",
+    "isPressed": false
+  },
+  "49": {
+    "keyCode": 49,
+    "keyText": "1",
+    "isPressed": false
+  },
+  "150": {
+    "keyCode": 150,
+    "keyText": "OEM_FJ_ROYA",
+    "isPressed": false
+  },
+  "50": {
+    "keyCode": 50,
+    "keyText": "2",
+    "isPressed": false
+  },
+  "51": {
+    "keyCode": 51,
+    "keyText": "3",
+    "isPressed": false
+  },
+  "52": {
+    "keyCode": 52,
+    "keyText": "4",
+    "isPressed": false
+  },
+  "53": {
+    "keyCode": 53,
+    "keyText": "5",
+    "isPressed": false
+  },
+  "54": {
+    "keyCode": 54,
+    "keyText": "6",
+    "isPressed": false
+  },
+  "55": {
+    "keyCode": 55,
+    "keyText": "7",
+    "isPressed": false
+  },
+  "56": {
+    "keyCode": 56,
+    "keyText": "8",
+    "isPressed": false
+  },
+  "57": {
+    "keyCode": 57,
+    "keyText": "9",
+    "isPressed": false
+  },
+  "160": {
+    "keyCode": 160,
+    "keyText": "LSHIFT",
+    "isPressed": false
+  },
+  "161": {
+    "keyCode": 161,
+    "keyText": "RSHIFT",
+    "isPressed": false
+  },
+  "162": {
+    "keyCode": 162,
+    "keyText": "LCONTROL",
+    "isPressed": false
+  },
+  "163": {
+    "keyCode": 163,
+    "keyText": "RCONTROL",
+    "isPressed": false
+  },
+  "164": {
+    "keyCode": 164,
+    "keyText": "LMENU",
+    "isPressed": false
+  },
+  "165": {
+    "keyCode": 165,
+    "keyText": "RMENU",
+    "isPressed": false
+  },
+  "166": {
+    "keyCode": 166,
+    "keyText": "BROWSER_BACK",
+    "isPressed": false
+  },
+  "167": {
+    "keyCode": 167,
+    "keyText": "BROWSER_FORWARD",
+    "isPressed": false
+  },
+  "168": {
+    "keyCode": 168,
+    "keyText": "BROWSER_REFRESH",
+    "isPressed": false
+  },
+  "169": {
+    "keyCode": 169,
+    "keyText": "BROWSER_STOP",
+    "isPressed": false
+  },
+  "65": {
+    "keyCode": 65,
+    "keyText": "A",
+    "isPressed": false
+  },
+  "66": {
+    "keyCode": 66,
+    "keyText": "B",
+    "isPressed": false
+  },
+  "67": {
+    "keyCode": 67,
+    "keyText": "C",
+    "isPressed": false
+  },
+  "68": {
+    "keyCode": 68,
+    "keyText": "D",
+    "isPressed": false
+  },
+  "69": {
+    "keyCode": 69,
+    "keyText": "E",
+    "isPressed": false
+  },
+  "170": {
+    "keyCode": 170,
+    "keyText": "BROWSER_SEARCH",
+    "isPressed": false
+  },
+  "171": {
+    "keyCode": 171,
+    "keyText": "BROWSER_FAVORITES",
+    "isPressed": false
+  },
+  "172": {
+    "keyCode": 172,
+    "keyText": "BROWSER_HOME",
+    "isPressed": false
+  },
+  "173": {
+    "keyCode": 173,
+    "keyText": "VOLUME_MUTE",
+    "isPressed": false
+  },
+  "174": {
+    "keyCode": 174,
+    "keyText": "VOLUME_DOWN",
+    "isPressed": false
+  },
+  "175": {
+    "keyCode": 175,
+    "keyText": "VOLUME_UP",
+    "isPressed": false
+  },
+  "176": {
+    "keyCode": 176,
+    "keyText": "MEDIA_NEXT_TRACK",
+    "isPressed": false
+  },
+  "177": {
+    "keyCode": 177,
+    "keyText": "MEDIA_PREV_TRACK",
     "isPressed": false
   },
   "178": {
     "keyCode": 178,
-    "keyText": "Stop",
-    "rawCode": 178,
+    "keyText": "MEDIA_STOP",
+    "isPressed": false
+  },
+  "179": {
+    "keyCode": 179,
+    "keyText": "MEDIA_PLAY_PAUSE",
+    "isPressed": false
+  },
+  "70": {
+    "keyCode": 70,
+    "keyText": "F",
+    "isPressed": false
+  },
+  "71": {
+    "keyCode": 71,
+    "keyText": "G",
+    "isPressed": false
+  },
+  "72": {
+    "keyCode": 72,
+    "keyText": "H",
+    "isPressed": false
+  },
+  "73": {
+    "keyCode": 73,
+    "keyText": "I",
+    "isPressed": false
+  },
+  "74": {
+    "keyCode": 74,
+    "keyText": "J",
+    "isPressed": false
+  },
+  "75": {
+    "keyCode": 75,
+    "keyText": "K",
+    "isPressed": false
+  },
+  "76": {
+    "keyCode": 76,
+    "keyText": "L",
+    "isPressed": false
+  },
+  "77": {
+    "keyCode": 77,
+    "keyText": "M",
+    "isPressed": false
+  },
+  "78": {
+    "keyCode": 78,
+    "keyText": "N",
+    "isPressed": false
+  },
+  "79": {
+    "keyCode": 79,
+    "keyText": "O",
+    "isPressed": false
+  },
+  "180": {
+    "keyCode": 180,
+    "keyText": "LAUNCH_MAIL",
+    "isPressed": false
+  },
+  "181": {
+    "keyCode": 181,
+    "keyText": "LAUNCH_MEDIA_SELECT",
+    "isPressed": false
+  },
+  "182": {
+    "keyCode": 182,
+    "keyText": "LAUNCH_APP1",
+    "isPressed": false
+  },
+  "183": {
+    "keyCode": 183,
+    "keyText": "LAUNCH_APP2",
+    "isPressed": false
+  },
+  "186": {
+    "keyCode": 186,
+    "keyText": "OEM_1",
+    "isPressed": false
+  },
+  "187": {
+    "keyCode": 187,
+    "keyText": "OEM_PLUS",
+    "isPressed": false
+  },
+  "188": {
+    "keyCode": 188,
+    "keyText": "OEM_COMMA",
+    "isPressed": false
+  },
+  "189": {
+    "keyCode": 189,
+    "keyText": "OEM_MINUS",
+    "isPressed": false
+  },
+  "80": {
+    "keyCode": 80,
+    "keyText": "P",
+    "isPressed": false
+  },
+  "81": {
+    "keyCode": 81,
+    "keyText": "Q",
+    "isPressed": false
+  },
+  "82": {
+    "keyCode": 82,
+    "keyText": "R",
+    "isPressed": false
+  },
+  "83": {
+    "keyCode": 83,
+    "keyText": "S",
+    "isPressed": false
+  },
+  "84": {
+    "keyCode": 84,
+    "keyText": "T",
+    "isPressed": false
+  },
+  "85": {
+    "keyCode": 85,
+    "keyText": "U",
+    "isPressed": false
+  },
+  "86": {
+    "keyCode": 86,
+    "keyText": "V",
+    "isPressed": false
+  },
+  "87": {
+    "keyCode": 87,
+    "keyText": "W",
+    "isPressed": false
+  },
+  "88": {
+    "keyCode": 88,
+    "keyText": "X",
+    "isPressed": false
+  },
+  "89": {
+    "keyCode": 89,
+    "keyText": "Y",
+    "isPressed": false
+  },
+  "190": {
+    "keyCode": 190,
+    "keyText": "OEM_PERIOD",
+    "isPressed": false
+  },
+  "191": {
+    "keyCode": 191,
+    "keyText": "OEM_2",
+    "isPressed": false
+  },
+  "192": {
+    "keyCode": 192,
+    "keyText": "OEM_3",
+    "isPressed": false
+  },
+  "90": {
+    "keyCode": 90,
+    "keyText": "Z",
+    "isPressed": false
+  },
+  "91": {
+    "keyCode": 91,
+    "keyText": "LWIN",
+    "isPressed": false
+  },
+  "92": {
+    "keyCode": 92,
+    "keyText": "RWIN",
+    "isPressed": false
+  },
+  "93": {
+    "keyCode": 93,
+    "keyText": "APPS",
+    "isPressed": false
+  },
+  "95": {
+    "keyCode": 95,
+    "keyText": "SLEEP",
+    "isPressed": false
+  },
+  "96": {
+    "keyCode": 96,
+    "keyText": "NUMPAD0",
+    "isPressed": false
+  },
+  "97": {
+    "keyCode": 97,
+    "keyText": "NUMPAD1",
+    "isPressed": false
+  },
+  "98": {
+    "keyCode": 98,
+    "keyText": "NUMPAD2",
+    "isPressed": false
+  },
+  "99": {
+    "keyCode": 99,
+    "keyText": "NUMPAD3",
+    "isPressed": false
+  },
+  "219": {
+    "keyCode": 219,
+    "keyText": "OEM_4",
+    "isPressed": false
+  },
+  "220": {
+    "keyCode": 220,
+    "keyText": "OEM_5",
+    "isPressed": false
+  },
+  "100": {
+    "keyCode": 100,
+    "keyText": "NUMPAD4",
+    "isPressed": false
+  },
+  "221": {
+    "keyCode": 221,
+    "keyText": "OEM_6",
+    "isPressed": false
+  },
+  "101": {
+    "keyCode": 101,
+    "keyText": "NUMPAD5",
     "isPressed": false
   },
   "222": {
     "keyCode": 222,
-    "keyText": "Quote",
-    "rawCode": 222,
+    "keyText": "OEM_7",
     "isPressed": false
   },
-  "224": {
-    "keyCode": 224,
-    "keyText": "Up",
-    "rawCode": 224,
+  "102": {
+    "keyCode": 102,
+    "keyText": "NUMPAD6",
+    "isPressed": false
+  },
+  "223": {
+    "keyCode": 223,
+    "keyText": "OEM_8",
+    "isPressed": false
+  },
+  "103": {
+    "keyCode": 103,
+    "keyText": "NUMPAD7",
+    "isPressed": false
+  },
+  "104": {
+    "keyCode": 104,
+    "keyText": "NUMPAD8",
     "isPressed": false
   },
   "225": {
     "keyCode": 225,
-    "keyText": "Down",
-    "rawCode": 225,
+    "keyText": "OEM_AX",
+    "isPressed": false
+  },
+  "105": {
+    "keyCode": 105,
+    "keyText": "NUMPAD9",
     "isPressed": false
   },
   "226": {
     "keyCode": 226,
-    "keyText": "Left",
-    "rawCode": 226,
+    "keyText": "OEM_102",
+    "isPressed": false
+  },
+  "106": {
+    "keyCode": 106,
+    "keyText": "MULTIPLY",
     "isPressed": false
   },
   "227": {
     "keyCode": 227,
-    "keyText": "Right",
-    "rawCode": 227,
+    "keyText": "ICO_HELP",
+    "isPressed": false
+  },
+  "107": {
+    "keyCode": 107,
+    "keyText": "ADD",
+    "isPressed": false
+  },
+  "228": {
+    "keyCode": 228,
+    "keyText": "ICO_00",
+    "isPressed": false
+  },
+  "108": {
+    "keyCode": 108,
+    "keyText": "SEPARATOR",
+    "isPressed": false
+  },
+  "229": {
+    "keyCode": 229,
+    "keyText": "PROCESSKEY",
+    "isPressed": false
+  },
+  "109": {
+    "keyCode": 109,
+    "keyText": "SUBTRACT",
     "isPressed": false
   }
 }

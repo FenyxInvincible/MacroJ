@@ -1,5 +1,5 @@
 {
-  "Stop": {
+  "MEDIA_STOP": {
     "onPress":{
       "class": "StopApplication",
       "params": [
