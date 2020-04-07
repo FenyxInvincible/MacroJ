@@ -22,8 +22,6 @@ dependencies {
     compile group: 'net.java.dev.jna', name: 'jna', version: '5.5.0'
     compile group: 'net.java.dev.jna', name: 'jna-platform', version: '5.5.0'
 
-    implementation group: 'com.github.Col-E', name: 'Simplified-JNA', version: '1.0'
-
     compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 

@@ -2,8 +2,8 @@ package local.autohotkey.service;
 import com.sun.jna.platform.unix.X11;
 import local.autohotkey.data.Key;
 import lombok.extern.slf4j.Slf4j;
-import me.coley.simplejna.hook.key.KeyEventReceiver;
-import me.coley.simplejna.hook.key.KeyHookManager;
+import local.autohotkey.jna.hook.key.KeyEventReceiver;
+import local.autohotkey.jna.hook.key.KeyHookManager;
 import org.springframework.stereotype.Service;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
@@ -26,7 +26,6 @@ public class MacroKeyListener extends KeyEventReceiver {
     @Override
     public boolean onKeyUpdate(SystemState systemState, PressState pressState, int time, int vkCode) {
         Key key = keyManager.findKeyByKeyCode(vkCode);
-        
         switch (pressState){
             case DOWN:
                 return keyPressed(key, pressState);
@@ -43,8 +42,7 @@ public class MacroKeyListener extends KeyEventReceiver {
         }
         key.pressed();
         if (macroFactory.hasMacro(key)) {
-            macroFactory.execute(key, pressState);
-            return true;
+            return macroFactory.execute(key, pressState);
         }
         return false;
     }
@@ -52,8 +50,7 @@ public class MacroKeyListener extends KeyEventReceiver {
         key.released();
 
         if (macroFactory.hasMacro(key)) {
-            macroFactory.execute(key, pressState);
-            return true;
+            return macroFactory.execute(key, pressState);
         }
 
         return false;

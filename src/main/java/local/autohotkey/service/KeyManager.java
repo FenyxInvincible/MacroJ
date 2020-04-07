@@ -1,5 +1,6 @@
 package local.autohotkey.service;
 
+import com.google.gson.Gson;
 import local.autohotkey.data.Key;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,12 +27,8 @@ public class KeyManager {
     @PostConstruct
     private void init() throws IOException {
         keys = new JsonReader(keyConfig).parse().entrySet()
-            .stream().map(s -> Pair.of(Integer.valueOf(s.getKey()), Key.create(s.getValue().getAsJsonObject())))
-            .collect(Collectors.toMap(Pair::getLeft, Pair::getRight));
-        /*Map<Integer, Key> map = keys.entrySet().stream()
-                .map(e -> Pair.of(e.getValue().getRawCode(), e.getValue()))
+                .stream().map(s -> Pair.of(Integer.valueOf(s.getKey()), Key.create(s.getValue().getAsJsonObject())))
                 .collect(Collectors.toMap(Pair::getLeft, Pair::getRight));
-        log.info(new Gson().toJson(map));*/
     }
 
     public boolean hasKey(int keyCode) {
@@ -47,7 +44,7 @@ public class KeyManager {
     }
 
     public Key findKeyByText(String key) {
-        return keys.get(findKeyCodeByText(key));
+        return keys.get(findKeyCodeByText(key.toUpperCase()));
     }
 
     public Key findKeyByKeyCode(int keyCode) {

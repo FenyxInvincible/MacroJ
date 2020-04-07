@@ -1,6 +1,7 @@
 package local.autohotkey.data.macro;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.key.MouseKey;
 import local.autohotkey.key.Sender;
 import local.autohotkey.service.KeyManager;
 import local.autohotkey.utils.ScreenPicker;
@@ -58,9 +59,9 @@ public class EsoUseSkill implements Macro {
 
             do {
                 long start = System.currentTimeMillis();
-                sender.mouseLeftClick();
+                sender.mouseKeyClick(MouseKey.LMB);
                 Thread.sleep(delay/2);
-                sender.mouseLeftClick();
+                sender.mouseKeyClick(MouseKey.LMB);
                 Thread.sleep(delay/2);
 
 
@@ -73,7 +74,7 @@ public class EsoUseSkill implements Macro {
                 }
 
                 if (useSynergy && ScreenPicker.pickDwordColor( 1278, 1114) == SYNERGY_COLOR){
-                    sender.mouseMiddleClick();
+                    sender.mouseKeyClick(MouseKey.MMB);
                 }
 
                 sender.sendKey(isProcTriggered ? procKey: overridableKey, 30);
@@ -94,7 +95,7 @@ public class EsoUseSkill implements Macro {
                 if (execution < totalExecution) {
                     Thread.sleep(totalExecution - execution);
                     if (useSynergy && ScreenPicker.pickDwordColor( 1278, 1114) == SYNERGY_COLOR){
-                        sender.mouseMiddleClick();
+                        sender.mouseKeyClick(MouseKey.MMB);
                     }
                 }
 

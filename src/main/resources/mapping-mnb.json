@@ -1,0 +1,485 @@
+{
+    "PGUP": [
+        //combination key
+        {
+            "onPress": {
+                "class": "DummyMacro",
+                "params": [
+                ]
+            }
+        }
+    ],
+    "PGDN": [
+        //combination key
+        {
+            "onPress": {
+                "class": "DummyMacro",
+                "params": [
+                ]
+            }
+        }
+    ],
+    "MEDIA_STOP": [
+        {
+            "onPress": {
+                "class": "StopApplication",
+                "params": [
+                ]
+            }
+        }
+    ],
+    "F11": [
+        {
+            "onPress": {
+                "class": "SettingsMacro",
+                "params": [
+                ]
+            }
+        }
+    ],
+    "F12": [
+        {
+            "onPress": {
+                "class": "DebugMacro",
+                "params": [
+                ]
+            }
+        }
+    ],
+    "F13": [
+        {
+            "trigger": "PGUP",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F1"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F1"
+                ]
+            }
+        },
+        {
+            "trigger": "PGDN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "1"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "1"
+                ]
+            }
+        }
+    ],
+    "F14": [
+        {
+            "trigger": "PGUP",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F2"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F2"
+                ]
+            }
+        },
+        {
+            "trigger": "PGDN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "2"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "2"
+                ]
+            }
+        }
+    ],
+    "F15": [
+        {
+            "trigger": "PGUP",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F3"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F3"
+                ]
+            }
+        },
+        {
+            "trigger": "PGDN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "3"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "3"
+                ]
+            }
+        }
+    ],
+    "F16": [
+        {
+            "trigger": "PGUP",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F4"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F4"
+                ]
+            }
+        },
+        {
+            "trigger": "PGDN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "4"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "4"
+                ]
+            }
+        },
+        {
+            "onPress": {
+                "class": "MnbAttackStart",
+                "params": [
+                    "left"
+                ]
+            },
+            "onRelease": {
+                "class": "MnbAttackEnd",
+                "params": [
+                ]
+            }
+        }
+    ],
+    "F17": [
+        {
+            "trigger": "PGUP",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F5"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F5"
+                ]
+            }
+        },
+        {
+            "trigger": "PGDN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "5"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "5"
+                ]
+            }
+        },
+        {
+            "onPress": {
+                "class": "MnbAttackStart",
+                "params": [
+                    "up"
+                ]
+            },
+            "onRelease": {
+                "class": "MnbAttackEnd",
+                "params": [
+                ]
+            }
+        }
+    ],
+    "F18": [
+        {
+            "trigger": "PGUP",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F6"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F6"
+                ]
+            }
+        },
+        {
+            "trigger": "PGDN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "6"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "6"
+                ]
+            }
+        },
+        {
+            "onPress": {
+                "class": "MnbAttackStart",
+                "params": [
+                    "right"
+                ]
+            },
+            "onRelease": {
+                "class": "MnbAttackEnd",
+                "params": [
+                ]
+            }
+        }
+    ],
+    "F19": [
+        {
+            "trigger": "PGUP",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F7"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F7"
+                ]
+            }
+        },
+        {
+            "trigger": "PGDN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "7"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "7"
+                ]
+            }
+        }
+    ],
+    "F20": [
+        {
+            "trigger": "PGUP",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F8"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F8"
+                ]
+            }
+        },
+        {
+            "trigger": "PGDN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "8"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "8"
+                ]
+            }
+        },
+        {
+            "onPress": {
+                "class": "MnbAttackStart",
+                "params": [
+                    "down"
+                ]
+            },
+            "onRelease": {
+                "class": "MnbAttackEnd",
+                "params": [
+                ]
+            }
+        }
+    ],
+    "F21": [
+        {
+            "trigger": "PGUP",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F9"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F9"
+                ]
+            }
+        },
+        {
+            "trigger": "PGDN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "9"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "9"
+                ]
+            }
+        }
+    ],
+    "F22": [
+        {
+            "trigger": "PGUP",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F10"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F10"
+                ]
+            }
+        },
+        {
+            "trigger": "PGDN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "0"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "0"
+                ]
+            }
+        }
+    ],
+    "F23": [
+        {
+            "trigger": "PGUP",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F11"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F11"
+                ]
+            }
+        },
+        {
+            "trigger": "PGDN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "-"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "-"
+                ]
+            }
+        }
+    ],
+    "F24": [
+        {
+            "trigger": "PGUP",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F12"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F12"
+                ]
+            }
+        },
+        {
+            "trigger": "PGDN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "="
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "="
+                ]
+            }
+        }
+    ]
+}

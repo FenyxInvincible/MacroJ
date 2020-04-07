@@ -1,5 +1,6 @@
 package local.autohotkey.service;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import local.autohotkey.data.Key;
@@ -8,7 +9,7 @@ import local.autohotkey.data.macro.Macro;
 import local.autohotkey.macro.MacroThreads;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import me.coley.simplejna.hook.key.KeyEventReceiver;
+import local.autohotkey.jna.hook.key.KeyEventReceiver;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
@@ -16,10 +17,10 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Component
 @Slf4j
@@ -32,7 +33,7 @@ public class MacroFactory {
     private final ApplicationContext context;
     private final KeyManager keyManager;
     private final String macroPackage;
-    private Map<Integer, MacroPair> macros;
+    private Map<Integer, List<MacroPair>> macros;
     private Map<Integer, MacroThreads> macroThreadMap = new ConcurrentHashMap<>();
 
     public MacroFactory(
@@ -51,30 +52,50 @@ public class MacroFactory {
     private void init() throws IOException {
         macros = new JsonReader(macroConfigFile).parse()
                 .entrySet().stream()
-                .map(e -> Pair.of(keyManager.findKeyCodeByText(e.getKey()), createMacroPair(e.getValue())))
+                .map(e -> Pair.of(
+                        keyManager.findKeyCodeByText(e.getKey()),
+                        createListOfMacroPair(keyManager.findKeyCodeByText(e.getKey()), e.getValue()))
+                )
                 .collect(Collectors.toMap(Pair::getLeft, Pair::getRight));
+    }
+
+    private List<MacroPair> createListOfMacroPair(Integer keyCode, JsonElement value) {
+        JsonArray json = value.getAsJsonArray();
+
+        return StreamSupport.stream(Spliterators.spliteratorUnknownSize(json.iterator(), Spliterator.ORDERED), false)
+                .map(this::createMacroPair)
+                .collect(Collectors.toList());
     }
 
     private MacroPair createMacroPair(JsonElement value) {
         JsonObject json = value.getAsJsonObject();
         JsonElement onPress = json.get("onPress");
         JsonElement onRelease = json.get("onRelease");
-        return new MacroPair(findMacroClass(onPress), findMacroClass(onRelease));
+        Key trigger = json.has("trigger") ? keyManager.findKeyByText(json.get("trigger").getAsString()) : null;
+        return new MacroPair(findMacroClass(onPress), findMacroClass(onRelease), trigger);
     }
 
 
-    public void execute(Key key, KeyEventReceiver.PressState pressState) {
-        Macro macro = macros.get(key.getKeyCode()).getMacroByEventType(pressState);
+    public boolean execute(Key key, KeyEventReceiver.PressState pressState) {
+        boolean isExecuted = false;
+        Optional<MacroPair> possibleMacro = macros.get(key.getKeyCode()).stream()
+                .filter(e -> e == null || e.isTriggered())
+                .findFirst();
 
-        if (!macroThreadMap.containsKey(key.getKeyCode())) {
-            macroThreadMap.put(key.getKeyCode(), new MacroThreads());
+        if(possibleMacro.isPresent()){
+            Macro macro = possibleMacro.get().getMacroByEventType(pressState);
+            if (!macroThreadMap.containsKey(key.getKeyCode())) {
+                macroThreadMap.put(key.getKeyCode(), new MacroThreads());
+            }
+
+            log.debug("Macro found {}", macro.getClass());
+
+            MacroThreads macroThreads = macroThreadMap.get(key.getKeyCode());
+
+            macroThreads.run(macro, pressState);
+            isExecuted = true;
         }
-
-        log.debug("Macro found {}", macro.getClass());
-
-        MacroThreads macroThreads = macroThreadMap.get(key.getKeyCode());
-
-        macroThreads.run(macro, pressState);
+        return isExecuted;
     }
 
     private Macro findMacroClass(JsonElement value) {
@@ -113,9 +134,10 @@ public class MacroFactory {
     private static class MacroPair {
         private final Macro onPressMacro;
         private final Macro onReleaseMacro;
+        private final Key triggerKey;
 
         public Macro getMacroByEventType(KeyEventReceiver.PressState eventType) {
-            switch(eventType) {
+            switch (eventType) {
                 case DOWN:
                     return getOnPressMacro();
                 case UP:
@@ -123,6 +145,10 @@ public class MacroFactory {
                 default:
                     throw new IllegalArgumentException("Unknown event type " + eventType);
             }
+        }
+
+        public boolean isTriggered() {
+            return triggerKey == null || triggerKey.isPressed();
         }
     }
 }

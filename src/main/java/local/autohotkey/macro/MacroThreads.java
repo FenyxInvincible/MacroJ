@@ -2,7 +2,7 @@ package local.autohotkey.macro;
 
 import local.autohotkey.data.macro.Macro;
 import lombok.extern.slf4j.Slf4j;
-import me.coley.simplejna.hook.key.KeyEventReceiver;
+import local.autohotkey.jna.hook.key.KeyEventReceiver;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
