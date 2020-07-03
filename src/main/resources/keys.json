@@ -607,13 +607,13 @@
     },
     "166": {
         "keyCode": 166,
-        "keyText": "BROWSER_BACK",
+        "keyText": "BRBCK",
         "scanCode": 362,
         "isPressed": false
     },
     "167": {
         "keyCode": 167,
-        "keyText": "BROWSER_FORWARD",
+        "keyText": "BRFWD",
         "scanCode": 361,
         "isPressed": false
     },
@@ -647,6 +647,18 @@
         "scanCode": 304,
         "isPressed": false
     },
+    "176": {
+        "keyCode": 176,
+        "keyText": "TRACKN",
+        "scanCode": 0,
+        "isPressed": false
+    },
+    "177": {
+        "keyCode": 177,
+        "keyText": "TRACKP",
+        "scanCode": 0,
+        "isPressed": false
+    },
     "178": {
         "keyCode": 178,
         "keyText": "MEDIA_STOP",
@@ -673,7 +685,7 @@
     },
     "187": {
         "keyCode": 187,
-        "keyText": "\u003d",
+        "keyText": "=",
         "scanCode": 13,
         "isPressed": false
     },

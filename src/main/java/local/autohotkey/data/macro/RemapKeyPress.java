@@ -1,11 +1,11 @@
 package local.autohotkey.data.macro;
 
 import local.autohotkey.data.Key;
-import local.autohotkey.key.MouseKey;
-import local.autohotkey.key.Sender;
+import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
 import local.autohotkey.utils.eso.Locks;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +14,7 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 @Scope("prototype")
+@Slf4j
 public class RemapKeyPress implements Macro {
     private final Sender sender;
     private final KeyManager keys;

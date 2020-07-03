@@ -1,7 +1,7 @@
 package local.autohotkey.data.macro;
 
 import local.autohotkey.data.Key;
-import local.autohotkey.key.Sender;
+import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
 import local.autohotkey.utils.eso.Locks;
 import lombok.RequiredArgsConstructor;

@@ -1,8 +1,9 @@
-package local.autohotkey.key;
+package local.autohotkey.sender;
 
 import local.autohotkey.data.Key;
 import local.autohotkey.jna.Keyboard;
 import local.autohotkey.jna.Mouse;
+import local.autohotkey.key.MouseKey;
 import org.springframework.stereotype.Component;
 
 @Component

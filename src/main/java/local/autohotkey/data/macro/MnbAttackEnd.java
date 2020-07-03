@@ -1,13 +1,12 @@
 package local.autohotkey.data.macro;
 
 import local.autohotkey.key.MouseKey;
-import local.autohotkey.key.Sender;
+import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
 import local.autohotkey.utils.eso.Locks;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.awt.*;
 import java.util.List;
 
 @Component

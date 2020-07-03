@@ -14,6 +14,8 @@ public class Keyboard {
 	public static final int KEYEVENTF_KEYDOWN = 0;
 	public static final int KEYEVENTF_KEYUP = 2;
 
+	public static final int IS_MACRO = 18;
+
 	/**
 	 * Check if a key is pressed.
 	 * 
@@ -60,7 +62,7 @@ public class Keyboard {
 		input.input.setType("ki");
 		input.input.ki.wScan = new WORD(scanCode);
 		input.input.ki.time = new DWORD(0);
-		input.input.ki.dwExtraInfo = new ULONG_PTR(0);
+		input.input.ki.dwExtraInfo = new ULONG_PTR(IS_MACRO);
 		input.input.ki.wVk = new WORD(vkCode);
 		input.input.ki.dwFlags = new DWORD(KEYEVENTF_KEYDOWN);
 		User32.INSTANCE.SendInput(new DWORD(1), (INPUT[]) input.toArray(1), input.size());
@@ -77,7 +79,7 @@ public class Keyboard {
 		input.input.setType("ki");
 		input.input.ki.wScan = new WORD(scanCode);
 		input.input.ki.time = new DWORD(0);
-		input.input.ki.dwExtraInfo = new ULONG_PTR(0);
+		input.input.ki.dwExtraInfo = new ULONG_PTR(IS_MACRO);
 		input.input.ki.wVk = new WORD(vkCode);
 		input.input.ki.dwFlags = new DWORD(KEYEVENTF_KEYUP);
 		User32.INSTANCE.SendInput(new DWORD(1), (INPUT[]) input.toArray(1), input.size());

@@ -30,7 +30,7 @@ public class Application {
 
     private static String selectProfile() {
 
-        String[] profilesArray = {"default", "eso", "mnb"};
+        String[] profilesArray = {"default", "eso", "mnb", "fallout"};
         JComboBox profiles = new JComboBox(profilesArray);
         profiles.setEditable(true);
 

@@ -1,5 +1,5 @@
 {
-    "PGUP": [
+    "TRACKP": [
         //combination key
         {
             "onPress": {
@@ -9,7 +9,7 @@
             }
         }
     ],
-    "PGDN": [
+    "TRACKN": [
         //combination key
         {
             "onPress": {
@@ -28,27 +28,9 @@
             }
         }
     ],
-    "F11": [
+    "1": [
         {
-            "onPress": {
-                "class": "SettingsMacro",
-                "params": [
-                ]
-            }
-        }
-    ],
-    "F12": [
-        {
-            "onPress": {
-                "class": "DebugMacro",
-                "params": [
-                ]
-            }
-        }
-    ],
-    "F13": [
-        {
-            "trigger": "PGUP",
+            "trigger": "TRACKP",
             "onPress": {
                 "class": "RemapKeyPress",
                 "params": [
@@ -59,6 +41,21 @@
                 "class": "RemapKeyRelease",
                 "params": [
                     "F1"
+                ]
+            }
+        },
+        {
+            "trigger": "TRACKN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F13"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F13"
                 ]
             }
         },
@@ -77,9 +74,9 @@
             }
         }
     ],
-    "F14": [
+    "2": [
         {
-            "trigger": "PGUP",
+            "trigger": "TRACKP",
             "onPress": {
                 "class": "RemapKeyPress",
                 "params": [
@@ -90,6 +87,21 @@
                 "class": "RemapKeyRelease",
                 "params": [
                     "F2"
+                ]
+            }
+        },
+        {
+            "trigger": "TRACKN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F14"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F14"
                 ]
             }
         },
@@ -108,9 +120,9 @@
             }
         }
     ],
-    "F15": [
+    "3": [
         {
-            "trigger": "PGUP",
+            "trigger": "TRACKP",
             "onPress": {
                 "class": "RemapKeyPress",
                 "params": [
@@ -121,6 +133,21 @@
                 "class": "RemapKeyRelease",
                 "params": [
                     "F3"
+                ]
+            }
+        },
+        {
+            "trigger": "TRACKN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F15"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F15"
                 ]
             }
         },
@@ -139,9 +166,9 @@
             }
         }
     ],
-    "F16": [
+    "4": [
         {
-            "trigger": "PGUP",
+            "trigger": "TRACKP",
             "onPress": {
                 "class": "RemapKeyPress",
                 "params": [
@@ -152,6 +179,21 @@
                 "class": "RemapKeyRelease",
                 "params": [
                     "F4"
+                ]
+            }
+        },
+        {
+            "trigger": "TRACKN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F16"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F16"
                 ]
             }
         },
@@ -170,9 +212,9 @@
             }
         }
     ],
-    "F17": [
+    "5": [
         {
-            "trigger": "PGUP",
+            "trigger": "TRACKP",
             "onPress": {
                 "class": "RemapKeyPress",
                 "params": [
@@ -183,6 +225,21 @@
                 "class": "RemapKeyRelease",
                 "params": [
                     "F5"
+                ]
+            }
+        },
+        {
+            "trigger": "TRACKN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F17"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F17"
                 ]
             }
         },
@@ -201,9 +258,9 @@
             }
         }
     ],
-    "F18": [
+    "6": [
         {
-            "trigger": "PGUP",
+            "trigger": "TRACKP",
             "onPress": {
                 "class": "RemapKeyPress",
                 "params": [
@@ -214,6 +271,21 @@
                 "class": "RemapKeyRelease",
                 "params": [
                     "F6"
+                ]
+            }
+        },
+        {
+            "trigger": "TRACKN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F18"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F18"
                 ]
             }
         },
@@ -232,9 +304,9 @@
             }
         }
     ],
-    "F19": [
+    "7": [
         {
-            "trigger": "PGUP",
+            "trigger": "TRACKP",
             "onPress": {
                 "class": "RemapKeyPress",
                 "params": [
@@ -245,6 +317,21 @@
                 "class": "RemapKeyRelease",
                 "params": [
                     "F7"
+                ]
+            }
+        },
+        {
+            "trigger": "TRACKN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F19"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F19"
                 ]
             }
         },
@@ -263,9 +350,9 @@
             }
         }
     ],
-    "F20": [
+    "8": [
         {
-            "trigger": "PGUP",
+            "trigger": "TRACKP",
             "onPress": {
                 "class": "RemapKeyPress",
                 "params": [
@@ -276,6 +363,21 @@
                 "class": "RemapKeyRelease",
                 "params": [
                     "F8"
+                ]
+            }
+        },
+        {
+            "trigger": "TRACKN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F20"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F20"
                 ]
             }
         },
@@ -294,9 +396,9 @@
             }
         }
     ],
-    "F21": [
+    "9": [
         {
-            "trigger": "PGUP",
+            "trigger": "TRACKP",
             "onPress": {
                 "class": "RemapKeyPress",
                 "params": [
@@ -307,6 +409,21 @@
                 "class": "RemapKeyRelease",
                 "params": [
                     "F9"
+                ]
+            }
+        },
+        {
+            "trigger": "TRACKN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F21"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F21"
                 ]
             }
         },
@@ -325,9 +442,9 @@
             }
         }
     ],
-    "F22": [
+    "0": [
         {
-            "trigger": "PGUP",
+            "trigger": "TRACKP",
             "onPress": {
                 "class": "RemapKeyPress",
                 "params": [
@@ -338,6 +455,21 @@
                 "class": "RemapKeyRelease",
                 "params": [
                     "F10"
+                ]
+            }
+        },
+        {
+            "trigger": "TRACKN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F22"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F22"
                 ]
             }
         },
@@ -356,9 +488,9 @@
             }
         }
     ],
-    "F23": [
+    "-": [
         {
-            "trigger": "PGUP",
+            "trigger": "TRACKP",
             "onPress": {
                 "class": "RemapKeyPress",
                 "params": [
@@ -369,6 +501,21 @@
                 "class": "RemapKeyRelease",
                 "params": [
                     "F11"
+                ]
+            }
+        },
+        {
+            "trigger": "TRACKN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F23"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F23"
                 ]
             }
         },
@@ -387,9 +534,9 @@
             }
         }
     ],
-    "F24": [
+    "=": [
         {
-            "trigger": "PGUP",
+            "trigger": "TRACKP",
             "onPress": {
                 "class": "RemapKeyPress",
                 "params": [
@@ -400,6 +547,21 @@
                 "class": "RemapKeyRelease",
                 "params": [
                     "F12"
+                ]
+            }
+        },
+        {
+            "trigger": "TRACKN",
+            "onPress": {
+                "class": "RemapKeyPress",
+                "params": [
+                    "F24"
+                ]
+            },
+            "onRelease": {
+                "class": "RemapKeyRelease",
+                "params": [
+                    "F24"
                 ]
             }
         },

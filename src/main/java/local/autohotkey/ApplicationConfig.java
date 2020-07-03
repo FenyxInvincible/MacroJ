@@ -1,7 +1,7 @@
 package local.autohotkey;
 
-import local.autohotkey.key.JnaSender;
-import local.autohotkey.key.Sender;
+import local.autohotkey.sender.JnaSender;
+import local.autohotkey.sender.Sender;
 import local.autohotkey.jna.hook.key.KeyHookManager;
 import local.autohotkey.jna.hook.mouse.MouseHookManager;
 import org.springframework.context.annotation.Bean;

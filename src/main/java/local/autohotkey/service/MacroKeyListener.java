@@ -1,11 +1,12 @@
 package local.autohotkey.service;
-import com.sun.jna.platform.unix.X11;
+import com.sun.jna.platform.win32.WinUser;
 import local.autohotkey.data.Key;
+import local.autohotkey.jna.Keyboard;
 import lombok.extern.slf4j.Slf4j;
 import local.autohotkey.jna.hook.key.KeyEventReceiver;
 import local.autohotkey.jna.hook.key.KeyHookManager;
 import org.springframework.stereotype.Service;
-import java.awt.event.KeyEvent;
+
 import java.util.HashMap;
 import java.util.Map;
 @Slf4j
@@ -24,8 +25,23 @@ public class MacroKeyListener extends KeyEventReceiver {
         this.macroFactory = macroFactory;
     }
     @Override
-    public boolean onKeyUpdate(SystemState systemState, PressState pressState, int time, int vkCode) {
+    public boolean onKeyUpdate(SystemState systemState, PressState pressState, WinUser.KBDLLHOOKSTRUCT info, int vkCode) {
+        if (info.dwExtraInfo.intValue() == Keyboard.IS_MACRO) {
+            //ignore macro input
+            return false;
+        }
+
         Key key = keyManager.findKeyByKeyCode(vkCode);
+
+        if (key == null) {
+            log.error("Unknown code: {}", vkCode);
+            return false;
+        }
+
+        if(key.isPressed() && pressState == PressState.DOWN) {
+            return true;
+        }
+
         switch (pressState){
             case DOWN:
                 return keyPressed(key, pressState);

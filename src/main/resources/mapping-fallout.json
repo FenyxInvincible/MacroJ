@@ -1,0 +1,32 @@
+{
+    "MEDIA_STOP": [
+        {
+            "onPress": {
+                "class": "StopApplication",
+                "params": [
+                ]
+            }
+        }
+    ],
+    "F11": [{
+        "onPress": {
+            "class": "SettingsMacro",
+            "params": [
+            ]
+        }
+    }],
+    "F12": [{
+        "onPress": {
+            "class": "DebugMacro",
+            "params": [
+            ]
+        }
+    }],
+    "F13": [{
+        "onPress": {
+            "class": "Fallout76Vats",
+            "params": [
+            ]
+        }
+    }]
+}

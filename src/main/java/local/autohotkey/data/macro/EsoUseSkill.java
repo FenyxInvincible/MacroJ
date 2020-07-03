@@ -2,7 +2,7 @@ package local.autohotkey.data.macro;
 
 import local.autohotkey.data.Key;
 import local.autohotkey.key.MouseKey;
-import local.autohotkey.key.Sender;
+import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
 import local.autohotkey.utils.ScreenPicker;
 import local.autohotkey.utils.eso.EsoUtils;

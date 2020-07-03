@@ -2,9 +2,8 @@ package local.autohotkey.data.macro;
 
 import local.autohotkey.data.Key;
 import local.autohotkey.key.MouseKey;
-import local.autohotkey.key.Sender;
+import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
-import local.autohotkey.service.MouseEventListener;
 import local.autohotkey.utils.eso.Locks;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.List;
 
@@ -22,16 +20,7 @@ import java.util.List;
 @Slf4j
 @Scope("prototype")
 public class MnbAttackStart implements Macro {
-    private static Robot robot;
-    private static HashMap<String, Integer> directionKey = new HashMap<>();
-
-    static {
-        try {
-            robot = new Robot();
-        } catch (AWTException e) {
-            e.printStackTrace();
-        }
-    }
+    private static HashMap<String, Key> directionKey = new HashMap<>();
 
     private final Sender sender;
     private final KeyManager keys;
@@ -41,10 +30,10 @@ public class MnbAttackStart implements Macro {
     @PostConstruct
     private void init() {
         if (directionKey.isEmpty()) {
-            directionKey.put("up", KeyEvent.VK_W);
-            directionKey.put("left", KeyEvent.VK_A);
-            directionKey.put("down", KeyEvent.VK_S);
-            directionKey.put("right", KeyEvent.VK_D);
+            directionKey.put("up", keys.findKeyByText("w"));
+            directionKey.put("left", keys.findKeyByText("a"));
+            directionKey.put("down", keys.findKeyByText("s"));
+            directionKey.put("right", keys.findKeyByText("d"));
         }
     }
 
@@ -56,12 +45,26 @@ public class MnbAttackStart implements Macro {
     @Override
     public void run() {
         try {
-            int dk = directionKey.get(direction);
+            Key dk = directionKey.get(direction);
             locks.getCastLock().lock();
-            sender.mouseKeyClick(MouseKey.RMB);
-            robot.keyPress(dk);
+            sender.mouseKeyPress(MouseKey.RMB);
+            Thread.sleep(16);
+            sender.mouseKeyRelease(MouseKey.RMB);
+
+            sender.pressKey(dk);
+            Thread.sleep(16);
+            sender.pressKey(dk);
+            Thread.sleep(16);
+            sender.pressKey(dk);
+
             sender.mouseKeyPress(MouseKey.LMB);
-            robot.keyRelease(dk);
+
+            if(!dk.isPressed()) {
+                sender.releaseKey(dk);
+            }
+
+            Thread.sleep(16);
+
             locks.getCastLock().unlock();
         } catch (Exception e) {
             e.printStackTrace();

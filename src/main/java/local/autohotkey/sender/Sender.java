@@ -1,6 +1,7 @@
-package local.autohotkey.key;
+package local.autohotkey.sender;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.key.MouseKey;
 
 public interface Sender {
     void pressKey(Key key);
