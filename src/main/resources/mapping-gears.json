@@ -1,0 +1,36 @@
+{
+    "MEDIA_STOP": [
+        {
+            "onPress": {
+                "class": "StopApplication",
+                "params": [
+                ]
+            }
+        }
+    ],
+    "F11": [{
+        "onPress": {
+            "class": "SettingsMacro",
+            "params": [
+            ]
+        }
+    }],
+    "F10": [{
+        "onPress": {
+            "class": "DebugMacro",
+            "params": [
+            ]
+        }
+    }],
+    "LMB": [{
+        "onPress": {
+            "class": "GearsReload",
+            "params": [
+                "221",
+                "2307",
+                "2306",
+                "11.5"
+            ]
+        }
+    }]
+}

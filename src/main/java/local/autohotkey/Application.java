@@ -12,6 +12,7 @@ import javax.swing.*;
 @SpringBootApplication
 @Slf4j
 public class Application {
+    public static String PROFILE;
     static {
         System.setProperty("java.awt.headless", "false");
     }
@@ -30,13 +31,13 @@ public class Application {
 
     private static String selectProfile() {
 
-        String[] profilesArray = {"default", "eso", "mnb", "fallout"};
+        String[] profilesArray = {"default", "eso", "mnb", "fallout", "gears"};
         JComboBox profiles = new JComboBox(profilesArray);
         profiles.setEditable(true);
 
         JOptionPane.showMessageDialog(null, profiles, "select or type a value", JOptionPane.QUESTION_MESSAGE);
         log.info("Selected profile: {}", profiles.getSelectedItem());
-        System.setProperty(AbstractEnvironment.ACTIVE_PROFILES_PROPERTY_NAME, profiles.getSelectedItem().toString());
+        PROFILE = profiles.getSelectedItem().toString();
         return "";
     }
 }

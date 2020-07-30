@@ -8,6 +8,7 @@ public enum MouseButtonType {
 	LEFT_DOWN(513), LEFT_UP(514), RIGHT_DOWN(516), RIGHT_UP(517), MIDDLE_DOWN(519), MIDDLE_UP(520);
 	// @formatter:on
 	private static Map<Integer, MouseButtonType> types;
+	private int value;
 
 	MouseButtonType(int value) {
 		register(value, this);
@@ -22,5 +23,10 @@ public enum MouseButtonType {
 
 	public static MouseButtonType fromWParam(int value) {
 		return types.get(value);
+	}
+
+
+	public int getValue() {
+		return value;
 	}
 }

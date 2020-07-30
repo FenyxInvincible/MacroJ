@@ -29,7 +29,7 @@ public class DebugMacro implements Macro {
 
             //BufferedImage bi = ScreenPicker.getImageByCoords((int)b.getX(), (int) b.getY(), 5);//1149, 1399
             BufferedImage bi = ScreenPicker.getImageByCoords(848, 576, 5);//1149, 1399
-            File file = new File("E:\\tmp\\image.png");
+            File file = new File("D:\\tmp\\image.png");
             ImageIO.write(bi, "png", file);
             log.info("File saved: {}",  file);
         } catch (IOException e) {

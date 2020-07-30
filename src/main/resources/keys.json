@@ -748,5 +748,23 @@
         "keyText": "\u0027",
         "scanCode": 40,
         "isPressed": false
+    },
+    "1983": {
+        "keyCode": 1983,
+        "keyText": "LMB",
+        "scanCode": 1983,
+        "isPressed": false
+    },
+    "1984": {
+        "keyCode": 1984,
+        "keyText": "RMB",
+        "scanCode": 1984,
+        "isPressed": false
+    },
+    "1985": {
+        "keyCode": 1985,
+        "keyText": "MMB",
+        "scanCode": 1985,
+        "isPressed": false
     }
 }

@@ -1,6 +1,7 @@
 package local.autohotkey.service;
 
 import com.sun.jna.platform.win32.WinDef;
+import local.autohotkey.jna.hook.key.KeyEventReceiver;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import local.autohotkey.jna.Mouse;
@@ -20,19 +21,31 @@ public class MouseEventListener extends MouseEventReceiver {
     private static final AtomicBoolean isLocked = new AtomicBoolean(false);
     @Getter
     private static volatile Point lockedPoint = new Point(0, 0);
+    private final MacroKeyListener macroKeyListener;
 
-    public MouseEventListener(MouseHookManager hookManager) {
+    public MouseEventListener(MouseHookManager hookManager,  MacroKeyListener macroKeyListener) {
         super(hookManager);
+        this.macroKeyListener = macroKeyListener;
     }
 
     @Override
     public boolean onMousePress(MouseButtonType mouseButtonType, WinDef.HWND hwnd, WinDef.POINT point) {
-        return false;
+        return macroKeyListener.onKeyUpdate(KeyEventReceiver.PressState.DOWN, getFakeMouseKey(mouseButtonType));
     }
 
     @Override
     public boolean onMouseRelease(MouseButtonType mouseButtonType, WinDef.HWND hwnd, WinDef.POINT point) {
-        return false;
+        return macroKeyListener.onKeyUpdate(KeyEventReceiver.PressState.UP, getFakeMouseKey(mouseButtonType));
+    }
+
+    private int getFakeMouseKey(MouseButtonType mouseButtonType) {
+        if(mouseButtonType.equals(MouseButtonType.RIGHT_DOWN) || mouseButtonType.equals(MouseButtonType.RIGHT_UP)) {
+            return 1984;
+        }
+        if(mouseButtonType.equals(MouseButtonType.MIDDLE_DOWN) || mouseButtonType.equals(MouseButtonType.MIDDLE_UP)) {
+            return 1985;
+        }
+        return 1983;
     }
 
     @Override

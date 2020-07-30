@@ -3,6 +3,7 @@ package local.autohotkey.service;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import local.autohotkey.Application;
 import local.autohotkey.data.Key;
 import local.autohotkey.data.macro.DummyMacro;
 import local.autohotkey.data.macro.Macro;
@@ -37,12 +38,11 @@ public class MacroFactory {
     private Map<Integer, MacroThreads> macroThreadMap = new ConcurrentHashMap<>();
 
     public MacroFactory(
-            @Value("${app.macro.mapping.file}") String path,
             @Value("${app.macro.package}") String macroPackage,
             KeyManager keyManager,
             ApplicationContext context
     ) {
-        this.macroConfigFile = path;
+        this.macroConfigFile = "mapping-" + Application.PROFILE + ".json";
         this.macroPackage = macroPackage;
         this.keyManager = keyManager;
         this.context = context;

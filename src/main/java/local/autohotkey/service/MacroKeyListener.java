@@ -24,9 +24,14 @@ public class MacroKeyListener extends KeyEventReceiver {
         this.keyManager = keyManager;
         this.macroFactory = macroFactory;
     }
+
+    public boolean onKeyUpdate(PressState pressState, int vkCode) {
+        return this.onKeyUpdate(SystemState.STANDARD, pressState, null, vkCode);
+    }
+
     @Override
     public boolean onKeyUpdate(SystemState systemState, PressState pressState, WinUser.KBDLLHOOKSTRUCT info, int vkCode) {
-        if (info.dwExtraInfo.intValue() == Keyboard.IS_MACRO) {
+        if (info!= null && info.dwExtraInfo.intValue() == Keyboard.IS_MACRO) {
             //ignore macro input
             return false;
         }

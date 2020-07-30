@@ -23,7 +23,7 @@ public class ApplicationRunner {
 
     public void run() {
         keyHookManager.hook(keyListener);
-        //mouseHookManager.hook(mouseEventReceiver);
+        mouseHookManager.hook(mouseEventReceiver);
         log.info("Application started");
     }
 }

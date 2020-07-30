@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 @Slf4j
 public class ScreenPicker {
@@ -14,11 +15,13 @@ public class ScreenPicker {
     private static Robot robot = null;
     private static final WinDef.HDC hdc = User32.INSTANCE.GetDC(null);
 
-    /*public static Color pickColor(int x, int y) {
+    public static BufferedImage screenshot() throws IOException {
         initRobot();
-        //Toolkit.getDefaultToolkit().sync();
-        return robot.getPixelColor(20, 20);
-    }*/
+        Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+        BufferedImage capture = robot.createScreenCapture(screenRect);
+        return capture;
+    }
+
     public static int pickDwordColor(int x, int y) {
         return MyGDI32.INSTANCE.GetPixel(hdc, x, y);
     }
