@@ -1,9 +1,9 @@
-package local.autohotkey.data.macro;
+package local.autohotkey.data.macro.eso;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.macro.Macro;
 import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
-import local.autohotkey.utils.ScreenPicker;
 import local.autohotkey.utils.eso.EsoUtils;
 import local.autohotkey.utils.eso.Locks;
 import lombok.RequiredArgsConstructor;
@@ -15,17 +15,19 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class EsoChangeFirstBar implements Macro {
+public class EsoChangeSecondBar implements Macro {
 
     private final Sender sender;
     private final KeyManager keys;
     private final Locks locks;
 
-    private Key f21;
+    private Key f22;
+    private Key f23;
 
     @Override
     public void setParams(List<String> params) {
-        f21 = keys.findKeyByText("F21");
+        f22 = keys.findKeyByText("F22");
+        f23 = keys.findKeyByText("F23");
     }
 
     @Override
@@ -33,10 +35,8 @@ public class EsoChangeFirstBar implements Macro {
         try{
             locks.getSwitchBarLock().lock();
             long start = System.currentTimeMillis();
-            log.debug("ScreenPicker.pickDwordColor != ScreenPicker.DWORD_WHITE {}", ScreenPicker.pickDwordColor(1149, 1399) != ScreenPicker.DWORD_WHITE);
-            while (EsoUtils.isFirstBar()){
-                log.debug("=========={}", f21);
-                sender.sendKey(f21, 16);
+            while (!EsoUtils.isFirstBar()){
+                sender.sendKey(f22, 16);
                 Thread.sleep(50);
 
                 if (System.currentTimeMillis() - start > 1500) {
@@ -46,8 +46,7 @@ public class EsoChangeFirstBar implements Macro {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             locks.getSwitchBarLock().unlock();
         }
     }

@@ -1,5 +1,6 @@
-package local.autohotkey.data.macro;
+package local.autohotkey.data.macro.mnb;
 
+import local.autohotkey.data.macro.Macro;
 import local.autohotkey.key.MouseKey;
 import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;

@@ -33,17 +33,14 @@ public class MacroFactory {
     private final String macroConfigFile;
     private final ApplicationContext context;
     private final KeyManager keyManager;
-    private final String macroPackage;
     private Map<Integer, List<MacroPair>> macros;
     private Map<Integer, MacroThreads> macroThreadMap = new ConcurrentHashMap<>();
 
     public MacroFactory(
-            @Value("${app.macro.package}") String macroPackage,
             KeyManager keyManager,
             ApplicationContext context
     ) {
         this.macroConfigFile = "mapping-" + Application.PROFILE + ".json";
-        this.macroPackage = macroPackage;
         this.keyManager = keyManager;
         this.context = context;
     }
@@ -106,7 +103,7 @@ public class MacroFactory {
         } else {
             try {
                 String className = value.getAsJsonObject().get("class").getAsString();
-                Class<?> clazz = Class.forName(macroPackage + "." + className);
+                Class<?> clazz = Class.forName(className);
                 bean = (Macro) context.getBean(clazz);
 
                 ArrayList<String> params = new ArrayList<>();

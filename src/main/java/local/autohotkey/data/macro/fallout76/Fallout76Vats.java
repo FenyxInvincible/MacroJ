@@ -1,6 +1,7 @@
-package local.autohotkey.data.macro;
+package local.autohotkey.data.macro.fallout76;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.macro.Macro;
 import local.autohotkey.key.MouseKey;
 import local.autohotkey.sender.RobotSender;
 import local.autohotkey.sender.Sender;

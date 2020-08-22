@@ -3,7 +3,7 @@
         //combination key
         {
             "onPress": {
-                "class": "DummyMacro",
+                "class": "local.autohotkey.data.macro.DummyMacro",
                 "params": [
                 ]
             }
@@ -13,7 +13,7 @@
         //combination key
         {
             "onPress": {
-                "class": "DummyMacro",
+                "class": "local.autohotkey.data.macro.DummyMacro",
                 "params": [
                 ]
             }
@@ -22,7 +22,7 @@
     "MEDIA_STOP": [
         {
             "onPress": {
-                "class": "StopApplication",
+                "class": "local.autohotkey.data.macro.StopApplication",
                 "params": [
                 ]
             }
@@ -31,7 +31,7 @@
     "F11": [
         {
             "onPress": {
-                "class": "SettingsMacro",
+                "class": "local.autohotkey.data.macro.SettingsMacro",
                 "params": [
                 ]
             }
@@ -40,7 +40,7 @@
     "F12": [
         {
             "onPress": {
-                "class": "DebugMacro",
+                "class": "local.autohotkey.data.macro.DebugMacro",
                 "params": [
                 ]
             }
@@ -50,13 +50,13 @@
         {
             "trigger": "PGUP",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F1"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F1"
                 ]
@@ -65,13 +65,13 @@
         {
             "trigger": "PGDN",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "1"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "1"
                 ]
@@ -82,13 +82,13 @@
         {
             "trigger": "PGUP",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F2"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F2"
                 ]
@@ -97,13 +97,13 @@
         {
             "trigger": "PGDN",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "2"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "2"
                 ]
@@ -114,13 +114,13 @@
         {
             "trigger": "PGUP",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F3"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F3"
                 ]
@@ -129,13 +129,13 @@
         {
             "trigger": "PGDN",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "3"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "3"
                 ]
@@ -146,13 +146,13 @@
         {
             "trigger": "PGUP",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F4"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F4"
                 ]
@@ -161,13 +161,13 @@
         {
             "trigger": "PGDN",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "4"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "4"
                 ]
@@ -175,13 +175,13 @@
         },
         {
             "onPress": {
-                "class": "MnbAttackStart",
+                "class": "local.autohotkey.data.macro.mnb.MnbAttackStart",
                 "params": [
                     "left"
                 ]
             },
             "onRelease": {
-                "class": "MnbAttackEnd",
+                "class": "local.autohotkey.data.macro.mnb.MnbAttackEnd",
                 "params": [
                 ]
             }
@@ -191,13 +191,13 @@
         {
             "trigger": "PGUP",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F5"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F5"
                 ]
@@ -206,13 +206,13 @@
         {
             "trigger": "PGDN",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "5"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "5"
                 ]
@@ -220,13 +220,13 @@
         },
         {
             "onPress": {
-                "class": "MnbAttackStart",
+                "class": "local.autohotkey.data.macro.mnb.MnbAttackStart",
                 "params": [
                     "up"
                 ]
             },
             "onRelease": {
-                "class": "MnbAttackEnd",
+                "class": "local.autohotkey.data.macro.mnb.MnbAttackEnd",
                 "params": [
                 ]
             }
@@ -236,13 +236,13 @@
         {
             "trigger": "PGUP",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F6"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F6"
                 ]
@@ -251,13 +251,13 @@
         {
             "trigger": "PGDN",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "6"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "6"
                 ]
@@ -265,13 +265,13 @@
         },
         {
             "onPress": {
-                "class": "MnbAttackStart",
+                "class": "local.autohotkey.data.macro.mnb.MnbAttackStart",
                 "params": [
                     "right"
                 ]
             },
             "onRelease": {
-                "class": "MnbAttackEnd",
+                "class": "local.autohotkey.data.macro.mnb.MnbAttackEnd",
                 "params": [
                 ]
             }
@@ -281,13 +281,13 @@
         {
             "trigger": "PGUP",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F7"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F7"
                 ]
@@ -296,13 +296,13 @@
         {
             "trigger": "PGDN",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "7"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "7"
                 ]
@@ -313,13 +313,13 @@
         {
             "trigger": "PGUP",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F8"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F8"
                 ]
@@ -328,13 +328,13 @@
         {
             "trigger": "PGDN",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "8"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "8"
                 ]
@@ -342,13 +342,13 @@
         },
         {
             "onPress": {
-                "class": "MnbAttackStart",
+                "class": "local.autohotkey.data.macro.mnb.MnbAttackStart",
                 "params": [
                     "down"
                 ]
             },
             "onRelease": {
-                "class": "MnbAttackEnd",
+                "class": "local.autohotkey.data.macro.mnb.MnbAttackEnd",
                 "params": [
                 ]
             }
@@ -358,13 +358,13 @@
         {
             "trigger": "PGUP",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F9"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F9"
                 ]
@@ -373,13 +373,13 @@
         {
             "trigger": "PGDN",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "9"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "9"
                 ]
@@ -390,13 +390,13 @@
         {
             "trigger": "PGUP",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F10"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F10"
                 ]
@@ -405,13 +405,13 @@
         {
             "trigger": "PGDN",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "0"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "0"
                 ]
@@ -422,13 +422,13 @@
         {
             "trigger": "PGUP",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F11"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F11"
                 ]
@@ -437,13 +437,13 @@
         {
             "trigger": "PGDN",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "-"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "-"
                 ]
@@ -454,13 +454,13 @@
         {
             "trigger": "PGUP",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F12"
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F12"
                 ]
@@ -469,13 +469,13 @@
         {
             "trigger": "PGDN",
             "onPress": {
-                "class": "RemapKeyPress",
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "="
                 ]
             },
             "onRelease": {
-                "class": "RemapKeyRelease",
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "="
                 ]

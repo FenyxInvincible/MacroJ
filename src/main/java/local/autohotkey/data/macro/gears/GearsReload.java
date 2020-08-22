@@ -1,6 +1,7 @@
-package local.autohotkey.data.macro;
+package local.autohotkey.data.macro.gears;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.macro.Macro;
 import local.autohotkey.sender.RobotSender;
 import local.autohotkey.service.KeyManager;
 import local.autohotkey.utils.ScreenPicker;
@@ -30,6 +31,7 @@ public class GearsReload implements Macro {
     private int x1;
     private int x2;
     private double speed;
+    private int length;
 
 
     @PostConstruct
@@ -43,6 +45,7 @@ public class GearsReload implements Macro {
         x1 = Integer.parseInt(params.get(1));
         x2 = Integer.parseInt(params.get(2));
         speed = Double.parseDouble(params.get(3));
+        length = Integer.parseInt(params.get(4));
     }
 
     @Override

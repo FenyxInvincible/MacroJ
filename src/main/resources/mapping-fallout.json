@@ -2,7 +2,7 @@
     "MEDIA_STOP": [
         {
             "onPress": {
-                "class": "StopApplication",
+                "class": "local.autohotkey.data.macro.StopApplication",
                 "params": [
                 ]
             }
@@ -10,21 +10,21 @@
     ],
     "F11": [{
         "onPress": {
-            "class": "SettingsMacro",
+            "class": "local.autohotkey.data.macro.SettingsMacro",
             "params": [
             ]
         }
     }],
     "F12": [{
         "onPress": {
-            "class": "DebugMacro",
+            "class": "local.autohotkey.data.macro.DebugMacro",
             "params": [
             ]
         }
     }],
     "F13": [{
         "onPress": {
-            "class": "Fallout76Vats",
+            "class": "local.autohotkey.data.macro.fallout76.Fallout76Vats",
             "params": [
             ]
         }

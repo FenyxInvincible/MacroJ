@@ -1,5 +1,6 @@
-package local.autohotkey.data.macro;
+package local.autohotkey.data.macro.eso;
 
+import local.autohotkey.data.macro.Macro;
 import local.autohotkey.utils.eso.Locks;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

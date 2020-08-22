@@ -2,34 +2,31 @@
     "MEDIA_STOP": [
         {
             "onPress": {
-                "class": "StopApplication",
+                "class": "local.autohotkey.data.macro.StopApplication",
                 "params": [
                 ]
             }
         }
     ],
-    "F11": [{
+    "0": [{
         "onPress": {
-            "class": "SettingsMacro",
+            "class": "local.autohotkey.data.macro.Crosshair",
             "params": [
-            ]
-        }
-    }],
-    "F10": [{
-        "onPress": {
-            "class": "DebugMacro",
-            "params": [
+                "40",
+                "40",
+                "crosshair.png"
             ]
         }
     }],
     "LMB": [{
         "onPress": {
-            "class": "GearsReload",
+            "class": "local.autohotkey.data.macro.gears.GearsReload",
             "params": [
                 "221",
                 "2307",
                 "2306",
-                "11.5"
+                "11.5",
+                "200"
             ]
         }
     }]
