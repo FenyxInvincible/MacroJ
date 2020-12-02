@@ -13,6 +13,7 @@ import javax.swing.*;
 @Slf4j
 public class Application {
     public static String PROFILE;
+
     static {
         System.setProperty("java.awt.headless", "false");
     }
@@ -31,7 +32,7 @@ public class Application {
 
     private static String selectProfile() {
 
-        String[] profilesArray = {"default", "eso", "mnb", "fallout", "gears"};
+        String[] profilesArray = {"default", "gesture", "eso", "mnb", "fallout4", "fallout", "gears"};
         JComboBox profiles = new JComboBox(profilesArray);
         profiles.setEditable(true);
 

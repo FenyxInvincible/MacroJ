@@ -1,0 +1,33 @@
+{
+    "PGUP": [{
+        "onPress": {
+            "class": "local.autohotkey.data.macro.GestureMacro",
+            "params": [
+                "F13",
+                "F14",
+                "F15",
+                "F16"
+            ]
+        }
+    }],
+    "PGDN": [{
+        "onPress": {
+            "class": "local.autohotkey.data.macro.GestureMacro",
+            "params": [
+                "F17",
+                "F18",
+                "F19",
+                "F20"
+            ]
+        }
+    }],
+    "MEDIA_STOP": [
+        {
+            "onPress": {
+                "class": "local.autohotkey.data.macro.StopApplication",
+                "params": [
+                ]
+            }
+        }
+    ]
+}

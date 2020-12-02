@@ -1,0 +1,44 @@
+{
+    "MEDIA_STOP": [
+        {
+            "onPress": {
+                "class": "local.autohotkey.data.macro.StopApplication",
+                "params": [
+                ]
+            }
+        }
+    ],
+    "PGDN": [{
+        "onPress": {
+            "class": "local.autohotkey.data.macro.GestureMacro",
+            "params": [
+                "UP",
+                "DOWN",
+                "LEFT",
+                "RIGHT"
+            ]
+        }
+    }],
+    "K": [{
+        "onPress": {
+            "class": "local.autohotkey.data.macro.GestureMacro",
+            "params": [
+                "UP",
+                "DOWN",
+                "LEFT",
+                "RIGHT"
+            ]
+        }
+    }],
+    "F11": [{
+        "onPress": {
+            "class": "local.autohotkey.data.macro.DebugMacro",
+            "params": [
+                "UP",
+                "DOWN",
+                "LEFT",
+                "RIGHT"
+            ]
+        }
+    }]
+}
