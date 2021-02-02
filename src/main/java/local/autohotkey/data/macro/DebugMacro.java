@@ -1,6 +1,5 @@
 package local.autohotkey.data.macro;
 
-import local.autohotkey.utils.Overlay;
 import local.autohotkey.utils.ScreenPicker;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -11,8 +10,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.Random;
-import java.util.UUID;
 
 @Component
 @Slf4j

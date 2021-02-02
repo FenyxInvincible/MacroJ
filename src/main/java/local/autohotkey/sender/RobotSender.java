@@ -4,6 +4,7 @@ import local.autohotkey.data.Key;
 import local.autohotkey.jna.Keyboard;
 import local.autohotkey.jna.Mouse;
 import local.autohotkey.key.MouseKey;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,7 @@ import java.awt.event.KeyEvent;
 
 @Component
 @Qualifier("Robot")
+@Slf4j
 public class RobotSender implements Sender{
 
     private Robot robot;

@@ -19,25 +19,17 @@
             ]
         }
     }],
-    "K": [{
+    "4": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.GestureMacro",
+            "class": "local.autohotkey.data.macro.poe.Blink",
             "params": [
-                "UP",
-                "DOWN",
-                "LEFT",
-                "RIGHT"
             ]
         }
     }],
-    "F11": [{
+    "L": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.DebugMacro",
+            "class": "local.autohotkey.data.macro.poe.Heal",
             "params": [
-                "UP",
-                "DOWN",
-                "LEFT",
-                "RIGHT"
             ]
         }
     }]

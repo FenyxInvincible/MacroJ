@@ -31,7 +31,7 @@ public class MacroKeyListener extends KeyEventReceiver {
 
     @Override
     public boolean onKeyUpdate(SystemState systemState, PressState pressState, WinUser.KBDLLHOOKSTRUCT info, int vkCode) {
-        log.info("{}", vkCode);
+        log.info("{} {}", vkCode);
         if (info!= null && info.dwExtraInfo.intValue() == Keyboard.IS_MACRO) {
             //ignore macro input
             return false;

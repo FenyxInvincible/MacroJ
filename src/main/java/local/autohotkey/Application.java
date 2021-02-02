@@ -32,7 +32,7 @@ public class Application {
 
     private static String selectProfile() {
 
-        String[] profilesArray = {"default", "gesture", "eso", "mnb", "fallout4", "fallout", "gears"};
+        String[] profilesArray = {"default", "gesture", "eso", "mnb", "poe", "fallout", "gears", "cyberpunk"};
         JComboBox profiles = new JComboBox(profilesArray);
         profiles.setEditable(true);
 
