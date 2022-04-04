@@ -10,5 +10,6 @@ public interface Sender {
     void mouseKeyClick(MouseKey key);
     void mouseKeyPress(MouseKey key);
     void mouseKeyRelease(MouseKey key);
+    void sendMouseKey(MouseKey key, int delay) throws InterruptedException;
     void mouseMove(int x, int y);
 }

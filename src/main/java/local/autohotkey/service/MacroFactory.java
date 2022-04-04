@@ -1,86 +1,80 @@
 package local.autohotkey.service;
 
-import com.google.gson.JsonArray;
+import com.google.gson.Gson;
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import local.autohotkey.Application;
 import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroDefinition;
+import local.autohotkey.data.MacroDefinitionAction;
 import local.autohotkey.data.macro.DummyMacro;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.macro.MacroThreads;
+import local.autohotkey.utils.Files;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import local.autohotkey.jna.hook.key.KeyEventReceiver;
 import org.apache.commons.lang3.tuple.Pair;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @Component
 @Slf4j
+@RequiredArgsConstructor
 public class MacroFactory {
 
     public static final int KEY_PRESS = 2401;
     public static final int KEY_RELEASE = 2402;
 
-    private final String macroConfigFile;
     private final ApplicationContext context;
     private final KeyManager keyManager;
-    private Map<Integer, List<MacroPair>> macros;
-    private Map<Integer, MacroThreads> macroThreadMap = new ConcurrentHashMap<>();
+    private final Gson gson;
 
-    public MacroFactory(
-            KeyManager keyManager,
-            ApplicationContext context
-    ) {
-        this.macroConfigFile = "mapping-" + Application.PROFILE + ".json";
-        this.keyManager = keyManager;
-        this.context = context;
-    }
+    private Map<Integer, MacroPair> macros;
+    private final Map<Integer, MacroThreads> macroThreadMap = new ConcurrentHashMap<>();
 
     @PostConstruct
     private void init() throws IOException {
-        macros = new JsonReader(macroConfigFile).parse()
-                .entrySet().stream()
+
+        String macroConfigFile = "mapping-" + Application.PROFILE + ".json";
+
+        Type collectionType = TypeToken.getParameterized(Map.class, String.class, MacroDefinition.class)
+                .getType();
+        Map<String, MacroDefinition> ms = gson.fromJson(
+                new InputStreamReader(Files.loadResource(macroConfigFile)),
+                collectionType
+        );
+
+        macros = ms.entrySet().stream()
                 .map(e -> Pair.of(
                         keyManager.findKeyCodeByText(e.getKey()),
-                        createListOfMacroPair(keyManager.findKeyCodeByText(e.getKey()), e.getValue()))
-                )
-                .collect(Collectors.toMap(Pair::getLeft, Pair::getRight));
+                        createListOfMacroPair(
+                                keyManager.findKeyByText(e.getKey()),
+                                e.getValue()
+                        )
+                    )
+                ).collect(Collectors.toMap(Pair::getLeft, Pair::getRight));
     }
 
-    private List<MacroPair> createListOfMacroPair(Integer keyCode, JsonElement value) {
-        JsonArray json = value.getAsJsonArray();
-
-        return StreamSupport.stream(Spliterators.spliteratorUnknownSize(json.iterator(), Spliterator.ORDERED), false)
-                .map(this::createMacroPair)
-                .collect(Collectors.toList());
+    private MacroPair createListOfMacroPair(Key key, MacroDefinition definition) {
+        return new MacroPair(findMacroClass(key, definition.getOnPress()), findMacroClass(key, definition.getOnRelease()), key);
     }
-
-    private MacroPair createMacroPair(JsonElement value) {
-        JsonObject json = value.getAsJsonObject();
-        JsonElement onPress = json.get("onPress");
-        JsonElement onRelease = json.get("onRelease");
-        Key trigger = json.has("trigger") ? keyManager.findKeyByText(json.get("trigger").getAsString()) : null;
-        return new MacroPair(findMacroClass(onPress), findMacroClass(onRelease), trigger);
-    }
-
 
     public boolean execute(Key key, KeyEventReceiver.PressState pressState) {
         boolean isExecuted = false;
-        Optional<MacroPair> possibleMacro = macros.get(key.getKeyCode()).stream()
-                .filter(e -> e == null || e.isTriggered())
-                .findFirst();
+        MacroPair macroByKey = macros.get(key.getKeyCode());
 
-        if(possibleMacro.isPresent()){
-            Macro macro = possibleMacro.get().getMacroByEventType(pressState);
+        if(macroByKey != null){
+            Macro macro = macroByKey.getMacroByEventType(pressState);
             if (!macroThreadMap.containsKey(key.getKeyCode())) {
                 macroThreadMap.put(key.getKeyCode(), new MacroThreads());
             }
@@ -95,28 +89,26 @@ public class MacroFactory {
         return isExecuted;
     }
 
-    private Macro findMacroClass(JsonElement value) {
+    private Macro findMacroClass(Key key, MacroDefinitionAction definition) {
         Macro bean = null;
 
-        if (value == null) {
+        if (definition == null) {
             bean = new DummyMacro();
         } else {
             try {
-                String className = value.getAsJsonObject().get("class").getAsString();
-                Class<?> clazz = Class.forName(className);
-                bean = (Macro) context.getBean(clazz);
+                bean = (Macro) context.getBean(Class.forName(definition.getMacroClass()));
 
-                ArrayList<String> params = new ArrayList<>();
-                value.getAsJsonObject().get("params").getAsJsonArray()
-                        .iterator().forEachRemaining(jsonElement -> {
-                    params.add(jsonElement.getAsString());
-                });
-
-                bean.setParams(params);
-
+                if (bean.getParamsType() == null) {
+                    bean.setParams(definition.getParams(), key);
+                } else {
+                    Type collectionType = TypeToken.get(bean.getParamsType()).getType();
+                    String tempParamJson = gson.toJson(definition.getParams());
+                    Object params = gson.fromJson(tempParamJson, collectionType);
+                    bean.setParams(params, key);
+                }
             } catch (ClassCastException | ClassNotFoundException e) {
                 e.printStackTrace();
-                throw new IllegalArgumentException("Can not find macro class" + value);
+                throw new IllegalArgumentException("Can not find macro class" + definition.getMacroClass(), e);
             }
         }
 

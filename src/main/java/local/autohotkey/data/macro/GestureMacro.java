@@ -5,14 +5,12 @@ import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.awt.*;
 import java.util.*;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 @Slf4j
@@ -30,7 +28,8 @@ public class GestureMacro implements Macro {
     }
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
+        List<String> params = (List<String>) param;
         rawSequenceMap.put(Direction.UP, params.get(0));
         rawSequenceMap.put(Direction.DOWN, params.get(1));
         rawSequenceMap.put(Direction.LEFT, params.get(2));

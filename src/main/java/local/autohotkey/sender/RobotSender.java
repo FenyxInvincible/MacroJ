@@ -93,6 +93,13 @@ public class RobotSender implements Sender{
     }
 
     @Override
+    public void sendMouseKey(MouseKey key, int delay) throws InterruptedException {
+        mouseKeyPress(key);
+        Thread.sleep(delay);
+        mouseKeyRelease(key);
+    }
+
+    @Override
     public void mouseMove(int x, int y) {
         Mouse.mouseMove(x, y);
     }

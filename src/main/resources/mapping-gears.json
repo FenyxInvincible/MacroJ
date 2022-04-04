@@ -2,7 +2,7 @@
     "MEDIA_STOP": [
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.StopApplication",
+                "macroClass": "local.autohotkey.data.macro.StopApplication",
                 "params": [
                 ]
             }
@@ -10,7 +10,7 @@
     ],
     "0": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.Crosshair",
+            "macroClass": "local.autohotkey.data.macro.Crosshair",
             "params": [
                 "40",
                 "40",
@@ -20,7 +20,7 @@
     }],
     "LMB": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.gears.GearsReload",
+            "macroClass": "local.autohotkey.data.macro.gears.GearsReload",
             "params": [
                 "221",
                 "2307",

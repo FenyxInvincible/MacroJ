@@ -1,8 +1,12 @@
 package local.autohotkey.data.macro;
 
 
-import java.util.List;
+import local.autohotkey.data.Key;
 
 public interface Macro extends Runnable {
-    void setParams(List<String> params);
+    void setParams(Object param, Key self);
+
+    default Class<?> getParamsType(){
+        return null;
+    };
 }

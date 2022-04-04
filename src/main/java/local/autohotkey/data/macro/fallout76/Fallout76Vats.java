@@ -2,12 +2,9 @@ package local.autohotkey.data.macro.fallout76;
 
 import local.autohotkey.data.Key;
 import local.autohotkey.data.macro.Macro;
-import local.autohotkey.key.MouseKey;
 import local.autohotkey.sender.RobotSender;
-import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
 import local.autohotkey.utils.ScreenPicker;
-import local.autohotkey.utils.eso.EsoUtils;
 import local.autohotkey.utils.eso.Locks;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +12,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.util.List;
 
 @Component
 @Scope("prototype")
@@ -44,7 +40,7 @@ public class Fallout76Vats implements Macro {
     }
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
 
     }
 

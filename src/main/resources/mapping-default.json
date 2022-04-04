@@ -3,7 +3,7 @@
         //combination key
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.DummyMacro",
+                "macroClass": "local.autohotkey.data.macro.DummyMacro",
                 "params": [
                 ]
             }
@@ -13,7 +13,7 @@
         //combination key
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.DummyMacro",
+                "macroClass": "local.autohotkey.data.macro.DummyMacro",
                 "params": [
                 ]
             }
@@ -22,7 +22,7 @@
     "MEDIA_STOP": [
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.StopApplication",
+                "macroClass": "local.autohotkey.data.macro.StopApplication",
                 "params": [
                 ]
             }
@@ -32,13 +32,13 @@
         {
             "trigger": "TRACKP",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F1"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F1"
                 ]
@@ -47,13 +47,13 @@
         {
             "trigger": "TRACKN",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F13"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F13"
                 ]
@@ -61,13 +61,13 @@
         },
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "1"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "1"
                 ]
@@ -78,13 +78,13 @@
         {
             "trigger": "TRACKP",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F2"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F2"
                 ]
@@ -93,13 +93,13 @@
         {
             "trigger": "TRACKN",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F14"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F14"
                 ]
@@ -107,13 +107,13 @@
         },
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "2"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "2"
                 ]
@@ -124,13 +124,13 @@
         {
             "trigger": "TRACKP",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F3"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F3"
                 ]
@@ -139,13 +139,13 @@
         {
             "trigger": "TRACKN",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F15"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F15"
                 ]
@@ -153,13 +153,13 @@
         },
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "3"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "3"
                 ]
@@ -170,13 +170,13 @@
         {
             "trigger": "TRACKP",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F4"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F4"
                 ]
@@ -185,13 +185,13 @@
         {
             "trigger": "TRACKN",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F16"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F16"
                 ]
@@ -199,13 +199,13 @@
         },
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "4"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "4"
                 ]
@@ -216,13 +216,13 @@
         {
             "trigger": "TRACKP",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F5"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F5"
                 ]
@@ -231,13 +231,13 @@
         {
             "trigger": "TRACKN",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F17"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F17"
                 ]
@@ -245,13 +245,13 @@
         },
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "5"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "5"
                 ]
@@ -262,13 +262,13 @@
         {
             "trigger": "TRACKP",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F6"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F6"
                 ]
@@ -277,13 +277,13 @@
         {
             "trigger": "TRACKN",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F18"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F18"
                 ]
@@ -291,13 +291,13 @@
         },
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "6"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "6"
                 ]
@@ -308,13 +308,13 @@
         {
             "trigger": "TRACKP",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F7"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F7"
                 ]
@@ -323,13 +323,13 @@
         {
             "trigger": "TRACKN",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F19"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F19"
                 ]
@@ -337,13 +337,13 @@
         },
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "7"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "7"
                 ]
@@ -354,13 +354,13 @@
         {
             "trigger": "TRACKP",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F8"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F8"
                 ]
@@ -369,13 +369,13 @@
         {
             "trigger": "TRACKN",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F20"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F20"
                 ]
@@ -383,13 +383,13 @@
         },
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "8"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "8"
                 ]
@@ -400,13 +400,13 @@
         {
             "trigger": "TRACKP",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F9"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F9"
                 ]
@@ -415,13 +415,13 @@
         {
             "trigger": "TRACKN",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F21"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F21"
                 ]
@@ -429,13 +429,13 @@
         },
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "9"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "9"
                 ]
@@ -446,13 +446,13 @@
         {
             "trigger": "TRACKP",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F10"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F10"
                 ]
@@ -461,13 +461,13 @@
         {
             "trigger": "TRACKN",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F22"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F22"
                 ]
@@ -475,13 +475,13 @@
         },
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "0"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "0"
                 ]
@@ -492,13 +492,13 @@
         {
             "trigger": "TRACKP",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F11"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F11"
                 ]
@@ -507,13 +507,13 @@
         {
             "trigger": "TRACKN",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F23"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F23"
                 ]
@@ -521,13 +521,13 @@
         },
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "-"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "-"
                 ]
@@ -538,13 +538,13 @@
         {
             "trigger": "TRACKP",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F12"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F12"
                 ]
@@ -553,13 +553,13 @@
         {
             "trigger": "TRACKN",
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "F24"
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "F24"
                 ]
@@ -567,13 +567,13 @@
         },
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
                 "params": [
                     "="
                 ]
             },
             "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "="
                 ]

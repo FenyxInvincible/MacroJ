@@ -40,7 +40,8 @@ public class GearsReload implements Macro {
     }
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
+        java.util.List<String> params = (List<String>) param;
         y = Integer.parseInt(params.get(0));
         x1 = Integer.parseInt(params.get(1));
         x2 = Integer.parseInt(params.get(2));

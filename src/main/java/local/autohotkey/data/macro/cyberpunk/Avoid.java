@@ -4,13 +4,10 @@ import local.autohotkey.data.Key;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.data.macro.Memorize;
 import local.autohotkey.sender.RobotSender;
-import local.autohotkey.sender.Sender;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 @Slf4j
@@ -23,7 +20,7 @@ public class Avoid implements Macro {
     private long latestPress;
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
 
     }
 

@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 @Component
 @RequiredArgsConstructor
@@ -25,7 +24,8 @@ public class SpamMacro implements Macro {
     private int delay;
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
+        List<String> params = (List<String>) param;
         overridableKey = keys.findKeyByText(params.get(0));
         delay = Integer.parseInt(params.get(1));
     }

@@ -1,5 +1,6 @@
 package local.autohotkey.data.macro.mnb;
 
+import local.autohotkey.data.Key;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.key.MouseKey;
 import local.autohotkey.sender.Sender;
@@ -7,8 +8,6 @@ import local.autohotkey.service.KeyManager;
 import local.autohotkey.utils.eso.Locks;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 @RequiredArgsConstructor
@@ -19,7 +18,7 @@ public class MnbAttackEnd implements Macro {
     private String direction;
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
     }
 
     @Override

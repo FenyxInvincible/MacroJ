@@ -1,7 +1,6 @@
 package local.autohotkey.data.macro;
 
 import local.autohotkey.data.Key;
-import local.autohotkey.sender.RobotSender;
 import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
 import lombok.RequiredArgsConstructor;
@@ -9,8 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.util.List;
 
 @Component
@@ -26,7 +23,8 @@ public class Memorize implements Macro{
     private Key key;
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
+        List<String> params = (List<String>) param;
         key = keys.findKeyByText(params.get(0));
     }
 

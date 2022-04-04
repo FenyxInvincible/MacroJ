@@ -15,7 +15,6 @@ import java.util.concurrent.ExecutorService;
 @Slf4j
 public class ApplicationRunner {
 
-    private final ExecutorService executorService;
     private final KeyEventReceiver keyListener;
     private final MouseEventReceiver mouseEventReceiver;
     private final KeyHookManager keyHookManager;

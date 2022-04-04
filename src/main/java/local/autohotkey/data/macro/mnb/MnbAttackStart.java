@@ -39,7 +39,8 @@ public class MnbAttackStart implements Macro {
     }
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
+        java.util.List<String> params = (List<String>) param;
         direction = params.get(0).toLowerCase();
     }
 

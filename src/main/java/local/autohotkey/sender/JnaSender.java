@@ -4,9 +4,11 @@ import local.autohotkey.data.Key;
 import local.autohotkey.jna.Keyboard;
 import local.autohotkey.jna.Mouse;
 import local.autohotkey.key.MouseKey;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class JnaSender implements Sender{
     @Override
     public void pressKey(Key key) {
@@ -73,6 +75,13 @@ public class JnaSender implements Sender{
                 Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_MIDDLEUP);
                 break;
         }
+    }
+
+    @Override
+    public void sendMouseKey(MouseKey key, int delay) throws InterruptedException {
+        mouseKeyPress(key);
+        Thread.sleep(delay);
+        mouseKeyRelease(key);
     }
 
     @Override

@@ -11,8 +11,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
 @RequiredArgsConstructor
 @Slf4j
@@ -25,7 +23,7 @@ public class EsoChangeFirstBar implements Macro {
     private Key f21;
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
         f21 = keys.findKeyByText("F21");
     }
 

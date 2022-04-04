@@ -10,8 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -27,7 +25,7 @@ public class Heal implements Macro {
     private static AtomicBoolean isStarted = new AtomicBoolean(false);
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
         key = keys.findKeyByText("1");
     }
 

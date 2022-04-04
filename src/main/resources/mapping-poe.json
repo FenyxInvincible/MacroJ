@@ -2,7 +2,7 @@
     "MEDIA_STOP": [
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.StopApplication",
+                "macroClass": "local.autohotkey.data.macro.StopApplication",
                 "params": [
                 ]
             }
@@ -10,7 +10,7 @@
     ],
     "PGDN": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.GestureMacro",
+            "macroClass": "local.autohotkey.data.macro.GestureMacro",
             "params": [
                 "UP",
                 "DOWN",
@@ -21,14 +21,14 @@
     }],
     "4": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.poe.Blink",
+            "macroClass": "local.autohotkey.data.macro.poe.Blink",
             "params": [
             ]
         }
     }],
     "L": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.poe.Heal",
+            "macroClass": "local.autohotkey.data.macro.poe.Heal",
             "params": [
             ]
         }

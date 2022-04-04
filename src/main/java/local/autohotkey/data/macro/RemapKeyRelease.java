@@ -20,7 +20,8 @@ public class RemapKeyRelease implements Macro {
     private Key overridableKey;
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
+        List<String> params = (List<String>) param;
         overridableKey = keys.findKeyByText(params.get(0));
     }
 

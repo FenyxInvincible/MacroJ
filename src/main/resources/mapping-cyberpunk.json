@@ -1,7 +1,7 @@
 {
     "W": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.Memorize",
+            "macroClass": "local.autohotkey.data.macro.Memorize",
             "params": [
                 "W"
             ]
@@ -9,7 +9,7 @@
     }],
     "A": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.Memorize",
+            "macroClass": "local.autohotkey.data.macro.Memorize",
             "params": [
                 "A"
             ]
@@ -17,7 +17,7 @@
     }],
     "S": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.Memorize",
+            "macroClass": "local.autohotkey.data.macro.Memorize",
             "params": [
                 "S"
             ]
@@ -25,7 +25,7 @@
     }],
     "D": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.Memorize",
+            "macroClass": "local.autohotkey.data.macro.Memorize",
             "params": [
                 "D"
             ]
@@ -33,14 +33,14 @@
     }],
     "LSHIFT": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.cyberpunk.Avoid",
+            "macroClass": "local.autohotkey.data.macro.cyberpunk.Avoid",
             "params": [
             ]
         }
     }],
     "PGUP": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.GestureMacro",
+            "macroClass": "local.autohotkey.data.macro.GestureMacro",
             "params": [
                 "F13",
                 "F14",
@@ -51,7 +51,7 @@
     }],
     "PGDN": [{
         "onPress": {
-            "class": "local.autohotkey.data.macro.GestureMacro",
+            "macroClass": "local.autohotkey.data.macro.GestureMacro",
             "params": [
                 "F17",
                 "F18",
@@ -63,7 +63,7 @@
     "MEDIA_STOP": [
         {
             "onPress": {
-                "class": "local.autohotkey.data.macro.StopApplication",
+                "macroClass": "local.autohotkey.data.macro.StopApplication",
                 "params": [
                 ]
             }

@@ -1,16 +1,11 @@
 package local.autohotkey.data.macro;
 
+import local.autohotkey.data.Key;
 import local.autohotkey.utils.Overlay;
-import local.autohotkey.utils.ScreenPicker;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
@@ -26,7 +21,7 @@ public class OverlayExample implements Macro {
     }
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
 
     }
 

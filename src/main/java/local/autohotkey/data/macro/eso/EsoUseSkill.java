@@ -36,7 +36,8 @@ public class EsoUseSkill implements Macro {
     private boolean useBlock;
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
+        List<String> params = (List<String>) param;
         overridableKey = keys.findKeyByText(params.get(0));
         triggerKey = keys.findKeyByText(params.get(1));
         delay = Integer.valueOf(params.get(2));

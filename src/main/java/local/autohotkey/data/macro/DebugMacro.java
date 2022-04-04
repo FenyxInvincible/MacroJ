@@ -1,5 +1,6 @@
 package local.autohotkey.data.macro;
 
+import local.autohotkey.data.Key;
 import local.autohotkey.utils.ScreenPicker;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -9,14 +10,13 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 @Component
 @Slf4j
 public class DebugMacro implements Macro {
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
 
     }
 

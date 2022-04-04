@@ -2,6 +2,7 @@ package local.autohotkey.data;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.Expose;
+import local.autohotkey.key.MouseKey;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -34,5 +35,9 @@ public class Key {
 
     public boolean isPressed(){
         return isPressed.get();
+    }
+
+    public boolean isMouseKey() {
+        return MouseKey.of(keyText) != MouseKey.UNKNOWN;
     }
 }

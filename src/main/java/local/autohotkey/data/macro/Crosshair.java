@@ -1,21 +1,17 @@
 package local.autohotkey.data.macro;
 
+import local.autohotkey.data.Key;
 import local.autohotkey.utils.Files;
 import local.autohotkey.utils.Overlay;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-import java.util.Random;
-import java.util.UUID;
 
 @Component
 @Slf4j
@@ -33,8 +29,9 @@ public class Crosshair implements Macro {
     }
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
         try {
+            java.util.List<String> params = (List<String>) param;
             InputStream inputStream = Files.loadResource(params.get(2));
             crosshair = scale(
                     ImageIO.read(inputStream),

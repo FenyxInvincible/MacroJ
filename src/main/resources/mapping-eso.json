@@ -2,7 +2,7 @@
   "MEDIA_STOP": [
     {
       "onPress": {
-        "class": "local.autohotkey.data.macro.StopApplication",
+        "macroClass": "local.autohotkey.data.macro.StopApplication",
         "params": [
         ]
       }
@@ -10,33 +10,33 @@
   ],
   "F11": [{
     "onPress": {
-      "class": "local.autohotkey.data.macro.eso.SettingsMacro",
+      "macroClass": "local.autohotkey.data.macro.eso.SettingsMacro",
       "params": [
       ]
     }
   }],
   "F12": [{
     "onPress": {
-      "class": "local.autohotkey.data.macro.DebugMacro",
+      "macroClass": "local.autohotkey.data.macro.DebugMacro",
       "params": [
       ]
     }
   }],
   "F23": [{
     "onPress": {
-      "class": "local.autohotkey.data.macro.eso.EsoChangeFirstBar",
+      "macroClass": "local.autohotkey.data.macro.eso.EsoChangeFirstBar",
       "params": [
       ]
     },
     "onRelease": {
-      "class": "local.autohotkey.data.macro.eso.EsoChangeSecondBar",
+      "macroClass": "local.autohotkey.data.macro.eso.EsoChangeSecondBar",
       "params": [
       ]
     }
   }],
   "F13": [{
     "onPress": {
-      "class": "local.autohotkey.data.macro.eso.EsoUseSkill",
+      "macroClass": "local.autohotkey.data.macro.eso.EsoUseSkill",
       "params": [
         "2",
         //send key
@@ -53,7 +53,7 @@
   }],
   "F14": [{
     "onPress": {
-      "class": "local.autohotkey.data.macro.eso.EsoUseSkill",
+      "macroClass": "local.autohotkey.data.macro.eso.EsoUseSkill",
       "params": [
         "3",
         //send key
@@ -70,7 +70,7 @@
   }],
   "F15": [{
     "onPress": {
-      "class": "local.autohotkey.data.macro.eso.EsoUseSkill",
+      "macroClass": "local.autohotkey.data.macro.eso.EsoUseSkill",
       "params": [
         "4",
         //send key
@@ -87,7 +87,7 @@
   }],
   "F16": [{
     "onPress": {
-      "class": "local.autohotkey.data.macro.eso.EsoUseSkill",
+      "macroClass": "local.autohotkey.data.macro.eso.EsoUseSkill",
       "params": [
         "5",
         //send key
@@ -106,7 +106,7 @@
   "F17": [
     {
       "onPress": {
-        "class": "local.autohotkey.data.macro.eso.EsoUseSkill",
+        "macroClass": "local.autohotkey.data.macro.eso.EsoUseSkill",
         "params": [
           "6",
           //send key

@@ -1,0 +1,157 @@
+{
+    "-": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.Reset",
+                "params": {
+                    "spells": {
+                        "key": "NUMPAD7",
+                        "amount": 5
+                    },
+                    "consumables": {
+                        "key": "NUMPAD9",
+                        "amount": 5
+                    }
+                }
+            }
+        },
+    "1":
+        {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+                "params": {
+                    "position": "1",
+                    "changeKey": "NUMPAD9"
+                }
+            }
+        }    ,
+    "2":
+        {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+                "params": {
+                    "position": "2",
+                    "changeKey": "NUMPAD9"
+                }
+            }
+        },
+    "3":
+        {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+                "params": {
+                    "position": "3",
+                    "changeKey": "NUMPAD9"
+                }
+            }
+        },
+    "7": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+                "params": {
+                    "position": "4",
+                    "changeKey": "NUMPAD9"
+                }
+            }
+        },
+    "9": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+                "params": {
+                    "position": "5",
+                    "changeKey": "NUMPAD9",
+                    "useKey": "RMB"
+                }
+            }
+        },
+    "NUMPAD1": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+                "params": {
+                    "position": "6",
+                    "changeKey": "NUMPAD9"
+                }
+            }
+        },
+    "NUMPAD2": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+                "params": {
+                    "position": "7",
+                    "changeKey": "NUMPAD9"
+                }
+            }
+        },
+    "NUMPAD3": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+                "params": {
+                    "position": "8",
+                    "changeKey": "NUMPAD9"
+                }
+            }
+        },
+    "0": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+                "params": {
+                    "position": "1",
+                    "changeKey": "NUMPAD7",
+                    "useKey": "R"
+                }
+            }
+        },
+    "=": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+                "params": {
+                    "position": "2",
+                    "changeKey": "NUMPAD7",
+                    "useKey": "R"
+                }
+            }
+        },
+    "PGUP": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+                "params": {
+                    "position": "3",
+                    "changeKey": "NUMPAD7",
+                    "useKey": "R"
+                }
+            }
+        },
+    "PGDN": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+                "params": {
+                    "position": "4",
+                    "changeKey": "NUMPAD7",
+                    "useKey": "R"
+                }
+            }
+        },
+    "MMB": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+                "params": {
+                    "position": "5",
+                    "changeKey": "NUMPAD7",
+                    "useKey": "R"
+                }
+            }
+        },
+    "M": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.RemapKeyPress",
+                "params": [
+                    "G"
+                ]
+            },
+            "onRelease": {
+                "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
+                "params": [
+                    "G"
+                ]
+            }
+        }
+}

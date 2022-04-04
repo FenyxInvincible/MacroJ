@@ -10,8 +10,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
 @RequiredArgsConstructor
 @Slf4j
@@ -25,7 +23,7 @@ public class EsoChangeSecondBar implements Macro {
     private Key f23;
 
     @Override
-    public void setParams(List<String> params) {
+    public void setParams(Object param, Key self) {
         f22 = keys.findKeyByText("F22");
         f23 = keys.findKeyByText("F23");
     }
