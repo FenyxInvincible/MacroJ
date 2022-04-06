@@ -1,16 +1,17 @@
 package local.autohotkey.data.macro.eldenring;
 
+import com.google.gson.reflect.TypeToken;
 import local.autohotkey.data.Key;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.data.macro.eldenring.data.SelectSlot;
-import local.autohotkey.key.MouseKey;
 import local.autohotkey.sender.Sender;
-import local.autohotkey.service.KeyManager;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import java.lang.reflect.Type;
 
 @Component
 @RequiredArgsConstructor
@@ -22,8 +23,8 @@ public class SelectSpellSlot implements Macro {
     private SelectSlot slotInfo;
 
     @Override
-    public Class<?> getParamsType() {
-        return SelectSlot.class;
+    public Type getParamsType() {
+        return TypeToken.get(SelectSlot.class).getType();
     }
 
     @Override
@@ -41,13 +42,16 @@ public class SelectSpellSlot implements Macro {
         }
 
         if (slotInfo.getUseKey() != null) {
-            if (!slotInfo.getUseKey().isMouseKey()) {
-                sender.sendKey(slotInfo.getUseKey(), 64);
-                log.info("keyboard");
-            } else {
-                log.info("mouse");
-                sender.sendMouseKey(MouseKey.of(slotInfo.getUseKey().getKeyText()), 32);
-            }
+            slotInfo.getUseKey().stream().forEach(
+                    use -> {
+                        sender.sendKey(use.getKey(), 64);
+                        try {
+                            Thread.sleep(use.getDelay());
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         }
     }
 }

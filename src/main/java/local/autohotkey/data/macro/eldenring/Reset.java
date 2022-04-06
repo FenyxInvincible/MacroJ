@@ -1,14 +1,16 @@
 package local.autohotkey.data.macro.eldenring;
 
+import com.google.gson.reflect.TypeToken;
 import local.autohotkey.data.Key;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.data.macro.eldenring.data.Settings;
 import local.autohotkey.sender.Sender;
-import local.autohotkey.service.KeyManager;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+
+import java.lang.reflect.Type;
 
 @Component
 @RequiredArgsConstructor
@@ -19,8 +21,8 @@ public class Reset  implements Macro {
     private Settings settings;
 
     @Override
-    public Class<?> getParamsType() {
-        return Settings.class;
+    public Type getParamsType() {
+        return TypeToken.get(Settings.class).getType();
     }
 
     @Override

@@ -59,7 +59,11 @@
                 "params": {
                     "position": "5",
                     "changeKey": "NUMPAD9",
-                    "useKey": "RMB"
+                    "useKey": [
+                        {"key": "4", "delay": 500},
+                        {"key": "RMB", "delay": 3000},
+                        {"key": "4", "delay": 10}
+                    ]
                 }
             }
         },
@@ -68,7 +72,10 @@
                 "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
                 "params": {
                     "position": "6",
-                    "changeKey": "NUMPAD9"
+                    "changeKey": "NUMPAD9",
+                    "useKey": [
+                        {"key": "RMB", "delay": 10}
+                    ]
                 }
             }
         },
@@ -96,7 +103,9 @@
                 "params": {
                     "position": "1",
                     "changeKey": "NUMPAD7",
-                    "useKey": "R"
+                    "useKey": [
+                        {"key": "R", "delay": 1}
+                    ]
                 }
             }
         },
@@ -106,7 +115,9 @@
                 "params": {
                     "position": "2",
                     "changeKey": "NUMPAD7",
-                    "useKey": "R"
+                    "useKey": [
+                        {"key": "R", "delay": 1}
+                    ]
                 }
             }
         },
@@ -116,7 +127,9 @@
                 "params": {
                     "position": "3",
                     "changeKey": "NUMPAD7",
-                    "useKey": "R"
+                    "useKey": [
+                        {"key": "R", "delay": 1}
+                    ]
                 }
             }
         },
@@ -126,7 +139,9 @@
                 "params": {
                     "position": "4",
                     "changeKey": "NUMPAD7",
-                    "useKey": "R"
+                    "useKey": [
+                        {"key": "R", "delay": 1}
+                    ]
                 }
             }
         },
@@ -136,7 +151,9 @@
                 "params": {
                     "position": "5",
                     "changeKey": "NUMPAD7",
-                    "useKey": "R"
+                    "useKey": [
+                        {"key": "R", "delay": 1}
+                    ]
                 }
             }
         },
@@ -151,6 +168,15 @@
                 "macroClass": "local.autohotkey.data.macro.RemapKeyRelease",
                 "params": [
                     "G"
+                ]
+            }
+        },
+    "8": {
+            "onPress": {
+                "macroClass": "local.autohotkey.data.macro.Sequence",
+                "params": [
+                    {"key": "8", "delay": 50},
+                    {"key": "LMB", "delay": 50}
                 ]
             }
         }

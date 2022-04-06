@@ -1,7 +1,6 @@
 package local.autohotkey.service;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 import local.autohotkey.Application;
 import local.autohotkey.data.Key;
@@ -101,7 +100,7 @@ public class MacroFactory {
                 if (bean.getParamsType() == null) {
                     bean.setParams(definition.getParams(), key);
                 } else {
-                    Type collectionType = TypeToken.get(bean.getParamsType()).getType();
+                    Type collectionType = bean.getParamsType();
                     String tempParamJson = gson.toJson(definition.getParams());
                     Object params = gson.fromJson(tempParamJson, collectionType);
                     bean.setParams(params, key);

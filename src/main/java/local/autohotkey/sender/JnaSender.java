@@ -22,8 +22,12 @@ public class JnaSender implements Sender{
 
     @Override
     public void sendKey(Key key, int delay) {
-
         try {
+            if (key.isMouseKey()) {
+                sendMouseKey(MouseKey.of(key.getKeyText()), delay);
+                return;
+            }
+
             Keyboard.sendKeyDown(key.getKeyCode(), key.getScanCode());
             Thread.sleep(delay);
             Keyboard.sendKeyUp(key.getKeyCode(), key.getScanCode());
