@@ -19,6 +19,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
@@ -44,12 +46,12 @@ public class MacroFactory {
     @PostConstruct
     private void init() throws IOException {
 
-        String macroConfigFile = "mapping-" + Application.PROFILE + ".json";
+        String macroConfigFile = "./profiles/mapping-" + Application.PROFILE + ".json";
 
         Type collectionType = TypeToken.getParameterized(Map.class, String.class, MacroDefinition.class)
                 .getType();
         Map<String, MacroDefinition> ms = gson.fromJson(
-                new InputStreamReader(Files.loadResource(macroConfigFile)),
+                new FileReader(macroConfigFile),
                 collectionType
         );
 

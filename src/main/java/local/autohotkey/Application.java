@@ -2,12 +2,18 @@ package local.autohotkey;
 
 import com.google.common.collect.ImmutableList;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.AbstractEnvironment;
 
 import javax.swing.*;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
 @Slf4j
@@ -30,15 +36,23 @@ public class Application {
         }
     }
 
-    private static String selectProfile() {
+    private static void selectProfile() {
 
-        String[] profilesArray = {"default", "gesture", "eso", "eldenring"};
+        String[] profilesArray = listProfilesForFolder(new File("./profiles")).toArray(new String[0]);
         JComboBox profiles = new JComboBox(profilesArray);
         profiles.setEditable(true);
 
         JOptionPane.showMessageDialog(null, profiles, "select or type a value", JOptionPane.QUESTION_MESSAGE);
         log.info("Selected profile: {}", profiles.getSelectedItem());
         PROFILE = profiles.getSelectedItem().toString();
-        return "";
+    }
+
+    private static List<String> listProfilesForFolder(final File folder) {
+
+        return Arrays.stream(folder.listFiles()).sorted().
+                filter(f -> !f.isDirectory() && f.getName().startsWith("mapping-"))
+                .map(f -> f.getName().replace("mapping-", "")
+                        .replace(".json", ""))
+                .collect(Collectors.toList());
     }
 }
