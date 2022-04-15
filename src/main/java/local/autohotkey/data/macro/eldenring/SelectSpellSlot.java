@@ -44,10 +44,21 @@ public class SelectSpellSlot implements Macro {
         if (slotInfo.getUseKey() != null) {
             slotInfo.getUseKey().stream().forEach(
                     use -> {
-                        sender.sendKey(use.getKey(), 64);
                         try {
+
+                            if (use.getAction() == Key.Action.Press) {
+                                sender.pressKey(use.getKey());
+                                log.info("press {}", use);
+                            } else if (use.getAction() == Key.Action.Release) {
+                                log.info("release {}", use);
+                                sender.releaseKey(use.getKey());
+                            } else {
+                                log.info("send {}", use);
+                                sender.sendKey(use.getKey(), 64);
+                            }
+
                             Thread.sleep(use.getDelay());
-                        } catch (InterruptedException e) {
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }

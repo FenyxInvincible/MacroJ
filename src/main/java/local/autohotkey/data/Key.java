@@ -6,6 +6,8 @@ import local.autohotkey.key.MouseKey;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import javax.annotation.Nullable;
+import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Data
@@ -39,5 +41,19 @@ public class Key {
 
     public boolean isMouseKey() {
         return MouseKey.of(keyText) != MouseKey.UNKNOWN;
+    }
+
+
+    @Nullable
+    public enum Action {
+        Press,
+        Release,
+        Send;
+
+        public static Action of(String str) {
+            return Arrays.stream(Action.values())
+                    .filter(e -> e.name().equalsIgnoreCase(str))
+                    .findAny().orElse(null);
+        }
     }
 }
