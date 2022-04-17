@@ -32,7 +32,12 @@ public class Blink implements Macro {
         sender.sendKey(getKey(keys), 50);
 
         while (color == ScreenPicker.pickDwordColor(2002, 1383) && System.currentTimeMillis() - time < 1500) {
-            sender.sendKey(getKey(keys), 50);
+            try {
+                sender.sendKey(getKey(keys), 50);
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

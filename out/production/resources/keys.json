@@ -1,0 +1,626 @@
+{
+  "0": {
+    "keyCode": 0,
+    "keyText": "Undefined",
+    "rawCode": 0,
+    "isPressed": false
+  },
+  "1": {
+    "keyCode": 1,
+    "keyText": "Escape",
+    "rawCode": 27,
+    "isPressed": false
+  },
+  "2": {
+    "keyCode": 2,
+    "keyText": "1",
+    "rawCode": 49,
+    "isPressed": false
+  },
+  "3": {
+    "keyCode": 3,
+    "keyText": "2",
+    "rawCode": 50,
+    "isPressed": false
+  },
+  "4": {
+    "keyCode": 4,
+    "keyText": "3",
+    "rawCode": 51,
+    "isPressed": false
+  },
+  "5": {
+    "keyCode": 5,
+    "keyText": "4",
+    "rawCode": 52,
+    "isPressed": false
+  },
+  "6": {
+    "keyCode": 6,
+    "keyText": "5",
+    "rawCode": 53,
+    "isPressed": false
+  },
+  "7": {
+    "keyCode": 7,
+    "keyText": "6",
+    "rawCode": 54,
+    "isPressed": false
+  },
+  "8": {
+    "keyCode": 8,
+    "keyText": "7",
+    "rawCode": 55,
+    "isPressed": false
+  },
+  "9": {
+    "keyCode": 9,
+    "keyText": "8",
+    "rawCode": 56,
+    "isPressed": false
+  },
+  "10": {
+    "keyCode": 10,
+    "keyText": "9",
+    "rawCode": 57,
+    "isPressed": false
+  },
+  "11": {
+    "keyCode": 11,
+    "keyText": "0",
+    "rawCode": 48,
+    "isPressed": false
+  },
+  "12": {
+    "keyCode": 12,
+    "keyText": "Minus",
+    "rawCode": 45,
+    "isPressed": false
+  },
+  "13": {
+    "keyCode": 13,
+    "keyText": "Equals",
+    "rawCode": 61,
+    "isPressed": false
+  },
+  "14": {
+    "keyCode": 14,
+    "keyText": "Backspace",
+    "rawCode": 8,
+    "isPressed": false
+  },
+  "15": {
+    "keyCode": 15,
+    "keyText": "Tab",
+    "rawCode": 9,
+    "isPressed": false
+  },
+  "16": {
+    "keyCode": 16,
+    "keyText": "Q",
+    "rawCode": 81,
+    "isPressed": false
+  },
+  "17": {
+    "keyCode": 17,
+    "keyText": "W",
+    "rawCode": 87,
+    "isPressed": false
+  },
+  "18": {
+    "keyCode": 18,
+    "keyText": "E",
+    "rawCode": 69,
+    "isPressed": false
+  },
+  "19": {
+    "keyCode": 19,
+    "keyText": "R",
+    "rawCode": 82,
+    "isPressed": false
+  },
+  "20": {
+    "keyCode": 20,
+    "keyText": "T",
+    "rawCode": 84,
+    "isPressed": false
+  },
+  "22": {
+    "keyCode": 22,
+    "keyText": "U",
+    "rawCode": 85,
+    "isPressed": false
+  },
+  "23": {
+    "keyCode": 23,
+    "keyText": "I",
+    "rawCode": 73,
+    "isPressed": false
+  },
+  "24": {
+    "keyCode": 24,
+    "keyText": "O",
+    "rawCode": 79,
+    "isPressed": false
+  },
+  "25": {
+    "keyCode": 25,
+    "keyText": "P",
+    "rawCode": 80,
+    "isPressed": false
+  },
+  "26": {
+    "keyCode": 26,
+    "keyText": "Open Bracket",
+    "rawCode": 91,
+    "isPressed": false
+  },
+  "27": {
+    "keyCode": 27,
+    "keyText": "Close Bracket",
+    "rawCode": 93,
+    "isPressed": false
+  },
+  "28": {
+    "keyCode": 28,
+    "keyText": "Enter",
+    "rawCode": 10,
+    "isPressed": false
+  },
+  "29": {
+    "keyCode": 29,
+    "keyText": "Left Control",
+    "rawCode": 16,
+    "isPressed": false
+  },
+  "30": {
+    "keyCode": 30,
+    "keyText": "A",
+    "rawCode": 65,
+    "isPressed": false
+  },
+  "31": {
+    "keyCode": 31,
+    "keyText": "S",
+    "rawCode": 83,
+    "isPressed": false
+  },
+  "32": {
+    "keyCode": 32,
+    "keyText": "D",
+    "rawCode": 68,
+    "isPressed": false
+  },
+  "33": {
+    "keyCode": 33,
+    "keyText": "F",
+    "rawCode": 70,
+    "isPressed": false
+  },
+  "34": {
+    "keyCode": 34,
+    "keyText": "G",
+    "rawCode": 71,
+    "isPressed": false
+  },
+  "35": {
+    "keyCode": 35,
+    "keyText": "H",
+    "rawCode": 72,
+    "isPressed": false
+  },
+  "57380": {
+    "keyCode": 57380,
+    "keyText": "Stop",
+    "rawCode": 65480,
+    "isPressed": false
+  },
+  "37": {
+    "keyCode": 37,
+    "keyText": "K",
+    "rawCode": 75,
+    "isPressed": false
+  },
+  "38": {
+    "keyCode": 38,
+    "keyText": "L",
+    "rawCode": 76,
+    "isPressed": false
+  },
+  "39": {
+    "keyCode": 39,
+    "keyText": "Semicolon",
+    "rawCode": 59,
+    "isPressed": false
+  },
+  "40": {
+    "keyCode": 40,
+    "keyText": "Quote",
+    "rawCode": 222,
+    "isPressed": false
+  },
+  "41": {
+    "keyCode": 41,
+    "keyText": "Back Quote",
+    "rawCode": 192,
+    "isPressed": false
+  },
+  "43": {
+    "keyCode": 43,
+    "keyText": "Back Slash",
+    "rawCode": 92,
+    "isPressed": false
+  },
+  "44": {
+    "keyCode": 44,
+    "keyText": "Z",
+    "rawCode": 90,
+    "isPressed": false
+  },
+  "45": {
+    "keyCode": 45,
+    "keyText": "X",
+    "rawCode": 88,
+    "isPressed": false
+  },
+  "46": {
+    "keyCode": 46,
+    "keyText": "C",
+    "rawCode": 67,
+    "isPressed": false
+  },
+  "47": {
+    "keyCode": 47,
+    "keyText": "V",
+    "rawCode": 86,
+    "isPressed": false
+  },
+  "48": {
+    "keyCode": 48,
+    "keyText": "B",
+    "rawCode": 66,
+    "isPressed": false
+  },
+  "49": {
+    "keyCode": 49,
+    "keyText": "N",
+    "rawCode": 78,
+    "isPressed": false
+  },
+  "50": {
+    "keyCode": 50,
+    "keyText": "M",
+    "rawCode": 77,
+    "isPressed": false
+  },
+  "51": {
+    "keyCode": 51,
+    "keyText": "Comma",
+    "rawCode": 44,
+    "isPressed": false
+  },
+  "52": {
+    "keyCode": 52,
+    "keyText": "Period",
+    "rawCode": 46,
+    "isPressed": false
+  },
+  "53": {
+    "keyCode": 53,
+    "keyText": "Slash",
+    "rawCode": 47,
+    "isPressed": false
+  },
+  "3637": {
+    "keyCode": 3637,
+    "keyText": "NumPad Divide",
+    "rawCode": 111,
+    "isPressed": false
+  },
+  "3639": {
+    "keyCode": 3639,
+    "keyText": "Print Screen",
+    "rawCode": 154,
+    "isPressed": false
+  },
+  "55": {
+    "keyCode": 55,
+    "keyText": "NumPad Multiply",
+    "rawCode": 106,
+    "isPressed": false
+  },
+  "59": {
+    "keyCode": 59,
+    "keyText": "F1",
+    "rawCode": 112,
+    "isPressed": false
+  },
+  "60": {
+    "keyCode": 60,
+    "keyText": "F2",
+    "rawCode": 113,
+    "isPressed": false
+  },
+  "61": {
+    "keyCode": 61,
+    "keyText": "F3",
+    "rawCode": 114,
+    "isPressed": false
+  },
+  "62": {
+    "keyCode": 62,
+    "keyText": "F4",
+    "rawCode": 115,
+    "isPressed": false
+  },
+  "63": {
+    "keyCode": 63,
+    "keyText": "F5",
+    "rawCode": 116,
+    "isPressed": false
+  },
+  "64": {
+    "keyCode": 64,
+    "keyText": "F6",
+    "rawCode": 117,
+    "isPressed": false
+  },
+  "65": {
+    "keyCode": 65,
+    "keyText": "F7",
+    "rawCode": 118,
+    "isPressed": false
+  },
+  "66": {
+    "keyCode": 66,
+    "keyText": "F8",
+    "rawCode": 119,
+    "isPressed": false
+  },
+  "67": {
+    "keyCode": 67,
+    "keyText": "F9",
+    "rawCode": 120,
+    "isPressed": false
+  },
+  "68": {
+    "keyCode": 68,
+    "keyText": "F10",
+    "rawCode": 121,
+    "isPressed": false
+  },
+  "3653": {
+    "keyCode": 3653,
+    "keyText": "Pause",
+    "rawCode": 19,
+    "isPressed": false
+  },
+  "70": {
+    "keyCode": 70,
+    "keyText": "Scroll Lock",
+    "rawCode": 145,
+    "isPressed": false
+  },
+  "71": {
+    "keyCode": 71,
+    "keyText": "NumPad 7",
+    "rawCode": 103,
+    "isPressed": false
+  },
+  "3655": {
+    "keyCode": 3655,
+    "keyText": "Home",
+    "rawCode": 36,
+    "isPressed": false
+  },
+  "72": {
+    "keyCode": 72,
+    "keyText": "NumPad 8",
+    "rawCode": 104,
+    "isPressed": false
+  },
+  "57416": {
+    "keyCode": 57416,
+    "keyText": "Up",
+    "rawCode": 224,
+    "isPressed": false
+  },
+  "73": {
+    "keyCode": 73,
+    "keyText": "NumPad 9",
+    "rawCode": 105,
+    "isPressed": false
+  },
+  "3657": {
+    "keyCode": 3657,
+    "keyText": "Page Up",
+    "rawCode": 33,
+    "isPressed": false
+  },
+  "74": {
+    "keyCode": 74,
+    "keyText": "NumPad Subtract",
+    "rawCode": 109,
+    "isPressed": false
+  },
+  "75": {
+    "keyCode": 75,
+    "keyText": "NumPad 4",
+    "rawCode": 100,
+    "isPressed": false
+  },
+  "57419": {
+    "keyCode": 57419,
+    "keyText": "Left",
+    "rawCode": 226,
+    "isPressed": false
+  },
+  "76": {
+    "keyCode": 76,
+    "keyText": "NumPad 5",
+    "rawCode": 101,
+    "isPressed": false
+  },
+  "57421": {
+    "keyCode": 57421,
+    "keyText": "Right",
+    "rawCode": 227,
+    "isPressed": false
+  },
+  "77": {
+    "keyCode": 77,
+    "keyText": "NumPad 6",
+    "rawCode": 102,
+    "isPressed": false
+  },
+  "78": {
+    "keyCode": 78,
+    "keyText": "NumPad Add",
+    "rawCode": 107,
+    "isPressed": false
+  },
+  "79": {
+    "keyCode": 79,
+    "keyText": "NumPad 1",
+    "rawCode": 97,
+    "isPressed": false
+  },
+  "3663": {
+    "keyCode": 3663,
+    "keyText": "End",
+    "rawCode": 35,
+    "isPressed": false
+  },
+  "57424": {
+    "keyCode": 57424,
+    "keyText": "Down",
+    "rawCode": 225,
+    "isPressed": false
+  },
+  "80": {
+    "keyCode": 80,
+    "keyText": "NumPad 2",
+    "rawCode": 98,
+    "isPressed": false
+  },
+  "81": {
+    "keyCode": 81,
+    "keyText": "NumPad 3",
+    "rawCode": 99,
+    "isPressed": false
+  },
+  "3665": {
+    "keyCode": 3665,
+    "keyText": "Page Down",
+    "rawCode": 34,
+    "isPressed": false
+  },
+  "82": {
+    "keyCode": 82,
+    "keyText": "NumPad 0",
+    "rawCode": 96,
+    "isPressed": false
+  },
+  "3666": {
+    "keyCode": 3666,
+    "keyText": "Insert",
+    "rawCode": 155,
+    "isPressed": false
+  },
+  "83": {
+    "keyCode": 83,
+    "keyText": "NumPad Separator",
+    "rawCode": 108,
+    "isPressed": false
+  },
+  "3667": {
+    "keyCode": 3667,
+    "keyText": "Delete",
+    "rawCode": 127,
+    "isPressed": false
+  },
+  "87": {
+    "keyCode": 87,
+    "keyText": "F11",
+    "rawCode": 122,
+    "isPressed": false
+  },
+  "88": {
+    "keyCode": 88,
+    "keyText": "F12",
+    "rawCode": 123,
+    "isPressed": false
+  },
+  "91": {
+    "keyCode": 91,
+    "keyText": "F13",
+    "rawCode": 61440,
+    "isPressed": false
+  },
+  "92": {
+    "keyCode": 92,
+    "keyText": "F14",
+    "rawCode": 61441,
+    "isPressed": false
+  },
+  "93": {
+    "keyCode": 93,
+    "keyText": "F15",
+    "rawCode": 61442,
+    "isPressed": false
+  },
+  "99": {
+    "keyCode": 99,
+    "keyText": "F16",
+    "rawCode": 61443,
+    "isPressed": false
+  },
+  "100": {
+    "keyCode": 100,
+    "keyText": "F17",
+    "rawCode": 61444,
+    "isPressed": false
+  },
+  "101": {
+    "keyCode": 101,
+    "keyText": "F18",
+    "rawCode": 61445,
+    "isPressed": false
+  },
+  "102": {
+    "keyCode": 102,
+    "keyText": "F19",
+    "rawCode": 61446,
+    "isPressed": false
+  },
+  "103": {
+    "keyCode": 103,
+    "keyText": "F20",
+    "rawCode": 61447,
+    "isPressed": false
+  },
+  "104": {
+    "keyCode": 104,
+    "keyText": "F21",
+    "rawCode": 61448,
+    "isPressed": false
+  },
+  "105": {
+    "keyCode": 105,
+    "keyText": "F22",
+    "rawCode": 61449,
+    "isPressed": false
+  },
+  "106": {
+    "keyCode": 106,
+    "keyText": "F23",
+    "rawCode": 61450,
+    "isPressed": false
+  },
+  "107": {
+    "keyCode": 107,
+    "keyText": "F24",
+    "rawCode": 61451,
+    "isPressed": false
+  }
+}

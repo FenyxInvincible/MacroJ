@@ -1,0 +1,33 @@
+{
+    "PGUP": [{
+        "onPress": {
+            "class": "local.autohotkey.data.macro.GestureMacro",
+            "params": [
+                "NUMPADMULT",
+                "NUMPADSUB",
+                "NUMPADDIV",
+                "NUMPADDOT"
+            ]
+        }
+    }],
+    "PGDN": [{
+        "onPress": {
+            "class": "local.autohotkey.data.macro.GestureMacro",
+            "params": [
+                "NUMPAD3",
+                "NUMPAD4",
+                "NUMPAD1",
+                "NUMPAD2"
+            ]
+        }
+    }],
+    "MEDIA_STOP": [
+        {
+            "onPress": {
+                "class": "local.autohotkey.data.macro.StopApplication",
+                "params": [
+                ]
+            }
+        }
+    ]
+}

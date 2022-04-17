@@ -425,6 +425,12 @@
         "scanCode": 83,
         "isPressed": false
     },
+    "111": {
+        "keyCode": 111,
+        "keyText": "NUMPADDIV",
+        "scanCode": 53,
+        "isPressed": false
+    },
     "112": {
         "keyCode": 112,
         "keyText": "F1",

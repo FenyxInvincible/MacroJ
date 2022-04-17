@@ -1,0 +1,11 @@
+{
+    "LMB": [
+        {
+            "onPress": {
+                "class": "local.autohotkey.data.macro.EventLog",
+                "params": [
+                ]
+            }
+        }
+    ]
+}

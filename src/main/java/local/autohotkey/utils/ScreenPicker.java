@@ -26,11 +26,15 @@ public class ScreenPicker {
         return MyGDI32.INSTANCE.GetPixel(hdc, x, y);
     }
 
+    public static Color pickRGBColor(int x, int y) {
+        return dwordToColor(pickDwordColor(x, y));
+    }
+
     public static Color dwordToColor(int dword) {
         return new Color(
-                (dword >> 16) & 0xFF,
+                dword & 0xFF,
                 (dword >> 8) & 0xFF,
-                dword & 0xFF
+                (dword >> 16) & 0xFF
         );
     }
 
@@ -60,6 +64,15 @@ public class ScreenPicker {
         return bufferedImage;
     }
 
+    public static boolean colorCloseTo(Color target, Color expected, int delta) {
+        return target.getRed() < expected.getRed() + delta &&
+                target.getRed() > expected.getRed() - delta &&
+                target.getGreen() < expected.getGreen() + delta &&
+                target.getGreen() > expected.getGreen() - delta &&
+                target.getBlue() < expected.getBlue() + delta &&
+                target.getBlue() > expected.getBlue() - delta;
+    }
+
     private static synchronized void initRobot() {
         if (robot == null) {
             try {
@@ -69,4 +82,5 @@ public class ScreenPicker {
             }
         }
     }
+
 }

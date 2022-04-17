@@ -1,4 +1,4 @@
-package local.autohotkey.data.macro.poe;
+package local.autohotkey.data.macro.nioh;
 
 import local.autohotkey.data.Key;
 import local.autohotkey.data.macro.Macro;
@@ -6,7 +6,6 @@ import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
 import local.autohotkey.utils.Overlay;
 import local.autohotkey.utils.ScreenPicker;
-import local.autohotkey.utils.eso.Locks;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
@@ -15,13 +14,11 @@ import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-import java.util.Random;
 import java.util.UUID;
-import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -29,27 +26,30 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @RequiredArgsConstructor
 @Scope("prototype")
 @Slf4j
-public class Heal implements Macro {
+public class StamRegen implements Macro {
+    public static final int START_X = 322;
+    public static final int END_X = 834;
+    public static final int LINE_Y = 139;
+    public static final Color RED_LINE = new Color(213, 115, 106);
+    private static final double RATIO = 3.0;
+
+
     private final Sender sender;
     private final KeyManager keys;
     private final Overlay overlay;
-    private Key key1;
-    private Key key3;
-    private Key key9;
+    private Key key5;
     private static AtomicBoolean isInterrupted = new AtomicBoolean(false);
     private static AtomicBoolean isStarted = new AtomicBoolean(false);
 
     @Override
     public void setParams(List<String> params) {
-        key1 = keys.findKeyByText("1");
-        key3 = keys.findKeyByText("3");
-        key9 = keys.findKeyByText("9");
+        key5 = keys.findKeyByText("5");
     }
 
     @Override
     public void run() {
         if (!isStarted.get()) {
-            Executors.newSingleThreadExecutor().execute(new HealDaemon());
+            Executors.newSingleThreadExecutor().execute(new RegenDaemon());
             isStarted.set(true);
             isInterrupted.set(false);
             toggleOverlay();
@@ -76,34 +76,53 @@ public class Heal implements Macro {
         });
     }
 
-    class HealDaemon implements Runnable {
+    class RegenDaemon implements Runnable {
 
         @Override
         public void run() {
             while (!isInterrupted.get()) {
-                int sleep = 200;
                 try {
-                    //hp
-                    int color = ScreenPicker.pickDwordColor(140, 1247);
-                    if (color != 2693048) {
-                        log.debug("Sending heal {} expected 2693048", color);
-                        sender.sendKey(key1, 30);
-                        sender.sendKey(key3, 30);
-                        sleep = 1500;
+
+                    BufferedImage img = ScreenPicker.screenshot();
+
+                    int length = 0;
+                    boolean found = false;
+                    //log.info("NEW LOOP +++++++++++++++++++++++++++++++++++++ ");
+                    for (int i = START_X; i < END_X; i++) {
+                        Color pixel = new Color(img.getRGB(i, LINE_Y));
+                        //log.info("{} {} ", pixel, COLOR);
+                        //r=108,g=120,b=214
+                        if (pixel.getRed() > 240 && pixel.getBlue() > 240 && pixel.getGreen() > 240) {
+                            found = true;
+                            continue;
+                        }
+
+                        if (found && closeTo(pixel, RED_LINE, 10)) {
+                            length++;
+                        }
                     }
-                    //mp
-                    color = ScreenPicker.pickDwordColor(2404, 1286); //x: 2404.0 y: 1286.0 Dword: 12088087 Color: java.awt.Color[r=184,g=115,b=23
-                    if (color != 12088087) {
-                        log.debug("Sending mana {} expected 12088087", color);
-                        sender.sendKey(key9, 30);
-                        sleep = 1500;
+
+                    if (length != 0) {
+                        log.info("{}", length);
+                        Thread.sleep((long)(length * RATIO));
+                        sender.sendKey(key5, 30);
                     }
-                    Thread.sleep(sleep);
-                } catch (InterruptedException e) {
+
+                    Thread.sleep(100);
+                } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
                 }
             }
             isInterrupted.set(false);
+        }
+
+        private boolean closeTo(Color pixel, Color redLine, int delta) {
+            return pixel.getRed() < redLine.getRed() + delta &&
+                    pixel.getRed() > redLine.getRed() - delta &&
+                    pixel.getGreen() < redLine.getGreen() + delta &&
+                    pixel.getGreen() > redLine.getGreen() - delta &&
+                    pixel.getBlue() < redLine.getBlue() + delta &&
+                    pixel.getBlue() > redLine.getBlue() - delta;
         }
     }
 }
