@@ -82,7 +82,7 @@ Excess direction can be skipped.
 ### local.autohotkey.data.macro.RemapKey
 It's used for remapping one key to other. 
 
-Required params - List of {"key": "KEYNAME", "delay": millis, action: "Press or Release"}
+Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press or Release"}
 ```json
 "params": {
     "key": "4", //key name for keys.json
@@ -101,14 +101,14 @@ or
 ### local.autohotkey.data.macro.SendSequence
 Send sequence of keys with specified delay between
 
-Required params - List of {"key": "KEYNAME", "delay": millis, action: "Press or Release"}
+Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press or Release"}
 ```json
 "params": [
     //delay here is time between keys. Delay between press and release is constant 64 ms
     {"key": "4", "delay": 500},
-    {"key": "E", "delay": 30, action: "Press"},
+    {"key": "E", "delay": 30, "action": "Press"},
     {"key": "RMB", "delay": 30},
-    {"key": "E", "delay": 30, action: "Release"},
+    {"key": "E", "delay": 30, "action": "Release"},
     {"key": "RMB", "delay": 3000},
     {"key": "4", "delay": 10}
 ]
@@ -117,14 +117,14 @@ Required params - List of {"key": "KEYNAME", "delay": millis, action: "Press or 
 ### local.autohotkey.data.macro.SpamSequence
 Send sequence of keys while key is pressed
 
-Required params - List of {"key": "KEYNAME", "delay": millis, action: "Press or Release"}
+Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press or Release"}
 ```json
 "params": [
     //delay here is time between keys. Delay between press and release is constant 64 ms
     {"key": "4", "delay": 500}, 
-    {"key": "E", "delay": 30, action: "Press"},
+    {"key": "E", "delay": 30, "action": "Press"},
     {"key": "RMB", "delay": 30},
-    {"key": "E", "delay": 30, action: "Release"},
+    {"key": "E", "delay": 30, "action": "Release"},
     {"key": "RMB", "delay": 3000},
     {"key": "4", "delay": 10}
 ]
