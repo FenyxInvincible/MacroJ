@@ -1,5 +1,5 @@
 # **About**
-This tool is designed to provide macro functionality creation (like AutoHotkey) using Java as main language.
+This tool is designed to provide macro creation functionality (like AutoHotkey) using Java as main language.
 
 It was designed for Windows and JNA is default key sender. It's possible to use Java Robot instead.
 Need to change Sender bean to following in `ApplicationConfig.java`
