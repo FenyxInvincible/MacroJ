@@ -1,15 +1,18 @@
 package local.autohotkey.data.macro;
 
+import com.google.gson.reflect.TypeToken;
 import local.autohotkey.data.Key;
 import local.autohotkey.data.MacroKey;
 import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.awt.*;
+import java.lang.reflect.Type;
 import java.util.*;
 import java.util.List;
 
@@ -17,24 +20,23 @@ import java.util.List;
 @Slf4j
 @Scope("prototype")
 @RequiredArgsConstructor
-public class GestureMacro implements Macro {
+public class Gesture implements Macro {
 
-    private final KeyManager keys;
     private final Sender sender;
-
-    private Map<Direction, String> rawSequenceMap = new HashMap<>();
+    private Map<Direction, Key> keyData;
 
     private enum Direction {
         UP, DOWN, RIGHT, LEFT
     }
 
     @Override
+    public Type getParamsType() {
+        return TypeToken.getParameterized(Map.class, Direction.class, Key.class).getType();
+    }
+
+    @Override
     public void setParams(Object param, MacroKey self) {
-        List<String> params = (List<String>) param;
-        rawSequenceMap.put(Direction.UP, params.get(0));
-        rawSequenceMap.put(Direction.DOWN, params.get(1));
-        rawSequenceMap.put(Direction.LEFT, params.get(2));
-        rawSequenceMap.put(Direction.RIGHT, params.get(3));
+        keyData = (Map<Direction, Key>) param;
     }
 
     @Override
@@ -72,28 +74,12 @@ public class GestureMacro implements Macro {
 
             Direction d = findDirection(maxPointer, new Point());
 
-            String rawSequence = rawSequenceMap.get(d);
-            executeSequence(rawSequence);
-
+            Key key = keyData.get(d);
+            if(key != null) {
+                sender.sendKey(key, 64);
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-    }
-
-    private void executeSequence(String rawSequence) {
-        String[] sequenceArray = rawSequence.split("\\|");
-        for (String entry : sequenceArray) {
-            if (entry.startsWith("{")) {
-                try {
-                    Thread.sleep(Integer.parseInt(entry.replaceAll("[^\\d.]", "")));
-                } catch (Exception e) {
-                    log.error("{} can not be parsed as int", entry, e);
-                }
-
-            } else {
-                Key key = keys.findKeyByText(entry);
-                sender.sendKey(key, 32);
-            }
         }
     }
 

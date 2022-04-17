@@ -1,0 +1,1 @@
+start /REALTIME java -Dspring.profiles.active=eso -jar "D:\Games\AhkJ\autohotkey-1.0-SNAPSHOT.jar" 

@@ -42,7 +42,12 @@ public class Application {
         JComboBox profiles = new JComboBox(profilesArray);
         profiles.setEditable(true);
 
-        JOptionPane.showMessageDialog(null, profiles, "select or type a value", JOptionPane.QUESTION_MESSAGE);
+        int choice = JOptionPane.showConfirmDialog(null, profiles, "Select profile", JOptionPane.OK_CANCEL_OPTION);
+
+        if(choice != JOptionPane.OK_OPTION) {
+            System.exit(0);
+        }
+
         log.info("Selected profile: {}", profiles.getSelectedItem());
         PROFILE = profiles.getSelectedItem().toString();
     }
