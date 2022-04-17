@@ -30,7 +30,8 @@ public class MouseEventListener extends MouseEventReceiver {
 
     @Override
     public boolean onMousePress(MouseButtonType mouseButtonType, WinDef.HWND hwnd, WinDef.POINT point) {
-        return macroKeyListener.onKeyUpdate(KeyEventReceiver.PressState.DOWN, getFakeMouseKey(mouseButtonType));
+        boolean rtn = macroKeyListener.onKeyUpdate(KeyEventReceiver.PressState.DOWN, getFakeMouseKey(mouseButtonType));
+        return rtn;
     }
 
     @Override

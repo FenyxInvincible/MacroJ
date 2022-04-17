@@ -1,9 +1,8 @@
 package local.autohotkey.data.macro;
 
 import com.google.gson.reflect.TypeToken;
-import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.data.UseKeyData;
-import local.autohotkey.data.macro.eldenring.data.SelectSlot;
 import local.autohotkey.sender.Sender;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +24,7 @@ public class Sequence implements Macro {
     }
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
         this.params = (List<UseKeyData>)param;
     }
 

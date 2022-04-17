@@ -1,6 +1,7 @@
 package local.autohotkey.data.macro.eso;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.key.MouseKey;
 import local.autohotkey.sender.Sender;
@@ -36,7 +37,7 @@ public class EsoUseSkill implements Macro {
     private boolean useBlock;
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
         List<String> params = (List<String>) param;
         overridableKey = keys.findKeyByText(params.get(0));
         triggerKey = keys.findKeyByText(params.get(1));

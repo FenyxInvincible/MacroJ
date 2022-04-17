@@ -1,6 +1,7 @@
 package local.autohotkey.data.macro.poe;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
@@ -19,7 +20,7 @@ public class Blink implements Macro {
     private static Key key;
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
     }
 //2002 1383
     @Override

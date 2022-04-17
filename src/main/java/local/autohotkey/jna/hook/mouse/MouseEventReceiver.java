@@ -32,16 +32,18 @@ public abstract class MouseEventReceiver extends DeviceEventReceiver<MouseHookMa
 	@Override
 	public LRESULT callback(int nCode, WPARAM wParam, MOUSEHOOKSTRUCT info) {
 		boolean cancel = false;
+
 		int code = wParam.intValue();
+
 		if (code == WM_MOUSEMOVE) {
 			cancel = onMouseMove(info.hwnd, info.pt);
 		} else if (code == WM_MOUSESCROLL) {
 			boolean down = Pointer.nativeValue(info.hwnd.getPointer()) == 4287102976L;
 			cancel = onMouseScroll(down, info.hwnd, info.pt);
 		} else if (code == WM_MOUSELDOWN || code == WM_MOUSERDOWN || code == WM_MOUSEMDOWN) {
-			onMousePress(MouseButtonType.fromWParam(code), info.hwnd, info.pt);
+			cancel = onMousePress(MouseButtonType.fromWParam(code), info.hwnd, info.pt);
 		} else if (code == WM_MOUSELUP || code == WM_MOUSERUP || code == WM_MOUSEMUP) {
-			onMouseRelease(MouseButtonType.fromWParam(code), info.hwnd, info.pt);
+			cancel = onMouseRelease(MouseButtonType.fromWParam(code), info.hwnd, info.pt);
 		}
 		if (cancel) {
 			return new LRESULT(1);

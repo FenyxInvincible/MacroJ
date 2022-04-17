@@ -1,6 +1,7 @@
 package local.autohotkey.data.macro;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ public class Memorize implements Macro{
     private Key key;
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
         List<String> params = (List<String>) param;
         key = keys.findKeyByText(params.get(0));
     }

@@ -1,6 +1,7 @@
 package local.autohotkey.data.macro.cyberpunk;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.data.macro.Memorize;
 import local.autohotkey.sender.RobotSender;
@@ -20,7 +21,7 @@ public class Avoid implements Macro {
     private long latestPress;
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
 
     }
 

@@ -1,6 +1,7 @@
 package local.autohotkey.data.macro;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
 import local.autohotkey.utils.eso.Locks;
@@ -24,7 +25,7 @@ public class SpamMacro implements Macro {
     private int delay;
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
         List<String> params = (List<String>) param;
         overridableKey = keys.findKeyByText(params.get(0));
         delay = Integer.parseInt(params.get(1));

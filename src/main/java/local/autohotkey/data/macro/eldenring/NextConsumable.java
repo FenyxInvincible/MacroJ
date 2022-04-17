@@ -1,6 +1,7 @@
 package local.autohotkey.data.macro.eldenring;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.data.macro.eldenring.data.KeyActions;
 import local.autohotkey.sender.Sender;
@@ -31,7 +32,7 @@ public class NextConsumable implements Macro {
 
     @SuppressWarnings("unchecked")
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
         //todo not working due to params were refactored
         Map<String, String> map = (Map<String, String>) param;
         /*changeKey = keys.findKeyByText(params.get(0));

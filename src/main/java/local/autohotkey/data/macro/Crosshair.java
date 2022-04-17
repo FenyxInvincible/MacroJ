@@ -1,6 +1,6 @@
 package local.autohotkey.data.macro;
 
-import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.utils.Files;
 import local.autohotkey.utils.Overlay;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +29,7 @@ public class Crosshair implements Macro {
     }
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
         try {
             java.util.List<String> params = (List<String>) param;
             InputStream inputStream = Files.loadResource(params.get(2));

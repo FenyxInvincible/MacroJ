@@ -1,6 +1,7 @@
 package local.autohotkey.data.macro.poe;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
@@ -25,7 +26,7 @@ public class Heal implements Macro {
     private static AtomicBoolean isStarted = new AtomicBoolean(false);
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
         key = keys.findKeyByText("1");
     }
 

@@ -1,6 +1,7 @@
 package local.autohotkey.data.macro.mnb;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.key.MouseKey;
 import local.autohotkey.sender.Sender;
@@ -39,7 +40,7 @@ public class MnbAttackStart implements Macro {
     }
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
         java.util.List<String> params = (List<String>) param;
         direction = params.get(0).toLowerCase();
     }
