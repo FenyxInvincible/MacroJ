@@ -1,0 +1,1 @@
+start /REALTIME java -jar "macroj-1.0-SNAPSHOT.jar"

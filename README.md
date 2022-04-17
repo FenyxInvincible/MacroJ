@@ -1,5 +1,17 @@
 # **About**
-This tool is designed to create macro functionality (like Autohotkey) using Java as main language
+This tool is designed to provide macro functionality creation (like AutoHotkey) using Java as main language.
+
+It was designed for Windows and JNA is default key sender. It's possible to use Java Robot instead.
+Need to change Sender bean to following in `ApplicationConfig.java`
+
+```java
+@Bean
+public Sender sender(){
+    return new RobotSender();
+}
+```
+In that case MacroJ could be used on other OS (haven't check).
+
 It allows to use all power of Java threads and C-like syntax for macro definitions
 
 # **Requirement**
@@ -7,11 +19,19 @@ Java 8+ installed
 
 # **How to use**
 There are several default included macro definitions which can be used out of the box.
-Clone repo and execute `./gradlew build`. All necessary files will be in build/libs folder (autohotkey-1.0-SNAPSHOT.jar, profiles)
-Run `java -jar autohotkey-1.0-SNAPSHOT.jar` and select profile
+
+Download [release](https://github.com/FenyxInvincible/MacroJ/releases) and unpack. 
+
+Alternatively, clone repo and execute `./gradlew build`. All necessary files will be in `build/libs` folder (macroj-1.0-SNAPSHOT.jar, profiles)
+Run `java -jar macroj-1.0-SNAPSHOT.jar` or create .bat file
+```
+start /REALTIME java -jar "macroj-1.0-SNAPSHOT.jar"
+```
 
 # **Adding profile**
-New profile can be added easily. Just need to put `mapping-***.json` where *** is profile name single word. 
+Adding new profile doesn't require compilation. 
+
+New profile can be easily added. Just need to put `mapping-***.json` where *** is profile name single word. 
 -This JSON file has to contain similar configuration for each macro key
 
 ```json
