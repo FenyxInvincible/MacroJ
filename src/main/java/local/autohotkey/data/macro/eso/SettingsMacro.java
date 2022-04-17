@@ -1,6 +1,6 @@
 package local.autohotkey.data.macro.eso;
 
-import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.utils.eso.Locks;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +15,7 @@ public class SettingsMacro implements Macro {
     private final Locks locks;
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
     }
 
     @Override

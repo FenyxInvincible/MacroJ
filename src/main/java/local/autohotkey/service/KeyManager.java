@@ -22,7 +22,6 @@ public class KeyManager {
     private String keyConfig;
 
     private Map<Integer, Key> keys;
-    private Map<Integer, Key> macroKeys;
 
     @PostConstruct
     private void init() throws IOException {

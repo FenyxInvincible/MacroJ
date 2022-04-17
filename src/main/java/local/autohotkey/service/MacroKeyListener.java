@@ -1,6 +1,7 @@
 package local.autohotkey.service;
 import com.sun.jna.platform.win32.WinUser;
 import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.jna.Keyboard;
 import lombok.extern.slf4j.Slf4j;
 import local.autohotkey.jna.hook.key.KeyEventReceiver;
@@ -31,7 +32,7 @@ public class MacroKeyListener extends KeyEventReceiver {
 
     @Override
     public boolean onKeyUpdate(SystemState systemState, PressState pressState, WinUser.KBDLLHOOKSTRUCT info, int vkCode) {
-        log.info("{} {}", vkCode);
+        log.debug("{} {}", vkCode);
         if (info!= null && info.dwExtraInfo.intValue() == Keyboard.IS_MACRO) {
             //ignore macro input
             return false;
@@ -42,10 +43,6 @@ public class MacroKeyListener extends KeyEventReceiver {
         if (key == null) {
             log.error("Unknown code: {}", vkCode);
             return false;
-        }
-
-        if(key.isPressed() && pressState == PressState.DOWN) {
-            return true;
         }
 
         switch (pressState){
@@ -59,20 +56,25 @@ public class MacroKeyListener extends KeyEventReceiver {
         }
     }
     private boolean keyPressed(Key key, PressState pressState) {
-        if (key.isPressed()) {
-            return false;
-        }
+        //we will ignore key event when resend appears due to key holding
+        boolean ignore = key.isPressed();
+
         key.pressed();
-        if (macroFactory.hasMacro(key)) {
-            return macroFactory.execute(key, pressState);
+        MacroKey mk = macroFactory.getMacro(key);
+        if (mk != null) {
+            if(ignore) {
+                return true;
+            }
+            return macroFactory.execute(mk, pressState);
         }
         return false;
     }
     private boolean keyReleased(Key key, PressState pressState) {
         key.released();
 
-        if (macroFactory.hasMacro(key)) {
-            return macroFactory.execute(key, pressState);
+        MacroKey mk = macroFactory.getMacro(key);
+        if (mk != null) {
+            return macroFactory.execute(mk, pressState);
         }
 
         return false;

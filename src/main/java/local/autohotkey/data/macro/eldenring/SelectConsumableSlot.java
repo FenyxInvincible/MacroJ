@@ -1,10 +1,9 @@
 package local.autohotkey.data.macro.eldenring;
 
 import com.google.gson.reflect.TypeToken;
-import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.data.macro.eldenring.data.SelectSlot;
-import local.autohotkey.data.macro.eldenring.data.Settings;
 import local.autohotkey.sender.Sender;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -30,7 +29,7 @@ public class SelectConsumableSlot implements Macro {
     }
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
         slotInfo = (SelectSlot)param;
     }
 

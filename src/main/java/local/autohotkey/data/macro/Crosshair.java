@@ -1,16 +1,20 @@
 package local.autohotkey.data.macro;
 
-import local.autohotkey.data.Key;
+import com.google.gson.reflect.TypeToken;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.utils.Files;
 import local.autohotkey.utils.Overlay;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Type;
 import java.util.List;
 
 @Component
@@ -28,15 +32,27 @@ public class Crosshair implements Macro {
         this.overlay = overlay;
     }
 
+    @Data
+    public static class Param{
+        private String imagePath;
+        private int scaleX;
+        private int scaleY;
+    }
+
     @Override
-    public void setParams(Object param, Key self) {
+    public Type getParamsType() {
+        return TypeToken.get(Param.class).getType();
+    }
+
+    @Override
+    public void setParams(Object param, MacroKey self) {
         try {
-            java.util.List<String> params = (List<String>) param;
-            InputStream inputStream = Files.loadResource(params.get(2));
+            Param params = (Param) param;
+            InputStream inputStream = new FileInputStream(params.getImagePath());
             crosshair = scale(
                     ImageIO.read(inputStream),
-                    Integer.parseInt(params.get(0)),
-                    Integer.parseInt(params.get(1))
+                    params.getScaleX(),
+                    params.getScaleY()
             );
         } catch (IOException e) {
             e.printStackTrace();

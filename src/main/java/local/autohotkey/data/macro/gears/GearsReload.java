@@ -1,6 +1,7 @@
 package local.autohotkey.data.macro.gears;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.sender.RobotSender;
 import local.autohotkey.service.KeyManager;
@@ -40,7 +41,7 @@ public class GearsReload implements Macro {
     }
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
         java.util.List<String> params = (List<String>) param;
         y = Integer.parseInt(params.get(0));
         x1 = Integer.parseInt(params.get(1));

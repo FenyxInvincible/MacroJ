@@ -1,6 +1,6 @@
 package local.autohotkey.data.macro;
 
-import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class DummyMacro implements Macro {
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
     }
 
     @Override

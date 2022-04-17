@@ -1,6 +1,7 @@
 package local.autohotkey.data.macro.eso;
 
 import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.sender.Sender;
 import local.autohotkey.service.KeyManager;
@@ -23,7 +24,7 @@ public class EsoChangeFirstBar implements Macro {
     private Key f21;
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
         f21 = keys.findKeyByText("F21");
     }
 

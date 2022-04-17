@@ -1,0 +1,71 @@
+{
+    //keys with modifiers have to be above of keys without modifiers.
+    //Modifier can be any valid key from keys.json
+    "LSHIFT+1": {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.SendSequence",
+            "params": [
+                {"key": "4", "action": "Press", "delay": 500},
+                {"key": "3", "action": "Press", "delay": 500},
+                {"key": "A", "action": "Press", "delay": 500}
+            ]
+        }
+    },
+    "1": {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.RemapKey",
+            "params": {
+                "key": "2",
+                "action": "Press"
+            }
+        },
+        "onRelease": {
+            "macroClass": "local.autohotkey.data.macro.RemapKey",
+            "params": {
+                "key": "2",
+                "action": "Release"
+            }
+        }
+    },
+    "2": {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.SpamSequence",
+            "params": [
+                {"key": "2", "action": "Press", "delay": 500},
+                {"key": "3", "action": "Press", "delay": 100},
+                {"key": "A", "action": "Press", "delay": 1000}
+            ]
+        }
+    },
+    "3": {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.SpamSequence",
+            "params": [
+                {"key": "2", "action": "Press", "delay": 500},
+                {"key": "3", "action": "Press", "delay": 100},
+                {"key": "A", "action": "Press", "delay": 1000}
+            ]
+        }
+    },
+    "4": {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.Gesture",
+            "params": {
+                "UP": "5",
+                "DOWN": "6",
+                "LEFT": "7",
+                "RIGHT": "8"
+            }
+        }
+    },
+    "5": {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.Crosshair",
+            "params": {
+                "imagePath": "profiles/crosshair.png",
+                "scaleX": "60",
+                "scaleY": "60"
+            }
+        }
+    }
+}

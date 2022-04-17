@@ -1,6 +1,6 @@
 package local.autohotkey.data.macro;
 
-import local.autohotkey.data.Key;
+import local.autohotkey.data.MacroKey;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
@@ -14,7 +14,7 @@ public class StopApplication implements Macro {
     private final ApplicationContext context;
 
     @Override
-    public void setParams(Object param, Key self) {
+    public void setParams(Object param, MacroKey self) {
 
     }
 
