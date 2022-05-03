@@ -101,8 +101,13 @@ public class MacroFactory {
                 } else {
                     Type collectionType = bean.getParamsType();
                     String tempParamJson = gson.toJson(definition.getParams());
-                    Object params = gson.fromJson(tempParamJson, collectionType);
-                    bean.setParams(params, key);
+                    try{
+                        Object params = gson.fromJson(tempParamJson, collectionType);
+                        bean.setParams(params, key);
+                    } catch (Exception e) {
+                        log.error("{}", tempParamJson);
+                        throw new IllegalArgumentException(e);
+                    }
                 }
             } catch (ClassCastException | ClassNotFoundException e) {
                 e.printStackTrace();

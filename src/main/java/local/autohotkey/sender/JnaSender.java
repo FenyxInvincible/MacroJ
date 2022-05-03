@@ -12,12 +12,20 @@ import org.springframework.stereotype.Component;
 public class JnaSender implements Sender{
     @Override
     public void pressKey(Key key) {
-        Keyboard.sendKeyDown(key.getKeyCode(), key.getScanCode());
+        if (key.isMouseKey()) {
+            mouseKeyPress(MouseKey.of(key.getKeyText()));
+        } else {
+            Keyboard.sendKeyDown(key.getKeyCode(), key.getScanCode());
+        }
     }
 
     @Override
     public void releaseKey(Key key) {
-        Keyboard.sendKeyUp(key.getKeyCode(), key.getScanCode());
+        if (key.isMouseKey()) {
+            mouseKeyRelease(MouseKey.of(key.getKeyText()));
+        } else {
+            Keyboard.sendKeyUp(key.getKeyCode(), key.getScanCode());
+        }
     }
 
     @Override
@@ -25,12 +33,11 @@ public class JnaSender implements Sender{
         try {
             if (key.isMouseKey()) {
                 sendMouseKey(MouseKey.of(key.getKeyText()), delay);
-                return;
+            } else {
+                Keyboard.sendKeyDown(key.getKeyCode(), key.getScanCode());
+                Thread.sleep(delay);
+                Keyboard.sendKeyUp(key.getKeyCode(), key.getScanCode());
             }
-
-            Keyboard.sendKeyDown(key.getKeyCode(), key.getScanCode());
-            Thread.sleep(delay);
-            Keyboard.sendKeyUp(key.getKeyCode(), key.getScanCode());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
