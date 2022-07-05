@@ -16,6 +16,19 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Slf4j
 @Service
 public class MouseEventListener extends MouseEventReceiver {
+    private enum FakeMouseKeys {
+        //These fake keys HAS to be registered in keys.json with same values
+        LMB (1983), RMB(1984), MMB(1985), MOUSE_SCROLL(1986);
+        private final int value;
+
+        FakeMouseKeys(int enumVal) {
+            this.value = enumVal;
+        }
+
+        int getValue() {
+            return value;
+        }
+    }
 
     @Getter
     private static final AtomicBoolean isLocked = new AtomicBoolean(false);
@@ -41,17 +54,21 @@ public class MouseEventListener extends MouseEventReceiver {
 
     private int getFakeMouseKey(MouseButtonType mouseButtonType) {
         if(mouseButtonType.equals(MouseButtonType.RIGHT_DOWN) || mouseButtonType.equals(MouseButtonType.RIGHT_UP)) {
-            return 1984;
+            return FakeMouseKeys.RMB.getValue();
         }
         if(mouseButtonType.equals(MouseButtonType.MIDDLE_DOWN) || mouseButtonType.equals(MouseButtonType.MIDDLE_UP)) {
-            return 1985;
+            return FakeMouseKeys.MMB.getValue();
         }
-        return 1983;
+        return FakeMouseKeys.LMB.getValue();
     }
 
     @Override
-    public boolean onMouseScroll(boolean b, WinDef.HWND hwnd, WinDef.POINT point) {
-        return false;
+    public boolean onMouseScroll(boolean isDown, WinDef.HWND hwnd, WinDef.POINT point) {
+        boolean rtn = macroKeyListener.onKeyUpdate(
+                isDown ? KeyEventReceiver.PressState.DOWN : KeyEventReceiver.PressState.UP,
+                FakeMouseKeys.MOUSE_SCROLL.getValue()
+        );
+        return rtn;
     }
 
     @Override
