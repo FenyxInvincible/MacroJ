@@ -16,27 +16,48 @@ public class Key {
     private final int keyCode;
     private final String keyText;
     private final int scanCode;
+    /**
+     * Some keys don't have usual press release flow, such as Mouse Scroll may have Press and Release independently
+     */
+    private final boolean hasPressReleaseFlow;
+
     @Expose
     private AtomicBoolean isPressed = new AtomicBoolean(false);
+
+    /**
+     * todo refactor it to save this information in keys.json instead of hardcode
+     *
+     * arrays of vCodes which don't have usual behaviour as press/release. As example scroll which may send up and down independently
+     */
+    private final int[] singleStateKeys = new int[]{1986};
 
     public static Key create(JsonObject jsonElement) {
         return new Key(
                 jsonElement.get("keyCode").getAsInt(),
                 jsonElement.get("keyText").getAsString(),
-                jsonElement.get("scanCode").getAsInt()
+                jsonElement.get("scanCode").getAsInt(),
+                jsonElement.get("hasPressReleaseFlow").getAsBoolean()
         );
     }
 
     public void released() {
-        isPressed.set(false);
+        if(hasPressReleaseFlow) {
+            isPressed.set(false);
+        }
     }
 
     public void pressed() {
-        isPressed.set(true);
+        if(hasPressReleaseFlow) {
+            isPressed.set(true);
+        }
     }
 
     public boolean isPressed(){
-        return isPressed.get();
+        if(hasPressReleaseFlow) {
+            return isPressed.get();
+        } else {
+            return false;
+        }
     }
 
     public boolean isMouseKey() {
