@@ -1,9 +1,9 @@
 //Elden Ring macro profile. Allows to change spells and consumables by pressing specific key
 //To be avle to use is without changing profile following key mapping in game should be specified:
-//Change spell key: NUMPAD7
-//Change consumable key: NUMPAD9
-//Change right weapon: 6
-//Change left weapon: 4
+//Change spell key: NUMPAD9
+//Change consumable key: NUMPAD7
+//Change right weapon: U
+//Change left weapon: J
 //Use consumable: R
 //Amount of spells/consumables should be set to values which character has in current period of time.
 //Changing amount of spells/consumables on character REQUIRES changes for amount property
@@ -16,20 +16,20 @@
             "params": {
                 "spells": {
                     //change spell key
-                    "key": "NUMPAD7",
+                    "key": "NUMPAD9",
                     //Number of spells
-                    "amount": 2
+                    "amount": 5
                 },
                 "consumables": {
                     //change consumable key
-                    "key": "NUMPAD9",
+                    "key": "NUMPAD7",
                     //Number of consumables
-                    "amount": 2
+                    "amount": 5
                 }
             }
         }
     },
-    //Select 1 spell slot only
+    //Select 1 spell
     "1":
     {
         "onPress": {
@@ -40,22 +40,52 @@
             }
         }
     },
-    //Select 2nd spell slot and auto use from left hand weapon
+    //Select 2 spell
     "2":
     {
         "onPress": {
             "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
             "params": {
                 "position": "2",
-                "changeKey": "NUMPAD9",
-                "useKey": [
-                    {"key": "RMB", "delay": 1}
-                ]
+                "changeKey": "NUMPAD9"
+            }
+        }
+    },
+    //Select 3 spell
+    "3":
+    {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+            "params": {
+                "position": "3",
+                "changeKey": "NUMPAD9"
+            }
+        }
+    },
+    //Select 4 spell
+    "4":
+    {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+            "params": {
+                "position": "4",
+                "changeKey": "NUMPAD9"
+            }
+        }
+    },
+    //Select 5 spell
+    "5":
+    {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+            "params": {
+                "position": "5",
+                "changeKey": "NUMPAD9"
             }
         }
     },
     //Use HP
-    "0": {
+    "6": {
         "onPress": {
             "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
             "params": {
@@ -68,7 +98,7 @@
         }
     },
     //Use MP
-    "=": {
+    "7": {
         "onPress": {
             "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
             "params": {
@@ -80,7 +110,48 @@
             }
         }
     },
-    //Both handed weapon right/left by scrolling up down (disables scrolls in inventory)
+    //3rd slot
+    "8": {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+            "params": {
+                "position": "3",
+                "changeKey": "NUMPAD7",
+                "useKey": [
+                    {"key": "R", "delay": 1}
+                ]
+            }
+        }
+    },
+    //4th slot
+    "9": {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+            "params": {
+                "position": "4",
+                "changeKey": "NUMPAD7",
+                "useKey": [
+                    {"key": "R", "delay": 1}
+                ]
+            }
+        }
+    },
+    //5th slot
+    "0": {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+            "params": {
+                "position": "5",
+                "changeKey": "NUMPAD7",
+                "useKey": [
+                    {"key": "R", "delay": 1}
+                ]
+            }
+        }
+    }
+
+    /*//Uncomment this section if you need itBoth handed weapon right/left by scrolling up down (disables scrolls in inventory)
+    ,
     "MOUSE_SCROLL": {
         "onPress": {
             "macroClass": "local.autohotkey.data.macro.SendSequence",
@@ -98,5 +169,5 @@
                 {"key": "E", "delay": 75, "action": "Release"}
             ]
         }
-    }
+    }*/
 }
