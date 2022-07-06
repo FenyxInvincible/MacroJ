@@ -2,8 +2,6 @@
 //To be avle to use is without changing profile following key mapping in game should be specified:
 //Change spell key: NUMPAD9
 //Change consumable key: NUMPAD7
-//Change right weapon: U
-//Change left weapon: J
 //Use consumable: R
 //Amount of spells/consumables should be set to values which character has in current period of time.
 //Changing amount of spells/consumables on character REQUIRES changes for amount property
