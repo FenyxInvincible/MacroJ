@@ -1,4 +1,13 @@
 //Elden Ring macro profile. Allows to change spells and consumables by pressing specific key
+//To be avle to use is without changing profile following key mapping in game should be specified:
+//Change spell key: NUMPAD7
+//Change consumable key: NUMPAD9
+//Change right weapon: 6
+//Change left weapon: 4
+//Use consumable: R
+//Amount of spells/consumables should be set to values which character has in current period of time.
+//Changing amount of spells/consumables on character REQUIRES changes for amount property
+//If order is broken it can be reset by pressing "-" (dash) key
 {
     "-": {
         "onPress": {
