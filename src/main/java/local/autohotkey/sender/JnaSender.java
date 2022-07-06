@@ -55,6 +55,8 @@ public class JnaSender implements Sender{
             case MMB:
                 mouseMiddleClick();
                 break;
+            case MOUSE_SCROLL:
+                throw new IllegalArgumentException("MOUSE_SCROLL doesn't have click action. Only UP or DOWN supported");
         }
     }
 
