@@ -5,7 +5,7 @@ import local.autohotkey.data.macro.eldenring.data.KeyActions;
 import java.util.Arrays;
 
 public enum MouseKey {
-    LMB, RMB, MMB, UNKNOWN;
+    LMB, RMB, MMB, MOUSE_SCROLL, UNKNOWN;
 
     public static MouseKey of(String str) {
         return Arrays.stream(MouseKey.values())

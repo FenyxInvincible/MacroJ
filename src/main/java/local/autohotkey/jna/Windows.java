@@ -18,6 +18,8 @@ import com.sun.jna.platform.win32.WinUser.WNDENUMPROC;
  */
 public class Windows {
 	public static final int MAX_TITLE_LENGTH = 1024;
+	public static final int IS_MACRO = 18;
+
 	/**
 	 * The window is initially minimized.
 	 */

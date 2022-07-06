@@ -63,7 +63,7 @@ public class MacroFactory {
         return new MacroPair(findMacroClass(key, definition.getOnPress()), findMacroClass(key, definition.getOnRelease()), key);
     }
 
-    public boolean execute(MacroKey key, KeyEventReceiver.PressState pressState) {
+    public boolean execute(MacroKey key, MacroListener.EventState pressState) {
         boolean isExecuted = false;
 
         MacroPair macroByKey = macros.stream()
@@ -133,7 +133,7 @@ public class MacroFactory {
         private final Macro onReleaseMacro;
         private final MacroKey macroKey;
 
-        public Macro getMacroByEventType(KeyEventReceiver.PressState eventType) {
+        public Macro getMacroByEventType(MacroListener.EventState eventType) {
             switch (eventType) {
                 case DOWN:
                     return getOnPressMacro();

@@ -1,6 +1,7 @@
 package local.autohotkey.service;
 
 import com.google.gson.Gson;
+import com.google.gson.stream.MalformedJsonException;
 import local.autohotkey.data.Key;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,9 +26,14 @@ public class KeyManager {
 
     @PostConstruct
     private void init() throws IOException {
-        keys = new JsonReader(keyConfig).parse().entrySet()
-                .stream().map(s -> Pair.of(Integer.valueOf(s.getKey()), Key.create(s.getValue().getAsJsonObject())))
-                .collect(Collectors.toMap(Pair::getLeft, Pair::getRight));
+        try {
+            keys = new JsonReader(keyConfig).parse().entrySet()
+                    .stream().map(s -> Pair.of(Integer.valueOf(s.getKey()), Key.create(s.getValue().getAsJsonObject())))
+                    .collect(Collectors.toMap(Pair::getLeft, Pair::getRight));
+        } catch (Exception e) {
+            log.error("File keys.json is corrupted. {}", keyConfig);
+            throw new IllegalArgumentException("File keys.json is corrupted. See logs", e);
+        }
     }
 
     public boolean hasKey(int keyCode) {

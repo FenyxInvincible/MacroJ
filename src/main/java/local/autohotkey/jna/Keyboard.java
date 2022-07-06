@@ -7,14 +7,14 @@ import com.sun.jna.platform.win32.WinDef.DWORD;
 import com.sun.jna.platform.win32.WinDef.WORD;
 import com.sun.jna.platform.win32.WinUser.INPUT;
 
+import static local.autohotkey.jna.Windows.IS_MACRO;
+
 /**
  * Keyboard related methods and values.
  */
 public class Keyboard {
 	public static final int KEYEVENTF_KEYDOWN = 0;
 	public static final int KEYEVENTF_KEYUP = 2;
-
-	public static final int IS_MACRO = 18;
 
 	/**
 	 * Check if a key is pressed.

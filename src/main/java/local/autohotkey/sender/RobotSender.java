@@ -58,7 +58,8 @@ public class RobotSender implements Sender{
                 break;
             case MMB:
                 mouseMiddleClick();
-                break;
+            case MOUSE_SCROLL:
+                throw new IllegalArgumentException("MOUSE_SCROLL doesn't have click action. Only UP or DOWN supported");
         }
     }
 
@@ -74,6 +75,9 @@ public class RobotSender implements Sender{
             case MMB:
                 robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
                 break;
+            case MOUSE_SCROLL:
+                robot.mouseWheel(-1);
+                break;
         }
     }
 
@@ -88,6 +92,9 @@ public class RobotSender implements Sender{
                 break;
             case MMB:
                 robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
+                break;
+            case MOUSE_SCROLL:
+                robot.mouseWheel(1);
                 break;
         }
     }

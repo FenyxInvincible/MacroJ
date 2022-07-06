@@ -1,6 +1,7 @@
 package local.autohotkey.macro;
 
 import local.autohotkey.data.macro.Macro;
+import local.autohotkey.service.MacroListener;
 import lombok.extern.slf4j.Slf4j;
 import local.autohotkey.jna.hook.key.KeyEventReceiver;
 
@@ -14,7 +15,7 @@ public class MacroThreads {
     private MacroThread onPressThread = new MacroThread();
     private MacroThread onReleaseThread = new MacroThread();
 
-    public void run(Macro macro, KeyEventReceiver.PressState eventType) {
+    public void run(Macro macro, MacroListener.EventState eventType) {
 
         MacroThread macroThread = null;
         switch (eventType){

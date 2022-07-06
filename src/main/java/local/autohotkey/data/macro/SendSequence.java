@@ -35,6 +35,7 @@ public class SendSequence implements Macro {
                 } else {
                     sender.sendKey(k.getKey(), 64);
                 }
+                log.debug("Sending event through {} key action {}", sender.getClass().getSimpleName(), k);
 
                 Thread.sleep(k.getDelay());
             } catch (InterruptedException e) {
