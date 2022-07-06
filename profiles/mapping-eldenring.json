@@ -1,3 +1,4 @@
+//Elden Ring macro profile. Allows to change spells and consumables by pressing specific key
 {
     "-": {
         "onPress": {
@@ -220,6 +221,26 @@
                 "key": "G",
                 "delay": 60
             }
+        }
+    },
+    "MOUSE_SCROLL": {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.SendSequence",
+            "params": [
+                {"key": "MOUSE_SCROLL", "delay": 1, "action": "Press"},
+                {"key": "E", "delay": 30, "action": "Press"},
+                {"key": "LMB", "delay": 30},
+                {"key": "E", "delay": 75, "action": "Release"}
+            ]
+        },
+        "onRelease": {
+            "macroClass": "local.autohotkey.data.macro.SendSequence",
+            "params": [
+                {"key": "MOUSE_SCROLL", "delay": 1, "action": "Release"},
+                {"key": "E", "delay": 30, "action": "Press"},
+                {"key": "RMB", "delay": 30},
+                {"key": "E", "delay": 75, "action": "Release"}
+            ]
         }
     }
 }
