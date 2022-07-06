@@ -1,6 +1,8 @@
 package local.autohotkey.jna.hook.mouse;
 
 import com.sun.jna.Pointer;
+import com.sun.jna.Structure;
+import com.sun.jna.platform.win32.BaseTSD;
 import com.sun.jna.platform.win32.User32;
 import com.sun.jna.platform.win32.WinDef.HWND;
 import com.sun.jna.platform.win32.WinDef.LPARAM;
@@ -12,12 +14,17 @@ import local.autohotkey.jna.hook.DeviceEventReceiver;
 import local.autohotkey.jna.hook.mouse.struct.LowLevelMouseProc;
 import local.autohotkey.jna.hook.mouse.struct.MOUSEHOOKSTRUCT;
 import local.autohotkey.jna.hook.mouse.struct.MouseButtonType;
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * A simplified representation of a LowLevelMouseProc.
  * 
  * @author Matt
  */
+@Slf4j
 public abstract class MouseEventReceiver extends DeviceEventReceiver<MouseHookManager> implements LowLevelMouseProc {
 	public static final int WM_MOUSEMOVE = 512;
 	public static final int WM_MOUSESCROLL = 522;
@@ -36,14 +43,14 @@ public abstract class MouseEventReceiver extends DeviceEventReceiver<MouseHookMa
 		int code = wParam.intValue();
 
 		if (code == WM_MOUSEMOVE) {
-			cancel = onMouseMove(info.hwnd, info.pt);
+			cancel = onMouseMove(info);
 		} else if (code == WM_MOUSESCROLL) {
 			boolean down = Pointer.nativeValue(info.hwnd.getPointer()) == 4287102976L;
-			cancel = onMouseScroll(down, info.hwnd, info.pt);
+			cancel = onMouseScroll(down, info);
 		} else if (code == WM_MOUSELDOWN || code == WM_MOUSERDOWN || code == WM_MOUSEMDOWN) {
-			cancel = onMousePress(MouseButtonType.fromWParam(code), info.hwnd, info.pt);
+			cancel = onMousePress(MouseButtonType.fromWParam(code), info);
 		} else if (code == WM_MOUSELUP || code == WM_MOUSERUP || code == WM_MOUSEMUP) {
-			cancel = onMouseRelease(MouseButtonType.fromWParam(code), info.hwnd, info.pt);
+			cancel = onMouseRelease(MouseButtonType.fromWParam(code), info);
 		}
 		if (cancel) {
 			return new LRESULT(1);
@@ -53,18 +60,17 @@ public abstract class MouseEventReceiver extends DeviceEventReceiver<MouseHookMa
 		return User32.INSTANCE.CallNextHookEx(getHookManager().getHhk(this), nCode, wParam, new LPARAM(peer));
 	}
 
+
 	/**
 	 * Called when the mouse is pressed. Returning true will cancel the event.
 	 * 
 	 * @param type
 	 *            Type is press <i>(Left, Right, Middle)</i>
-	 * @param hwnd
-	 *            Window handle that receives the event.
 	 * @param info
 	 *            Mouse information.
 	 * @return Event cancellation
 	 */
-	public abstract boolean onMousePress(MouseButtonType type, HWND hwnd, POINT info);
+	public abstract boolean onMousePress(MouseButtonType type, MOUSEHOOKSTRUCT info);
 
 	/**
 	 * Called when the mouse is released. Returning true will cancel the event.
@@ -75,29 +81,25 @@ public abstract class MouseEventReceiver extends DeviceEventReceiver<MouseHookMa
 	 *            Mouse information.
 	 * @return Event cancellation
 	 */
-	public abstract boolean onMouseRelease(MouseButtonType type, HWND hwnd, POINT info);
+	public abstract boolean onMouseRelease(MouseButtonType type, MOUSEHOOKSTRUCT info);
 
 	/**
 	 * Called when the mouse wheel is moved. Returning true will cancel the event.
 	 * 
 	 * @param down
 	 *            Scroll event is down <i>(Negative movement)</i>
-	 * @param hwnd
-	 *            Window handle that receives the event.
 	 * @param info
-	 *            Mouse information.
+	 *            Mouse event information.
 	 * @return Event cancellation
 	 */
-	public abstract boolean onMouseScroll(boolean down, HWND hwnd, POINT info);
+	public abstract boolean onMouseScroll(boolean down, MOUSEHOOKSTRUCT info);
 
 	/**
 	 * Called when the mouse wheel is moved. Returning true will cancel the event.
 	 * 
-	 * @param hwnd
-	 *            Window handle that receives the event.
 	 * @param info
-	 *            Mouse information.
+	 *            MOUSEHOOKSTRUCT struct information.
 	 * @return Event cancellation
 	 */
-	public abstract boolean onMouseMove(HWND hwnd, POINT info);
+	public abstract boolean onMouseMove(MOUSEHOOKSTRUCT info);
 }

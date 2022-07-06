@@ -766,7 +766,7 @@
         "keyText": "MMB",
         "scanCode": 1985,
         "isPressed": false
-    }б
+    },
     "1986": {
         "keyCode": 1986,
         "keyText": "MOUSE_SCROLL",

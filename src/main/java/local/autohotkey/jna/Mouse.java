@@ -5,10 +5,14 @@ import com.sun.jna.platform.win32.BaseTSD.ULONG_PTR;
 import com.sun.jna.platform.win32.WinDef.DWORD;
 import com.sun.jna.platform.win32.WinDef.LONG;
 import com.sun.jna.platform.win32.WinUser.INPUT;
+import lombok.extern.slf4j.Slf4j;
+
+import static local.autohotkey.jna.Windows.IS_MACRO;
 
 /**
  * Mouse related methods and values.
  */
+@Slf4j
 public class Mouse {
 	public static final int MOUSEEVENTF_MOVE = 1;
 	public static final int MOUSEEVENTF_LEFTDOWN = 2;
@@ -17,7 +21,8 @@ public class Mouse {
 	public static final int MOUSEEVENTF_RIGHTUP = 16;
 	public static final int MOUSEEVENTF_MIDDLEDOWN = 32;
 	public static final int MOUSEEVENTF_MIDDLEUP = 64;
-	public static final int MOUSEEVENTF_WHEEL = 2048;
+
+	public static final int MOUSEEVENTF_WHEEL = 0x0800;
 
 	/**
 	 * Moves the mouse relative to it's current position.
@@ -78,9 +83,14 @@ public class Mouse {
 	 * @param flags
 	 */
 	public static void mouseAction(int x, int y, int flags) {
+		mouseAction(x,y,flags, DwData.ZERO.value);
+	}
+	public static void mouseAction(int x, int y, int flags, int dwData) {
 		INPUT input = new INPUT();
 
 		input.type = new DWORD(INPUT.INPUT_MOUSE);
+
+
 		input.input.setType("mi");
 		if (x != -1) {
 			input.input.mi.dx = new LONG(x);
@@ -89,8 +99,32 @@ public class Mouse {
 			input.input.mi.dy = new LONG(y);
 		}
 		input.input.mi.time = new DWORD(0);
-		input.input.mi.dwExtraInfo = new ULONG_PTR(0);
+		input.input.mi.dwExtraInfo = new ULONG_PTR(IS_MACRO);
 		input.input.mi.dwFlags = new DWORD(flags);
-		User32.INSTANCE.SendInput(new DWORD(1), new INPUT[] { input }, input.size());
+		input.input.mi.mouseData = new DWORD(dwData);
+		DWORD amount = User32.INSTANCE.SendInput(new DWORD(1), new INPUT[] { input }, input.size());
+		log.debug("Successful sendings {}", amount);
+	}
+
+	/**
+	 * If dwFlags contains MOUSEEVENTF_WHEEL, then dwData specifies the amount of wheel movement.
+	 * A positive value indicates that the wheel was rotated forward, away from the user;
+	 * a negative value indicates that the wheel was rotated backward, toward the user.
+	 * One wheel click is defined as WHEEL_DELTA, which is 120.
+	 *
+	 * If dwFlags is not MOUSEEVENTF_WHEEL, MOUSEEVENTF_XDOWN, or MOUSEEVENTF_XUP, then dwData should be zero.
+	 */
+	public enum DwData {
+		ZERO(0), WHEEL_DELTA(120);
+
+		private final int value;
+
+		DwData(int enumValue) {
+			value = enumValue;
+		}
+
+		public int getValue() {
+			return value;
+		}
 	}
 }
