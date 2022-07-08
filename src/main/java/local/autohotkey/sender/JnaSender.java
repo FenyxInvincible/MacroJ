@@ -10,33 +10,34 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class JnaSender implements Sender{
+
     @Override
-    public void pressKey(Key key) {
+    public void pressKey(Key key, boolean allowRecursive) {
         if (key.isMouseKey()) {
-            mouseKeyPress(MouseKey.of(key.getKeyText()));
+            mouseKeyPress(MouseKey.of(key.getKeyText()), allowRecursive);
         } else {
-            Keyboard.sendKeyDown(key.getKeyCode(), key.getScanCode());
+            Keyboard.sendKeyDown(key.getKeyCode(), key.getScanCode(), allowRecursive);
         }
     }
 
     @Override
-    public void releaseKey(Key key) {
+    public void releaseKey(Key key, boolean allowRecursive) {
         if (key.isMouseKey()) {
-            mouseKeyRelease(MouseKey.of(key.getKeyText()));
+            mouseKeyRelease(MouseKey.of(key.getKeyText()), allowRecursive);
         } else {
-            Keyboard.sendKeyUp(key.getKeyCode(), key.getScanCode());
+            Keyboard.sendKeyUp(key.getKeyCode(), key.getScanCode(), allowRecursive);
         }
     }
 
     @Override
-    public void sendKey(Key key, int delay) {
+    public void sendKey(Key key, int delay, boolean allowRecursive) {
         try {
             if (key.isMouseKey()) {
-                sendMouseKey(MouseKey.of(key.getKeyText()), delay);
+                sendMouseKey(MouseKey.of(key.getKeyText()), delay, allowRecursive);
             } else {
-                Keyboard.sendKeyDown(key.getKeyCode(), key.getScanCode());
+                Keyboard.sendKeyDown(key.getKeyCode(), key.getScanCode(), allowRecursive);
                 Thread.sleep(delay);
-                Keyboard.sendKeyUp(key.getKeyCode(), key.getScanCode());
+                Keyboard.sendKeyUp(key.getKeyCode(), key.getScanCode(), allowRecursive);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -44,16 +45,16 @@ public class JnaSender implements Sender{
     }
 
     @Override
-    public void mouseKeyClick(MouseKey key) {
+    public void mouseKeyClick(MouseKey key, boolean allowRecursive) {
         switch (key){
             case LMB:
-                mouseLeftClick();
+                mouseLeftClick(allowRecursive);
                 break;
             case RMB:
-                mouseRightClick();
+                mouseRightClick(allowRecursive);
                 break;
             case MMB:
-                mouseMiddleClick();
+                mouseMiddleClick(allowRecursive);
                 break;
             case MOUSE_SCROLL:
                 throw new IllegalArgumentException("MOUSE_SCROLL doesn't have click action. Only UP or DOWN supported");
@@ -61,42 +62,42 @@ public class JnaSender implements Sender{
     }
 
     @Override
-    public void mouseKeyPress(MouseKey key) {
+    public void mouseKeyPress(MouseKey key, boolean allowRecursive) {
         switch (key){
             case LMB:
-                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_LEFTDOWN);
+                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_LEFTDOWN, allowRecursive);
                 break;
             case RMB:
-                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_RIGHTDOWN);
+                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_RIGHTDOWN, allowRecursive);
                 break;
             case MMB:
-                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_MIDDLEDOWN);
+                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_MIDDLEDOWN, allowRecursive);
             case MOUSE_SCROLL:
-                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_WHEEL, -Mouse.DwData.WHEEL_DELTA.getValue());
+                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_WHEEL, -Mouse.DwData.WHEEL_DELTA.getValue(), allowRecursive);
                 break;
         }
     }
 
     @Override
-    public void mouseKeyRelease(MouseKey key) {
+    public void mouseKeyRelease(MouseKey key, boolean allowRecursive) {
         switch (key){
             case LMB:
-                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_LEFTUP);
+                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_LEFTUP, allowRecursive);
                 break;
             case RMB:
-                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_RIGHTUP);
+                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_RIGHTUP, allowRecursive);
                 break;
             case MMB:
-                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_MIDDLEUP);
+                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_MIDDLEUP, allowRecursive);
                 break;
             case MOUSE_SCROLL:
-                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_WHEEL, Mouse.DwData.WHEEL_DELTA.getValue());
+                Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_WHEEL, Mouse.DwData.WHEEL_DELTA.getValue(), allowRecursive);
                 break;
         }
     }
 
     @Override
-    public void sendMouseKey(MouseKey key, int delay) throws InterruptedException {
+    public void sendMouseKey(MouseKey key, int delay, boolean allowRecursive) throws InterruptedException {
         mouseKeyPress(key);
         Thread.sleep(delay);
         mouseKeyRelease(key);
@@ -107,15 +108,15 @@ public class JnaSender implements Sender{
         Mouse.mouseMove(x, y);
     }
 
-    private void mouseLeftClick() {
-        Mouse.mouseLeftClick(-1, -1);
+    private void mouseLeftClick(boolean allowRecursive) {
+        Mouse.mouseLeftClick(-1, -1, allowRecursive);
     }
 
-    private void mouseRightClick() {
-        Mouse.mouseRightClick(-1, -1);
+    private void mouseRightClick(boolean allowRecursive) {
+        Mouse.mouseRightClick(-1, -1, allowRecursive);
     }
 
-    private void mouseMiddleClick() {
-        Mouse.mouseMiddleClick(-1, -1);
+    private void mouseMiddleClick(boolean allowRecursive) {
+        Mouse.mouseMiddleClick(-1, -1, allowRecursive);
     }
 }
