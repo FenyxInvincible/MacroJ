@@ -13,6 +13,10 @@ import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
+/**
+ * AllowRecursive doesn't work for this Sender due to absence of sending dwExtraInfo
+ * Need to be careful when resending of same key happens. See parent interface for more info
+ */
 @Component
 @Qualifier("Robot")
 @Slf4j
@@ -26,17 +30,17 @@ public class RobotSender implements Sender{
     }
 
     @Override
-    public void pressKey(Key key) {
+    public void pressKey(Key key, boolean allowRecursive) {
         robot.keyPress(key.getKeyCode());
     }
 
     @Override
-    public void releaseKey(Key key) {
+    public void releaseKey(Key key, boolean allowRecursive) {
         robot.keyRelease(key.getKeyCode());
     }
 
     @Override
-    public void sendKey(Key key, int delay) {
+    public void sendKey(Key key, int delay, boolean allowRecursive) {
 
         try {
             pressKey(key);
@@ -48,7 +52,7 @@ public class RobotSender implements Sender{
     }
 
     @Override
-    public void mouseKeyClick(MouseKey key) {
+    public void mouseKeyClick(MouseKey key, boolean allowRecursive) {
         switch (key){
             case LMB:
                 mouseLeftClick();
@@ -64,7 +68,7 @@ public class RobotSender implements Sender{
     }
 
     @Override
-    public void mouseKeyPress(MouseKey key) {
+    public void mouseKeyPress(MouseKey key, boolean allowRecursive) {
         switch (key){
             case LMB:
                 robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
@@ -82,7 +86,7 @@ public class RobotSender implements Sender{
     }
 
     @Override
-    public void mouseKeyRelease(MouseKey key) {
+    public void mouseKeyRelease(MouseKey key, boolean allowRecursive) {
         switch (key){
             case LMB:
                 robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
@@ -100,7 +104,7 @@ public class RobotSender implements Sender{
     }
 
     @Override
-    public void sendMouseKey(MouseKey key, int delay) throws InterruptedException {
+    public void sendMouseKey(MouseKey key, int delay, boolean allowRecursive) throws InterruptedException {
         mouseKeyPress(key);
         Thread.sleep(delay);
         mouseKeyRelease(key);
@@ -108,18 +112,21 @@ public class RobotSender implements Sender{
 
     @Override
     public void mouseMove(int x, int y) {
-        Mouse.mouseMove(x, y);
+        robot.mouseMove(x, y);
     }
 
     private void mouseLeftClick() {
-        Mouse.mouseLeftClick(-1, -1);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
 
     private void mouseRightClick() {
-        Mouse.mouseRightClick(-1, -1);
+        robot.mousePress(InputEvent.BUTTON2_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON2_DOWN_MASK);
     }
 
     private void mouseMiddleClick() {
-        Mouse.mouseMiddleClick(-1, -1);
+        robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
     }
 }

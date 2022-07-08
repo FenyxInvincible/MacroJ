@@ -33,7 +33,7 @@ public class Mouse {
 	 *            Vertical movement
 	 */
 	public static void mouseMove(int x, int y) {
-		mouseAction(x, y, MOUSEEVENTF_MOVE);
+		mouseAction(x, y, MOUSEEVENTF_MOVE, false);
 	}
 
 	/**
@@ -44,9 +44,9 @@ public class Mouse {
 	 * @param x
 	 * @param y
 	 */
-	public static void mouseLeftClick(int x, int y) {
-		mouseAction(x, y, MOUSEEVENTF_LEFTDOWN);
-		mouseAction(x, y, MOUSEEVENTF_LEFTUP);
+	public static void mouseLeftClick(int x, int y, boolean allowRecursive) {
+		mouseAction(x, y, MOUSEEVENTF_LEFTDOWN, allowRecursive);
+		mouseAction(x, y, MOUSEEVENTF_LEFTUP, allowRecursive);
 	}
 
 	/**
@@ -57,9 +57,9 @@ public class Mouse {
 	 * @param x
 	 * @param y
 	 */
-	public static void mouseRightClick(int x, int y) {
-		mouseAction(x, y, MOUSEEVENTF_RIGHTDOWN);
-		mouseAction(x, y, MOUSEEVENTF_RIGHTUP);
+	public static void mouseRightClick(int x, int y, boolean allowRecursive) {
+		mouseAction(x, y, MOUSEEVENTF_RIGHTDOWN, allowRecursive);
+		mouseAction(x, y, MOUSEEVENTF_RIGHTUP, allowRecursive);
 	}
 
 	/**
@@ -70,9 +70,9 @@ public class Mouse {
 	 * @param x
 	 * @param y
 	 */
-	public static void mouseMiddleClick(int x, int y) {
-		mouseAction(x, y, MOUSEEVENTF_MIDDLEDOWN);
-		mouseAction(x, y, MOUSEEVENTF_MIDDLEUP);
+	public static void mouseMiddleClick(int x, int y, boolean allowRecursive) {
+		mouseAction(x, y, MOUSEEVENTF_MIDDLEDOWN, allowRecursive);
+		mouseAction(x, y, MOUSEEVENTF_MIDDLEUP, allowRecursive);
 	}
 
 	/**
@@ -82,10 +82,10 @@ public class Mouse {
 	 * @param y
 	 * @param flags
 	 */
-	public static void mouseAction(int x, int y, int flags) {
-		mouseAction(x,y,flags, DwData.ZERO.value);
+	public static void mouseAction(int x, int y, int flags, boolean allowRecursive) {
+		mouseAction(x,y,flags, DwData.ZERO.value, allowRecursive);
 	}
-	public static void mouseAction(int x, int y, int flags, int dwData) {
+	public static void mouseAction(int x, int y, int flags, int dwData, boolean allowRecursive) {
 		INPUT input = new INPUT();
 
 		input.type = new DWORD(INPUT.INPUT_MOUSE);
@@ -99,7 +99,7 @@ public class Mouse {
 			input.input.mi.dy = new LONG(y);
 		}
 		input.input.mi.time = new DWORD(0);
-		input.input.mi.dwExtraInfo = new ULONG_PTR(IS_MACRO);
+		input.input.mi.dwExtraInfo = new ULONG_PTR(allowRecursive ? 0 : IS_MACRO);
 		input.input.mi.dwFlags = new DWORD(flags);
 		input.input.mi.mouseData = new DWORD(dwData);
 		DWORD amount = User32.INSTANCE.SendInput(new DWORD(1), new INPUT[] { input }, input.size());

@@ -16,6 +16,9 @@ import java.lang.reflect.Type;
 import java.util.*;
 import java.util.List;
 
+/**
+ * For RobotSender implementation better do not use recursive call when macro is bind on key and resend it
+ */
 @Component
 @Slf4j
 @Scope("prototype")
@@ -24,6 +27,10 @@ public class Gesture implements Macro {
 
     private final Sender sender;
     private Map<Direction, Key> keyData;
+    private MacroKey keyInitiator;
+    //if was bind to onPress need to wait release or max delay, if onRelease then max delay only
+    private boolean initialState;
+
 
     private enum Direction {
         UP, DOWN, RIGHT, LEFT
@@ -37,6 +44,8 @@ public class Gesture implements Macro {
     @Override
     public void setParams(Object param, MacroKey self) {
         keyData = (Map<Direction, Key>) param;
+        keyInitiator = self;
+        initialState = keyInitiator.getKey().isPressed();
     }
 
     @Override
@@ -53,6 +62,11 @@ public class Gesture implements Macro {
                 pointer = MouseInfo.getPointerInfo();
                 Point newPoint = pointer.getLocation();
                 directionList.add(newPoint);
+
+                //release happened before max delay
+                if(initialState && !keyInitiator.getKey().isPressed()) {
+                    break;
+                }
             }
 
             Point maxPointer = new Point();
@@ -76,7 +90,7 @@ public class Gesture implements Macro {
 
             Key key = keyData.get(d);
             if(key != null) {
-                sender.sendKey(key, 64);
+                sender.sendKey(key, 64, true);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
