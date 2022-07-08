@@ -57,6 +57,7 @@ public class Gesture implements Macro {
 
             List<Point> directionList = new ArrayList<>();
 
+
             for (int i = 0; i < 5; i++) {
                 Thread.sleep(60);
                 pointer = MouseInfo.getPointerInfo();
@@ -68,29 +69,33 @@ public class Gesture implements Macro {
                     break;
                 }
             }
+            if(point.equals(pointer.getLocation())) {
+                //prevent recursive macro call
+                sender.sendKey(keyInitiator.getKey(), 64, false);
+            } else {
+                Point maxPointer = new Point();
 
-            Point maxPointer = new Point();
+                directionList.stream()
+                        .forEach(
+                                point1 -> {
+                                    double x = Math.abs(point1.getX() - point.getX());
+                                    if (Math.abs(maxPointer.getX()) < x) {
+                                        maxPointer.setLocation(point1.getX() - point.getX(), maxPointer.getY());
+                                    }
 
-            directionList.stream()
-                    .forEach(
-                            point1 -> {
-                                double x = Math.abs(point1.getX() - point.getX());
-                                if (Math.abs(maxPointer.getX()) < x) {
-                                    maxPointer.setLocation(point1.getX() - point.getX(), maxPointer.getY());
+                                    double y = Math.abs(point1.getY() - point.getY());
+                                    if (Math.abs(maxPointer.getY()) < y) {
+                                        maxPointer.setLocation(maxPointer.getX(), point1.getY() - point.getY());
+                                    }
                                 }
+                        );
 
-                                double y = Math.abs(point1.getY() - point.getY());
-                                if (Math.abs(maxPointer.getY()) < y) {
-                                    maxPointer.setLocation(maxPointer.getX(), point1.getY() - point.getY());
-                                }
-                            }
-                    );
+                Direction d = findDirection(maxPointer, new Point());
 
-            Direction d = findDirection(maxPointer, new Point());
-
-            Key key = keyData.get(d);
-            if(key != null) {
-                sender.sendKey(key, 64, true);
+                Key key = keyData.get(d);
+                if (key != null) {
+                    sender.sendKey(key, 64, true);
+                }
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
