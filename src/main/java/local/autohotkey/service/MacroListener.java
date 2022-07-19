@@ -74,7 +74,6 @@ public class MacroListener {
     private boolean keyPressed(Key key, EventState pressState) {
         //we will ignore key event when resend appears due to key holding
         boolean ignore = key.isPressed();
-
         key.pressed();
         MacroKey mk = macroFactory.getMacro(key);
         if (mk != null) {

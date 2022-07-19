@@ -77,4 +77,13 @@ public class Key {
                     .findAny().orElse(null);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Key{" +
+                "keyCode=" + keyCode +
+                ", keyText='" + keyText + '\'' +
+                ", scanCode=" + scanCode +
+                '}';
+    }
 }

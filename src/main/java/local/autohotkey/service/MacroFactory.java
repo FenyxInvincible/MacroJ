@@ -3,19 +3,14 @@ package local.autohotkey.service;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import local.autohotkey.Application;
-import local.autohotkey.data.Key;
-import local.autohotkey.data.MacroDefinition;
-import local.autohotkey.data.MacroDefinitionAction;
-import local.autohotkey.data.MacroKey;
+import local.autohotkey.data.*;
 import local.autohotkey.data.macro.DummyMacro;
 import local.autohotkey.data.macro.Macro;
 import local.autohotkey.macro.MacroThreads;
-import local.autohotkey.utils.Files;
+import local.autohotkey.utils.ScreenPicker;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import local.autohotkey.jna.hook.key.KeyEventReceiver;
-import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -60,7 +55,12 @@ public class MacroFactory {
     }
 
     private MacroPair createListOfMacroPair(MacroKey key, MacroDefinition definition) {
-        return new MacroPair(findMacroClass(key, definition.getOnPress()), findMacroClass(key, definition.getOnRelease()), key);
+        return new MacroPair(
+                Optional.ofNullable(definition.getApplication()).orElse(ApplicationDefinition.DUMMY) ,
+                findMacroClass(key, definition.getOnPress()),
+                findMacroClass(key, definition.getOnRelease()),
+                key
+        );
     }
 
     public boolean execute(MacroKey key, MacroListener.EventState pressState) {
@@ -71,7 +71,12 @@ public class MacroFactory {
         .findAny()
         .orElse(null);
 
-        if(macroByKey != null){
+        if(macroByKey != null &&
+                macroByKey.applicationDefinition.isValidApplication(
+                        ScreenPicker.getForegroundWindowTitle(),
+                        ScreenPicker.getForegroundWindowPath()
+                )
+        ){
             Macro macro = macroByKey.getMacroByEventType(pressState);
             if (!macroThreadMap.containsKey(key)) {
                 macroThreadMap.put(key, new MacroThreads());
@@ -129,6 +134,7 @@ public class MacroFactory {
 
     @Data
     private static class MacroPair {
+        private final ApplicationDefinition applicationDefinition;
         private final Macro onPressMacro;
         private final Macro onReleaseMacro;
         private final MacroKey macroKey;

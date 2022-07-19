@@ -67,5 +67,11 @@
                 "scaleY": "60"
             }
         }
+    },
+    "6": {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.DebugMacro",
+            "params": []
+        }
     }
 }

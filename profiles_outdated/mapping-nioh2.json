@@ -1,0 +1,74 @@
+{
+    "Q": [
+        {
+            "onPress": {
+                "class": "local.autohotkey.data.macro.SendSequence",
+                "params": [
+                    "10",
+                    "NUMPAD2"
+                ]
+            },
+            "onRelease": {
+                "class": "local.autohotkey.data.macro.SendSequence",
+                "params": [
+                    "10",
+                    "NUMPAD1"
+                ]
+            }
+        }
+    ],
+    "M": [
+        {
+            "onPress": {
+                "class": "local.autohotkey.data.macro.SendSequence",
+                "params": [
+                    "10",
+                    "NUMPAD1"
+                ]
+            },
+            "onRelease": {
+                "class": "local.autohotkey.data.macro.SendSequence",
+                "params": [
+                    "10",
+                    "NUMPAD2"
+                ]
+            }
+        }
+    ],
+    "6": [
+        {
+            "onPress": {
+                "class": "local.autohotkey.data.macro.nioh.SpiritChange",
+                "params": [
+                    "P",
+                    "5"
+                ]
+            }
+        }
+    ],
+    "=": [
+        {
+            "onPress": {
+                "class": "local.autohotkey.data.macro.RemapKeyPress",
+                "params": [
+                    "TAB"
+                ]
+            },
+            "onRelease": {
+                "class": "local.autohotkey.data.macro.RemapKeyRelease",
+                "params": [
+                    "TAB"
+                ]
+            }
+        }
+    ],
+    "F5": [
+        {
+            "onPress": {
+                "class": "local.autohotkey.data.macro.nioh.StamRegenV2",
+                "params": [
+                ]
+            }
+        }
+    ]
+}

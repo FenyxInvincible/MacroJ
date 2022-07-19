@@ -1,12 +1,16 @@
 package local.autohotkey.utils;
 
-import com.sun.jna.platform.win32.User32;
-import com.sun.jna.platform.win32.WinDef;
+import com.sun.jna.Native;
+import com.sun.jna.platform.win32.*;
+import com.sun.jna.ptr.IntByReference;
 import lombok.extern.slf4j.Slf4j;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+
+import static com.sun.jna.platform.win32.WinNT.PROCESS_QUERY_INFORMATION;
+import static com.sun.jna.platform.win32.WinNT.PROCESS_VM_READ;
 
 @Slf4j
 public class ScreenPicker {
@@ -14,6 +18,27 @@ public class ScreenPicker {
 
     private static Robot robot = null;
     private static final WinDef.HDC hdc = User32.INSTANCE.GetDC(null);
+
+    public static String getForegroundWindowTitle() {
+        char[] windowText = new char[256];
+        WinDef.HWND foregroundWindow = User32.INSTANCE.GetForegroundWindow();
+        User32.INSTANCE.GetWindowText(foregroundWindow, windowText, windowText.length);
+        return Native.toString(windowText);
+    }
+
+    public static String getForegroundWindowPath() {
+        char[] windowPath = new char[512];
+
+        Psapi psapi = Psapi.INSTANCE;
+        IntByReference pointer = new IntByReference();
+        User32.INSTANCE.GetWindowThreadProcessId(User32.INSTANCE.GetForegroundWindow(), pointer);
+        final Kernel32 kernel32 = Kernel32.INSTANCE;
+        WinNT.HANDLE process = kernel32.OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, false, pointer.getValue());
+        psapi.GetModuleFileNameExW(process, null, windowPath, windowPath.length);
+        Kernel32.INSTANCE.CloseHandle(process);
+
+        return Native.toString(windowPath);
+    }
 
     public static BufferedImage screenshot() throws IOException {
         initRobot();

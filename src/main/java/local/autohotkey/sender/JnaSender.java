@@ -72,6 +72,7 @@ public class JnaSender implements Sender{
                 break;
             case MMB:
                 Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_MIDDLEDOWN, allowRecursive);
+                break;
             case MOUSE_SCROLL:
                 Mouse.mouseAction(-1, -1, Mouse.MOUSEEVENTF_WHEEL, -Mouse.DwData.WHEEL_DELTA.getValue(), allowRecursive);
                 break;
