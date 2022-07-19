@@ -1,0 +1,49 @@
+{
+    "Q": [
+        {
+            "onPress": {
+                "class": "local.autohotkey.data.macro.RemapKeySend",
+                "params": [
+                    "Q"
+                ]
+            },
+            "onRelease": {
+                "class": "local.autohotkey.data.macro.SendSequence",
+                "params": [
+                    "20",
+                    "Q",
+                    "Q"
+                ]
+            }
+        }
+    ],
+    "M": [
+        {
+            "onPress": {
+                "class": "local.autohotkey.data.macro.SendSequence",
+                "params": [
+                    "20",
+                    "Q",
+                    "Q"
+                ]
+            },
+            "onRelease": {
+                "class": "local.autohotkey.data.macro.SendSequence",
+                "params": [
+                    "20",
+                    "Q"
+                ]
+            }
+        }
+    ],
+    "F5": [
+        {
+            "onPress": {
+                "class": "local.autohotkey.data.macro.nioh.StamRegen",
+                "params": [
+                    "Q"
+                ]
+            }
+        }
+    ]
+}

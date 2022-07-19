@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -78,5 +79,14 @@ public class Overlay extends Thread {
                     e -> e.getValue().accept(g)
             );
         }
+    }
+
+    public static BufferedImage scale(BufferedImage img, int dWidth, int dHeight) {
+        Image tmp = img.getScaledInstance(dWidth, dHeight, Image.SCALE_SMOOTH);
+        BufferedImage dimg = new BufferedImage(dWidth, dHeight, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2d = dimg.createGraphics();
+        g2d.drawImage(tmp, 0, 0, null);
+        g2d.dispose();
+        return dimg;
     }
 }

@@ -15,6 +15,7 @@ import java.awt.*;
 import java.lang.reflect.Type;
 import java.util.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * For RobotSender implementation better do not use recursive call when macro is bind on key and resend it
@@ -45,61 +46,60 @@ public class Gesture implements Macro {
     public void setParams(Object param, MacroKey self) {
         keyData = (Map<Direction, Key>) param;
         keyInitiator = self;
-        initialState = keyInitiator.getKey().isPressed();
     }
 
     @Override
     public void run() {
-
+        initialState = keyInitiator.getKey().isPressed();
         try {
             PointerInfo pointer = MouseInfo.getPointerInfo();
             Point point = pointer.getLocation();
+            Direction direction = null;
 
-            List<Point> directionList = new ArrayList<>();
+            ArrayList<Direction> catchedDirections = new ArrayList<>();
 
-
-            for (int i = 0; i < 5; i++) {
-                Thread.sleep(60);
-                pointer = MouseInfo.getPointerInfo();
-                Point newPoint = pointer.getLocation();
-                directionList.add(newPoint);
+            for (int i = 0; i < 50; i++) {
+                Thread.sleep(10);
+                Point pointerLocation = MouseInfo.getPointerInfo().getLocation();
+                log.debug("Point {} Pointer location {}", point, pointerLocation);
+                if(!point.equals(pointerLocation)) {
+                    catchedDirections.add(findDirection(pointerLocation, point));
+                }
 
                 //release happened before max delay
                 if(initialState && !keyInitiator.getKey().isPressed()) {
                     break;
                 }
             }
-            if(point.equals(pointer.getLocation())) {
+
+            direction = getSingleDirection(catchedDirections);
+
+            if(direction == null) {
                 //prevent recursive macro call
-                sender.sendKey(keyInitiator.getKey(), 64, false);
+                log.info("Gesture: pointer was not moved. Sending key {} by {}", keyInitiator.getKey(), sender.getClass().getSimpleName());
+                sender.sendKey(keyInitiator.getKey(), 16, false);
+
             } else {
-                Point maxPointer = new Point();
-
-                directionList.stream()
-                        .forEach(
-                                point1 -> {
-                                    double x = Math.abs(point1.getX() - point.getX());
-                                    if (Math.abs(maxPointer.getX()) < x) {
-                                        maxPointer.setLocation(point1.getX() - point.getX(), maxPointer.getY());
-                                    }
-
-                                    double y = Math.abs(point1.getY() - point.getY());
-                                    if (Math.abs(maxPointer.getY()) < y) {
-                                        maxPointer.setLocation(maxPointer.getX(), point1.getY() - point.getY());
-                                    }
-                                }
-                        );
-
-                Direction d = findDirection(maxPointer, new Point());
-
-                Key key = keyData.get(d);
+                Key key = keyData.get(direction);
                 if (key != null) {
-                    sender.sendKey(key, 64, true);
+                    sender.sendKey(key, 16, true);
+                    log.info("Gesture: Key sent {}", key);
                 }
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    private Direction getSingleDirection(ArrayList<Direction> catchedDirections) {
+        if(catchedDirections.isEmpty()) {
+            return null;
+        };
+        HashMap<Direction, Integer> directions = new HashMap<Direction, Integer>();
+        catchedDirections.forEach(d -> directions.compute(d, (direction, count) -> count == null ? 1 : count + 1));
+        log.info("Found directions {}", directions);
+
+        return directions.entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).get().getKey();
     }
 
     private Direction findDirection(Point newPoint, Point point) {

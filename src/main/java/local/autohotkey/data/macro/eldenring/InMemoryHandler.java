@@ -1,10 +1,16 @@
 package local.autohotkey.data.macro.eldenring;
 
+import local.autohotkey.data.UseKeyData;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.tuple.MutablePair;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 @Slf4j
 @Component
@@ -17,7 +23,11 @@ public class InMemoryHandler {
     private long spellKeyPressed;
     private long consumableKeyPressed;
 
+    private int inactiveActionsSlotId = 0;
+    private final List<UseKeyData> inactiveActions = new ArrayList<>();
+
     public void resetSpells(int amount) {
+        inactiveActions.clear();
         reset(amount, spells);
     }
 
@@ -41,6 +51,19 @@ public class InMemoryHandler {
         next(consumables);
     }
 
+    public List<UseKeyData> getInactiveActions(int slotId) {
+        return slotId == inactiveActionsSlotId ? Collections.emptyList() : inactiveActions;
+    }
+
+    public void setInactiveActions(int slotId, List<UseKeyData> actions) {
+        inactiveActionsSlotId = slotId;
+        inactiveActions.clear();
+        inactiveActions.addAll(actions);
+    }
+
+    public int getInactiveActionsSlotId() {
+        return inactiveActionsSlotId;
+    }
     /**
      *
      * @param desired desired position

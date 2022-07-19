@@ -49,7 +49,7 @@ public class Crosshair implements Macro {
         try {
             Param params = (Param) param;
             InputStream inputStream = new FileInputStream(params.getImagePath());
-            crosshair = scale(
+            crosshair = Overlay.scale(
                     ImageIO.read(inputStream),
                     params.getScaleX(),
                     params.getScaleY()
@@ -78,14 +78,5 @@ public class Crosshair implements Macro {
             isOn = false;
         }
 
-    }
-
-    public static BufferedImage scale(BufferedImage img, int dWidth, int dHeight) {
-        Image tmp = img.getScaledInstance(dWidth, dHeight, Image.SCALE_SMOOTH);
-        BufferedImage dimg = new BufferedImage(dWidth, dHeight, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2d = dimg.createGraphics();
-        g2d.drawImage(tmp, 0, 0, null);
-        g2d.dispose();
-        return dimg;
     }
 }

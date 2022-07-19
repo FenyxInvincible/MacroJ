@@ -150,3 +150,32 @@ Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press o
 ]
 ```
 Other macros are too specific for game, but could be used as example and found in `local.autohotkey.data.macro` package
+
+# Limiting of macro execution by application
+By default, all macro will be executed for any active appliaction. 
+There is a way to limit this behavior. For example: 
+```json
+"1": {
+    "application": {
+        "pathRegex": ".*chrome.*"
+    },
+    "onPress": ...
+    "onRelease": ...
+}
+```
+There are 4 checks which can be used: titleStartsWith, titleRegex, pathStartsWith, pathRegex.
+You can specify one check or any combination of them.
+First 2 checks window title, other path to executable. 
+They are implemented in chain, so if anyone returns false, other will not be executed.
+**Note:** _regex_ operations are usually more costly compared to _startWith_
+
+Window title and path to application in foreground could be checked by DebugMacro:
+```json
+"6": {
+    "onPress": {
+        "macroClass": "local.autohotkey.data.macro.DebugMacro",
+        "params": []
+    }
+}
+```
+It's part of **test** profile. Just run this profile, press 6 key and check logs.
