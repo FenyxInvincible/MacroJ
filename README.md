@@ -149,6 +149,40 @@ Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press o
     {"key": "4", "delay": 10}
 ]
 ```
+
+### local.autohotkey.data.macro.DoubleAction
+Choosing between 2 options depends on action (key press or release).
+This macro sends press and release of specified key.
+If action is changed before specified time: shortKey will be emulated, longKey otherwise.
+If chosen section is **onPress**, shortKey will be sent in case **release** action is happens before **longPressMs**
+If chosen section is **onRelease**, same but vice versa.
+
+```json
+"params": {
+    "longPressMs": 200,  
+    "shortKey": "A",
+    "longKey": "B", 
+    "propagateCall": false,
+    "pressReleaseDelayMs": 16
+}
+```
+By default, all sendings from sender are not propagated, so this sending will not trigger next macro
+When propagateCall = true, if there is macro that is bound to sent key, it will be executed.
+**Note:** _propagateCall_ may lead to infinite loop and OutOfMemory exception.
+
+Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press or Release"}
+```json
+"params": [
+    //delay here is time between keys. Delay between press and release is constant 64 ms
+    {"key": "4", "delay": 500}, 
+    {"key": "E", "delay": 30, "action": "Press"},
+    {"key": "RMB", "delay": 30},
+    {"key": "E", "delay": 30, "action": "Release"},
+    {"key": "RMB", "delay": 3000},
+    {"key": "4", "delay": 10}
+]
+```
+
 Other macros are too specific for game, but could be used as example and found in `local.autohotkey.data.macro` package
 
 # Limiting of macro execution by application
