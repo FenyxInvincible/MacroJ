@@ -29,8 +29,6 @@ public class Gesture implements Macro {
     private final Sender sender;
     private Map<Direction, Key> keyData;
     private MacroKey keyInitiator;
-    //if was bind to onPress need to wait release or max delay, if onRelease then max delay only
-    private boolean initialState;
 
 
     private enum Direction {
@@ -50,7 +48,8 @@ public class Gesture implements Macro {
 
     @Override
     public void run() {
-        initialState = keyInitiator.getKey().isPressed();
+        //if was bind to onPress need to wait release or max delay, if onRelease then max delay only
+        boolean initialState = keyInitiator.getKey().isPressed();
         try {
             PointerInfo pointer = MouseInfo.getPointerInfo();
             Point point = pointer.getLocation();

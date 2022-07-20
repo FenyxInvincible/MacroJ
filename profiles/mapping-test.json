@@ -73,5 +73,17 @@
             "macroClass": "local.autohotkey.data.macro.DebugMacro",
             "params": []
         }
+    },
+    "7": {
+        "onPress": {
+            "macroClass": "local.autohotkey.data.macro.DoubleAction",
+            "params": {
+                "longPressMs": 300,
+                //key 1 will be sent, due to macro propagation macro which is bound on key "1" will be executed
+                "shortKey": "1",
+                "longKey": "2",
+                "propagateCall": true
+            }
+        }
     }
 }

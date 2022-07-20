@@ -56,7 +56,7 @@ public class MacroFactory {
 
     private MacroPair createListOfMacroPair(MacroKey key, MacroDefinition definition) {
         return new MacroPair(
-                Optional.ofNullable(definition.getApplication()).orElse(ApplicationDefinition.DUMMY) ,
+                Optional.ofNullable(definition.getApplication()).orElse(ApplicationDefinition.DUMMY),
                 findMacroClass(key, definition.getOnPress()),
                 findMacroClass(key, definition.getOnRelease()),
                 key
