@@ -121,4 +121,10 @@
       </item>
     </group>
   </component>
+  <component name="uidesigner-configuration">
+    <option name="INSTRUMENT_CLASSES" value="false" />
+    <option name="COPY_FORMS_RUNTIME_TO_OUTPUT" value="false" />
+    <option name="DEFAULT_LAYOUT_MANAGER" value="GridBagLayout" />
+    <option name="USE_DYNAMIC_BUNDLES" value="true" />
+  </component>
 </project>

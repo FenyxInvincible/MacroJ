@@ -10,7 +10,7 @@
     //Setup of amounts and reset order macro
     "-": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.eldenring.Reset",
+            "macroClass": "eldenring.Reset",
             "params": {
                 "spells": {
                     //change spell key
@@ -31,7 +31,7 @@
     "1":
     {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+            "macroClass": "eldenring.SelectSpellSlot",
             "params": {
                 "position": "1",
                 "changeKey": "NUMPAD9"
@@ -42,7 +42,7 @@
     "2":
     {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+            "macroClass": "eldenring.SelectSpellSlot",
             "params": {
                 "position": "2",
                 "changeKey": "NUMPAD9"
@@ -53,7 +53,7 @@
     "3":
     {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+            "macroClass": "eldenring.SelectSpellSlot",
             "params": {
                 "position": "3",
                 "changeKey": "NUMPAD9"
@@ -64,7 +64,7 @@
     "4":
     {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+            "macroClass": "eldenring.SelectSpellSlot",
             "params": {
                 "position": "4",
                 "changeKey": "NUMPAD9"
@@ -75,7 +75,7 @@
     "5":
     {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.eldenring.SelectSpellSlot",
+            "macroClass": "eldenring.SelectSpellSlot",
             "params": {
                 "position": "5",
                 "changeKey": "NUMPAD9"
@@ -85,7 +85,7 @@
     //Use HP
     "6": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+            "macroClass": "eldenring.SelectConsumableSlot",
             "params": {
                 "position": "1",
                 "changeKey": "NUMPAD7",
@@ -98,7 +98,7 @@
     //Use MP
     "7": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+            "macroClass": "eldenring.SelectConsumableSlot",
             "params": {
                 "position": "2",
                 "changeKey": "NUMPAD7",
@@ -111,7 +111,7 @@
     //3rd slot
     "8": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+            "macroClass": "eldenring.SelectConsumableSlot",
             "params": {
                 "position": "3",
                 "changeKey": "NUMPAD7",
@@ -124,7 +124,7 @@
     //4th slot
     "9": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+            "macroClass": "eldenring.SelectConsumableSlot",
             "params": {
                 "position": "4",
                 "changeKey": "NUMPAD7",
@@ -137,7 +137,7 @@
     //5th slot
     "0": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.eldenring.SelectConsumableSlot",
+            "macroClass": "eldenring.SelectConsumableSlot",
             "params": {
                 "position": "5",
                 "changeKey": "NUMPAD7",
@@ -152,7 +152,7 @@
     ,
     "MOUSE_SCROLL": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.SendSequence",
+            "macroClass": "SendSequence",
             "params": [
                 {"key": "E", "delay": 30, "action": "Press"},
                 {"key": "LMB", "delay": 30},
@@ -160,7 +160,7 @@
             ]
         },
         "onRelease": {
-            "macroClass": "local.autohotkey.data.macro.SendSequence",
+            "macroClass": "SendSequence",
             "params": [
                 {"key": "E", "delay": 30, "action": "Press"},
                 {"key": "RMB", "delay": 30},

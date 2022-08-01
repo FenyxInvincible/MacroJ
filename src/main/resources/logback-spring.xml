@@ -12,17 +12,23 @@
         </layout>
     </appender>
 
+    <appender name="Memory"
+              class="local.macroj.log.MemoryLog">
+    </appender>
+
 
     <root level="info">
         <appender-ref ref="Console" />
     </root>
 
-    <logger name="local.autohotkey" level="info" additivity="false">
+    <logger name="local.macroj" level="OFF" additivity="false">
         <appender-ref ref="Console" />
+        <appender-ref ref="Memory" />
     </logger>
 
     <logger name="org.jnativehook" level="OFF" additivity="false">
         <appender-ref ref="Console" />
+        <appender-ref ref="Memory" />
     </logger>
 
 </configuration>
