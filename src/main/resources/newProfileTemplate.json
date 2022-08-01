@@ -1,0 +1,19 @@
+{
+  "1": {
+    "onPress": {
+      "macroClass": "SendSequence",
+      "params": [
+        {"key": "LSHIFT", "action": "Press", "delay": 20},
+        {"key": "M", "delay": 20},
+        {"key": "LSHIFT", "action": "Release", "delay": 20},
+        {"key": "A", "action": "Press", "delay": 20},
+        {"key": "C", "action": "Press", "delay": 20},
+        {"key": "R", "action": "Press", "delay": 20},
+        {"key": "O", "action": "Press", "delay": 20},
+        {"key": "LSHIFT", "action": "Press", "delay": 20},
+        {"key": "J", "action": "Press", "delay": 20},
+        {"key": "LSHIFT", "action": "Release", "delay": 20}
+      ]
+    }
+  }
+}

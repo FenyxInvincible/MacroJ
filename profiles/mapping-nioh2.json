@@ -1,7 +1,7 @@
 {
   "MMB": {
     "onPress": {
-      "macroClass": "local.autohotkey.data.macro.Gesture",
+      "macroClass": "Gesture",
       "params": {
         "UP": "NUMPAD7",
         "DOWN": "NUMPAD8",
@@ -12,7 +12,7 @@
   },
   "F5": {
     "onPress": {
-      "macroClass": "local.autohotkey.data.macro.nioh.StamRegenV2",
+      "macroClass": "nioh.StamRegenV2",
       "params": {
         //image to indicate that macro is running
         "buffActiveImagePath": "profiles/nioh2Logo.png",

@@ -3,7 +3,7 @@
     //Modifier can be any valid key from keys.json
     "LSHIFT+1": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.SendSequence",
+            "macroClass": "SendSequence",
             "params": [
                 {"key": "4", "action": "Press", "delay": 500},
                 {"key": "3", "action": "Press", "delay": 500},
@@ -13,14 +13,14 @@
     },
     "1": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.RemapKey",
+            "macroClass": "RemapKey",
             "params": {
                 "key": "2",
                 "action": "Press"
             }
         },
         "onRelease": {
-            "macroClass": "local.autohotkey.data.macro.RemapKey",
+            "macroClass": "RemapKey",
             "params": {
                 "key": "2",
                 "action": "Release"
@@ -29,7 +29,7 @@
     },
     "2": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.SpamSequence",
+            "macroClass": "SpamSequence",
             "params": [
                 {"key": "2", "action": "Press", "delay": 500},
                 {"key": "3", "action": "Press", "delay": 100},
@@ -39,7 +39,7 @@
     },
     "3": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.SpamSequence",
+            "macroClass": "SpamSequence",
             "params": [
                 {"key": "2", "action": "Press", "delay": 500},
                 {"key": "3", "action": "Press", "delay": 100},
@@ -49,7 +49,7 @@
     },
     "4": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.Gesture",
+            "macroClass": "Gesture",
             "params": {
                 "UP": "5",//link to macro below
                 "DOWN": "6",
@@ -60,7 +60,7 @@
     },
     "5": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.Crosshair",
+            "macroClass": "Crosshair",
             "params": {
                 "imagePath": "profiles/crosshair.png",
                 "scaleX": "60",
@@ -70,13 +70,13 @@
     },
     "6": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.DebugMacro",
+            "macroClass": "DebugMacro",
             "params": []
         }
     },
     "7": {
         "onPress": {
-            "macroClass": "local.autohotkey.data.macro.DoubleAction",
+            "macroClass": "DoubleAction",
             "params": {
                 "longPressMs": 300,
                 //key 1 will be sent, due to macro propagation macro which is bound on key "1" will be executed

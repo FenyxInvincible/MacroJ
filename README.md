@@ -35,15 +35,15 @@ New profile can be easily added. Just need to put `mapping-***.json` where *** i
 -This JSON file has to contain similar configuration for each macro key
 
 ```json
-"KEYNAME": {
+"KEYNAME": {//all available keys can be found in src/main/resources/keys.json
     "onPress": {
-        "macroClass": "MACRO CLASS PATH",
+        "macroClass": "MACRO CLASS",//e.g. SendSequence
         "params": 
             ... depends on macro class
         
     },
     "onRelease": {
-        "macroClass": "MACRO CLASS PATH",
+        "macroClass": "MACRO CLASS PATH",//e.g. SendSequence
         "params": [ //list of string by default if is not specified
             "1", "asd"
         ]
@@ -52,7 +52,7 @@ New profile can be easily added. Just need to put `mapping-***.json` where *** i
 ```
 `KEYNAME` - string value of key (see src/main/resources/keys.json). Modifier + key name is allowed. For example `LCONTROL+1`
 
-`macroClass` - path to macro class eg. `local.autohotkey.data.macro.SendSequence`. See **List of included macros**
+`macroClass` - path to macro class eg. `local.macroj.data.macro.SendSequence`. See **List of included macros**
 
 `params` - parameters for macro. Depends on macro class and could be checked by Type getParamsType() method. 
 If it's not specified, default null is used from interface and pure Gson deserialisation will appear. 
@@ -65,14 +65,14 @@ For example following code will be transformed to `List<String>`
 
 # **Adding new macro**
 
-Any macro class has to implement `local.autohotkey.data.macro.Macro` interface.
+Any macro class has to implement `local.macroj.data.macro.Macro` interface.
 Expected data type from JSON params section can be specified by overriding `Type getParamsType()` method or Gson deserialisation by default.
 
 # **List of included macros**
 
 You could check `mapping-test.json` for example of macro usage
 
-### local.autohotkey.data.macro.Crosshair
+### Crosshair
 
 Scales and draws image (crosshair for example) at the center of screen; 
 
@@ -85,7 +85,7 @@ Required params - json object with `imagePath`, `scaleX`, `scaleY` keys.
 }
 ```
 
-### local.autohotkey.data.macro.Gesture
+### Gesture
 Allows to bind four actions for one key. When key is pressed and mouse direction is UP/DOWN/LEFT/RIGHT specific key is mapped.
 
 Required params - json object with direction as key and key name as value.
@@ -99,7 +99,7 @@ Excess direction can be skipped.
 }
 ```
 
-### local.autohotkey.data.macro.RemapKey
+### RemapKey
 It's used for remapping one key to other. 
 
 Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press or Release"}
@@ -118,7 +118,7 @@ or
 ```
 
 
-### local.autohotkey.data.macro.SendSequence
+### SendSequence
 Send sequence of keys with specified delay between
 
 Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press or Release"}
@@ -134,7 +134,7 @@ Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press o
 ]
 ```
 
-### local.autohotkey.data.macro.SpamSequence
+### SpamSequence
 Send sequence of keys while key is pressed
 
 Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press or Release"}
@@ -150,7 +150,7 @@ Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press o
 ]
 ```
 
-### local.autohotkey.data.macro.DoubleAction
+### DoubleAction
 Choosing between 2 options depends on action (key press or release).
 This macro sends press and release of specified key.
 If action is changed before specified time: shortKey will be emulated, longKey otherwise.
@@ -183,7 +183,7 @@ Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press o
 ]
 ```
 
-Other macros are too specific for game, but could be used as example and found in `local.autohotkey.data.macro` package
+Other macros are too specific for game, but could be used as example and found in `local.macroj.data.macro` package
 
 # Limiting of macro execution by application
 By default, all macro will be executed for any active appliaction. 
@@ -207,7 +207,7 @@ Window title and path to application in foreground could be checked by DebugMacr
 ```json
 "6": {
     "onPress": {
-        "macroClass": "local.autohotkey.data.macro.DebugMacro",
+        "macroClass": "DebugMacro",
         "params": []
     }
 }
