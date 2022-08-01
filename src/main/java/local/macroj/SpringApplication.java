@@ -18,6 +18,10 @@ public class SpringApplication {
 
     public static void main(String[] args) {
         try {
+
+            UIManager.setLookAndFeel(
+                    UIManager.getSystemLookAndFeelClassName());
+
             ConfigurableApplicationContext context = org.springframework.boot.SpringApplication.run(SpringApplication.class, args);
 
             EventQueue.invokeLater(() -> {

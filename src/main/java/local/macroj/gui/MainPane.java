@@ -76,8 +76,8 @@ public class MainPane extends JPanel {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(logsPane, GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
 						.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+						.addComponent(logsPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
 						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 								.addComponent(logsCheckBox, Alignment.LEADING)
@@ -96,8 +96,8 @@ public class MainPane extends JPanel {
 					.addContainerGap()
 					.addComponent(lblNewLabel)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(loadButton)
 						.addComponent(btnEdit)
@@ -105,11 +105,12 @@ public class MainPane extends JPanel {
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(logsCheckBox)
 					.addGap(4)
-					.addComponent(logsPane, GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+					.addComponent(logsPane, GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
 					.addContainerGap())
 		);
 
 		logsField = new JTextArea();
+		logsField.setFont(new Font("Monospaced", Font.PLAIN, 11));
 		logsPane.setViewportView(logsField);
 		logsField.setEditable(false);
 
