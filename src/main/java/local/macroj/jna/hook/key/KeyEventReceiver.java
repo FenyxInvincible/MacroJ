@@ -9,12 +9,14 @@ import com.sun.jna.platform.win32.WinUser.KBDLLHOOKSTRUCT;
 import com.sun.jna.platform.win32.WinUser.LowLevelKeyboardProc;
 
 import local.macroj.jna.hook.DeviceEventReceiver;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * A simplified representation of JNA's LowLevelKeyboardProc.
  * 
  * @author Matt
  */
+@Slf4j
 public abstract class KeyEventReceiver extends DeviceEventReceiver<KeyHookManager> implements LowLevelKeyboardProc {
 	private static final int WM_KEYDOWN = 256, WM_KEYUP = 257;
 	private static final int WM_SYSKEYDOWN = 260, WM_SYSKEYUP = 261;
@@ -30,8 +32,12 @@ public abstract class KeyEventReceiver extends DeviceEventReceiver<KeyHookManage
 		if (cancel) {
 			return new LRESULT(1);
 		}
+
 		Pointer ptr = info.getPointer();
 		long peer = Pointer.nativeValue(ptr);
+
+		log.debug("Callback: WPARAM {}, KBDLLHOOKSTRUCT {}}", wParam, info);
+
 		return User32.INSTANCE.CallNextHookEx(getHookManager().getHhk(this), nCode, wParam, new LPARAM(peer));
 	}
 

@@ -60,7 +60,7 @@ public class MouseEventListener extends MouseEventReceiver {
 
     @Override
     public boolean onMouseScroll(boolean isDown, MOUSEHOOKSTRUCT info) {
-        log.debug("Scroll is found: isDown {}, point {}", isDown, info.pt);
+        log.trace("Scroll is found: isDown {}, point {}", isDown, info.pt);
         boolean rtn = macroListener.onUpdate(
                 isDown ? MacroListener.EventState.DOWN : MacroListener.EventState.UP,
                 info,

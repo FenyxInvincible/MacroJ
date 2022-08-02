@@ -29,11 +29,13 @@ public class RobotSender implements Sender{
     @Override
     public void pressKey(Key key, boolean allowRecursive) {
         robot.keyPress(key.getKeyCode());
+        log.debug("RobotSender pressKey {} allow recursive: {}", key, allowRecursive);
     }
 
     @Override
     public void releaseKey(Key key, boolean allowRecursive) {
         robot.keyRelease(key.getKeyCode());
+        log.debug("RobotSender releaseKey {} allow recursive: {}", key, allowRecursive);
     }
 
     @Override
