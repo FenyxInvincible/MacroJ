@@ -71,7 +71,8 @@ public class InMemoryHandler {
      */
     private int select(int desired, MutablePair<Integer, Integer> mem) {
         if (desired <= 0 || desired > mem.right) {
-            return 0;
+            log.warn("desired slot {} but only {} are available", desired, mem.right);
+            throw new IndexOutOfBoundsException("desired more that available");
         }
 
         int current = mem.left;

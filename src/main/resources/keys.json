@@ -4,902 +4,1031 @@
     "keyText": "BACKSPACE",
     "scanCode": 14,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "9": {
     "keyCode": 9,
     "keyText": "TAB",
     "scanCode": 15,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "13": {
     "keyCode": 13,
     "keyText": "ENTER",
     "scanCode": 28,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "19": {
     "keyCode": 19,
     "keyText": "PAUSE",
     "scanCode": 69,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "20": {
     "keyCode": 20,
     "keyText": "CAPSLOCK",
     "scanCode": 58,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "27": {
     "keyCode": 27,
     "keyText": "ESCAPE",
     "scanCode": 1,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "32": {
     "keyCode": 32,
     "keyText": "SPACE",
     "scanCode": 57,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "33": {
     "keyCode": 33,
     "keyText": "PGUP",
     "scanCode": 329,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "34": {
     "keyCode": 34,
     "keyText": "PGDN",
     "scanCode": 337,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "35": {
     "keyCode": 35,
     "keyText": "END",
     "scanCode": 335,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "36": {
     "keyCode": 36,
     "keyText": "HOME",
     "scanCode": 327,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "37": {
     "keyCode": 37,
     "keyText": "LEFT",
     "scanCode": 331,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": true
   },
   "38": {
     "keyCode": 38,
     "keyText": "UP",
     "scanCode": 328,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": true
   },
   "39": {
     "keyCode": 39,
     "keyText": "RIGHT",
     "scanCode": 333,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": true
   },
   "40": {
     "keyCode": 40,
     "keyText": "DOWN",
     "scanCode": 336,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": true
   },
   "44": {
     "keyCode": 44,
     "keyText": "PRINTSCREEN",
     "scanCode": 311,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "45": {
     "keyCode": 45,
     "keyText": "INSERT",
     "scanCode": 338,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "46": {
     "keyCode": 46,
     "keyText": "DELETE",
     "scanCode": 339,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "48": {
     "keyCode": 48,
     "keyText": "0",
     "scanCode": 11,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "49": {
     "keyCode": 49,
     "keyText": "1",
     "scanCode": 2,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "50": {
     "keyCode": 50,
     "keyText": "2",
     "scanCode": 3,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "51": {
     "keyCode": 51,
     "keyText": "3",
     "scanCode": 4,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "52": {
     "keyCode": 52,
     "keyText": "4",
     "scanCode": 5,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "53": {
     "keyCode": 53,
     "keyText": "5",
     "scanCode": 6,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "54": {
     "keyCode": 54,
     "keyText": "6",
     "scanCode": 7,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "55": {
     "keyCode": 55,
     "keyText": "7",
     "scanCode": 8,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "56": {
     "keyCode": 56,
     "keyText": "8",
     "scanCode": 9,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "57": {
     "keyCode": 57,
     "keyText": "9",
     "scanCode": 10,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "65": {
     "keyCode": 65,
     "keyText": "A",
     "scanCode": 30,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "66": {
     "keyCode": 66,
     "keyText": "B",
     "scanCode": 48,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "67": {
     "keyCode": 67,
     "keyText": "C",
     "scanCode": 46,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "68": {
     "keyCode": 68,
     "keyText": "D",
     "scanCode": 32,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "69": {
     "keyCode": 69,
     "keyText": "E",
     "scanCode": 18,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "70": {
     "keyCode": 70,
     "keyText": "F",
     "scanCode": 33,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "71": {
     "keyCode": 71,
     "keyText": "G",
     "scanCode": 34,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "72": {
     "keyCode": 72,
     "keyText": "H",
     "scanCode": 35,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "73": {
     "keyCode": 73,
     "keyText": "I",
     "scanCode": 23,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "74": {
     "keyCode": 74,
     "keyText": "J",
     "scanCode": 36,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "75": {
     "keyCode": 75,
     "keyText": "K",
     "scanCode": 37,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "76": {
     "keyCode": 76,
     "keyText": "L",
     "scanCode": 38,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "77": {
     "keyCode": 77,
     "keyText": "M",
     "scanCode": 50,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "78": {
     "keyCode": 78,
     "keyText": "N",
     "scanCode": 49,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "79": {
     "keyCode": 79,
     "keyText": "O",
     "scanCode": 24,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "80": {
     "keyCode": 80,
     "keyText": "P",
     "scanCode": 25,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "81": {
     "keyCode": 81,
     "keyText": "Q",
     "scanCode": 16,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "82": {
     "keyCode": 82,
     "keyText": "R",
     "scanCode": 19,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "83": {
     "keyCode": 83,
     "keyText": "S",
     "scanCode": 31,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "84": {
     "keyCode": 84,
     "keyText": "T",
     "scanCode": 20,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "85": {
     "keyCode": 85,
     "keyText": "U",
     "scanCode": 22,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "86": {
     "keyCode": 86,
     "keyText": "V",
     "scanCode": 47,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "87": {
     "keyCode": 87,
     "keyText": "W",
     "scanCode": 17,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "88": {
     "keyCode": 88,
     "keyText": "X",
     "scanCode": 45,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "89": {
     "keyCode": 89,
     "keyText": "Y",
     "scanCode": 21,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "90": {
     "keyCode": 90,
     "keyText": "Z",
     "scanCode": 44,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "91": {
     "keyCode": 91,
     "keyText": "LWIN",
     "scanCode": 347,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "92": {
     "keyCode": 92,
     "keyText": "RWIN",
     "scanCode": 348,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "93": {
     "keyCode": 93,
     "keyText": "APPSKEY",
     "scanCode": 349,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "96": {
     "keyCode": 96,
     "keyText": "NUMPAD0",
     "scanCode": 82,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "97": {
     "keyCode": 97,
     "keyText": "NUMPAD1",
     "scanCode": 79,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "98": {
     "keyCode": 98,
     "keyText": "NUMPAD2",
     "scanCode": 80,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "99": {
     "keyCode": 99,
     "keyText": "NUMPAD3",
     "scanCode": 81,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "100": {
     "keyCode": 100,
     "keyText": "NUMPAD4",
     "scanCode": 75,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "101": {
     "keyCode": 101,
     "keyText": "NUMPAD5",
     "scanCode": 76,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "102": {
     "keyCode": 102,
     "keyText": "NUMPAD6",
     "scanCode": 77,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "103": {
     "keyCode": 103,
     "keyText": "NUMPAD7",
     "scanCode": 71,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "104": {
     "keyCode": 104,
     "keyText": "NUMPAD8",
     "scanCode": 72,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "105": {
     "keyCode": 105,
     "keyText": "NUMPAD9",
     "scanCode": 73,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "106": {
     "keyCode": 106,
     "keyText": "NUMPADMULT",
     "scanCode": 55,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "107": {
     "keyCode": 107,
     "keyText": "NUMPADADD",
     "scanCode": 78,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "109": {
     "keyCode": 109,
     "keyText": "NUMPADSUB",
     "scanCode": 74,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "110": {
     "keyCode": 110,
     "keyText": "NUMPADDOT",
     "scanCode": 83,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "112": {
     "keyCode": 112,
     "keyText": "F1",
     "scanCode": 59,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "113": {
     "keyCode": 113,
     "keyText": "F2",
     "scanCode": 60,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "114": {
     "keyCode": 114,
     "keyText": "F3",
     "scanCode": 61,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "115": {
     "keyCode": 115,
     "keyText": "F4",
     "scanCode": 62,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "116": {
     "keyCode": 116,
     "keyText": "F5",
     "scanCode": 63,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "117": {
     "keyCode": 117,
     "keyText": "F6",
     "scanCode": 64,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "118": {
     "keyCode": 118,
     "keyText": "F7",
     "scanCode": 65,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "119": {
     "keyCode": 119,
     "keyText": "F8",
     "scanCode": 66,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "120": {
     "keyCode": 120,
     "keyText": "F9",
     "scanCode": 67,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "121": {
     "keyCode": 121,
     "keyText": "F10",
     "scanCode": 68,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "122": {
     "keyCode": 122,
     "keyText": "F11",
     "scanCode": 87,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "123": {
     "keyCode": 123,
     "keyText": "F12",
     "scanCode": 88,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "124": {
     "keyCode": 124,
     "keyText": "F13",
     "scanCode": 100,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "125": {
     "keyCode": 125,
     "keyText": "F14",
     "scanCode": 101,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "126": {
     "keyCode": 126,
     "keyText": "F15",
     "scanCode": 102,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "127": {
     "keyCode": 127,
     "keyText": "F16",
     "scanCode": 103,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "128": {
     "keyCode": 128,
     "keyText": "F17",
     "scanCode": 104,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "129": {
     "keyCode": 129,
     "keyText": "F18",
     "scanCode": 105,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "130": {
     "keyCode": 130,
     "keyText": "F19",
     "scanCode": 106,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "131": {
     "keyCode": 131,
     "keyText": "F20",
     "scanCode": 107,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "132": {
     "keyCode": 132,
     "keyText": "F21",
     "scanCode": 108,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "133": {
     "keyCode": 133,
     "keyText": "F22",
     "scanCode": 109,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "134": {
     "keyCode": 134,
     "keyText": "F23",
     "scanCode": 110,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "135": {
     "keyCode": 135,
     "keyText": "F24",
     "scanCode": 118,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "144": {
     "keyCode": 144,
     "keyText": "NUMLOCK",
     "scanCode": 325,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "145": {
     "keyCode": 145,
     "keyText": "SCROLLLOCK",
     "scanCode": 70,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "160": {
     "keyCode": 160,
     "keyText": "LSHIFT",
     "scanCode": 42,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "161": {
     "keyCode": 161,
     "keyText": "RSHIFT",
     "scanCode": 310,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "162": {
     "keyCode": 162,
     "keyText": "LCONTROL",
     "scanCode": 29,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "163": {
     "keyCode": 163,
     "keyText": "RCONTROL",
     "scanCode": 285,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "166": {
     "keyCode": 166,
     "keyText": "BRBCK",
     "scanCode": 362,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "167": {
     "keyCode": 167,
     "keyText": "BRFWD",
     "scanCode": 361,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "170": {
     "keyCode": 170,
     "keyText": "BROWSER_SEARCH",
     "scanCode": 357,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "172": {
     "keyCode": 172,
     "keyText": "BROWSER_HOME",
     "scanCode": 306,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "173": {
     "keyCode": 173,
     "keyText": "VOLUME_MUTE",
     "scanCode": 288,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "174": {
     "keyCode": 174,
     "keyText": "VOLUME_DOWN",
     "scanCode": 302,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "175": {
     "keyCode": 175,
     "keyText": "VOLUME_UP",
     "scanCode": 304,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "176": {
     "keyCode": 176,
     "keyText": "TRACKN",
     "scanCode": 0,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "177": {
     "keyCode": 177,
     "keyText": "TRACKP",
     "scanCode": 0,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "178": {
     "keyCode": 178,
     "keyText": "MEDIA_STOP",
     "scanCode": 292,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "179": {
     "keyCode": 179,
     "keyText": "MEDIA_PLAY_PAUSE",
     "scanCode": 290,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "180": {
     "keyCode": 180,
     "keyText": "LAUNCH_MAIL",
     "scanCode": 364,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "186": {
     "keyCode": 186,
     "keyText": ";",
     "scanCode": 39,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "187": {
     "keyCode": 187,
     "keyText": "=",
     "scanCode": 13,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "188": {
     "keyCode": 188,
     "keyText": ",",
     "scanCode": 51,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "189": {
     "keyCode": 189,
     "keyText": "-",
     "scanCode": 12,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "190": {
     "keyCode": 190,
     "keyText": ".",
     "scanCode": 52,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "191": {
     "keyCode": 191,
     "keyText": "/",
     "scanCode": 53,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "219": {
     "keyCode": 219,
     "keyText": "[",
     "scanCode": 26,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "220": {
     "keyCode": 220,
     "keyText": "\\",
     "scanCode": 43,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "221": {
     "keyCode": 221,
     "keyText": "]",
     "scanCode": 27,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "164": {
     "keyCode": 164,
     "keyText": "LALT",
     "scanCode": 56,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "165": {
     "keyCode": 165,
     "keyText": "RALT",
     "scanCode": 312,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "222": {
     "keyCode": 222,
     "keyText": "\u0027",
     "scanCode": 40,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "1983": {
     "keyCode": 1983,
     "keyText": "LMB",
     "scanCode": 1983,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "1984": {
     "keyCode": 1984,
     "keyText": "RMB",
     "scanCode": 1984,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "1985": {
     "keyCode": 1985,
     "keyText": "MMB",
     "scanCode": 1985,
     "isPressed": false,
-    "hasPressReleaseFlow": true
+    "hasPressReleaseFlow": true,
+    "isExtended": false
   },
   "1986": {
     "keyCode": 1986,
     "keyText": "MOUSE_SCROLL",
     "scanCode": 1986,
     "isPressed": false,
-    "hasPressReleaseFlow": false
+    "hasPressReleaseFlow": false,
+    "isExtended": false
   }
 }

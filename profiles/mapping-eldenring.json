@@ -14,15 +14,15 @@
             "params": {
                 "spells": {
                     //change spell key
-                    "key": "NUMPAD9",
+                    "key": "UP",
                     //Number of spells
-                    "amount": 5
+                    "amount": 2
                 },
                 "consumables": {
                     //change consumable key
-                    "key": "NUMPAD7",
+                    "key": "DOWN",
                     //Number of consumables
-                    "amount": 5
+                    "amount": 2
                 }
             }
         }
@@ -34,7 +34,7 @@
             "macroClass": "eldenring.SelectSpellSlot",
             "params": {
                 "position": "1",
-                "changeKey": "NUMPAD9"
+                "changeKey": "UP"
             }
         }
     },
@@ -45,7 +45,7 @@
             "macroClass": "eldenring.SelectSpellSlot",
             "params": {
                 "position": "2",
-                "changeKey": "NUMPAD9"
+                "changeKey": "UP"
             }
         }
     },
@@ -56,7 +56,7 @@
             "macroClass": "eldenring.SelectSpellSlot",
             "params": {
                 "position": "3",
-                "changeKey": "NUMPAD9"
+                "changeKey": "UP"
             }
         }
     },
@@ -67,7 +67,7 @@
             "macroClass": "eldenring.SelectSpellSlot",
             "params": {
                 "position": "4",
-                "changeKey": "NUMPAD9"
+                "changeKey": "UP"
             }
         }
     },
@@ -78,7 +78,7 @@
             "macroClass": "eldenring.SelectSpellSlot",
             "params": {
                 "position": "5",
-                "changeKey": "NUMPAD9"
+                "changeKey": "UP"
             }
         }
     },
@@ -88,7 +88,7 @@
             "macroClass": "eldenring.SelectConsumableSlot",
             "params": {
                 "position": "1",
-                "changeKey": "NUMPAD7",
+                "changeKey": "DOWN",
                 "useKey": [
                     {"key": "R", "delay": 1}
                 ]
@@ -101,7 +101,7 @@
             "macroClass": "eldenring.SelectConsumableSlot",
             "params": {
                 "position": "2",
-                "changeKey": "NUMPAD7",
+                "changeKey": "DOWN",
                 "useKey": [
                     {"key": "R", "delay": 1}
                 ]
@@ -114,7 +114,7 @@
             "macroClass": "eldenring.SelectConsumableSlot",
             "params": {
                 "position": "3",
-                "changeKey": "NUMPAD7",
+                "changeKey": "DOWN",
                 "useKey": [
                     {"key": "R", "delay": 1}
                 ]
@@ -127,7 +127,7 @@
             "macroClass": "eldenring.SelectConsumableSlot",
             "params": {
                 "position": "4",
-                "changeKey": "NUMPAD7",
+                "changeKey": "DOWN",
                 "useKey": [
                     {"key": "R", "delay": 1}
                 ]
@@ -140,7 +140,7 @@
             "macroClass": "eldenring.SelectConsumableSlot",
             "params": {
                 "position": "5",
-                "changeKey": "NUMPAD7",
+                "changeKey": "DOWN",
                 "useKey": [
                     {"key": "R", "delay": 1}
                 ]

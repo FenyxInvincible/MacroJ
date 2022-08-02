@@ -16,7 +16,8 @@ public class JnaSender implements Sender{
         if (key.isMouseKey()) {
             mouseKeyPress(MouseKey.of(key.getKeyText()), allowRecursive);
         } else {
-            Keyboard.sendKeyDown(key.getKeyCode(), key.getScanCode(), allowRecursive);
+            Keyboard.sendKeyDown(key, allowRecursive);
+            log.info("JnaSender pressKey {} allow recursive: {}", key, allowRecursive);
         }
     }
 
@@ -25,7 +26,8 @@ public class JnaSender implements Sender{
         if (key.isMouseKey()) {
             mouseKeyRelease(MouseKey.of(key.getKeyText()), allowRecursive);
         } else {
-            Keyboard.sendKeyUp(key.getKeyCode(), key.getScanCode(), allowRecursive);
+            Keyboard.sendKeyUp(key, allowRecursive);
+            log.debug("JnaSender releaseKey {} allow recursive: {}", key, allowRecursive);
         }
     }
 
@@ -35,9 +37,9 @@ public class JnaSender implements Sender{
             if (key.isMouseKey()) {
                 sendMouseKey(MouseKey.of(key.getKeyText()), delay, allowRecursive);
             } else {
-                Keyboard.sendKeyDown(key.getKeyCode(), key.getScanCode(), allowRecursive);
+                Keyboard.sendKeyDown(key, allowRecursive);
                 Thread.sleep(delay);
-                Keyboard.sendKeyUp(key.getKeyCode(), key.getScanCode(), allowRecursive);
+                Keyboard.sendKeyUp(key, allowRecursive);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

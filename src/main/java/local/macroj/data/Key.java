@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Data
 @RequiredArgsConstructor
 public class Key {
-    public static final Key KEY_NONE = new Key(-1, "None", -1, false);
+    public static final Key KEY_NONE = new Key(-1, "None", -1, false, false);
     private final int keyCode;
     private final String keyText;
     private final int scanCode;
@@ -21,6 +21,15 @@ public class Key {
      * Some keys don't have usual press release flow, such as Mouse Scroll may have Press and Release independently
      */
     private final boolean hasPressReleaseFlow;
+
+    /**
+     * According to JNA hook implementation all sent keys are marked as injected. Some key may not work (like UP, DOWN etc)
+     * It's possible to add isExtended flag. In that case key will be sent like additional keyboard from.
+     * https://docs-microsoft-com.translate.goog/en-us/windows/win32/api/winuser/ns-winuser-kbdllhookstruct?_x_tr_sl=en&_x_tr_tl=uk&_x_tr_hl=uk&_x_tr_pto=op%2Csc
+     * https://docs.microsoft.com/en-us/windows/win32/api/winuser/ns-winuser-keybdinput
+     * https://stackoverflow.com/questions/199687/how-do-i-send-mouse-keyboard-input-without-triggering-llmhf-injected-flag
+     */
+    private final boolean isExtended;
 
     @Expose
     private AtomicBoolean isPressed = new AtomicBoolean(false);
@@ -37,7 +46,8 @@ public class Key {
                 jsonElement.get("keyCode").getAsInt(),
                 jsonElement.get("keyText").getAsString(),
                 jsonElement.get("scanCode").getAsInt(),
-                jsonElement.get("hasPressReleaseFlow").getAsBoolean()
+                jsonElement.get("hasPressReleaseFlow").getAsBoolean(),
+                jsonElement.get("isExtended").getAsBoolean()
         );
     }
 
