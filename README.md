@@ -28,6 +28,30 @@ Run `java -jar macroj-1.0-SNAPSHOT.jar` or create .bat file
 start /REALTIME java -jar "macroj-1.0-SNAPSHOT.jar"
 ```
 
+# **Profile types**
+MacroJ supports **JSON** and **YAML** profiles. JSON is main type and used by default. 
+
+YAML is **converted** to JSON before execution. 
+
+Top level YAML sections which are started with **'x-'** (e.g _x-Template_) will be **removed** from result JSON.
+It allows to use YAML anchors like template variables. For example:
+
+```yaml
+x-SpellChangeKey: &TemplateVar "UP"
+params:
+ key: *TemplateVar
+```
+
+will be converted to
+
+```json
+{
+  "params": {
+    "key": "UP"
+  }
+}
+```
+
 # **Adding profile**
 Adding new profile doesn't require compilation. 
 

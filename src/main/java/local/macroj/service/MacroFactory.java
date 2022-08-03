@@ -6,7 +6,9 @@ import local.macroj.data.*;
 import local.macroj.data.macro.DummyMacro;
 import local.macroj.data.macro.Macro;
 import local.macroj.macro.MacroThreads;
+import local.macroj.utils.Files;
 import local.macroj.utils.ScreenPicker;
+import local.macroj.utils.YamlJsonConverter;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +21,8 @@ import javax.annotation.Nullable;
 import javax.annotation.PostConstruct;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
 import java.lang.reflect.Type;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -35,6 +39,7 @@ public class MacroFactory {
     private final ApplicationContext context;
     private final Gson gson;
     private final RuntimeConfig config;
+    private final YamlJsonConverter converter;
 
     @Value("${app.defaultPackage}")
     private final String defaultPackage;
@@ -52,8 +57,13 @@ public class MacroFactory {
 
         Type collectionType = TypeToken.getParameterized(Map.class, MacroKey.class, MacroDefinition.class)
                 .getType();
+
+        Reader reader = (macroConfigFile.endsWith(".yaml")) ?
+                new StringReader(converter.toJson(Files.readFile(macroConfigFile))) :
+                new FileReader(macroConfigFile);
+
         Map<MacroKey, MacroDefinition> ms = gson.fromJson(
-                new FileReader(macroConfigFile),
+                reader,
                 collectionType
         );
 
@@ -63,7 +73,7 @@ public class MacroFactory {
     }
 
     public static String getMacroConfigFilePath(String profilesFolder, String profileName) {
-        return profilesFolder + "/mapping-" + profileName + ".json";
+        return profilesFolder + "/mapping-" + profileName;
     }
 
     private MacroPair createListOfMacroPair(MacroKey key, MacroDefinition definition) {
@@ -160,6 +170,13 @@ public class MacroFactory {
                 .map(p -> p.getMacroKey())
                 .findAny()
                 .orElse(null);
+    }
+
+    public void stop() {
+        macroThreadMap.entrySet().stream().forEach(mt -> mt.getValue());
+        macroThreadMap.clear();
+        macros = null;
+        config.setCurrentProfile(null);
     }
 
     @Data

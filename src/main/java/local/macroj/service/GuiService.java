@@ -61,7 +61,7 @@ public class GuiService {
                     br.lines().collect(Collectors.joining("\n"))
             );
 
-            mainScreen.getMainPane().refresh();
+            refreshProfilesList();
 
             log.debug("New profile has been created: {}", name);
 
@@ -73,13 +73,26 @@ public class GuiService {
         }
     }
 
+    public void refreshProfilesList() {
+        mainScreen.getMainPane().refresh();
+    }
+
     public void registerGui(MainScreen screen) {
         this.mainScreen = screen;
     }
 
-    public boolean loadProfile(String toString) {
-        settings.setCurrentProfile(toString);
-        return runner.run();
+    public boolean toggleProfile(String profileName) {
+        if(!profileName.equals(settings.getCurrentProfile())) {
+            settings.setCurrentProfile(profileName);
+            if(runner.run()){
+                return true;
+            } else {
+                settings.setCurrentProfile(null);
+                return false;
+            }
+        } else {
+            return runner.stop();
+        }
     }
 
     public String getCurrentProfileName() {
@@ -111,6 +124,10 @@ public class GuiService {
         timerTask = timer.schedule(() -> {
             logsField.setText(memoryLogging.getLogs());
         }, 100, 500);
+    }
+
+    public void clearLogs() {
+        memoryLogging.clearLogs();
     }
 
     @Data

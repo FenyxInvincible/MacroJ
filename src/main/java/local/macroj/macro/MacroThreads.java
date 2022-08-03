@@ -17,7 +17,7 @@ public class MacroThreads {
     public void run(Macro macro, MacroListener.EventState eventType) {
 
         MacroThread macroThread = null;
-        switch (eventType){
+        switch (eventType) {
             case DOWN:
                 macroThread = onPressThread;
                 break;
@@ -36,6 +36,11 @@ public class MacroThreads {
         }
     }
 
+    public void shutdown() {
+        onPressThread.shutdown();
+        onReleaseThread.shutdown();
+    }
+
     private class MacroThread {
         private ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(1);
         private AtomicBoolean isFree = new AtomicBoolean(true);
@@ -52,6 +57,10 @@ public class MacroThreads {
                 isFree.set(true);
                 log.debug("Releasing thread for {}", macro.getClass());
             });
+        }
+
+        public void shutdown() {
+            executor.shutdown();
         }
     }
 }

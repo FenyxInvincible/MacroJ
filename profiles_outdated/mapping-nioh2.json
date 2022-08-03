@@ -1,74 +1,37 @@
 {
-    "Q": [
-        {
-            "onPress": {
-                "class": "local.autohotkey.data.macro.SendSequence",
-                "params": [
-                    "10",
-                    "NUMPAD2"
-                ]
-            },
-            "onRelease": {
-                "class": "local.autohotkey.data.macro.SendSequence",
-                "params": [
-                    "10",
-                    "NUMPAD1"
-                ]
-            }
-        }
-    ],
-    "M": [
-        {
-            "onPress": {
-                "class": "local.autohotkey.data.macro.SendSequence",
-                "params": [
-                    "10",
-                    "NUMPAD1"
-                ]
-            },
-            "onRelease": {
-                "class": "local.autohotkey.data.macro.SendSequence",
-                "params": [
-                    "10",
-                    "NUMPAD2"
-                ]
-            }
-        }
-    ],
-    "6": [
-        {
-            "onPress": {
-                "class": "local.autohotkey.data.macro.nioh.SpiritChange",
-                "params": [
-                    "P",
-                    "5"
-                ]
-            }
-        }
-    ],
-    "=": [
-        {
-            "onPress": {
-                "class": "local.autohotkey.data.macro.RemapKeyPress",
-                "params": [
-                    "TAB"
-                ]
-            },
-            "onRelease": {
-                "class": "local.autohotkey.data.macro.RemapKeyRelease",
-                "params": [
-                    "TAB"
-                ]
-            }
-        }
-    ],
-    "F5": [
-        {
-            "onPress": {
-                "class": "local.autohotkey.data.macro.nioh.StamRegenV2",
-                "params": [
-                ]
-            }
-        }
-    ]
+  "MMB": {
+    "onPress": {
+      "macroClass": "Gesture",
+      "params": {
+        "UP": "NUMPAD7",
+        "DOWN": "NUMPAD8",
+        "LEFT": "NUMPAD4",
+        "RIGHT": "NUMPAD5"
+      }
+    }
+  },
+  "F5": {
+    "onPress": {
+      "macroClass": "nioh.StamRegenV2",
+      "params": {
+        //image to indicate that macro is running
+        "buffActiveImagePath": "profiles/nioh2Logo.png",
+
+        "staminaRegenKey": "9",
+        //depending on resolution settings
+        "staminaBarStartX": 400,
+        "staminaBarEndX": 916,
+        "staminaBarY": 138,
+        "ratio": 3.3,
+
+        //changes spirit if checked pixel color is not equals desired
+        "isSpiritChangeActive": false,
+        "changeSpiritKey": "P",
+        "spiritPixelX": 242,
+        "spiritPixelY": 89,
+        "spiritPixelColorDword": 6274755
+
+      }
+    }
+  }
 }

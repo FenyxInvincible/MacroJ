@@ -1,0 +1,46 @@
+{
+  "LSHIFT+1": {
+    "onPress": {
+      "macroClass": "SendSequence",
+      "params": [
+        {
+          "key": "4",
+          "action": "Press",
+          "delay": 500
+        },
+        {
+          "key": "3",
+          "action": "Press",
+          "delay": 500
+        },
+        {
+          "key": "A",
+          "action": "Press",
+          "delay": 500
+        }
+      ]
+    }
+  },
+  "1": {
+    "onRelease": {
+      "macroClass": "RemapKey",
+      "params": [
+        {
+          "key": "4",
+          "action": "Press",
+          "delay": 500
+        },
+        {
+          "key": "3",
+          "action": "Press",
+          "delay": 500
+        },
+        {
+          "key": "A",
+          "action": "Press",
+          "delay": 500
+        }
+      ]
+    }
+  }
+}

@@ -1,5 +1,6 @@
 package local.macroj.utils;
 
+import com.google.common.base.Charsets;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.File;
@@ -17,5 +18,8 @@ public class Files {
             is =  new ClassPathResource(filePath).getInputStream();
         }
         return is;
+    }
+    public static String readFile(String filePath) throws IOException {
+        return com.google.common.io.Files.asCharSource(new File(filePath), Charsets.UTF_8).read();
     }
 }

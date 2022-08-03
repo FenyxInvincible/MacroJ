@@ -1,0 +1,24 @@
+# Start keys section
+x-SpellChangeKey: &SpellChangeKey "UP"
+
+# End keys section
+
+#Start templates section
+x-SpellSlot: &SpellSlotTemplate
+  onPress: &SpellOnPress
+    macroClass: eldenring.SelectSpellSlot
+    position: ''
+    changeKey: *SpellChangeKey
+#End templates section
+
+'1':
+  <<: *SpellSlotTemplate
+  onPress:
+    <<: *SpellOnPress
+    position: 1
+
+'2':
+  <<: *SpellSlotTemplate
+  onPress:
+    <<: *SpellOnPress
+    position: 2
