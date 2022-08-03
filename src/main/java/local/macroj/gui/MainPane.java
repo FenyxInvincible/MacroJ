@@ -222,7 +222,6 @@ public class MainPane extends JPanel {
 
 	@PostConstruct
 	public void init() {
-		profilesPath = "./profiles";
 		String[] profilesArray = listProfilesForFolder(new File(profilesPath)).toArray(new String[0]);
 		addToList(profilesList, profilesArray);
 	}

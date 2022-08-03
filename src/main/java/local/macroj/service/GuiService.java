@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.logging.LogLevel;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import javax.swing.*;
@@ -42,7 +43,7 @@ public class GuiService {
         }
 
         String fixedName = name.replaceAll("\\s+","-").
-                replaceAll("[^A-Za-z0-9_-]", "");
+                replaceAll("[^A-Za-z0-9_-]", "") + ".json";
 
         File file = new File(MacroFactory.getMacroConfigFilePath(profilesPath, fixedName));
 
@@ -52,14 +53,10 @@ public class GuiService {
 
         log.debug("Creation new profile: {}", name);
 
-        String template = this.getClass().getResource("/newProfileTemplate.json").getFile();
         try(
             FileWriter writer = new FileWriter(file);
-            BufferedReader br = new BufferedReader(new FileReader(template));
         ) {
-            writer.write(
-                    br.lines().collect(Collectors.joining("\n"))
-            );
+            writer.write("{}");
 
             refreshProfilesList();
 

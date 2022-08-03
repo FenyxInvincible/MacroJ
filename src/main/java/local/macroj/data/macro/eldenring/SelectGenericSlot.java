@@ -8,11 +8,7 @@ import local.macroj.data.macro.Macro;
 import local.macroj.data.macro.eldenring.data.SelectSlot;
 import local.macroj.sender.Sender;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
-import lombok.experimental.SuperBuilder;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Type;
 import java.util.Collections;
