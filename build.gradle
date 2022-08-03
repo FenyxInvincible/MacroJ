@@ -3,6 +3,7 @@ import com.sun.tools.sjavac.CopyFile
 plugins {
     id 'java'
     id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'edu.sc.seis.launch4j' version '2.5.3'
 }
 
 apply plugin: 'java'
@@ -11,7 +12,7 @@ apply plugin: 'io.spring.dependency-management'
 group 'local'
 version '1.1.0'
 
-sourceCompatibility = 1.9
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -53,9 +54,20 @@ task copyJarWithoutVersion(type: Copy) {
     rename "${project.name}-${project.version}.jar", "${project.name}.jar"
 }
 
+task copyBatFile(type: Copy) {
+    from ("${rootProject.buildDir}/resources/main/macroj.bat")
+    into file("${rootProject.buildDir}/libs/")
+}
+
 build.finalizedBy(copyFileFromRootProject)
 copyFileFromRootProject.finalizedBy(copyJarWithoutVersion)
-targetCompatibility = JavaVersion.VERSION_1_9
+copyFileFromRootProject.finalizedBy(copyBatFile)
+targetCompatibility = JavaVersion.VERSION_1_8
+
+launch4j {
+    mainClassName = 'local.macroj.SpringApplication'
+    icon = "${projectDir}/macroJ.ico"
+}
 
 test {
     useJUnitPlatform()

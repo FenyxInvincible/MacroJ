@@ -30,7 +30,12 @@ public class SpringApplication {
                 ex.setVisible(true);
             });
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Critical error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(
+                    null,
+                    "<html><body><p style='width: 200px;'>"+e.getMessage()+"</p></body></html>",
+                    "Critical error",
+                    JOptionPane.ERROR_MESSAGE
+            );
             System.exit(-1);
         }
     }
