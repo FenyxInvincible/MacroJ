@@ -16,7 +16,7 @@
               class="local.macroj.log.MemoryLog">
     </appender>
 
-    <appender name="RollingFile"
+    <!--<appender name="RollingFile"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logs/spring-boot-logger.log</file>
         <encoder
@@ -26,7 +26,7 @@
 
         <rollingPolicy
                 class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- rollover daily and when the file reaches 10 MegaBytes -->
+            &lt;!&ndash; rollover daily and when the file reaches 10 MegaBytes &ndash;&gt;
             <fileNamePattern>logs/archived/spring-boot-logger-%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
@@ -34,7 +34,7 @@
                 <maxFileSize>10MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
-    </appender>
+    </appender>-->
 
     <root level="INFO">
         <appender-ref ref="Console" />
