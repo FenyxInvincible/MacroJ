@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -43,6 +44,29 @@ public class Menu extends JMenuBar {
 			}
 		});
 		mainMenu.add(SettingsItem);
+		
+		JMenu profilesMenu = new JMenu("Profiles");
+		add(profilesMenu);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Open folder..");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Desktop.getDesktop().open(new File("./profiles"));
+				} catch (IOException ex) {
+					throw new RuntimeException(ex);
+				}
+			}
+		});
+		profilesMenu.add(mntmNewMenuItem);
+		
+		JMenuItem refreshProfilesMenuItem = new JMenuItem("Refresh");
+		refreshProfilesMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				guiService.refreshProfilesList();
+			}
+		});
+		profilesMenu.add(refreshProfilesMenuItem);
 		
 		JMenu helpItem = new JMenu("Help");
 		add(helpItem);
@@ -79,8 +103,11 @@ public class Menu extends JMenuBar {
 	}
 
 	private void createProfileTrigger() {
-		String name = JOptionPane.showInputDialog(null,
-				"Select profile name.", null);
+		String name = JOptionPane.showInputDialog(
+				null,
+				"Select profile name.",
+				"Profile creation"
+		);
 		if(name != null) {
 			GuiService.Result res = guiService.addProfile(name);
 			JOptionPane.showMessageDialog(null,

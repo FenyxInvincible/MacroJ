@@ -62,4 +62,8 @@ public class MemoryLogging {
         }
         return appender;
     }
+
+    public void clearLogs() {
+        getLogger().clear();
+    }
 }

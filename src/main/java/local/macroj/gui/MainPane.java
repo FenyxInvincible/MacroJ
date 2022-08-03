@@ -19,6 +19,8 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.ListSelectionEvent;
 
 @Component
 @Slf4j
@@ -28,6 +30,8 @@ public class MainPane extends JPanel {
 	private final JCheckBox logsCheckBox;
 	private final JScrollPane logsPane;
 	private final JButton copyButton;
+	private final JButton loadButton;
+	private final JButton clearButton;
 	@Autowired
 	private GuiService guiService;
 
@@ -40,11 +44,11 @@ public class MainPane extends JPanel {
 
 	public MainPane() {
 		
-		JButton loadButton = new JButton("Load");
+		loadButton = new JButton("Load");
 		loadButton.setBackground(new Color(166, 247, 180));
 		loadButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				loadProfile();
+				toggleProfile();
 			}
 		});
 		
@@ -113,19 +117,38 @@ public class MainPane extends JPanel {
 		logsField.setFont(new Font("Monospaced", Font.PLAIN, 11));
 		logsPane.setViewportView(logsField);
 		logsField.setEditable(false);
-
-
-		copyButton = new JButton("Copy");
-		copyButton.setBackground(new Color(232, 230, 153));
-		copyButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-				clipboard.setContents(new StringSelection(logsField.getText()), null);
-			}
-		});
-		logsPane.setColumnHeaderView(copyButton);
+		
+		JPanel panel = new JPanel();
+		logsPane.setColumnHeaderView(panel);
+		
+		
+				copyButton = new JButton("Copy");
+				panel.add(copyButton);
+				copyButton.setBackground(new Color(232, 230, 153));
+				
+				clearButton = new JButton("Clear");
+				clearButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						guiService.clearLogs();
+					}
+				});
+				clearButton.setBackground(new Color(128, 0, 255));
+				panel.add(clearButton);
+				copyButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+						clipboard.setContents(new StringSelection(logsField.getText()), null);
+					}
+				});
+				copyButton.setVisible(false);
+				clearButton.setVisible(false);
 
 		profilesList = new JList();
+		profilesList.addListSelectionListener(new ListSelectionListener() {
+			public void valueChanged(ListSelectionEvent e) {
+				updateLoadButton();
+			}
+		});
 		scrollPane.setViewportView(profilesList);
 		profilesList.setSize(new Dimension(0, 60));
 		profilesList.setVisibleRowCount(3);
@@ -141,7 +164,6 @@ public class MainPane extends JPanel {
 		});
 		profilesList.setSelectedIndex(0);
 		setLayout(groupLayout);
-		copyButton.setVisible(false);
 		logsField.setVisible(false);
 	}
 
@@ -151,28 +173,51 @@ public class MainPane extends JPanel {
 			guiService.enableLogs(logsField);
 			logsField.setVisible(true);
 			copyButton.setVisible(true);
+			clearButton.setVisible(true);
 		} else {
 			guiService.disableLogs(logsField);
 			logsField.setVisible(false);
 			copyButton.setVisible(false);
+			clearButton.setVisible(false);
 		}
 	}
 
 	private void editProfile() {
 		if(profilesList.getSelectedValue() != null) {
-			guiService.editProfile(profilesList.getSelectedValue().toString());
+			guiService.editProfile(currentListElementRealName());
 		}
 	}
 
-	private void loadProfile() {
-		if (profilesList.getSelectedValue() != null) {
-			boolean res = guiService.loadProfile(profilesList.getSelectedValue().toString());
-			if (res) {
-				mainLabel.setText(String.format("Current profile: %s", guiService.getCurrentProfileName()));
+	private void toggleProfile() {
+		if (profilesList.getSelectedValue() != null
+				&& guiService.toggleProfile(currentListElementRealName())) {
+			updateLoadButton();
+		} else {
+			log.warn("Could not load or stop profile");
+		}
+	}
+
+	private void updateLoadButton() {
+		if(guiService.getCurrentProfileName() != null) {
+			mainLabel.setText(String.format("Current profile: %s", guiService.getCurrentProfileName()));
+
+			String currentProfileName = guiService.getCurrentProfileName();
+
+			if(currentProfileName != null && currentProfileName.equals(currentListElementRealName())) {
+				loadButton.setText("Stop");
+			} else {
+				loadButton.setText("Load");
 			}
 		} else {
-			JOptionPane.showMessageDialog(this, "You need to select profile.");
+			mainLabel.setText(String.format("Select profile..."));
+			loadButton.setText("Load");
 		}
+	}
+
+	private String currentListElementRealName() {
+		return profilesList.getSelectedValue().toString()
+				.replace("[JSON]", ".json")
+				.replace("[YAML]", ".yaml");
 	}
 
 	@PostConstruct
@@ -194,8 +239,11 @@ public class MainPane extends JPanel {
 		}
 		return Arrays.stream(folder.listFiles()).sorted().
 				filter(f -> !f.isDirectory() && f.getName().startsWith("mapping-"))
+				.filter(f -> f.getName().endsWith(".json") || f.getName().endsWith(".yaml"))
 				.map(f -> f.getName().replace("mapping-", "")
-						.replace(".json", ""))
+						.replace(".json", "[JSON]")
+						.replace(".yaml", "[YAML]")
+				)
 				.collect(Collectors.toList());
 	}
 

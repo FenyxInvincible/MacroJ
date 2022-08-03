@@ -1,0 +1,79 @@
+#keys with modifiers have to be above of keys without modifiers.
+#Modifier can be any valid key from keys.json
+LSHIFT+1:
+    onPress:
+        macroClass: SendSequence
+        params:
+            - key: '4'
+              action: Press
+              delay: 500
+            - key: '3'
+              action: Press
+              delay: 500
+            - key: A
+              action: Press
+              delay: 500
+'1':
+    onPress:
+        macroClass: RemapKey
+        params:
+            key: '2'
+            action: Press
+    onRelease:
+        macroClass: RemapKey
+        params:
+            key: '2'
+            action: Release
+'2':
+    onPress:
+        macroClass: SpamSequence
+        params:
+            - key: '2'
+              action: Press
+              delay: 500
+            - key: '3'
+              action: Press
+              delay: 100
+            - key: A
+              action: Press
+              delay: 1000
+'3':
+    onPress:
+        macroClass: SpamSequence
+        params:
+            - key: '2'
+              action: Press
+              delay: 500
+            - key: '3'
+              action: Press
+              delay: 100
+            - key: A
+              action: Press
+              delay: 1000
+'4':
+    onPress:
+        macroClass: Gesture
+        params:
+            UP: '5' #link to macro below. Macro on key '5' will be executed
+            DOWN: '6'
+            LEFT: '7'
+            RIGHT: '8'
+'5':
+    onPress:
+        macroClass: Crosshair
+        params:
+            imagePath: profiles/crosshair.png
+            scaleX: '60'
+            scaleY: '60'
+'6':
+    onPress:
+        macroClass: DebugMacro
+        params: []
+'7':
+    onPress:
+        macroClass: DoubleAction
+        params:
+            longPressMs: 300
+            shortKey: '1' #key 1 will be sent, due to macro propagation macro which is bound on key "1" will be executed
+            longKey: '2'
+            propagateCall: true

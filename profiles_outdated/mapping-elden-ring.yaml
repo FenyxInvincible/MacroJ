@@ -1,0 +1,114 @@
+# Start keys section
+x-SpellChangeKey: &SpellChangeKey "UP"
+x-SpellAmount: &SpellAmount 5
+x-ConsumableChangeKey: &ConsumableChangeKey "DOWN"
+x-ConsumableAmount: &ConsumableAmount 5
+# End keys section
+
+#Start templates section
+x-SpellSlot: &SpellSlotTemplate
+  onPress: &SpellOnPress
+    macroClass: eldenring.SelectSpellSlot
+    params: &SpellParams
+      position: ''
+      changeKey: *SpellChangeKey
+
+x-ConsumableSlot: &ConsumableSlotTemplate
+  onPress: &ConsumableOnPress
+    macroClass: eldenring.SelectConsumableSlot
+    params: &ConsumableParams
+      position: ''
+      changeKey: *ConsumableChangeKey
+      useKey:
+        - key: "R"
+          delay: 1
+#End templates section
+
+#to bind macro on different keys change value in ''
+#reset macro
+'-':
+  onPress:
+    macroClass: eldenring.Reset
+    params:
+      spells:
+        key: *SpellChangeKey
+        amount: *SpellAmount
+      consumables:
+        key: *ConsumableChangeKey
+        amount: *ConsumableAmount
+
+#spells
+'1':
+  <<: *SpellSlotTemplate
+  onPress:
+    <<: *SpellOnPress
+    params:
+      <<: *SpellParams
+      position: 1
+'2':
+  <<: *SpellSlotTemplate
+  onPress:
+    <<: *SpellOnPress
+    params:
+      <<: *SpellParams
+      position: 2
+'3':
+  <<: *SpellSlotTemplate
+  onPress:
+    <<: *SpellOnPress
+    params:
+      <<: *SpellParams
+      position: 3
+'4':
+  <<: *SpellSlotTemplate
+  onPress:
+    <<: *SpellOnPress
+    params:
+      <<: *SpellParams
+      position: 4
+'5':
+  <<: *SpellSlotTemplate
+  onPress:
+    <<: *SpellOnPress
+    params:
+      <<: *SpellParams
+      position: 5
+
+#consumables
+'6':
+  <<: *ConsumableSlotTemplate
+  onPress:
+    <<: *ConsumableOnPress
+    params:
+      <<: *ConsumableParams
+      position: 1
+'7':
+  <<: *ConsumableSlotTemplate
+  onPress:
+    <<: *ConsumableOnPress
+    params:
+      <<: *ConsumableParams
+      position: 2
+'8':
+  <<: *ConsumableSlotTemplate
+  onPress:
+    <<: *ConsumableOnPress
+    params:
+      <<: *ConsumableParams
+      position: 3
+'9':
+  <<: *ConsumableSlotTemplate
+  onPress:
+    <<: *ConsumableOnPress
+    params:
+      <<: *ConsumableParams
+      position: 4
+'0':
+  <<: *ConsumableSlotTemplate
+  onPress:
+    <<: *ConsumableOnPress
+    params:
+      <<: *ConsumableParams
+      position: 5
+
+

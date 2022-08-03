@@ -44,4 +44,16 @@ public class ProfileRunner {
             return false;
         }
     }
+
+    public boolean stop() {
+        try {
+            String pf = config.getCurrentProfile();
+            macroFactory.stop();
+            log.info("Profile is stopped: {}", pf);
+            return true;
+        } catch (Exception e) {
+            log.error("Could not stop profile: {}", e.getMessage(), e);
+            return false;
+        }
+    }
 }

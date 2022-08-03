@@ -38,4 +38,8 @@ public class MemoryLog extends UnsynchronizedAppenderBase<ILoggingEvent> {
     public String getAsString() {
         return queue.stream().parallel().collect(Collectors.joining("\n"));
     }
+
+    public void clear() {
+        queue.clear();
+    }
 }

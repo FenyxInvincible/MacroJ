@@ -1,0 +1,16 @@
+{
+  "1": {
+    "onPress": {
+      "macroClass": "eldenring.SelectSpellSlot",
+      "position": 1,
+      "changeKey": "UP"
+    }
+  },
+  "2": {
+    "onPress": {
+      "macroClass": "eldenring.SelectSpellSlot",
+      "position": 2,
+      "changeKey": "UP"
+    }
+  }
+}
