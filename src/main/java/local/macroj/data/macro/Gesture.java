@@ -28,7 +28,7 @@ public class Gesture implements Macro {
 
 
     private enum Direction {
-        UP, DOWN, RIGHT, LEFT
+        NO_DIRECTION, UP, DOWN, RIGHT, LEFT
     }
 
     @Override
@@ -72,7 +72,12 @@ public class Gesture implements Macro {
             if(direction == null) {
                 //prevent recursive macro call
                 log.info("Gesture: pointer was not moved. Sending key {} by {}", keyInitiator.getKey(), sender.getClass().getSimpleName());
-                sender.sendKey(keyInitiator.getKey(), 16, false);
+                Key k = Optional.ofNullable(keyData.get(Direction.NO_DIRECTION)).orElse(keyInitiator.getKey());
+                sender.sendKey(
+                        k,
+                        16,
+                        k.getKeyCode() != keyInitiator.getKey().getKeyCode()
+                );
 
             } else {
                 Key key = keyData.get(direction);
