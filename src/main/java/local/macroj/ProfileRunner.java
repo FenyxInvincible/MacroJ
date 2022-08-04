@@ -1,6 +1,7 @@
 package local.macroj;
 
 import local.macroj.data.RuntimeConfig;
+import local.macroj.service.KeyManager;
 import local.macroj.service.MacroFactory;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +24,8 @@ public class ProfileRunner {
     private final MouseEventReceiver mouseEventReceiver;
     private final KeyHookManager keyHookManager;
     private final MouseHookManager mouseHookManager;
+
+    private final KeyManager keyManager;
 
     private final MacroFactory macroFactory;
 
@@ -49,6 +52,7 @@ public class ProfileRunner {
         try {
             String pf = config.getCurrentProfile();
             macroFactory.stop();
+            keyManager.cleanVirtualKeys();
             log.info("Profile is stopped: {}", pf);
             return true;
         } catch (Exception e) {

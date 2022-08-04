@@ -1,5 +1,22 @@
 # **About**
-This tool is designed to provide macro creation functionality (like AutoHotkey) using Java as main language.
+MacroJ is a free, open-source tool for Windows.
+Designed to create extensive key bindings, macros and hotkeys for various Windows applications (e.g. video games, image-, video- and 3D editors).
+It allows users to:
+- Create hotkeys for mouse and keyboard
+- Remap keys
+- Bind several hotkeys on one physical button
+- Create complex (even multi-threading) scenarios using power of Java concurrency
+
+This tool could be useful in following scenarios:
+- Gaming (remap keys, if it's not supported by game, create auto heal, triple shot etc)
+- Shortcut creator (see Examples below)
+
+It allows to use all power of Java threads and C-like syntax for macro definitions
+
+# **Requirement**
+Java 8+ installed
+
+# **Implementation:**
 
 It was designed for Windows and JNA is default key sender. It's possible to use Java Robot instead.
 Need to change Sender bean to following in `ApplicationConfig.java`
@@ -10,17 +27,12 @@ public Sender sender(){
     return new RobotSender();
 }
 ```
-In that case MacroJ could be used on other OS (haven't check).
-
-It allows to use all power of Java threads and C-like syntax for macro definitions
-
-# **Requirement**
-Java 8+ installed
 
 # **How to use**
-There are several default included macro definitions which can be used out of the box.
+It could be used without Java knowledge, but functionality will be limited by existing macros. 
+There are several default included macro definitions which can be used out of the box (see List of included macros).
 
-Download [release](https://github.com/FenyxInvincible/MacroJ/releases) and unpack. 
+**Download [release](https://github.com/FenyxInvincible/MacroJ/releases) and unpack.** 
 
 Alternatively, clone repo and execute `./gradlew build`. All necessary files will be in `build/libs` folder (macroj-1.0-SNAPSHOT.jar, profiles)
 Run `java -jar macroj-1.0-SNAPSHOT.jar` or create .bat file
@@ -55,7 +67,8 @@ will be converted to
 # **Adding profile**
 Adding new profile doesn't require compilation. 
 
-New profile can be easily added. Just need to put `mapping-***.json` where *** is profile name single word. 
+New profile can be easily added. Just need to put `mapping-***.json` where *** is profile name single word.
+Alternatively use File -> Create Profile in UI.
 -This JSON file has to contain similar configuration for each macro key
 
 ```json
@@ -115,29 +128,50 @@ Allows to bind four actions for one key. When key is pressed and mouse direction
 Required params - json object with direction as key and key name as value.
 Excess direction can be skipped.
 ```json
-"params": {
-    "UP": "5",
-    "DOWN": "6",
-    "LEFT": "7",
-    "RIGHT": "8"
+"CAPSLOCK": {
+    "onPress": {
+        "macroClass": "Gesture",
+        "params": {
+            "UP": "5",
+            "DOWN": "6",
+            "LEFT": "7",
+            "RIGHT": "8"
+    }
 }
 ```
 
 ### RemapKey
 It's used for remapping one key to other. 
 
-Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press or Release"}
 ```json
-"params": {
-    "key": "4", //key name for keys.json
-    "delay": 500 // delay between press and release
+"CAPSLOCK": {
+    "onPress": {
+        "macroClass": "RemapKey",
+        "params": {
+            "key": "4", //key name for keys.json
+            "delay": 500 // delay between press and release
+        }
+    }
 }
+
 ```
 or
 ```json
-"params": {
-    "key": "4", //key name for keys.json
-    "action": "Press" // Press or Release action, delay will be ignored
+"CAPSLOCK": {
+    "onPress": {
+        "macroClass": "RemapKey",
+        "params": {
+            "key": "4", //key name for keys.json
+            "action": "Press" // Press or Release action, delay will be ignored
+        }
+    },
+    "onRelease": {
+        "macroClass": "RemapKey",
+        "params": {
+            "key": "4", //key name for keys.json
+            "action": "Release" // Press or Release action, delay will be ignored
+        }
+    }
 }
 ```
 
@@ -145,33 +179,41 @@ or
 ### SendSequence
 Send sequence of keys with specified delay between
 
-Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press or Release"}
 ```json
-"params": [
-    //delay here is time between keys. Delay between press and release is constant 64 ms
-    {"key": "4", "delay": 500},
-    {"key": "E", "delay": 30, "action": "Press"},
-    {"key": "RMB", "delay": 30},
-    {"key": "E", "delay": 30, "action": "Release"},
-    {"key": "RMB", "delay": 3000},
-    {"key": "4", "delay": 10}
-]
+"CAPSLOCK": {
+    "onPress": {
+        "macroClass": "SendSequence",
+        "params": [
+            //delay here is time between keys. Delay between press and release is constant 64 ms
+            {"key": "4", "delay": 500},
+            {"key": "E", "delay": 30, "action": "Press"},
+            {"key": "RMB", "delay": 30},
+            {"key": "E", "delay": 30, "action": "Release"},
+            {"key": "RMB", "delay": 3000},
+            {"key": "4", "delay": 10}
+        ]
+    }
+}
 ```
 
 ### SpamSequence
 Send sequence of keys while key is pressed
 
-Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press or Release"}
 ```json
-"params": [
-    //delay here is time between keys. Delay between press and release is constant 64 ms
-    {"key": "4", "delay": 500}, 
-    {"key": "E", "delay": 30, "action": "Press"},
-    {"key": "RMB", "delay": 30},
-    {"key": "E", "delay": 30, "action": "Release"},
-    {"key": "RMB", "delay": 3000},
-    {"key": "4", "delay": 10}
-]
+"CAPSLOCK": {
+    "onPress": {
+        "macroClass": "SpamSequence",
+        "params": [
+            //delay here is time between keys. Delay between press and release is constant 64 ms
+            {"key": "4", "delay": 500},
+            {"key": "E", "delay": 30, "action": "Press"},
+            {"key": "RMB", "delay": 30},
+            {"key": "E", "delay": 30, "action": "Release"},
+            {"key": "RMB", "delay": 3000},
+            {"key": "4", "delay": 10}
+        ]
+    }
+}
 ```
 
 ### DoubleAction
@@ -182,30 +224,22 @@ If chosen section is **onPress**, shortKey will be sent in case **release** acti
 If chosen section is **onRelease**, same but vice versa.
 
 ```json
-"params": {
-    "longPressMs": 200,  
-    "shortKey": "A",
-    "longKey": "B", 
-    "propagateCall": false,
-    "pressReleaseDelayMs": 16
+"CAPSLOCK": {
+    "onPress": {
+        "macroClass": "DoubleAction",
+        "params": {
+            "longPressMs": 200,
+            "shortKey": "A",
+            "longKey": "B",
+            "propagateCall": false,
+            "pressReleaseDelayMs": 16
+        }
+    }
 }
 ```
 By default, all sendings from sender are not propagated, so this sending will not trigger next macro
 When propagateCall = true, if there is macro that is bound to sent key, it will be executed.
 **Note:** _propagateCall_ may lead to infinite loop and OutOfMemory exception.
-
-Required params - List of {"key": "KEYNAME", "delay": millis, "action": "Press or Release"}
-```json
-"params": [
-    //delay here is time between keys. Delay between press and release is constant 64 ms
-    {"key": "4", "delay": 500}, 
-    {"key": "E", "delay": 30, "action": "Press"},
-    {"key": "RMB", "delay": 30},
-    {"key": "E", "delay": 30, "action": "Release"},
-    {"key": "RMB", "delay": 3000},
-    {"key": "4", "delay": 10}
-]
-```
 
 Other macros are too specific for game, but could be used as example and found in `local.macroj.data.macro` package
 
@@ -237,3 +271,66 @@ Window title and path to application in foreground could be checked by DebugMacr
 }
 ```
 It's part of **test** profile. Just run this profile, press 6 key and check logs.
+
+# Virtual macro keys
+Sometimes may be required to call on macro from another. 
+Virtual keys don't exist outside MacroJ, so can not be accidentally called by pressing key.
+In this case virtual keys could be useful.
+For example Gesture macro could store 4 key directions, which could be executed later.
+Virtual keys have to start with **macro** word prefix and any other words letters (_e.g. macro1, macro_1, macroMyCoolMacro_). 
+
+```json
+"1": {
+    "onPress": {
+        "macroClass": "Gesture",
+        "params": {
+            "UP": "macro1", //link to virtual key
+            "DOWN": "macro2", //link to virtual key
+            "LEFT": "macro3", //link to virtual key
+            "RIGHT": "macro4" //link to virtual key
+        }
+    }
+},
+"macro1": {
+    "onPress": {
+    .......
+    }
+},
+"macro2": ... ,
+"macro3": ... ,
+"macro4": ... ,
+```
+Here 4 virtual keys will be created. 
+When Gesture macro send keys by direction, specific macro will be executed.
+Virtual keys live only in profile execution lifecicle and will be cleaned when profile stops.
+
+# **Examples:**
+Using 2 usless keys Capslock and right control we could have 6 useful shotrcuts in photoshop:
+
+```json
+    //short press will select brush, long(more that 200 ms) - pen
+    "CAPSLOCK": {
+        "onPress": {
+            "macroClass": "DoubleAction",
+            "params": {
+                "shortKey": "B",//brush
+                "longKey": "P",//pen
+                "longPressMs": 200,
+                "propagateCall": false,
+                "pressReleaseDelayMs": 16
+            }
+        }
+    },
+    "RControl": {//photoshop example. Press right control, move mouse up/down/right/left, release right control
+        "onPress": {
+            "macroClass": "Gesture",
+            "params": {
+                "UP": "M",//selection
+                "DOWN": "L",//lasso
+                "LEFT": "T", //text
+                "RIGHT": "E" //Erase
+            }
+        }
+    }
+}
+```

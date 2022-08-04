@@ -53,8 +53,8 @@
             "params": {
                 "UP": "5",//link to macro below
                 "DOWN": "6",
-                "LEFT": "7",
-                "RIGHT": "8"
+                "LEFT": "macro1", //link to virtual key macro1. case independent
+                "RIGHT": "macro2" //link to virtual key macro2. case independent
             }
         }
     },
@@ -83,6 +83,56 @@
                 "shortKey": "1",
                 "longKey": "2",
                 "propagateCall": true
+            }
+        }
+    },
+    "macro1": {
+        "onPress": {
+            "macroClass": "SendSequence",
+            "params": [
+                {"key": "m", "delay": 16},
+                {"key": "a", "delay": 16},
+                {"key": "c", "delay": 16},
+                {"key": "r", "delay": 16},
+                {"key": "o", "delay": 16},
+                {"key": "1", "delay": 16}
+            ]
+        }
+    },
+    "macro2": {
+        "onPress": {
+            "macroClass": "SendSequence",
+            "params": [
+                {"key": "m", "delay": 16},
+                {"key": "a", "delay": 16},
+                {"key": "c", "delay": 16},
+                {"key": "r", "delay": 16},
+                {"key": "o", "delay": 16},
+                {"key": "2", "delay": 16}
+            ]
+        }
+    },
+    //short press will select brush, long(more that 200 ms) - pen
+    "CAPSLOCK": {
+        "onPress": {
+            "macroClass": "DoubleAction",
+            "params": {
+                "shortKey": "B",//brush
+                "longKey": "P",//pen
+                "longPressMs": 200,
+                "propagateCall": false,
+                "pressReleaseDelayMs": 16
+            }
+        }
+    },
+    "RControl": {//photoshop example. Press right control, move mouse up/down/right/left, release right control
+        "onPress": {
+            "macroClass": "Gesture",
+            "params": {
+                "UP": "M",//selection
+                "DOWN": "L",//lasso
+                "LEFT": "T", //text
+                "RIGHT": "E" //Erase
             }
         }
     }
