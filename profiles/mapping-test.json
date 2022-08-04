@@ -112,7 +112,7 @@
             ]
         }
     },
-    //short press will select brush, long(more that 200 ms) - pen
+    //short press will select brush, long(more that 500 ms by default) - pen
     "CAPSLOCK": {
         "onPress": {
             "macroClass": "DoubleAction",
