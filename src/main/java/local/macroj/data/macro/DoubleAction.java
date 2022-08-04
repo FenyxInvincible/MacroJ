@@ -4,8 +4,12 @@ import com.google.gson.reflect.TypeToken;
 import local.macroj.data.Key;
 import local.macroj.data.MacroKey;
 import local.macroj.sender.Sender;
+import local.macroj.service.KeyManager;
+import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import lombok.Value;
+import lombok.experimental.PackagePrivate;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -54,18 +58,19 @@ public class DoubleAction implements Macro {
         }
         log.debug("DoubleAction: sending key {} data: {}", key, data);
         sender.sendKey(key, data.pressReleaseDelayMs, !key.equals(initiator.getKey()) && data.propagateCall);
+
     }
 
     @Data
     public static class DoubleActionData {
-        private final int pressReleaseDelayMs = 16;
-        private final int longPressMs;
-        private final Key shortKey;
-        private final Key longKey;
+        Key shortKey;
+        Key longKey;
+        int pressReleaseDelayMs = 16;
+        int longPressMs = 500;
         /**
          * By default all sends from sender are not propagated, so this sending will not trigger next macro
          * When true, if there is macro that is bound to sent key, it will be executed
          */
-        private final boolean propagateCall;
+        boolean propagateCall = false;
     }
 }

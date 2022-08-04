@@ -228,11 +228,11 @@ If chosen section is **onRelease**, same but vice versa.
     "onPress": {
         "macroClass": "DoubleAction",
         "params": {
-            "longPressMs": 200,
-            "shortKey": "A",
-            "longKey": "B",
-            "propagateCall": false,
-            "pressReleaseDelayMs": 16
+            "shortKey": "A", //required
+            "longKey": "B", //required
+            "longPressMs": 200, //optional. default 500
+            "propagateCall": false, //optional. default false
+            "pressReleaseDelayMs": 16 //optional. default 16
         }
     }
 }

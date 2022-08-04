@@ -112,16 +112,13 @@
             ]
         }
     },
-    //short press will select brush, long(more that 200 ms) - pen
+    //short press will select brush, long(more that 500 ms by default) - pen
     "CAPSLOCK": {
         "onPress": {
             "macroClass": "DoubleAction",
             "params": {
                 "shortKey": "B",//brush
-                "longKey": "P",//pen
-                "longPressMs": 200,
-                "propagateCall": false,
-                "pressReleaseDelayMs": 16
+                "longKey": "P"//pen
             }
         }
     },
@@ -129,9 +126,10 @@
         "onPress": {
             "macroClass": "Gesture",
             "params": {
+                "NO_DIRECTION": "V",//move
                 "UP": "M",//selection
                 "DOWN": "L",//lasso
-                "LEFT": "T", //text
+                "LEFT": "G", //fill
                 "RIGHT": "E" //Erase
             }
         }
