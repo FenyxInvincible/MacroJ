@@ -15,6 +15,7 @@ It allows to use all power of Java threads and C-like syntax for macro definitio
 
 # **Requirement**
 Java 8+ installed
+Next release will be migrated to Java 11. It can be download here https://www.oracle.com/java/technologies/downloads/#java11-windows
 
 # **Implementation:**
 
