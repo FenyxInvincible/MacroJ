@@ -4,15 +4,15 @@ import local.macroj.data.macro.Macro;
 import local.macroj.service.MacroListener;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
 public class MacroThreads {
 
-    private MacroThread onPressThread = new MacroThread();
-    private MacroThread onReleaseThread = new MacroThread();
+    private final MacroThread onPressThread = new MacroThread();
+    private final MacroThread onReleaseThread = new MacroThread();
 
     public void run(Macro macro, MacroListener.EventState eventType) {
 
@@ -29,10 +29,10 @@ public class MacroThreads {
         }
 
         if (macroThread.isFree()) {
-            log.debug("Thread is free {}", macro.getClass());
+            log.info("Thread is free {}", macro.getClass());
             macroThread.execute(macro);
         } else {
-            log.debug("Thread is not free. Skipping");
+            log.warn("Thread is not free. Skipping");
         }
     }
 
@@ -42,9 +42,10 @@ public class MacroThreads {
     }
 
     private class MacroThread {
-        private ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(1);
-        private AtomicBoolean isFree = new AtomicBoolean(true);
+        private final ExecutorService executor = Executors.newSingleThreadExecutor();
+        private final AtomicBoolean isFree = new AtomicBoolean(true);
 
+        private Macro macro;
         public boolean isFree() {
             return isFree.get();
         }
@@ -60,7 +61,7 @@ public class MacroThreads {
         }
 
         public void shutdown() {
-            executor.shutdown();
+            executor.shutdownNow();
         }
     }
 }

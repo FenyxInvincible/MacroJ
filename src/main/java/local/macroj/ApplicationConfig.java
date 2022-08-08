@@ -1,15 +1,14 @@
 package local.macroj;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import local.macroj.data.Key;
 import local.macroj.data.MacroKey;
-import local.macroj.sender.JnaSender;
-import local.macroj.sender.Sender;
 import local.macroj.jna.hook.key.KeyHookManager;
 import local.macroj.jna.hook.mouse.MouseHookManager;
+import local.macroj.sender.JnaSender;
+import local.macroj.sender.Sender;
+import local.macroj.serialization.ColorDeserializer;
 import local.macroj.serialization.KeyDeserializer;
 import local.macroj.serialization.MacroKeyDeserializer;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +18,11 @@ import java.awt.*;
 
 @Configuration
 public class ApplicationConfig {
+    /**
+     * Send action is press + delay + release. This is delay
+     */
+    public static final int DEFAULT_SEND_DELAY = 16;
+
     @Bean
     public Robot robot() throws AWTException {
         return new Robot();
@@ -39,10 +43,15 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public Gson gson(KeyDeserializer keyDeserializer, MacroKeyDeserializer macroKeyDeserializer){
+    public Gson gson(
+            KeyDeserializer keyDeserializer,
+            MacroKeyDeserializer macroKeyDeserializer,
+            ColorDeserializer colorDeserializer
+    ){
         return new GsonBuilder()
                 .registerTypeAdapter(Key.class, keyDeserializer)
                 .registerTypeAdapter(MacroKey.class, macroKeyDeserializer)
+                .registerTypeAdapter(Color.class, colorDeserializer)
                 .create();
     }
 }

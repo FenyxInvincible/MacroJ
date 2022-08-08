@@ -42,7 +42,6 @@ public class Heal implements Macro {
         }
     }
 
-
     class HealDaemon implements Runnable {
 
         @Override

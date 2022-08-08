@@ -58,6 +58,7 @@ public class Overlay extends Thread {
 
     public void clear(String drawId){
         overlayWindow.getGraphicsFunctions().remove(drawId);
+        overlayWindow.repaint();
     }
 
     public void clean(){
@@ -87,10 +88,10 @@ public class Overlay extends Thread {
 
     public static BufferedImage scale(BufferedImage img, int dWidth, int dHeight) {
         Image tmp = img.getScaledInstance(dWidth, dHeight, Image.SCALE_SMOOTH);
-        BufferedImage dimg = new BufferedImage(dWidth, dHeight, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2d = dimg.createGraphics();
+        BufferedImage bImg = new BufferedImage(dWidth, dHeight, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2d = bImg.createGraphics();
         g2d.drawImage(tmp, 0, 0, null);
         g2d.dispose();
-        return dimg;
+        return bImg;
     }
 }

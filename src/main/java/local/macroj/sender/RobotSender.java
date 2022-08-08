@@ -46,7 +46,7 @@ public class RobotSender implements Sender{
             Thread.sleep(delay);
             releaseKey(key);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
     }
 

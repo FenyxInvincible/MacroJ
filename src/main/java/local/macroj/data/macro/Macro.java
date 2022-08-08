@@ -10,4 +10,8 @@ public interface Macro extends Runnable {
     default Type getParamsType(){
         return null;
     };
+
+    default void shutdown() {
+
+    };
 }
