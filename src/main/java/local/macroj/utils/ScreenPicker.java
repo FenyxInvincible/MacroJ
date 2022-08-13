@@ -3,11 +3,14 @@ package local.macroj.utils;
 import com.sun.jna.Native;
 import com.sun.jna.platform.win32.*;
 import com.sun.jna.ptr.IntByReference;
+import dev.failsafe.Failsafe;
+import dev.failsafe.RetryPolicy;
 import lombok.extern.slf4j.Slf4j;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.time.Duration;
 
 import static com.sun.jna.platform.win32.WinNT.PROCESS_QUERY_INFORMATION;
 import static com.sun.jna.platform.win32.WinNT.PROCESS_VM_READ;
@@ -17,7 +20,7 @@ public class ScreenPicker {
     public static final int DWORD_WHITE = 16777215;
 
     private static Robot robot = null;
-    private static final WinDef.HDC hdc = User32.INSTANCE.GetDC(null);
+    private static WinDef.HDC hdc = User32.INSTANCE.GetDC(null);
 
     public static String getForegroundWindowTitle() {
         char[] windowText = new char[256];
@@ -47,8 +50,18 @@ public class ScreenPicker {
         return capture;
     }
 
-    public static int pickDwordColor(int x, int y) {
-        return MyGDI32.INSTANCE.GetPixel(hdc, x, y);
+    synchronized public static int pickDwordColor(int x, int y) {
+        RetryPolicy<Object> retryPolicy = RetryPolicy.builder()
+                .handleResult(-1)
+                .withMaxRetries(3)
+                .onRetry(event -> {
+                    User32.INSTANCE.ReleaseDC(null, hdc);
+                    hdc = User32.INSTANCE.GetDC(null);
+                    log.warn("DC was reset in ScreenPicker pickDwordColor");
+                })
+                .build();
+
+        return Failsafe.with(retryPolicy).get(() -> MyGDI32.INSTANCE.GetPixel(hdc, x, y));
     }
 
     public static Color pickRGBColor(int x, int y) {
@@ -56,6 +69,10 @@ public class ScreenPicker {
     }
 
     public static Color dwordToColor(int dword) {
+        if(dword < 0) {
+            throw new IllegalArgumentException("Incorrect dword value " + dword);
+        }
+
         return new Color(
                 (dword >> 16) & 0xFF,
                 (dword >> 8) & 0xFF,

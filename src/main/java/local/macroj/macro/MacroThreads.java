@@ -32,7 +32,7 @@ public class MacroThreads {
             log.info("Thread is free {}", macro.getClass());
             macroThread.execute(macro);
         } else {
-            log.warn("Thread is not free. Skipping");
+            log.warn("Thread is busy. Skipping");
         }
     }
 

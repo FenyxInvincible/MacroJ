@@ -26,7 +26,11 @@ public class SendSequence implements Macro {
 
     @Override
     public void run() {
-        sender.sendKeys(sendKeys, ApplicationConfig.DEFAULT_SEND_DELAY, self);
+        try {
+            sender.sendKeys(sendKeys, ApplicationConfig.DEFAULT_SEND_DELAY, self);
+        } catch (Exception e) {
+            log.error("Unhandled exception while sending sequence: params {}", sendKeys, e);
+        }
     }
 
     @Override

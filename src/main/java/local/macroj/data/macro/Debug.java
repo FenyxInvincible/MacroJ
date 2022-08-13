@@ -9,7 +9,7 @@ import java.awt.*;
 
 @Component
 @Slf4j
-public class DebugMacro implements Macro {
+public class Debug implements Macro {
 
     @Override
     public void setParams(Object param, MacroKey self) {
@@ -26,7 +26,7 @@ public class DebugMacro implements Macro {
             PointerInfo a = MouseInfo.getPointerInfo();
             Point b = a.getLocation();
             int color = ScreenPicker.pickDwordColor((int) b.getX(), (int) b.getY());
-            log.info("x: {} y: {} Dword: {} Color: {}", b.getX(), b.getY(), color, ScreenPicker.dwordToColor(color));
+            log.info("x: {} y: {} Color Dword: {} Color RGB: {}", b.getX(), b.getY(), color, ScreenPicker.dwordToColor(color));
             log.info("=============DEBUG END ==============");
         } catch (Exception e) {
             e.printStackTrace();

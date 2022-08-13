@@ -19,30 +19,31 @@ import java.util.List;
 @Slf4j
 @Component
 @Scope("prototype")
-public class PixelSame implements Macro {
+public class PixelColor implements Macro {
 
     private final Sender sender;
 
-    private PixelEqualData data;
+    private PixelColorData data;
     protected MacroKey self;
 
     @Override
     public void setParams(Object param, MacroKey self) {
-        this.data = (PixelEqualColor.PixelEqualDesiredData)param;
+        this.data = (PixelColorData)param;
         this.self = self;
     }
 
     @Override
     public Type getParamsType() {
-        return TypeToken.get(PixelEqualColor.PixelEqualData.class).getType();
+        return TypeToken.get(PixelColorData.class).getType();
     }
 
     @SneakyThrows
     @Override
     public void run() {
         int attempts = data.getMaxAttempts();
-
-        Color color = ScreenPicker.pickRGBColor(data.getX(), data.getY());
+        Color color = data.getDesiredColor() != null ?
+                data.getDesiredColor() :
+                ScreenPicker.pickRGBColor(data.getX(), data.getY());
 
         Thread.sleep(data.getAttemptsDelayMs());
 
@@ -65,13 +66,13 @@ public class PixelSame implements Macro {
 
     @Data
     @NoArgsConstructor
-    public static class PixelEqualData {
+    public static class PixelColorData {
         private boolean equality = true;
         @NonNull
         private Integer x;
         @NonNull
         private Integer y;
-
+        private Color desiredColor = null;
         private int maxAttempts = 3;
         private int attemptsDelayMs = 50;
         private List<UseKeyData> keys;

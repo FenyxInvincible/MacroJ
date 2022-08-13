@@ -1,39 +1,31 @@
 {
-  "1": {
+  "6": {
     "onPress": {
-      "macroClass": "PixelChecker",
-      "params": {
-        "x": 10,
-        "y": 10,
-        "desiredColor": null,
-        "equality": true, //optional, default true
-        "keys":  [
-          {"key": "a", "delay": 3000}
-        ],
-        "icon": {
-          "imagePath": "profiles/macroJ.png",
-          "x": 100,
-          "y": 100,
-          "width": 50,
-          "height": 50
-        }
-      }
+      "macroClass": "SendSequence",
+      "params": [
+        {"key": "6", "delay": 100},
+        {"key": "LControl", "delay": 50, "action": "Press"},
+        {"key": "5", "delay": 15},
+        {"key": "LControl", "delay": 50, "action": "Release"},
+        {"key": "8", "delay": 30}
+      ]
     }
   },
-  "2": {
+  //HP autocheck
+  "F5": {
     "onPress": {
       "macroClass": "PixelChecker",
       "params": {
-        "x": 10,
-        "y": 10,
+        "x": 154,
+        "y": 1263,
         "desiredColor": {
-          "r": 10,
-          "g": 10,
-          "b": 10
+          "r": 44,
+          "g": 27,
+          "b": 195
         },
-        "equality": true, //optional, default true
+        "equality": false, //optional, default true
         "keys":  [
-          {"key": "a", "delay": 3000}
+          {"key": "1", "delay": 500}
         ],
         "icon": {
           "imagePath": "profiles/macroJ.png",
@@ -41,8 +33,46 @@
           "y": 150,
           "width": 50,
           "height": 50
-        }
+        },
+        "refreshTimeMs": 50
       }
+    }
+  },
+  //MP autocheck
+  "F6": {
+    "onPress": {
+      "macroClass": "PixelChecker",
+      "params": {
+        "x": 2406,
+        "y": 1321,
+        "desiredColor": {
+          "r": 155,
+          "g": 83,
+          "b": 20
+        },
+        "equality": false, //optional, default true
+        "keys":  [
+          {"key": "9", "delay": 2000}
+        ],
+        "icon": {
+          "imagePath": "profiles/macroJ.png",
+          "x": 150,
+          "y": 150,
+          "width": 50,
+          "height": 50
+        },
+        "refreshTimeMs": 100
+      }
+    }
+  },
+  "F10": {
+    "onPress": {
+      "macroClass": "DeadlockDetection"
+    }
+  },
+  "F11": {
+    "onPress": {
+      "macroClass": "Debug"
     }
   }
 }

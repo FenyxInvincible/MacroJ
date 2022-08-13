@@ -68,8 +68,10 @@ public class PixelChecker implements Macro {
 
             log.info("Daemon is created");
         } else {
+            log.info("Stopping the daemon...");
             daemon.cancel(true);
             daemon = null;
+            log.info("Success");
         }
     }
 
@@ -112,7 +114,7 @@ public class PixelChecker implements Macro {
 
                     if(data.isEquality() == currentColor.equals(checkingColor)) {
                         sender.sendKeys(data.getKeys(), ApplicationConfig.DEFAULT_SEND_DELAY, initiator);
-                        log.info("Keys was sent: {}", data.getKeys());
+                        log.info("Keys was sent: {} for colors: Desired: {}, Actual {}", data.getKeys(), checkingColor, currentColor);
                     } else {
                         Thread.sleep(data.getRefreshTimeMs());
                     }

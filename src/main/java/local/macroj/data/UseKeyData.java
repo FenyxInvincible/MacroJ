@@ -6,5 +6,5 @@ import lombok.Data;
 public class UseKeyData {
     private Key key;
     private int delay;
-    private Key.Action action;
+    private Key.Action action = Key.Action.Send;
 }
