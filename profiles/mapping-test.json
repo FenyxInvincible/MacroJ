@@ -112,7 +112,7 @@
             ]
         }
     },
-    //short press will select brush, long(more that 500 ms by default) - pen
+    //photoshop example. short press will select brush, long(more that 500 ms by default) - pen
     "CAPSLOCK": {
         "onPress": {
             "macroClass": "DoubleAction",
@@ -122,16 +122,22 @@
             }
         }
     },
-    "RControl": {//photoshop example. Press right control, move mouse up/down/right/left, release right control
+    //photoshop example. Press right mouse button, move mouse up/down/right/left, release rmb.
+    //without movement rmb will be sent
+    "RMB": {
         "onPress": {
             "macroClass": "Gesture",
             "params": {
-                "NO_DIRECTION": "V",//move
                 "UP": "M",//selection
                 "DOWN": "L",//lasso
                 "LEFT": "G", //fill
                 "RIGHT": "E" //Erase
             }
+        }
+    },
+    "F11": {
+        "onPress": {
+            "macroClass": "Debug"
         }
     }
 }

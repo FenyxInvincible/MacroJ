@@ -1,7 +1,7 @@
 package local.macroj.data.macro;
 
 import com.google.gson.reflect.TypeToken;
-import local.macroj.data.Key;
+import local.macroj.ApplicationConfig;
 import local.macroj.data.MacroKey;
 import local.macroj.data.UseKeyData;
 import local.macroj.sender.Sender;
@@ -38,21 +38,7 @@ public class SpamSequence implements Macro {
     @Override
     public void run() {
         while (selfKey.getKey().isPressed()) {
-            keys.forEach(k -> {
-                try {
-                    if (k.getAction() == Key.Action.Press) {
-                        sender.pressKey(k.getKey());
-                    } else if (k.getAction() == Key.Action.Release) {
-                        sender.releaseKey(k.getKey());
-                    } else {
-                        sender.sendKey(k.getKey(), 64);
-                    }
-
-                    Thread.sleep(k.getDelay());
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            });
+            sender.sendKeys(keys, ApplicationConfig.DEFAULT_SEND_DELAY, selfKey);
         }
     }
 }

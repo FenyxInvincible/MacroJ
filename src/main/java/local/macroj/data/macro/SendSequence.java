@@ -1,7 +1,7 @@
 package local.macroj.data.macro;
 
 import com.google.gson.reflect.TypeToken;
-import local.macroj.data.Key;
+import local.macroj.ApplicationConfig;
 import local.macroj.data.MacroKey;
 import local.macroj.data.UseKeyData;
 import local.macroj.sender.Sender;
@@ -26,22 +26,11 @@ public class SendSequence implements Macro {
 
     @Override
     public void run() {
-        sendKeys.stream().forEach(k -> {
-            try {
-                if (k.getAction() == Key.Action.Press) {
-                    sender.pressKey(k.getKey());
-                } else if (k.getAction() == Key.Action.Release) {
-                    sender.releaseKey(k.getKey());
-                } else {
-                    sender.sendKey(k.getKey(), 64);
-                }
-                log.debug("Sending event through {} key action {}", sender.getClass().getSimpleName(), k);
-
-                Thread.sleep(k.getDelay());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
+        try {
+            sender.sendKeys(sendKeys, ApplicationConfig.DEFAULT_SEND_DELAY, self);
+        } catch (Exception e) {
+            log.error("Unhandled exception while sending sequence: params {}", sendKeys, e);
+        }
     }
 
     @Override

@@ -18,13 +18,14 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Nullable;
-import javax.annotation.PostConstruct;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 import java.lang.reflect.Type;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -104,7 +105,7 @@ public class MacroFactory {
                 macroThreadMap.put(key, new MacroThreads());
             }
 
-            log.info(
+            log.debug(
                     "Macro for key {} [modifier: {}, state: {}]  is found {}",
                     key.getKey().getKeyText(),
                     Optional.ofNullable(key.getModifier()).orElse(KEY_NONE).getKeyText(),
@@ -173,8 +174,9 @@ public class MacroFactory {
     }
 
     public void stop() {
-        macroThreadMap.entrySet().stream().forEach(mt -> mt.getValue());
+        macroThreadMap.forEach((key, value) -> value.shutdown());
         macroThreadMap.clear();
+        macros.forEach(MacroPair::shutdown);
         macros = null;
         config.setCurrentProfile(null);
     }
@@ -194,11 +196,16 @@ public class MacroFactory {
                     return getOnReleaseMacro();
                 default:
                     throw new IllegalArgumentException("Unknown event type " + eventType);
-            }
         }
+            }
 
         public boolean isTriggered() {
             return macroKey.getModifier() == null || macroKey.getModifier().isPressed();
+        }
+
+        public void shutdown() {
+            getOnPressMacro().shutdown();
+            getOnReleaseMacro().shutdown();
         }
     }
 }

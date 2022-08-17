@@ -16,10 +16,11 @@ import org.springframework.stereotype.Component;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.UUID;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -60,7 +61,7 @@ public class StamRegenV2 implements Macro {
         overlay.draw(UUID.randomUUID().toString(), graphics -> {
             try {
                 if(isStarted.get()) {
-                    InputStream image = new FileInputStream(macroData.buffActiveImagePath);
+                    InputStream image = Files.newInputStream(Paths.get(macroData.buffActiveImagePath));
                     BufferedImage scaledImage = Overlay.scale(ImageIO.read(image), 50, 50);
                     graphics.setColor(new Color(1f,0f,0f,.5f));
                     graphics.drawImage(scaledImage, 0, 80, null);

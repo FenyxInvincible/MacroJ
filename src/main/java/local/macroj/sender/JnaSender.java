@@ -42,7 +42,7 @@ public class JnaSender implements Sender{
                 Keyboard.sendKeyUp(key, allowRecursive);
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
     }
 

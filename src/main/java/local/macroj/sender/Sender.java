@@ -1,7 +1,11 @@
 package local.macroj.sender;
 
 import local.macroj.data.Key;
+import local.macroj.data.MacroKey;
+import local.macroj.data.UseKeyData;
 import local.macroj.key.MouseKey;
+
+import java.util.List;
 
 /**
  * If implementation can send dwExtraInfo, then default implementation should prevent recursive calls macro by sending
@@ -130,4 +134,21 @@ public interface Sender {
      * @param y
      */
     void mouseMove(int x, int y);
+
+    default void sendKeys(List<UseKeyData> sendKeys, int sendDelay, MacroKey initiator) {
+        sendKeys.stream().forEach(k -> {
+            try {
+                if (k.getAction() == Key.Action.Press) {
+                    pressKey(k.getKey());
+                } else if (k.getAction() == Key.Action.Release) {
+                    releaseKey(k.getKey());
+                } else {
+                    sendKey(k.getKey(), sendDelay);
+                }
+                Thread.sleep(k.getDelay());
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+    };
 }
