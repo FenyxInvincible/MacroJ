@@ -242,6 +242,64 @@ By default, all sendings from sender are not propagated, so this sending will no
 When propagateCall = true, if there is macro that is bound to sent key, it will be executed.
 **Note:** _propagateCall_ may lead to infinite loop and OutOfMemory exception.
 
+### PixelChecker
+Starts listening pixel color change and perform actions if color is (or not) changed
+
+```json
+"CAPSLOCK": {//key which starts listening
+    "onPress": {
+        "macroClass": "PixelChecker",
+            "params": {
+                "x": 158, //required, pixel x coordinate
+                "y": 1378, //required, pixel y coordinate
+                "equality": false, //if true will execute actions from keys section when pixel is equal, if false - not equals
+                "keys": [ //action which will be executed when condition is happened
+                  {"key": "1", "delay": 1500}
+                ],
+                "color": { //Whole section is optional. If specified macro will check pixel equality to this color                          
+                  "r": 0,  // If not specified color will be picked at startup, when key (CAPSLOCK in current case) is pressed
+                  "g": 0,  
+                  "b": 0
+                },
+                "icon": {//draw icon to show that current listening in progress
+                    "imagePath": "images/hp.png",
+                    "x": 100,
+                    "y": 150,
+                    "width": 25,
+                    "height": 25
+                },
+                "refreshTimeMs": 100 //optional, default 200 ms
+        }
+    }
+}
+```
+
+### PixelColor
+Similar to **PixelChecker** validates pixel color, but unlike of it validates only specific amount of times
+
+```json
+"CAPSLOCK": {//key which starts listening
+    "onPress": {
+        "macroClass": "PixelChecker",
+            "params": {
+                "x": 158, //required, pixel x coordinate
+                "y": 1378, //required, pixel y coordinate
+                "equality": false, //if true will execute actions from keys section when pixel is equal, if false - not equals
+                "keys": [ //action which will be executed when condition is happened
+                  {"key": "1", "delay": 1500}
+                ],
+                "color": { //Whole section is optional. If specified macro will check pixel equality to this color                          
+                  "r": 0,  // If not specified color will be picked at startup, when key (CAPSLOCK in current case) is pressed
+                  "g": 0,  
+                  "b": 0
+                },
+                "maxAttempts": 3, //optional, default 3
+                "attemptsDelayMs": 100 //optional, default 50 ms
+        }
+    }
+}
+```
+
 Other macros are too specific for game, but could be used as example and found in `local.macroj.data.macro` package
 
 # Limiting of macro execution by application

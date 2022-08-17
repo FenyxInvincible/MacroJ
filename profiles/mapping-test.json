@@ -134,5 +134,10 @@
                 "RIGHT": "E" //Erase
             }
         }
+    },
+    "F11": {
+        "onPress": {
+            "macroClass": "Debug"
+        }
     }
 }
