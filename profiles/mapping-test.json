@@ -68,12 +68,6 @@
             }
         }
     },
-    "6": {
-        "onPress": {
-            "macroClass": "DebugMacro",
-            "params": []
-        }
-    },
     "7": {
         "onPress": {
             "macroClass": "DoubleAction",

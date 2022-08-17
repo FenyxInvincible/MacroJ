@@ -67,7 +67,7 @@ LSHIFT+1:
             scaleY: '60'
 '6':
     onPress:
-        macroClass: DebugMacro
+        macroClass: Debug
         params: []
 '7':
     onPress:

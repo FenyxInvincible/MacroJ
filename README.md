@@ -14,8 +14,7 @@ This tool could be useful in following scenarios:
 It allows to use all power of Java threads and C-like syntax for macro definitions
 
 # **Requirement**
-Java 8+ installed
-Next release will be migrated to Java 11. It can be download here https://www.oracle.com/java/technologies/downloads/#java11-windows
+Java 11+ installed. It can be download here https://www.oracle.com/java/technologies/downloads/#java11-windows
 
 # **Implementation:**
 
@@ -243,7 +242,8 @@ When propagateCall = true, if there is macro that is bound to sent key, it will 
 **Note:** _propagateCall_ may lead to infinite loop and OutOfMemory exception.
 
 ### PixelChecker
-Starts listening pixel color change and perform actions if color is (or not) changed
+Starts listening pixel color change and perform actions if color is (or not) changed.
+Pressing macro key starts listening. Pressing it again, will stop listening
 
 ```json
 "CAPSLOCK": {//key which starts listening
