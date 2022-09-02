@@ -19,7 +19,7 @@ import java.lang.reflect.Type;
 @Slf4j
 public class Crosshair implements Macro {
 
-    private static final String CROSSHAIR = "crosshair";
+    private static final Overlay.OverlayLabel CROSSHAIR = Overlay.getRandomLabel();
     private boolean isOn = false;
 
     private final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();

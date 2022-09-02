@@ -21,7 +21,6 @@ import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.UUID;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -58,7 +57,7 @@ public class StamRegenV2 implements Macro {
     }
 
     private void toggleOverlay(){
-        overlay.draw(UUID.randomUUID().toString(), graphics -> {
+        overlay.draw(Overlay.getRandomLabel(), graphics -> {
             try {
                 if(isStarted.get()) {
                     InputStream image = Files.newInputStream(Paths.get(macroData.buffActiveImagePath));

@@ -22,7 +22,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.UUID;
 
 /**
  * For RobotSender implementation better do not use recursive call when macro is bind on key and resend it
@@ -69,13 +68,15 @@ public class Countdown implements Macro {
     @RequiredArgsConstructor
     private class IconTimerTask extends TimerTask {
         private final CountdownData data;
-        private String drawId;
+        private Overlay.OverlayLabel drawId;
         private int count = 0;
-        private String textDrawId;
+        private Overlay.OverlayLabel textDrawId;
         private long startTime;
+        private Font font;
 
         @Override
         public void run() {
+            font = new Font(data.font.getName(), data.font.getStyle().getValue(), data.font.getSize());
             if (count == 0) {
                 startTime = System.currentTimeMillis();
                 drawIcon();
@@ -93,22 +94,22 @@ public class Countdown implements Macro {
 
         private void drawText() {
 
-            String newDraw = UUID.randomUUID().toString();
+            Overlay.OverlayLabel newDraw = Overlay.getRandomLabelWithZOrder(100);
+
             overlay.draw(newDraw, graphics -> {
                 Color c = graphics.getColor();
                 Font f = graphics.getFont();
                 graphics.setColor(data.font.getColor());
-                graphics.setFont(new Font(data.font.getName(), data.font.getStyle().getValue(), data.font.getSize()));
+                graphics.setFont(font);
 
                 graphics.drawString(
-                        String.format("%.2f", (float)(data.duration - data.refresh * count) / 1000.f),
+                        String.format("%.2f", (float)(data.duration - (System.currentTimeMillis() - startTime)) / 1000.f),
                         data.icon.getX(),
                         data.icon.getY() + data.icon.getHeight()
                 );
 
                 graphics.setColor(c);
                 graphics.setFont(f);
-
             });
 
             if(textDrawId != null) {
@@ -119,14 +120,10 @@ public class Countdown implements Macro {
         }
 
         private void drawIcon() {
-            drawId = UUID.randomUUID().toString();
-
-            log.info("Drawing icon {}({})", data.icon.getImagePath(), drawId);
+            drawId = Overlay.getRandomLabel();
             overlay.draw(drawId, graphics -> {
-                log.info("!!!!!!!!!Image");
                 try {
                     InputStream image = Files.newInputStream(Paths.get(data.icon.getImagePath()));
-                    log.info("!!!!!!!!!Image {}", image);
                     BufferedImage scaledImage = Overlay.scale(ImageIO.read(image), data.icon.getWidth(), data.icon.getHeight());
                     graphics.setColor(new Color(1f, 0f, 0f, 1.f));
                     graphics.drawImage(scaledImage, data.icon.getX(), data.icon.getY(), null);
