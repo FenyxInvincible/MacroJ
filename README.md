@@ -197,7 +197,8 @@ Send sequence of keys with specified delay between
 ```
 
 ### SpamSequence
-Send sequence of keys while key is pressed
+Send sequence of keys while key is pressed. Lopp will be interrupted when key is released.
+Rest of unsent key will not be send.
 
 ```json
 "CAPSLOCK": {
@@ -295,6 +296,39 @@ Similar to **PixelChecker** validates pixel color, but unlike of it validates on
                 },
                 "maxAttempts": 3, //optional, default 3
                 "attemptsDelayMs": 100 //optional, default 50 ms
+        }
+    }
+}
+```
+
+### Countdown
+This macro just shows image and countdown text on the overlay screen for specific duration.
+Useful when needs to track cooldowns.
+
+```json
+"CAPSLOCK": {
+    "onPress": {
+        "macroClass": "Countdown",
+            "params": {
+            "duration": 3000, //optional, duration in milliseconds, default 1000 ms
+            "refresh": 100, //optional, refresh time in milliseconds, default 100 ms
+            "icon": {
+                "imagePath": "profiles/macroJ.png",
+                "x": 400, //optional, image top right x coordinate
+                "y": 400, //optional, image top right y coordinate
+                "width": 100, //optional, image width, default 50
+                "height": 100 //optional, image height, default 50
+            },
+            "font": {
+                "name": "TimesRoman",//optional, default TimesRoman
+                "style": "BOLD", //optional, default PLAIN, values: PLAIN, BOLD, ITALIC
+                "size": 20,//optional, default 12
+                "color": {//optional, default 0,0,0 (black)
+                    "r": 255,
+                    "g": 255,
+                    "b": 0
+                }
+            }
         }
     }
 }
