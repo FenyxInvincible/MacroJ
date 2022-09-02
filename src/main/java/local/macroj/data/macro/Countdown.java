@@ -92,12 +92,9 @@ public class Countdown implements Macro {
         }
 
         private void drawText() {
-            if(textDrawId != null) {
-                overlay.clear(textDrawId);
-            }
 
-            textDrawId = UUID.randomUUID().toString();
-            overlay.draw(textDrawId, graphics -> {
+            String newDraw = UUID.randomUUID().toString();
+            overlay.draw(newDraw, graphics -> {
                 Color c = graphics.getColor();
                 Font f = graphics.getFont();
                 graphics.setColor(data.font.getColor());
@@ -113,6 +110,12 @@ public class Countdown implements Macro {
                 graphics.setFont(f);
 
             });
+
+            if(textDrawId != null) {
+                overlay.clear(textDrawId);
+            }
+
+            textDrawId = newDraw;
         }
 
         private void drawIcon() {
@@ -134,8 +137,13 @@ public class Countdown implements Macro {
         }
 
         public void stop() {
-            overlay.clear(drawId);
-            overlay.clear(textDrawId);
+            if(textDrawId != null) {
+                overlay.clear(textDrawId);
+            }
+            if(drawId != null) {
+                overlay.clear(drawId);
+            }
+
             cancel();
         }
     }
