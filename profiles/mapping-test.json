@@ -80,6 +80,31 @@
             }
         }
     },
+    "8": {
+        "onPress": {
+            "macroClass": "Countdown",
+            "params": {
+                "duration": 3000,
+                "icon": {
+                    "imagePath": "profiles/macroJ.png",
+                    "x": 400,
+                    "y": 400,
+                    "width": 100,
+                    "height": 100
+                },
+                "font": {
+                    "name": "TimesRoman",
+                    "style": "BOLD",
+                    "size": 20,
+                    "color": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 0
+                    }
+                }
+            }
+        }
+    },
     "macro1": {
         "onPress": {
             "macroClass": "SendSequence",

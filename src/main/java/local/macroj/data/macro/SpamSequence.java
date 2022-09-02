@@ -38,7 +38,11 @@ public class SpamSequence implements Macro {
     @Override
     public void run() {
         while (selfKey.getKey().isPressed()) {
-            sender.sendKeys(keys, ApplicationConfig.DEFAULT_SEND_DELAY, selfKey);
+            keys.stream()
+                    .takeWhile(n -> selfKey.getKey().isPressed())
+                    .forEach(k -> {
+                        sender.send(k, ApplicationConfig.DEFAULT_SEND_DELAY);
+                    });
         }
     }
 }
