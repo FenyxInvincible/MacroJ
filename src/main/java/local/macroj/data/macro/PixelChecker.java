@@ -22,7 +22,6 @@ import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -86,7 +85,7 @@ public class PixelChecker implements Macro {
 
         private final PixelCheckerData data;
         private InputStream image;
-        private String drawId;
+        private Overlay.OverlayLabel drawId;
 
         @SneakyThrows
         @Override
@@ -130,7 +129,7 @@ public class PixelChecker implements Macro {
         private void createIcon() {
             try {
 
-                drawId = UUID.randomUUID().toString();
+                drawId = Overlay.getRandomLabel();
 
                 log.info("Drawing icon {}({})", data.icon.getImagePath(), drawId);
 
