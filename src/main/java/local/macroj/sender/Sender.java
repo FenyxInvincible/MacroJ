@@ -137,18 +137,20 @@ public interface Sender {
 
     default void sendKeys(List<UseKeyData> sendKeys, int sendDelay, MacroKey initiator) {
         sendKeys.stream().forEach(k -> {
-            send(k, sendDelay);
+            send(k, sendDelay, initiator);
         });
     };
 
-    default void send(UseKeyData useKeyData, int defaultDelay) {
+    default void send(UseKeyData useKeyData, int defaultDelay, MacroKey initiator) {
         try {
+            boolean allowPropagation = !initiator.getKey().equals(useKeyData.getKey());
+
             if (useKeyData.getAction() == Key.Action.Press) {
-                pressKey(useKeyData.getKey());
+                pressKey(useKeyData.getKey(), allowPropagation);
             } else if (useKeyData.getAction() == Key.Action.Release) {
-                releaseKey(useKeyData.getKey());
+                releaseKey(useKeyData.getKey(), allowPropagation);
             } else {
-                sendKey(useKeyData.getKey(), defaultDelay);
+                sendKey(useKeyData.getKey(), defaultDelay, allowPropagation);
             }
             Thread.sleep(useKeyData.getDelay());
         } catch (InterruptedException e) {

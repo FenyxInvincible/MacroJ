@@ -197,8 +197,8 @@ Send sequence of keys with specified delay between
 ```
 
 ### SpamSequence
-Send sequence of keys while key is pressed. Lopp will be interrupted when key is released.
-Rest of unsent key will not be send.
+Send sequence of keys while key is pressed. Loop will be interrupted when key is released.
+Rest of unsent key will not be sent.
 
 ```json
 "CAPSLOCK": {
