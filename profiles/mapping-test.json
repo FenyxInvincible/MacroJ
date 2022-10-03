@@ -29,11 +29,13 @@
     },
     "2": {
         "onPress": {
-            "macroClass": "SpamSequence",
+            "macroClass": "SendSequence",
             "params": [
-                {"key": "2", "action": "Press", "delay": 500},
-                {"key": "3", "action": "Press", "delay": 100},
-                {"key": "A", "action": "Press", "delay": 1000}
+                {"key": "m", "delay": "100-1000"},
+                {"key": "a", "delay": 100},
+                {"key": "c", "delay": "100-1000"},
+                {"key": "r"},
+                {"key": "o", "delay": 100}
             ]
         }
     },
@@ -41,9 +43,11 @@
         "onPress": {
             "macroClass": "SpamSequence",
             "params": [
-                {"key": "2", "action": "Press", "delay": 500},
-                {"key": "3", "action": "Press", "delay": 100},
-                {"key": "A", "action": "Press", "delay": 1000}
+                {"key": "m", "delay": 100},
+                {"key": "a", "delay": 100},
+                {"key": "c", "delay": 100},
+                {"key": "r", "delay": 100},
+                {"key": "o", "delay": 100}
             ]
         }
     },

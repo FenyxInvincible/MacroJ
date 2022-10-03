@@ -7,15 +7,9 @@ import com.sun.jna.platform.win32.WinDef.LRESULT;
 import com.sun.jna.platform.win32.WinDef.WPARAM;
 import com.sun.jna.platform.win32.WinUser.KBDLLHOOKSTRUCT;
 import com.sun.jna.platform.win32.WinUser.LowLevelKeyboardProc;
-
 import local.macroj.jna.hook.DeviceEventReceiver;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * A simplified representation of JNA's LowLevelKeyboardProc.
- * 
- * @author Matt
- */
 @Slf4j
 public abstract class KeyEventReceiver extends DeviceEventReceiver<KeyHookManager> implements LowLevelKeyboardProc {
 	private static final int WM_KEYDOWN = 256, WM_KEYUP = 257;
@@ -37,6 +31,18 @@ public abstract class KeyEventReceiver extends DeviceEventReceiver<KeyHookManage
 		long peer = Pointer.nativeValue(ptr);
 
 		log.debug("Callback: WPARAM {}, KBDLLHOOKSTRUCT {}}", wParam, info);
+
+		if (info.flags == 0x0010 || info.flags == 0x0011) {
+			info.flags = 0x0000;
+		}
+
+		if (info.flags == 0x0090 || info.flags == 0x0091) {
+			info.flags = 0x0080;
+		}
+
+		if (info.flags != 0x0000 && info.flags != 0x0080) {
+			log.warn("Possible keyboard LLKHF_INJECTED is found");
+		}
 
 		return User32.INSTANCE.CallNextHookEx(getHookManager().getHhk(this), nCode, wParam, new LPARAM(peer));
 	}
