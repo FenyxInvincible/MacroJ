@@ -1,10 +1,12 @@
 package local.macroj.data;
 
 import lombok.Data;
+import lombok.NonNull;
 
 @Data
 public class UseKeyData {
-    private Key key;
-    private int delay;
-    private Key.Action action = Key.Action.Send;
+    @NonNull
+    private final Key key;
+    private final int delay;
+    private final Key.Action action;
 }
