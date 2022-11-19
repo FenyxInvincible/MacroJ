@@ -301,6 +301,27 @@ Similar to **PixelChecker** validates pixel color, but unlike of it validates on
 }
 ```
 
+### SwitchCaseByColor
+Checks conditions and execute first successful. Each time will check pixel by coords and color
+
+```json
+"CAPSLOCK": {
+    "onPress": {
+        "macroClass": "SwitchCaseByColor",
+        "params": {
+            "cases": [
+                {
+                    "pixel": {"x": 0, "y": 0 },//could be found by usage of Debug macro
+                    "color": {"r": 255, "g": 255, "b": 0},//could be found by usage of Debug macro
+                    "key": {"key": "1", "delay": 0}//similar to other use keys may contain key, delay, action
+                }
+            ],
+            "defaultKey": "key": {"key": "2", "delay": 0}//similar to other use keys may contain key, delay, action
+        }
+    }
+}
+```
+
 ### Countdown
 This macro just shows image and countdown text on the overlay screen for specific duration.
 Useful when needs to track cooldowns.

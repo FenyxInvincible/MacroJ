@@ -109,6 +109,21 @@
             }
         }
     },
+    "9": {
+        "onPress": {
+            "macroClass": "SwitchCaseByColor",
+            "params": {
+                "cases": [
+                    {
+                        "pixel": {"x": 0, "y": 0 },
+                        "color": {"r": 255, "g": 255, "b": 0},
+                        "key": "k"
+                    }
+                ],
+                "defaultKey": "l"
+            }
+        }
+    },
     "macro1": {
         "onPress": {
             "macroClass": "SendSequence",
