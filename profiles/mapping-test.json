@@ -109,6 +109,21 @@
             }
         }
     },
+    "9": {
+        "onPress": {
+            "macroClass": "SwitchCaseByColor",
+            "params": {
+                "cases": [
+                    {
+                        "pixel": {"x": 0, "y": 0 },//could be found by usage of Debug macro
+                        "color": {"r": 255, "g": 255, "b": 0},//could be found by usage of Debug macro
+                        "key": {"key": "1", "delay": 0}//similar to other use keys may contain key, delay, action
+                    }
+                ],
+                "defaultKey": {"key": "2", "delay": 0}//similar to other use keys may contain key, delay, action
+            }
+        }
+    },
     "macro1": {
         "onPress": {
             "macroClass": "SendSequence",
