@@ -41,21 +41,34 @@ public class SwitchCaseByColor implements Macro {
 
     @Override
     public void run() {
+        var isInverted = switchCases.invert;
         for (SwitchCase switchCase : switchCases.cases) {
-            if (ScreenPicker.pickRGBColor(switchCase.pixel.getX(), switchCase.pixel.getY()).equals(switchCase.color)) {
+            var actualColor = ScreenPicker.pickRGBColor(switchCase.pixel.getX(), switchCase.pixel.getY());
+
+            log.info("Checking {} Invert: {} Checked color: {} Actual color: {}", switchCase.pixel, isInverted, switchCase.color, actualColor);
+            if (!isInverted && actualColor.equals(switchCase.color)) {
+                log.info("Found");
+                sender.send(switchCase.key, ApplicationConfig.DEFAULT_SEND_DELAY, keyInitiator);
+                return;
+            } else if (isInverted && !actualColor.equals(switchCase.color)) {
+                log.info("Found");
                 sender.send(switchCase.key, ApplicationConfig.DEFAULT_SEND_DELAY, keyInitiator);
                 return;
             }
         }
 
-        sender.send(switchCases.defaultKey, ApplicationConfig.DEFAULT_SEND_DELAY, keyInitiator);
+        if(switchCases.defaultKey != null) {
+            log.info("Use default");
+            sender.send(switchCases.defaultKey, ApplicationConfig.DEFAULT_SEND_DELAY, keyInitiator);
+        }
     }
 
     @Data
     public static class SwitchCases {
         private ArrayList<SwitchCase> cases;
-        @NonNull
         private UseKeyData defaultKey;
+
+        private boolean invert = false;
     }
 
     @Data

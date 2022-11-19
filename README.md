@@ -316,7 +316,7 @@ Checks conditions and execute first successful. Each time will check pixel by co
                     "key": {"key": "1", "delay": 0}//similar to other use keys may contain key, delay, action
                 }
             ],
-            "defaultKey": "key": {"key": "2", "delay": 0}//similar to other use keys may contain key, delay, action
+            "defaultKey": {"key": "2", "delay": 0}//Optional. similar to other use keys may contain key, delay, action
         }
     }
 }
