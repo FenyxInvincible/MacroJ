@@ -42,13 +42,28 @@
     "3": {
         "onPress": {
             "macroClass": "SpamSequence",
-            "params": [
-                {"key": "m", "delay": 100},
-                {"key": "a", "delay": 100},
-                {"key": "c", "delay": 100},
-                {"key": "r", "delay": 100},
-                {"key": "o", "delay": 100}
-            ]
+            "params": {
+                "behaviour": "CompleteCycle",
+                "type": "PressStartPressEnd",
+                "keys": [
+                    {
+                        "key": "s",
+                        "delay": 200
+                    },
+                    {
+                        "key": "p",
+                        "delay": 200
+                    },
+                    {
+                        "key": "a",
+                        "delay": 200
+                    },
+                    {
+                        "key": "m",
+                        "delay": 200
+                    }
+                ]
+            }
         }
     },
     "4": {
