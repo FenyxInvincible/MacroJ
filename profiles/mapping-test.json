@@ -43,8 +43,8 @@
         "onPress": {
             "macroClass": "SpamSequence",
             "params": {
-                "behaviour": "CompleteCycle",
-                "type": "PressStartPressEnd",
+                "behaviour": "CompleteCycle",//Optional. CompleteCycle or StopImmediately. StopImmediately by default
+                "type": "PressStartPressEnd",//Optional. PressStartReleaseEnd or PressStartPressEnd. PressStartReleaseEnd by default
                 "keys": [
                     {
                         "key": "s",
