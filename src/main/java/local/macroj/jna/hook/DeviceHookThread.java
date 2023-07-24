@@ -3,6 +3,7 @@ package local.macroj.jna.hook;
 import com.sun.jna.platform.win32.Kernel32;
 import com.sun.jna.platform.win32.User32;
 import com.sun.jna.platform.win32.WinDef;
+import com.sun.jna.platform.win32.WinUser;
 import com.sun.jna.platform.win32.WinUser.HHOOK;
 import com.sun.jna.platform.win32.WinUser.MSG;
 
@@ -47,6 +48,14 @@ public abstract class DeviceHookThread<H extends DeviceEventReceiver<?>> extends
 	public void run() {
 		WinDef.HMODULE handle = Kernel32.INSTANCE.GetModuleHandle(null);
 		this.hhk = User32.INSTANCE.SetWindowsHookEx(hookType, eventReceiver, handle, 0);
+		if (this.hhk == null) {
+			// Failed to install the hook
+			onFail();
+			return;
+		}
+
+		Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
+
 		int result;
 		while ((result = getMessage()) != 0) {
 			if (result == -1) {

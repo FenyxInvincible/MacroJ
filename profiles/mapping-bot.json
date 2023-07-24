@@ -1,0 +1,13 @@
+{
+  "F5": {
+    "onPress": {
+      "macroClass": "local.macroj.data.macro.poe.FollowBot",
+      "params": {
+        "findingZoneStartX": "300",
+        "findingZoneStartY": "300",
+        "findingZoneWidth": "500",
+        "findingZoneHeight": "200"
+      }
+    }
+  }
+}

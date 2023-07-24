@@ -7,10 +7,11 @@ import dev.failsafe.Failsafe;
 import dev.failsafe.RetryPolicy;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
 
 import static com.sun.jna.platform.win32.WinNT.PROCESS_QUERY_INFORMATION;
 import static com.sun.jna.platform.win32.WinNT.PROCESS_VM_READ;
@@ -80,6 +81,10 @@ public class ScreenPicker {
         );
     }
 
+    public static BufferedImage captureScreen(int x, int y, int sizeX, int sizeY) {
+        return MyGDI32.INSTANCE.captureScreen(hdc, x, y, sizeX, sizeY);
+    }
+
     public static BufferedImage getImageByCoords(int x, int y, int size) {
         int imgSize = size * 2 + 1;
 
@@ -122,6 +127,20 @@ public class ScreenPicker {
             } catch (AWTException e1) {
                 e1.printStackTrace();
             }
+        }
+    }
+
+    public static File getRootDir(Object obj) {
+        ClassLoader classLoader = obj.getClass().getClassLoader();
+        File rootDir = new File(classLoader.getResource("").getFile());
+        return new File(rootDir.getAbsolutePath());
+    }
+
+    public static void saveImageAsJpg(BufferedImage img, File file) {
+        try {
+            ImageIO.write(img, "png", file);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
