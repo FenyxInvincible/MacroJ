@@ -1,10 +1,9 @@
 package local.macroj.data.macro;
 
 import com.google.gson.reflect.TypeToken;
-import local.macroj.ApplicationConfig;
+import local.macroj.data.MacroBaseActionData;
 import local.macroj.data.MacroKey;
 import local.macroj.data.ScreenPosition;
-import local.macroj.data.UseKeyData;
 import local.macroj.sender.Sender;
 import local.macroj.utils.ScreenPicker;
 import lombok.Data;
@@ -47,26 +46,23 @@ public class SwitchCaseByColor implements Macro {
 
             log.info("Checking {} Invert: {} Checked color: {} Actual color: {}", switchCase.pixel, isInverted, switchCase.color, actualColor);
             if (!isInverted && actualColor.equals(switchCase.color)) {
-                log.info("Found");
-                sender.send(switchCase.key, ApplicationConfig.DEFAULT_SEND_DELAY, keyInitiator);
+                sender.handleMacroBaseAction(switchCase.key, keyInitiator);
                 return;
             } else if (isInverted && !actualColor.equals(switchCase.color)) {
-                log.info("Found");
-                sender.send(switchCase.key, ApplicationConfig.DEFAULT_SEND_DELAY, keyInitiator);
+                sender.handleMacroBaseAction(switchCase.key, keyInitiator);
                 return;
             }
         }
 
-        if(switchCases.defaultKey != null) {
-            log.info("Use default");
-            sender.send(switchCases.defaultKey, ApplicationConfig.DEFAULT_SEND_DELAY, keyInitiator);
+        if(switchCases.defaultAction != null) {
+            sender.handleMacroBaseAction(switchCases.defaultAction, keyInitiator);
         }
     }
 
     @Data
     public static class SwitchCases {
         private ArrayList<SwitchCase> cases;
-        private UseKeyData defaultKey;
+        private MacroBaseActionData defaultAction;
 
         private boolean invert = false;
     }
@@ -80,6 +76,6 @@ public class SwitchCaseByColor implements Macro {
         private Color color;
 
         @NonNull
-        private UseKeyData key;
+        private MacroBaseActionData key;
     }
 }

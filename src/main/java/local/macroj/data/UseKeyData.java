@@ -1,12 +1,18 @@
 package local.macroj.data;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NonNull;
+import lombok.experimental.SuperBuilder;
 
 @Data
-public class UseKeyData {
+@SuperBuilder
+@EqualsAndHashCode(callSuper = true)
+public class UseKeyData extends MacroBaseActionData {
     @NonNull
-    private final Key key;
-    private final int delay;
-    private final Key.Action action;
+    private Key key;
+
+    @Builder.Default
+    private Key.Action action = Key.Action.Send;
 }

@@ -72,6 +72,23 @@
             }
         }
     },
+    "6": {//mouse movement test
+        "onPress": {
+            "macroClass": "SendSequence",
+            "params": [
+                {"x": 100, y: 100, "movement": "Relative", "delay": 200},
+                {"key": "m", "delay": 16},
+                {"key": "o", "delay": 16},
+                {"key": "u", "delay": 16},
+                {"key": "s"},
+                {"key": "e", "delay": 16},
+                {"key": "m", "delay": 16},
+                {"key": "o", "delay": 16},
+                {"key": "v", "delay": 16},
+                {"key": "e", "delay": 16}
+            ]
+        }
+    },
     "7": {
         "onPress": {
             "macroClass": "DoubleAction",
