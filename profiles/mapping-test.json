@@ -6,6 +6,7 @@
             "macroClass": "SendSequence",
             "params": [
                 {"key": "4", "action": "Press", "delay": 500},
+                {"x": 0, "y": 0, "delay": 16, "movement": "Absolute"}, //or "Relative"
                 {"key": "3", "action": "Press", "delay": 500},
                 {"key": "A", "action": "Press", "delay": 500}
             ]

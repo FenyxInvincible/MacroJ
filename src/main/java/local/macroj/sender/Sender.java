@@ -165,20 +165,11 @@ public interface Sender {
             y = macroAction.getY();
         } else {
             var mousePointer = MouseInfo.getPointerInfo().getLocation();
-            System.out.println(mousePointer);
             x = macroAction.getX() + mousePointer.x;
             y += macroAction.getY() + mousePointer.y;
         }
-        System.out.println(x);
-        System.out.println(y);
         mouseMove(x, y);
         Thread.sleep(macroAction.getDelay());
-        var a = MouseInfo.getPointerInfo().getLocation();
-        System.out.println(a);
-    };
-
-    default void handleMacroBaseAction(MacroBaseActionData keyAction) {
-        handleMacroBaseAction(keyAction, null);
     };
 
     default void handleMacroBaseAction(MacroBaseActionData macroBaseActionData, MacroKey keyInitiator) {

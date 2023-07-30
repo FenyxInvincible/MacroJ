@@ -18,6 +18,7 @@ import java.lang.reflect.Type;
 public class RemapKey implements Macro {
     private final Sender sender;
     private MacroBaseActionData keyAction;
+    private MacroKey initiator;
 
     @Override
     public Type getParamsType() {
@@ -27,10 +28,11 @@ public class RemapKey implements Macro {
     @Override
     public void setParams(Object param, MacroKey self) {
         keyAction = (MacroBaseActionData) param;
+        initiator = self;
     }
 
     @Override
     public void run() {
-        sender.handleMacroBaseAction(keyAction);
+        sender.handleMacroBaseAction(keyAction, initiator);
     }
 }

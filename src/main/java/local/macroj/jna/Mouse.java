@@ -104,8 +104,6 @@ public class Mouse {
 		input.input.mi.dwFlags = new DWORD(flags);
 		input.input.mi.mouseData = new DWORD(dwData);
 		DWORD amount = User32.INSTANCE.SendInput(new DWORD(1), new INPUT[] { input }, input.size());
-		System.out.println(input.input.mi.dx);
-		System.out.println(input.input.mi.dy);
 		log.info("Successful sendings {}", amount);
 	}
 
