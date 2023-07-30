@@ -1,9 +1,8 @@
 package local.macroj.data.macro;
 
 import com.google.gson.reflect.TypeToken;
-import local.macroj.ApplicationConfig;
+import local.macroj.data.MacroBaseActionData;
 import local.macroj.data.MacroKey;
-import local.macroj.data.UseKeyData;
 import local.macroj.sender.Sender;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -20,17 +19,17 @@ import java.util.List;
 @Slf4j
 public class SpamSequence implements Macro {
     private final Sender sender;
-    private List<UseKeyData> keys;
+    private List<MacroBaseActionData> keys;
     private MacroKey selfKey;
 
     @Override
     public Type getParamsType() {
-        return TypeToken.getParameterized(List.class, UseKeyData.class).getType();
+        return TypeToken.getParameterized(List.class, MacroBaseActionData.class).getType();
     }
 
     @Override
     public void setParams(Object param, MacroKey self) {
-        keys = (List<UseKeyData>) param;
+        keys = (List<MacroBaseActionData>) param;
         this.selfKey = self;
     }
 
@@ -41,7 +40,7 @@ public class SpamSequence implements Macro {
             keys.stream()
                     .takeWhile(n -> selfKey.getKey().isPressed())
                     .forEach(k -> {
-                        sender.send(k, ApplicationConfig.DEFAULT_SEND_DELAY, selfKey);
+                        sender.handleMacroBaseAction(k, selfKey);
                     });
         }
     }

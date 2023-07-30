@@ -48,14 +48,16 @@ public class UseKeyDataDeserializer implements JsonDeserializer<UseKeyData> {
             }
         });
 
+        var builder = UseKeyData.builder();
         //defaults
-        if (params[1] == null) {
-            params[1] = 0;
+        if (params[1] != null) {
+            builder.delay((Integer) params[1]);
         }
-        if (params[2] == null) {
-            params[2] = Key.Action.Send;
+        if (params[2] != null) {
+            builder.action((Key.Action) params[2]);
         }
 
-        return new UseKeyData((Key) params[0], (Integer) params[1], (Key.Action) params[2]);
+
+        return builder.key((Key) params[0]).build();
     }
 }

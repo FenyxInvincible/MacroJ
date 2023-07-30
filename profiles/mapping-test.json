@@ -6,6 +6,7 @@
             "macroClass": "SendSequence",
             "params": [
                 {"key": "4", "action": "Press", "delay": 500},
+                {"x": 0, "y": 0, "delay": 16, "movement": "Absolute"}, //or "Relative"
                 {"key": "3", "action": "Press", "delay": 500},
                 {"key": "A", "action": "Press", "delay": 500}
             ]
@@ -70,6 +71,23 @@
                 "scaleX": "60",
                 "scaleY": "60"
             }
+        }
+    },
+    "6": {//mouse movement test
+        "onPress": {
+            "macroClass": "SendSequence",
+            "params": [
+                {"x": 100, y: 100, "movement": "Relative", "delay": 200},
+                {"key": "m", "delay": 16},
+                {"key": "o", "delay": 16},
+                {"key": "u", "delay": 16},
+                {"key": "s"},
+                {"key": "e", "delay": 16},
+                {"key": "m", "delay": 16},
+                {"key": "o", "delay": 16},
+                {"key": "v", "delay": 16},
+                {"key": "e", "delay": 16}
+            ]
         }
     },
     "7": {

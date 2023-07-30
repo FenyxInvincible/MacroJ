@@ -1,7 +1,7 @@
 package local.macroj.jna;
 
-import com.sun.jna.platform.win32.User32;
 import com.sun.jna.platform.win32.BaseTSD.ULONG_PTR;
+import com.sun.jna.platform.win32.User32;
 import com.sun.jna.platform.win32.WinDef.DWORD;
 import com.sun.jna.platform.win32.WinDef.LONG;
 import com.sun.jna.platform.win32.WinUser.INPUT;
@@ -33,7 +33,7 @@ public class Mouse {
 	 *            Vertical movement
 	 */
 	public static void mouseMove(int x, int y) {
-		mouseAction(x, y, MOUSEEVENTF_MOVE, false);
+		User32.INSTANCE.SetCursorPos(x, y);
 	}
 
 	/**
@@ -85,6 +85,7 @@ public class Mouse {
 	public static void mouseAction(int x, int y, int flags, boolean allowRecursive) {
 		mouseAction(x,y,flags, DwData.ZERO.value, allowRecursive);
 	}
+
 	public static void mouseAction(int x, int y, int flags, int dwData, boolean allowRecursive) {
 		INPUT input = new INPUT();
 
@@ -103,7 +104,7 @@ public class Mouse {
 		input.input.mi.dwFlags = new DWORD(flags);
 		input.input.mi.mouseData = new DWORD(dwData);
 		DWORD amount = User32.INSTANCE.SendInput(new DWORD(1), new INPUT[] { input }, input.size());
-		log.debug("Successful sendings {}", amount);
+		log.info("Successful sendings {}", amount);
 	}
 
 	/**

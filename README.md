@@ -109,6 +109,9 @@ Expected data type from JSON params section can be specified by overriding `Type
 
 You could check `mapping-test.json` for example of macro usage
 
+**UPD: From 1.2.0** each macro which supports key parameter (_{"key": "4", "delay": 500}_) also supports mouse movement directive like
+(_{"x": 0, "y": 0, "delay": 16, "movement": "Absolute"}_). See SendSequence for example
+
 ### Crosshair
 
 Scales and draws image (crosshair for example) at the center of screen; 
@@ -190,7 +193,8 @@ Send sequence of keys with specified delay between
             {"key": "RMB", "delay": 30},
             {"key": "E", "delay": 30, "action": "Release"},
             {"key": "RMB", "delay": 3000},
-            {"key": "4", "delay": 10}
+            {"key": "4", "delay": 10},
+            {"x": 0, "y": 0, "delay": 16, "movement": "Absolute"} //or "Relative"
         ]
     }
 }
@@ -211,7 +215,8 @@ Rest of unsent key will not be sent.
             {"key": "RMB", "delay": 30},
             {"key": "E", "delay": 30, "action": "Release"},
             {"key": "RMB", "delay": 3000},
-            {"key": "4", "delay": 10}
+            {"key": "4", "delay": 10},
+            {"x": 0, "y": 0, "delay": 16, "movement": "Absolute"}
         ]
     }
 }

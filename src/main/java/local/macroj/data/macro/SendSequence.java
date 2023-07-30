@@ -1,9 +1,8 @@
 package local.macroj.data.macro;
 
 import com.google.gson.reflect.TypeToken;
-import local.macroj.ApplicationConfig;
+import local.macroj.data.MacroBaseActionData;
 import local.macroj.data.MacroKey;
-import local.macroj.data.UseKeyData;
 import local.macroj.sender.Sender;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,13 +20,13 @@ public class SendSequence implements Macro {
 
     private final Sender sender;
 
-    private List<UseKeyData> sendKeys;
+    private List<MacroBaseActionData> sendKeys;
     private MacroKey self;
 
     @Override
     public void run() {
         try {
-            sender.sendKeys(sendKeys, ApplicationConfig.DEFAULT_SEND_DELAY, self);
+            sender.handleMacroBaseActions(sendKeys, self);
         } catch (Exception e) {
             log.error("Unhandled exception while sending sequence: params {}", sendKeys, e);
         }
@@ -35,12 +34,12 @@ public class SendSequence implements Macro {
 
     @Override
     public void setParams(Object param, MacroKey self) {
-        sendKeys = (List<UseKeyData>)param;
+        sendKeys = (List<MacroBaseActionData>)param;
         this.self = self;
     }
 
     @Override
     public Type getParamsType() {
-        return TypeToken.getParameterized(List.class, UseKeyData.class).getType();
+        return TypeToken.getParameterized(List.class, MacroBaseActionData.class).getType();
     }
 }

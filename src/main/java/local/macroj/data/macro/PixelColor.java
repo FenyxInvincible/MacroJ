@@ -1,9 +1,8 @@
 package local.macroj.data.macro;
 
 import com.google.gson.reflect.TypeToken;
-import local.macroj.ApplicationConfig;
+import local.macroj.data.MacroBaseActionData;
 import local.macroj.data.MacroKey;
-import local.macroj.data.UseKeyData;
 import local.macroj.sender.Sender;
 import local.macroj.utils.ScreenPicker;
 import lombok.*;
@@ -53,7 +52,7 @@ public class PixelColor implements Macro {
     protected void checking(int attempts, Color checkingColor) throws InterruptedException {
 
         while (condition(attempts, checkingColor)) {
-            sender.sendKeys(data.getKeys(), ApplicationConfig.DEFAULT_SEND_DELAY, self);
+            sender.handleMacroBaseActions(data.getKeys(), self);
             Thread.sleep(data.getAttemptsDelayMs());
             attempts--;
         }
@@ -75,6 +74,6 @@ public class PixelColor implements Macro {
         private Color desiredColor = null;
         private int maxAttempts = 3;
         private int attemptsDelayMs = 50;
-        private List<UseKeyData> keys;
+        private List<MacroBaseActionData> keys;
     }
 }

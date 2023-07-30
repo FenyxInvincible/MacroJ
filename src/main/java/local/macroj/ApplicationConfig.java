@@ -2,17 +2,12 @@ package local.macroj;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import local.macroj.data.Key;
-import local.macroj.data.MacroKey;
-import local.macroj.data.UseKeyData;
+import local.macroj.data.*;
 import local.macroj.jna.hook.key.KeyHookManager;
 import local.macroj.jna.hook.mouse.MouseHookManager;
 import local.macroj.sender.JnaSender;
 import local.macroj.sender.Sender;
-import local.macroj.serialization.ColorDeserializer;
-import local.macroj.serialization.KeyDeserializer;
-import local.macroj.serialization.MacroKeyDeserializer;
-import local.macroj.serialization.UseKeyDataDeserializer;
+import local.macroj.serialization.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -49,13 +44,17 @@ public class ApplicationConfig {
             KeyDeserializer keyDeserializer,
             MacroKeyDeserializer macroKeyDeserializer,
             ColorDeserializer colorDeserializer,
-            UseKeyDataDeserializer useKeyDataDeserializer
+            UseKeyDataDeserializer useKeyDataDeserializer,
+            MacroBaseActionDataDeserializer macroBaseActionDataDeserializer,
+            MouseMoveDataDeserializer mouseMoveDataDeserializer
     ){
         return new GsonBuilder()
                 .registerTypeAdapter(Key.class, keyDeserializer)
                 .registerTypeAdapter(MacroKey.class, macroKeyDeserializer)
                 .registerTypeAdapter(Color.class, colorDeserializer)
                 .registerTypeAdapter(UseKeyData.class, useKeyDataDeserializer)
+                .registerTypeAdapter(MacroBaseActionData.class, macroBaseActionDataDeserializer)
+                .registerTypeAdapter(MouseMoveData.class, mouseMoveDataDeserializer)
                 .create();
     }
 }

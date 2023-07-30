@@ -1,10 +1,9 @@
 package local.macroj.data.macro;
 
 import com.google.gson.reflect.TypeToken;
-import local.macroj.ApplicationConfig;
+import local.macroj.data.MacroBaseActionData;
 import local.macroj.data.MacroIconData;
 import local.macroj.data.MacroKey;
-import local.macroj.data.UseKeyData;
 import local.macroj.sender.Sender;
 import local.macroj.utils.Overlay;
 import local.macroj.utils.ScreenPicker;
@@ -112,7 +111,7 @@ public class PixelChecker implements Macro {
                     );
 
                     if(data.isEquality() == currentColor.equals(checkingColor)) {
-                        sender.sendKeys(data.getKeys(), ApplicationConfig.DEFAULT_SEND_DELAY, initiator);
+                        sender.handleMacroBaseActions(data.getKeys(), initiator);
                         log.info("Keys was sent: {} for colors: Desired: {}, Actual {}", data.getKeys(), checkingColor, currentColor);
                     } else {
                         Thread.sleep(data.getRefreshTimeMs());
@@ -171,7 +170,7 @@ public class PixelChecker implements Macro {
         @NonNull
         private Integer y;
         private Color desiredColor = null;
-        private List<UseKeyData> keys;
+        private List<MacroBaseActionData> keys;
         private MacroIconData icon = new MacroIconData();
     }
 }

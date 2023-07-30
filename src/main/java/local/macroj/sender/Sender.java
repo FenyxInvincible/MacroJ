@@ -1,10 +1,9 @@
 package local.macroj.sender;
 
-import local.macroj.data.Key;
-import local.macroj.data.MacroKey;
-import local.macroj.data.UseKeyData;
+import local.macroj.data.*;
 import local.macroj.key.MouseKey;
 
+import java.awt.*;
 import java.util.List;
 
 /**
@@ -156,5 +155,45 @@ public interface Sender {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
+    };
+
+    default void mouseMove(MouseMoveData macroAction) throws InterruptedException {
+        int x = 0;
+        int y = 0;
+        if(macroAction.getMovement() == MouseMoveData.MouseMovementType.Absolute) {
+            x = macroAction.getX();
+            y = macroAction.getY();
+        } else {
+            var mousePointer = MouseInfo.getPointerInfo().getLocation();
+            x = macroAction.getX() + mousePointer.x;
+            y += macroAction.getY() + mousePointer.y;
+        }
+        mouseMove(x, y);
+        Thread.sleep(macroAction.getDelay());
+    };
+
+    default void handleMacroBaseAction(MacroBaseActionData macroBaseActionData, MacroKey keyInitiator) {
+        if(macroBaseActionData instanceof UseKeyData) {
+            var useKeyData = (UseKeyData)macroBaseActionData;
+            if (useKeyData.getAction() == Key.Action.Press) {
+                pressKey(useKeyData.getKey());
+            } else if (useKeyData.getAction() == Key.Action.Release) {
+                releaseKey(useKeyData.getKey());
+            } else {
+                send(useKeyData, useKeyData.getDelay(), keyInitiator);
+            }
+        } else if (macroBaseActionData instanceof MouseMoveData){
+            try {
+                mouseMove((MouseMoveData)macroBaseActionData);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    };
+
+    default void handleMacroBaseActions(List<MacroBaseActionData> keys, MacroKey initiator) {
+        keys.forEach(k -> {
+            handleMacroBaseAction(k, initiator);
+        });
     };
 }
