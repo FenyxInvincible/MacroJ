@@ -141,19 +141,14 @@ public interface Sender {
     };
 
     default void send(UseKeyData useKeyData, int defaultDelay, MacroKey initiator) {
-        try {
-            boolean allowPropagation = !initiator.getKey().equals(useKeyData.getKey());
+        boolean allowPropagation = !initiator.getKey().equals(useKeyData.getKey());
 
-            if (useKeyData.getAction() == Key.Action.Press) {
-                pressKey(useKeyData.getKey(), allowPropagation);
-            } else if (useKeyData.getAction() == Key.Action.Release) {
-                releaseKey(useKeyData.getKey(), allowPropagation);
-            } else {
-                sendKey(useKeyData.getKey(), defaultDelay, allowPropagation);
-            }
-            Thread.sleep(useKeyData.getDelay());
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+        if (useKeyData.getAction() == Key.Action.Press) {
+            pressKey(useKeyData.getKey(), allowPropagation);
+        } else if (useKeyData.getAction() == Key.Action.Release) {
+            releaseKey(useKeyData.getKey(), allowPropagation);
+        } else {
+            sendKey(useKeyData.getKey(), defaultDelay, allowPropagation);
         }
     };
 
@@ -173,21 +168,26 @@ public interface Sender {
     };
 
     default void handleMacroBaseAction(MacroBaseActionData macroBaseActionData, MacroKey keyInitiator) {
-        if(macroBaseActionData instanceof UseKeyData) {
-            var useKeyData = (UseKeyData)macroBaseActionData;
-            if (useKeyData.getAction() == Key.Action.Press) {
-                pressKey(useKeyData.getKey());
-            } else if (useKeyData.getAction() == Key.Action.Release) {
-                releaseKey(useKeyData.getKey());
-            } else {
-                send(useKeyData, useKeyData.getDelay(), keyInitiator);
+        try {
+            if (macroBaseActionData instanceof UseKeyData) {
+                var useKeyData = (UseKeyData) macroBaseActionData;
+                if (useKeyData.getAction() == Key.Action.Press) {
+                    pressKey(useKeyData.getKey());
+                } else if (useKeyData.getAction() == Key.Action.Release) {
+                    releaseKey(useKeyData.getKey());
+                } else {
+                    send(useKeyData, useKeyData.getDelay(), keyInitiator);
+                }
+            } else if (macroBaseActionData instanceof MouseMoveData) {
+                try {
+                    mouseMove((MouseMoveData) macroBaseActionData);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
-        } else if (macroBaseActionData instanceof MouseMoveData){
-            try {
-                mouseMove((MouseMoveData)macroBaseActionData);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            Thread.sleep(macroBaseActionData.getDelay());
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     };
 

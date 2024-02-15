@@ -1,4 +1,50 @@
 {
+  "1": {
+    "onPress": {
+      "macroClass": "SwitchCaseByColor",
+      "params": {
+        "cases": [
+          {
+            "pixel": {"x": 0, "y": 0 },
+            "color": {"r": 255, "g": 255, "b": 0},
+            "key": {"key": "MacroCast1", "delay": 0}
+          }
+        ],
+        "defaultAction": {"key": "MacroPreCast1", "delay": 0}
+      }
+    }
+  },
+  "MacroCast1": {
+    "onPress": {
+      "macroClass": "SendSequence",
+      "params": [
+        {
+          "key": "NUMPAD4",
+          "delay": 100
+        }
+      ]
+    }
+  },
+  "MacroPreCast1": {
+    "onPress": {
+      "macroClass": "SendSequence",
+      "params": [
+        {
+          "key": "NUMPAD5",
+          "delay": 30
+        },
+        {
+          "key": "NUMPAD4",
+          "delay": 100
+        },
+        {
+          "key": "NUMPAD5",
+          "delay": 10,
+          "action": "Press"
+        }
+      ]
+    }
+  },
   "6": {
     "onPress": {
       "macroClass": "SendSequence",

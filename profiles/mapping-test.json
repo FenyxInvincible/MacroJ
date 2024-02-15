@@ -14,18 +14,54 @@
     },
     "1": {
         "onPress": {
-            "macroClass": "RemapKey",
-            "params": {
-                "key": "2",
-                "action": "Press"
-            }
+            "macroClass": "SendSequence",
+            "params": [
+                {
+                    "key": "2",
+                    "action": "Press",
+                    "delay": 500
+                },
+                {
+                    "key": "2",
+                    "action": "Release",
+                    "delay": 500
+                },
+                {
+                    "key": "3",
+                    "action": "Press",
+                    "delay": 500
+                },
+                {
+                    "key": "3",
+                    "action": "Release",
+                    "delay": 500
+                }
+            ]
         },
         "onRelease": {
-            "macroClass": "RemapKey",
-            "params": {
-                "key": "2",
-                "action": "Release"
-            }
+            "macroClass": "SendSequence",
+            "params": [
+                {
+                    "key": "3",
+                    "action": "Press",
+                    "delay": 500
+                },
+                {
+                    "key": "3",
+                    "action": "Release",
+                    "delay": 500
+                },
+                {
+                    "key": "2",
+                    "action": "Press",
+                    "delay": 500
+                },
+                {
+                    "key": "2",
+                    "action": "Release",
+                    "delay": 500
+                }
+            ]
         }
     },
     "2": {
