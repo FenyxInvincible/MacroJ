@@ -40,5 +40,11 @@ public class Reset  implements Macro {
         sender.releaseKey(settings.getConsumables().getKey());
         data.resetSpells(settings.getSpells().getAmount());
         data.resetConsumables(settings.getConsumables().getAmount());
+        data.setDelays(
+                settings.getSpells().getKeyDelay(),
+                settings.getSpells().getChangeDelay(),
+                settings.getConsumables().getKeyDelay(),
+                settings.getConsumables().getChangeDelay()
+        );
     }
 }

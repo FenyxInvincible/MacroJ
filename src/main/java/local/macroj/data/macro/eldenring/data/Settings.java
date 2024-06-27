@@ -12,5 +12,7 @@ public class Settings {
     public static class Setting{
         private Key key;
         private int amount;
+        private int keyDelay = 32;
+        private int changeDelay = 32;
     }
 }

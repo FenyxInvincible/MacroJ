@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 import java.lang.reflect.Type;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -69,8 +70,12 @@ public class MacroFactory {
         );
 
         macros = ms.entrySet().stream()
-                .map(e -> createListOfMacroPair(e.getKey(), e.getValue())
-                ).collect(Collectors.toList());
+                .map(e -> createListOfMacroPair(e.getKey(), e.getValue()))
+                .sorted(Comparator.comparing((MacroPair mp) -> mp.getMacroKey().getModifier() != null,
+                                Comparator.reverseOrder())
+                        .thenComparing(mp -> mp.getMacroKey().getKey(),
+                                Comparator.comparingInt(Key::hashCode)))
+                .collect(Collectors.toList());
     }
 
     public static String getMacroConfigFilePath(String profilesFolder, String profileName) {

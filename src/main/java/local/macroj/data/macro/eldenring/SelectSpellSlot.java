@@ -1,7 +1,6 @@
 package local.macroj.data.macro.eldenring;
 
 import local.macroj.sender.Sender;
-import lombok.experimental.SuperBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -20,5 +19,15 @@ public class SelectSpellSlot extends SelectGenericSlot {
     @Override
     protected int selectShift(int position) {
         return data.selectSpell(position);
+    }
+
+    @Override
+    protected int getChangeDelay() {
+        return data.spellsChangeDelay;
+    }
+
+    @Override
+    protected int getKeyDelay() {
+        return data.spellsKeyDelay;
     }
 }

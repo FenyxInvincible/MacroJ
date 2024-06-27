@@ -34,27 +34,29 @@ public abstract class SelectGenericSlot implements Macro {
 
     public void run () {
         try {
-
+            var changeDelay = getChangeDelay();
+            var keyDelay = getKeyDelay();
             //here we can have expected exception, and if so don't want to execute code below
             int shiftAmount = selectShift(slotInfo.getPosition());
 
             //execute onInactive of previous slot
-            if (!data.getInactiveActions().isEmpty() && !data.getInactiveActions().equals(slotInfo.getOnActive())) {
+            var clazz = this.getClass();
+            if (!data.getInactiveActions(clazz).isEmpty() && !data.getInactiveActions(clazz).equals(slotInfo.getOnActive())) {
                 log.debug("execute onInactive of previous slot");
-                executeActions(data.getInactiveActions());
+                executeActions(data.getInactiveActions(clazz));
             } else {
                 log.debug(
                         "inactive action of previous slot is empty {}, inactive of previous and current are equals {}",
-                        data.getInactiveActions().isEmpty(),
-                        data.getInactiveActions().equals(slotInfo.getOnActive())
+                        data.getInactiveActions(clazz).isEmpty(),
+                        data.getInactiveActions(clazz).equals(slotInfo.getOnActive())
                 );
             }
 
             //skip same action with inactive. We need to avoid executing same action twice, for example switch weapon twice.
             if (
                     slotInfo.getOnActive() != null && //there is an action
-                            slotInfo.getPosition() != data.getInactiveActionsSlotId() && //skip same slot
-                            !slotInfo.getOnActive().equals(data.getInactiveActions()) //We need to avoid executing same action twice, for example switch weapon twice for same group of skills.
+                            slotInfo.getPosition() != data.getInactiveActionsSlotId(this.getClass()) && //skip same slot
+                            !slotInfo.getOnActive().equals(data.getInactiveActions(this.getClass())) //We need to avoid executing same action twice, for example switch weapon twice for same group of skills.
             ) {
                 log.debug("executes onActive");
                 executeActions(slotInfo.getOnActive());
@@ -62,20 +64,21 @@ public abstract class SelectGenericSlot implements Macro {
                 log.debug(
                         "onActive is not null {}, slot is same as previous {}, onActive equals to prev invactive {}",
                         slotInfo.getOnActive() != null,
-                        slotInfo.getOnActive() != null && slotInfo.getPosition() != data.getInactiveActionsSlotId(),
-                        slotInfo.getOnActive() != null && slotInfo.getOnActive().equals(data.getInactiveActions())
+                        slotInfo.getOnActive() != null && slotInfo.getPosition() != data.getInactiveActionsSlotId(clazz),
+                        slotInfo.getOnActive() != null && slotInfo.getOnActive().equals(data.getInactiveActions(clazz))
                 );
             }
 
             //set inactive for current slot
             data.setInactiveActions(
+                    this.getClass(),
                     slotInfo.getPosition(),
                     slotInfo.getOnInactive() != null ? slotInfo.getOnInactive() : Collections.emptyList()
             );
 
             for (int i = 0; i < shiftAmount; i++) {
-                sender.sendKey(slotInfo.getChangeKey(), 32);
-                Thread.sleep(32);
+                sender.sendKey(slotInfo.getChangeKey(), keyDelay);
+                Thread.sleep(changeDelay);
             }
 
             if (slotInfo.getUseKey() != null) {
@@ -91,6 +94,7 @@ public abstract class SelectGenericSlot implements Macro {
     protected abstract int selectShift(int position);
 
     private void executeActions(List<UseKeyData> listOfKeys) {
+        var changeDelay = getChangeDelay();
         listOfKeys.stream().forEach(
                 use -> {
                     try {
@@ -103,7 +107,7 @@ public abstract class SelectGenericSlot implements Macro {
                             sender.releaseKey(use.getKey());
                         } else {
                             log.debug("send {}", use);
-                            sender.sendKey(use.getKey(), 64);
+                            sender.sendKey(use.getKey(), changeDelay);
                         }
 
                         Thread.sleep(use.getDelay());
@@ -113,4 +117,8 @@ public abstract class SelectGenericSlot implements Macro {
                 }
         );
     }
+
+    protected abstract int getChangeDelay();
+
+    protected abstract int getKeyDelay();
 }

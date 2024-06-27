@@ -82,6 +82,7 @@ public class MacroListener {
             if(ignore) {
                 return true;
             }
+            log.info("Execute macro {}", mk);
             return macroFactory.execute(mk, pressState);
         }
         return false;

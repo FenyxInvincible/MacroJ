@@ -8,8 +8,9 @@ import org.apache.commons.lang3.tuple.MutablePair;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Component
@@ -19,14 +20,19 @@ public class InMemoryHandler {
     MutablePair<Integer, Integer> spells = new MutablePair<>(1, 1);
     MutablePair<Integer, Integer> consumables = new MutablePair<>(1, 1);
 
+    int spellsKeyDelay = 32;
+    int spellsChangeDelay = 32;
+    int consumablesKeyDelay = 32;
+    int consumablesChangeDelay = 32;
+
     private long spellKeyPressed;
     private long consumableKeyPressed;
-
-    private int inactiveActionsSlotId = 0;
-    private final List<UseKeyData> inactiveActions = new ArrayList<>();
+    private Map<Class, InactiveAction> inactiveActionsByHandler = new HashMap<>();
 
     public void resetSpells(int amount) {
-        inactiveActions.clear();
+        inactiveActionsByHandler.entrySet().forEach(
+                e -> e.getValue().inactiveActions.clear()
+        );
         reset(amount, spells);
     }
 
@@ -50,18 +56,21 @@ public class InMemoryHandler {
         next(consumables);
     }
 
-    public List<UseKeyData> getInactiveActions(int slotId) {
-        return slotId == inactiveActionsSlotId ? Collections.emptyList() : inactiveActions;
+    public List<UseKeyData> getInactiveActions(Class clazz) {
+        var ia = inactiveActionsByHandler.computeIfAbsent(clazz, aClass -> new InactiveAction());
+        return ia.inactiveActions;
     }
 
-    public void setInactiveActions(int slotId, List<UseKeyData> actions) {
-        inactiveActionsSlotId = slotId;
-        inactiveActions.clear();
-        inactiveActions.addAll(actions);
+    public void setInactiveActions(Class clazz, int slotId, List<UseKeyData> actions) {
+        var ia = inactiveActionsByHandler.computeIfAbsent(clazz, aClass -> new InactiveAction());
+        ia.inactiveActionsSlotId = slotId;
+        ia.inactiveActions.clear();
+        ia.inactiveActions.addAll(actions);
     }
 
-    public int getInactiveActionsSlotId() {
-        return inactiveActionsSlotId;
+    public int getInactiveActionsSlotId(Class clazz) {
+        var ia = inactiveActionsByHandler.computeIfAbsent(clazz, aClass -> new InactiveAction());
+        return ia.inactiveActionsSlotId;
     }
     /**
      *
@@ -93,5 +102,17 @@ public class InMemoryHandler {
     private void reset(int amount, MutablePair<Integer, Integer> mem) {
         mem.left = 1;
         mem.right = amount;
+    }
+
+    public void setDelays(int spellsKeyDelay, int spellsChangeDelay, int consumablesKeyDelay, int consumablesChangeDelay) {
+        this.spellsKeyDelay = spellsKeyDelay;
+        this.spellsChangeDelay = spellsChangeDelay;
+        this.consumablesKeyDelay = consumablesKeyDelay;
+        this.consumablesChangeDelay = consumablesChangeDelay;
+    }
+
+    public static class InactiveAction {
+        private int inactiveActionsSlotId = 0;
+        private final List<UseKeyData> inactiveActions = new ArrayList<>();
     }
 }
